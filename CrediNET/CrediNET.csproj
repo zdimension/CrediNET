@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0348BDA-3E62-4A5D-856E-5FC721AF2355}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrediNET</RootNamespace>
+    <AssemblyName>CrediNET</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\..\..\..\Téléchargements\EPPlus 3.1.3\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\..\..\..\..\Téléchargements\ExcelExamplesrc\ExcelExample\ExcelExample\bin\Debug\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\..\..\..\..\Téléchargements\ExcelExamplesrc\ExcelExample\ExcelExample\bin\Debug\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.VBIDE">
+      <HintPath>..\..\..\..\..\Téléchargements\ExcelExamplesrc\ExcelExample\ExcelExample\bin\Debug\Interop.VBIDE.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>..\..\VoltagePlayer\VoltagePlayer\bin\Debug\Ookii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\..\..\..\..\Téléchargements\zedgraph_dll_v515\zedgraph_dll_v515\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph.resources">
+      <HintPath>..\..\..\..\..\Téléchargements\zedgraph_dll_v515\zedgraph_dll_v515\zedgraph_dll_v5.1.5\fr\ZedGraph.resources.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColumnSorter.cs" />
+    <Compile Include="Account.cs" />
+    <Compile Include="CoolTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateExcelDoc.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="Currencies.cs" />
+    <Compile Include="DoubleBufferListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmCountSpcEuro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCountSpcEuro.Designer.cs">
+      <DependentUpon>FrmCountSpcEuro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreateAccount.Designer.cs">
+      <DependentUpon>FrmCreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGraph.Designer.cs">
+      <DependentUpon>FrmGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperation.Designer.cs">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOpFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOpFilter.Designer.cs">
+      <DependentUpon>FrmOpFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOptions.Designer.cs">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lang.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NoBorderToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Operation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RendererStuff.cs" />
+    <EmbeddedResource Include="FrmCountSpcEuro.resx">
+      <DependentUpon>FrmCountSpcEuro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreateAccount.resx">
+      <DependentUpon>FrmCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGraph.resx">
+      <DependentUpon>FrmGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperation.resx">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpFilter.resx">
+      <DependentUpon>FrmOpFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOptions.resx">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_protect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_prepare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xls.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xlsx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csv.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngU1X58JfMGF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1ct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2ct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5ct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10ct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20ct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50ct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1eur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2eur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5eur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5eur_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10eur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20eur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50eur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100eur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200eur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\500eur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagnostic_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagnostic_chart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_pie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_line.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
