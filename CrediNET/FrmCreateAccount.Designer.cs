@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -43,6 +44,8 @@
             this.btnRemB = new System.Windows.Forms.Button();
             this.cbxDevise = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +97,7 @@
             this.cbxCrypt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cbxCrypt.AutoSize = true;
             this.cbxCrypt.Enabled = false;
-            this.cbxCrypt.Location = new System.Drawing.Point(15, 264);
+            this.cbxCrypt.Location = new System.Drawing.Point(20, 264);
             this.cbxCrypt.Name = "cbxCrypt";
             this.cbxCrypt.Size = new System.Drawing.Size(121, 19);
             this.cbxCrypt.TabIndex = 5;
@@ -105,7 +108,7 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(321, 281);
+            this.btnCancel.Location = new System.Drawing.Point(326, 281);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
@@ -134,7 +137,7 @@
             // 
             this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(240, 281);
+            this.btnOK.Location = new System.Drawing.Point(245, 281);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 9;
@@ -189,6 +192,7 @@
             this.cbxDevise.Name = "cbxDevise";
             this.cbxDevise.Size = new System.Drawing.Size(295, 23);
             this.cbxDevise.TabIndex = 14;
+            this.cbxDevise.SelectedIndexChanged += new System.EventHandler(this.cbxDevise_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -199,11 +203,16 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Devise :";
             // 
-            // FrmCreerCompte
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // FrmCreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 314);
+            this.ClientSize = new System.Drawing.Size(419, 314);
             this.ControlBox = false;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbxDevise);
@@ -221,9 +230,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "FrmCreerCompte";
+            this.Name = "FrmCreateAccount";
             this.Text = "Créer un compte";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCreateAccount_FormClosing);
             this.Load += new System.EventHandler(this.FrmCreerCompte_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +257,6 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox cbxDevise;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

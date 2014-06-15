@@ -74,8 +74,6 @@ namespace CrediNET
             if (lbxBudgets.SelectedItems.Count == 0)
                 return;
 
-
-
             lbxBudgets.Items.Remove(lbxBudgets.SelectedItem);
 
             if (lbxBudgets.SelectedItems.Count == 1)
@@ -131,6 +129,23 @@ namespace CrediNET
 
                 lbxBudgets.SetSelected(lbxBudgets.Items.IndexOf(s), true); 
             }
+        }
+
+        private void FrmCreateAccount_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.DialogResult == DialogResult.OK)
+            {
+                if (cbxDevise.SelectedItem == null)
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(cbxDevise, "!");
+                }
+            }
+        }
+
+        private void cbxDevise_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            errorProvider.SetError(cbxDevise, null);
         }
 
     }
