@@ -222,7 +222,7 @@ namespace CrediNET
 
             lvOps.Items.Clear();
 
-            /*switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
             {
                 case "en-US":
                     lblAccountName.Text = "<No account loaded>";
@@ -234,10 +234,7 @@ namespace CrediNET
                     lblSolde.Text = "Solde : 0,00 " + dfd;
                     lblSoldeAt.Text = "Solde au   /  /     : 0,00 " + dfd;
                     break;
-            }*/
-            this.Controls.Clear();
-            InitializeComponent();
-            resources.ApplyResources(this, "$this");
+            }
             
             lblTotalCredit.Text = "0,00 " + dfd;
             lblTotalDeb.Text = "0,00 " + dfd;

@@ -175,6 +175,9 @@
   <data name="btn1ct.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Count money in Euro</value>
   </data>

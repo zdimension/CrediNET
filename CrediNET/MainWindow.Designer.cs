@@ -22,8 +22,6 @@
 
         #region Code généré par le Concepteur Windows Form
 
-        System.ComponentModel.ComponentResourceManager resources;
-
         /// <summary>
         /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
         /// le contenu de cette méthode avec l'éditeur de code.
@@ -53,6 +51,7 @@
             this.clmnCred = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnDeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip = new CrediNET.NoBorderToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripSplitButton();
@@ -66,7 +65,6 @@
             this.classeurOpenOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditAcc = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddOp = new System.Windows.Forms.ToolStripButton();
             this.btnEditOp = new System.Windows.Forms.ToolStripButton();
             this.btnDuplOp = new System.Windows.Forms.ToolStripButton();
@@ -232,6 +230,11 @@
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip_Paint);
             // 
+            // toolStripSeparator1
+            // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            // 
             // btnNew
             // 
             resources.ApplyResources(this.btnNew, "btnNew");
@@ -332,11 +335,6 @@
             this.btnEditAcc.Image = global::CrediNET.Properties.Resources.document_prepare;
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // btnAddOp
             // 
