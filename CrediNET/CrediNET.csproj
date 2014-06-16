@@ -138,23 +138,47 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RendererStuff.cs" />
+    <EmbeddedResource Include="FrmCountSpcEuro.en-US.resx">
+      <DependentUpon>FrmCountSpcEuro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCountSpcEuro.resx">
       <DependentUpon>FrmCountSpcEuro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreateAccount.en-US.resx">
+      <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateAccount.resx">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGraph.en-US.resx">
+      <DependentUpon>FrmGraph.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGraph.resx">
       <DependentUpon>FrmGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperation.en-US.resx">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOperation.resx">
       <DependentUpon>FrmOperation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpFilter.en-US.resx">
+      <DependentUpon>FrmOpFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOpFilter.resx">
       <DependentUpon>FrmOpFilter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOptions.en-US.resx">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOptions.resx">
       <DependentUpon>FrmOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.de-DE.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.en-US.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
