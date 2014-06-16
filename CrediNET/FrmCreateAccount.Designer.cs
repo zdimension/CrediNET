@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCreateAccount));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -40,179 +41,171 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemB = new System.Windows.Forms.Button();
             this.cbxDevise = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRemB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            resources.ApplyResources(this.label1, "label1");
+            this.errorProvider.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Afin de créer un compte valide, veuillez remplir les champs ci-dessous.";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 50);
+            resources.ApplyResources(this.label2, "label2");
+            this.errorProvider.SetError(this.label2, resources.GetString("label2.Error"));
+            this.errorProvider.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nom :";
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(101, 47);
+            resources.ApplyResources(this.txtNom, "txtNom");
+            this.errorProvider.SetError(this.txtNom, resources.GetString("txtNom.Error"));
+            this.errorProvider.SetIconAlignment(this.txtNom, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtNom.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.txtNom, ((int)(resources.GetObject("txtNom.IconPadding"))));
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(295, 23);
-            this.txtNom.TabIndex = 2;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 79);
+            resources.ApplyResources(this.label3, "label3");
+            this.errorProvider.SetError(this.label3, resources.GetString("label3.Error"));
+            this.errorProvider.SetIconAlignment(this.label3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label3.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.label3, ((int)(resources.GetObject("label3.IconPadding"))));
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Mot de passe :";
             // 
             // txtPasse
             // 
-            this.txtPasse.Location = new System.Drawing.Point(101, 76);
+            resources.ApplyResources(this.txtPasse, "txtPasse");
+            this.errorProvider.SetError(this.txtPasse, resources.GetString("txtPasse.Error"));
+            this.errorProvider.SetIconAlignment(this.txtPasse, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtPasse.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.txtPasse, ((int)(resources.GetObject("txtPasse.IconPadding"))));
             this.txtPasse.Name = "txtPasse";
-            this.txtPasse.Size = new System.Drawing.Size(295, 23);
-            this.txtPasse.TabIndex = 4;
             this.txtPasse.UseSystemPasswordChar = true;
             this.txtPasse.Enter += new System.EventHandler(this.txtPasse_Enter);
             this.txtPasse.Leave += new System.EventHandler(this.txtPasse_Leave);
             // 
             // cbxCrypt
             // 
-            this.cbxCrypt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cbxCrypt.AutoSize = true;
-            this.cbxCrypt.Enabled = false;
-            this.cbxCrypt.Location = new System.Drawing.Point(20, 264);
+            resources.ApplyResources(this.cbxCrypt, "cbxCrypt");
+            this.errorProvider.SetError(this.cbxCrypt, resources.GetString("cbxCrypt.Error"));
+            this.errorProvider.SetIconAlignment(this.cbxCrypt, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbxCrypt.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.cbxCrypt, ((int)(resources.GetObject("cbxCrypt.IconPadding"))));
             this.cbxCrypt.Name = "cbxCrypt";
-            this.cbxCrypt.Size = new System.Drawing.Size(121, 19);
-            this.cbxCrypt.TabIndex = 5;
-            this.cbxCrypt.Text = "Crypter le compte";
             this.cbxCrypt.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(326, 281);
+            this.errorProvider.SetError(this.btnCancel, resources.GetString("btnCancel.Error"));
+            this.errorProvider.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.btnCancel, ((int)(resources.GetObject("btnCancel.IconPadding"))));
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // lbxBudgets
             // 
+            resources.ApplyResources(this.lbxBudgets, "lbxBudgets");
+            this.errorProvider.SetError(this.lbxBudgets, resources.GetString("lbxBudgets.Error"));
             this.lbxBudgets.FormattingEnabled = true;
-            this.lbxBudgets.ItemHeight = 15;
+            this.errorProvider.SetIconAlignment(this.lbxBudgets, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lbxBudgets.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.lbxBudgets, ((int)(resources.GetObject("lbxBudgets.IconPadding"))));
             this.lbxBudgets.Items.AddRange(new object[] {
-            "alimentaire",
-            "divers",
-            "habitat",
-            "salaire",
-            "santé",
-            "voiture"});
-            this.lbxBudgets.Location = new System.Drawing.Point(101, 163);
+            resources.GetString("lbxBudgets.Items"),
+            resources.GetString("lbxBudgets.Items1"),
+            resources.GetString("lbxBudgets.Items2"),
+            resources.GetString("lbxBudgets.Items3"),
+            resources.GetString("lbxBudgets.Items4"),
+            resources.GetString("lbxBudgets.Items5")});
             this.lbxBudgets.Name = "lbxBudgets";
-            this.lbxBudgets.Size = new System.Drawing.Size(295, 94);
             this.lbxBudgets.Sorted = true;
-            this.lbxBudgets.TabIndex = 8;
             this.lbxBudgets.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(245, 281);
+            this.errorProvider.SetError(this.btnOK, resources.GetString("btnOK.Error"));
+            this.errorProvider.SetIconAlignment(this.btnOK, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnOK.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.btnOK, ((int)(resources.GetObject("btnOK.IconPadding"))));
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 9;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // txtItemName
             // 
-            this.txtItemName.Location = new System.Drawing.Point(130, 134);
+            resources.ApplyResources(this.txtItemName, "txtItemName");
+            this.errorProvider.SetError(this.txtItemName, resources.GetString("txtItemName.Error"));
+            this.errorProvider.SetIconAlignment(this.txtItemName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtItemName.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.txtItemName, ((int)(resources.GetObject("txtItemName.IconPadding"))));
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(238, 23);
-            this.txtItemName.TabIndex = 12;
             this.txtItemName.TextChanged += new System.EventHandler(this.txtItemName_TextChanged);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 163);
+            resources.ApplyResources(this.label4, "label4");
+            this.errorProvider.SetError(this.label4, resources.GetString("label4.Error"));
+            this.errorProvider.SetIconAlignment(this.label4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label4.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.label4, ((int)(resources.GetObject("label4.IconPadding"))));
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 15);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Budgets :";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::CrediNET.Properties.Resources.add;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(100, 133);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(25, 25);
-            this.btnAdd.TabIndex = 11;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnRemB
-            // 
-            this.btnRemB.Enabled = false;
-            this.btnRemB.Image = global::CrediNET.Properties.Resources.delete;
-            this.btnRemB.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRemB.Location = new System.Drawing.Point(371, 133);
-            this.btnRemB.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRemB.Name = "btnRemB";
-            this.btnRemB.Size = new System.Drawing.Size(25, 25);
-            this.btnRemB.TabIndex = 10;
-            this.btnRemB.UseVisualStyleBackColor = true;
-            this.btnRemB.Click += new System.EventHandler(this.btnRemB_Click);
             // 
             // cbxDevise
             // 
+            resources.ApplyResources(this.cbxDevise, "cbxDevise");
+            this.errorProvider.SetError(this.cbxDevise, resources.GetString("cbxDevise.Error"));
             this.cbxDevise.FormattingEnabled = true;
-            this.cbxDevise.Location = new System.Drawing.Point(101, 105);
+            this.errorProvider.SetIconAlignment(this.cbxDevise, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbxDevise.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.cbxDevise, ((int)(resources.GetObject("cbxDevise.IconPadding"))));
             this.cbxDevise.Name = "cbxDevise";
-            this.cbxDevise.Size = new System.Drawing.Size(295, 23);
-            this.cbxDevise.TabIndex = 14;
             this.cbxDevise.SelectedIndexChanged += new System.EventHandler(this.cbxDevise_SelectedIndexChanged);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 108);
+            resources.ApplyResources(this.label5, "label5");
+            this.errorProvider.SetError(this.label5, resources.GetString("label5.Error"));
+            this.errorProvider.SetIconAlignment(this.label5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label5.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.label5, ((int)(resources.GetObject("label5.IconPadding"))));
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 15);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Devise :";
             // 
             // errorProvider
             // 
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider, "errorProvider");
+            // 
+            // btnAdd
+            // 
+            resources.ApplyResources(this.btnAdd, "btnAdd");
+            this.errorProvider.SetError(this.btnAdd, resources.GetString("btnAdd.Error"));
+            this.errorProvider.SetIconAlignment(this.btnAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnAdd.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.btnAdd, ((int)(resources.GetObject("btnAdd.IconPadding"))));
+            this.btnAdd.Image = global::CrediNET.Properties.Resources.add;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnRemB
+            // 
+            resources.ApplyResources(this.btnRemB, "btnRemB");
+            this.errorProvider.SetError(this.btnRemB, resources.GetString("btnRemB.Error"));
+            this.errorProvider.SetIconAlignment(this.btnRemB, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnRemB.IconAlignment"))));
+            this.errorProvider.SetIconPadding(this.btnRemB, ((int)(resources.GetObject("btnRemB.IconPadding"))));
+            this.btnRemB.Image = global::CrediNET.Properties.Resources.delete;
+            this.btnRemB.Name = "btnRemB";
+            this.btnRemB.UseVisualStyleBackColor = true;
+            this.btnRemB.Click += new System.EventHandler(this.btnRemB_Click);
             // 
             // FrmCreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 314);
             this.ControlBox = false;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbxDevise);
@@ -229,9 +222,7 @@
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmCreateAccount";
-            this.Text = "Créer un compte";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCreateAccount_FormClosing);
             this.Load += new System.EventHandler(this.FrmCreerCompte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();

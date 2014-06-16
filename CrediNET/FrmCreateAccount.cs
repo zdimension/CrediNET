@@ -82,7 +82,7 @@ namespace CrediNET
 
         private void txtPasse_Enter(object sender, EventArgs e)
         {
-            if (txtPasse.Text == "Laissez ce champ vide pour ne pas modifier le code" && edit)
+            if (txtPasse.Font.Italic && edit)
             {
                 txtPasse.Text = "";
                 txtPasse.Font = new Font(txtPasse.Font, FontStyle.Regular);
@@ -94,7 +94,16 @@ namespace CrediNET
         {
             if(txtPasse.Text == "" && edit)
             {
-                txtPasse.Text = "Laissez ce champ vide pour ne pas modifier le code";
+                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                {
+                    case "en-US":
+                        txtPasse.Text = "Leave this field empty to keep current password";
+                        break;
+                    default:        //case "fr-FR":
+                        txtPasse.Text = "Laissez ce champ vide pour ne pas modifier le code";
+                        break;
+                }
+
                 txtPasse.Font = new Font(txtPasse.Font, FontStyle.Italic);
                 txtPasse.UseSystemPasswordChar = false;
             }

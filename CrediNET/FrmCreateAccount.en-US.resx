@@ -117,142 +117,90 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="zg1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblLoading.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="lblLoading.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;zg1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="zg1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 530</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 15</value>
   </data>
-  <data name="&gt;&gt;lblLoading.Name" xml:space="preserve">
-    <value>lblLoading</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Currency :</value>
   </data>
-  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>876, 3</value>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblLoading.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+  <data name="btnRemB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblLoading.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 282</value>
+  <data name="lbxBudgets.Items" xml:space="preserve">
+    <value>alimentary</value>
   </data>
-  <data name="lblLoading.Text" xml:space="preserve">
-    <value>Chargement...</value>
+  <data name="lbxBudgets.Items1" xml:space="preserve">
+    <value>car</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrmGraph</value>
+  <data name="lbxBudgets.Items2" xml:space="preserve">
+    <value>health</value>
   </data>
-  <data name="&gt;&gt;lblLoading.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbxBudgets.Items3" xml:space="preserve">
+    <value>housing</value>
   </data>
-  <data name="&gt;&gt;zg1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lbxBudgets.Items4" xml:space="preserve">
+    <value>salary</value>
   </data>
-  <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="lbxBudgets.Items5" xml:space="preserve">
+    <value>various</value>
   </data>
-  <data name="pnlBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 29</value>
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblLoading.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;pnlBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="cbxCrypt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;zg1.Type" xml:space="preserve">
-    <value>ZedGraph.ZedGraphControl, ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
+  <data name="cbxCrypt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 19</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>954, 559</value>
+  <data name="cbxCrypt.Text" xml:space="preserve">
+    <value>Crypt account</value>
   </data>
-  <data name="pnlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 530</value>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="pnlBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 15</value>
   </data>
-  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
-    <value>pnlBottom</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Password :</value>
   </data>
-  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblLoading.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 15</value>
   </data>
-  <data name="&gt;&gt;pnlBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlBottom.Name" xml:space="preserve">
-    <value>pnlBottom</value>
-  </data>
-  <data name="&gt;&gt;lblLoading.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pnlBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
-    <value>btnClose</value>
-  </data>
-  <data name="zg1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;zg1.Name" xml:space="preserve">
-    <value>zg1</value>
-  </data>
-  <data name="&gt;&gt;pnlBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="zg1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="zg1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Name :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Graphique</value>
+    <value>Create an account</value>
   </data>
-  <data name="lblLoading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 15</value>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
-  </metadata>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 15</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Fill in all fields below to create a valid account.</value>
+  </data>
 </root>

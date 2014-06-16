@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOperation));
             this.mcDate = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxType = new System.Windows.Forms.ComboBox();
@@ -50,161 +51,113 @@
             // 
             // mcDate
             // 
-            this.mcDate.Location = new System.Drawing.Point(216, 5);
-            this.mcDate.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.mcDate, "mcDate");
             this.mcDate.MaxSelectionCount = 1;
             this.mcDate.Name = "mcDate";
-            this.mcDate.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 9);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Type :";
             // 
             // cbxType
             // 
+            resources.ApplyResources(this.cbxType, "cbxType");
             this.cbxType.FormattingEnabled = true;
-            this.cbxType.Location = new System.Drawing.Point(62, 6);
             this.cbxType.Name = "cbxType";
-            this.cbxType.Size = new System.Drawing.Size(150, 23);
-            this.cbxType.TabIndex = 2;
             this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 37);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Crédit :";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 66);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Débit :";
             // 
             // mupCredit
             // 
+            resources.ApplyResources(this.mupCredit, "mupCredit");
             this.mupCredit.DecimalPlaces = 2;
             this.mupCredit.Devise = "€";
-            this.mupCredit.Location = new System.Drawing.Point(62, 35);
             this.mupCredit.Maximum = new decimal(new int[] {
             -727379969,
             232,
             0,
             0});
             this.mupCredit.Name = "mupCredit";
-            this.mupCredit.Size = new System.Drawing.Size(150, 23);
-            this.mupCredit.TabIndex = 7;
             // 
             // mupDebit
             // 
+            resources.ApplyResources(this.mupDebit, "mupDebit");
             this.mupDebit.DecimalPlaces = 2;
             this.mupDebit.Devise = "€";
-            this.mupDebit.Location = new System.Drawing.Point(62, 64);
             this.mupDebit.Maximum = new decimal(new int[] {
             -727379969,
             232,
             0,
             0});
             this.mupDebit.Name = "mupDebit";
-            this.mupDebit.Size = new System.Drawing.Size(150, 23);
-            this.mupDebit.TabIndex = 8;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 96);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Budget :";
             // 
             // cbxBudget
             // 
+            resources.ApplyResources(this.cbxBudget, "cbxBudget");
             this.cbxBudget.FormattingEnabled = true;
-            this.cbxBudget.Location = new System.Drawing.Point(62, 93);
             this.cbxBudget.Name = "cbxBudget";
-            this.cbxBudget.Size = new System.Drawing.Size(150, 23);
-            this.cbxBudget.TabIndex = 10;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 181);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 15);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Commentaire :";
             // 
             // txtComm
             // 
-            this.txtComm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtComm.Location = new System.Drawing.Point(97, 178);
+            resources.ApplyResources(this.txtComm, "txtComm");
             this.txtComm.Name = "txtComm";
-            this.txtComm.Size = new System.Drawing.Size(346, 23);
-            this.txtComm.TabIndex = 12;
             // 
             // btnCancel
             // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(368, 212);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(287, 212);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 14;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // btnCmptSpc
             // 
-            this.btnCmptSpc.Location = new System.Drawing.Point(8, 122);
+            resources.ApplyResources(this.btnCmptSpc, "btnCmptSpc");
             this.btnCmptSpc.Name = "btnCmptSpc";
-            this.btnCmptSpc.Size = new System.Drawing.Size(204, 23);
-            this.btnCmptSpc.TabIndex = 15;
-            this.btnCmptSpc.Text = "Compter espèces";
             this.btnCmptSpc.UseVisualStyleBackColor = true;
             this.btnCmptSpc.Click += new System.EventHandler(this.btnCmptSpc_Click);
             // 
             // btnVirCaC
             // 
-            this.btnVirCaC.Location = new System.Drawing.Point(8, 150);
+            resources.ApplyResources(this.btnVirCaC, "btnVirCaC");
             this.btnVirCaC.Name = "btnVirCaC";
-            this.btnVirCaC.Size = new System.Drawing.Size(204, 23);
-            this.btnVirCaC.TabIndex = 16;
-            this.btnVirCaC.Text = "Virement compte-à-compte";
             this.btnVirCaC.UseVisualStyleBackColor = true;
-            this.btnVirCaC.Visible = false;
             // 
             // ofpCompte
             // 
             this.ofpCompte.DefaultExt = "cna";
-            this.ofpCompte.Filter = "Compte CrediNET (*.cna, *.cne)|*.cna;*.cne";
+            resources.ApplyResources(this.ofpCompte, "ofpCompte");
             // 
             // FrmOperation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 245);
             this.ControlBox = false;
             this.Controls.Add(this.btnVirCaC);
             this.Controls.Add(this.btnCmptSpc);
@@ -221,9 +174,7 @@
             this.Controls.Add(this.cbxType);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mcDate);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmOperation";
-            this.Text = "Nouvelle opération";
             ((System.ComponentModel.ISupportInitialize)(this.mupCredit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mupDebit)).EndInit();
             this.ResumeLayout(false);

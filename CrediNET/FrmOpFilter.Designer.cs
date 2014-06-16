@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOpFilter));
             this.SuspendLayout();
             // 
-            // FrmOpFiltre
+            // FrmOpFilter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(288, 163);
             this.ControlBox = false;
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "FrmOpFiltre";
-            this.Text = "Filtrer";
+            this.Name = "FrmOpFilter";
             this.ResumeLayout(false);
 
         }

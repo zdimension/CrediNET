@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCountSpcEuro));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.nud2eur = new System.Windows.Forms.NumericUpDown();
@@ -43,6 +44,9 @@
             this.nud20eur = new System.Windows.Forms.NumericUpDown();
             this.nud10eur = new System.Windows.Forms.NumericUpDown();
             this.nud5eur = new System.Windows.Forms.NumericUpDown();
+            this.nud500eur = new System.Windows.Forms.NumericUpDown();
+            this.nud200eur = new System.Windows.Forms.NumericUpDown();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btn500eur = new System.Windows.Forms.Button();
             this.btn200eur = new System.Windows.Forms.Button();
             this.btn100eur = new System.Windows.Forms.Button();
@@ -58,9 +62,6 @@
             this.btn5ct = new System.Windows.Forms.Button();
             this.btn2ct = new System.Windows.Forms.Button();
             this.btn1ct = new System.Windows.Forms.Button();
-            this.nud500eur = new System.Windows.Forms.NumericUpDown();
-            this.nud200eur = new System.Windows.Forms.NumericUpDown();
-            this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud2eur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud1eur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud50ct)).BeginInit();
@@ -80,326 +81,237 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(944, 568);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(863, 568);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // nud2eur
             // 
-            this.nud2eur.Location = new System.Drawing.Point(94, 544);
+            resources.ApplyResources(this.nud2eur, "nud2eur");
             this.nud2eur.Name = "nud2eur";
-            this.nud2eur.Size = new System.Drawing.Size(76, 23);
-            this.nud2eur.TabIndex = 11;
             this.nud2eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud1eur
             // 
-            this.nud1eur.Location = new System.Drawing.Point(94, 463);
+            resources.ApplyResources(this.nud1eur, "nud1eur");
             this.nud1eur.Name = "nud1eur";
-            this.nud1eur.Size = new System.Drawing.Size(76, 23);
-            this.nud1eur.TabIndex = 12;
             this.nud1eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud50ct
             // 
-            this.nud50ct.Location = new System.Drawing.Point(94, 382);
+            resources.ApplyResources(this.nud50ct, "nud50ct");
             this.nud50ct.Name = "nud50ct";
-            this.nud50ct.Size = new System.Drawing.Size(76, 23);
-            this.nud50ct.TabIndex = 13;
             this.nud50ct.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud20ct
             // 
-            this.nud20ct.Location = new System.Drawing.Point(94, 305);
+            resources.ApplyResources(this.nud20ct, "nud20ct");
             this.nud20ct.Name = "nud20ct";
-            this.nud20ct.Size = new System.Drawing.Size(76, 23);
-            this.nud20ct.TabIndex = 14;
             this.nud20ct.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud10ct
             // 
-            this.nud10ct.Location = new System.Drawing.Point(94, 231);
+            resources.ApplyResources(this.nud10ct, "nud10ct");
             this.nud10ct.Name = "nud10ct";
-            this.nud10ct.Size = new System.Drawing.Size(76, 23);
-            this.nud10ct.TabIndex = 15;
             this.nud10ct.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud5ct
             // 
-            this.nud5ct.Location = new System.Drawing.Point(94, 162);
+            resources.ApplyResources(this.nud5ct, "nud5ct");
             this.nud5ct.Name = "nud5ct";
-            this.nud5ct.Size = new System.Drawing.Size(76, 23);
-            this.nud5ct.TabIndex = 16;
             this.nud5ct.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud2ct
             // 
-            this.nud2ct.Location = new System.Drawing.Point(94, 98);
+            resources.ApplyResources(this.nud2ct, "nud2ct");
             this.nud2ct.Name = "nud2ct";
-            this.nud2ct.Size = new System.Drawing.Size(76, 23);
-            this.nud2ct.TabIndex = 17;
             this.nud2ct.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud1ct
             // 
-            this.nud1ct.Location = new System.Drawing.Point(94, 33);
+            resources.ApplyResources(this.nud1ct, "nud1ct");
             this.nud1ct.Name = "nud1ct";
-            this.nud1ct.Size = new System.Drawing.Size(76, 23);
-            this.nud1ct.TabIndex = 18;
             this.nud1ct.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud100eur
             // 
-            this.nud100eur.Location = new System.Drawing.Point(504, 497);
+            resources.ApplyResources(this.nud100eur, "nud100eur");
             this.nud100eur.Name = "nud100eur";
-            this.nud100eur.Size = new System.Drawing.Size(76, 23);
-            this.nud100eur.TabIndex = 24;
             this.nud100eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud50eur
             // 
-            this.nud50eur.Location = new System.Drawing.Point(504, 377);
+            resources.ApplyResources(this.nud50eur, "nud50eur");
             this.nud50eur.Name = "nud50eur";
-            this.nud50eur.Size = new System.Drawing.Size(76, 23);
-            this.nud50eur.TabIndex = 25;
             this.nud50eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud20eur
             // 
-            this.nud20eur.Location = new System.Drawing.Point(504, 267);
+            resources.ApplyResources(this.nud20eur, "nud20eur");
             this.nud20eur.Name = "nud20eur";
-            this.nud20eur.Size = new System.Drawing.Size(76, 23);
-            this.nud20eur.TabIndex = 26;
             this.nud20eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud10eur
             // 
-            this.nud10eur.Location = new System.Drawing.Point(504, 155);
+            resources.ApplyResources(this.nud10eur, "nud10eur");
             this.nud10eur.Name = "nud10eur";
-            this.nud10eur.Size = new System.Drawing.Size(76, 23);
-            this.nud10eur.TabIndex = 27;
             this.nud10eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
             // 
             // nud5eur
             // 
-            this.nud5eur.Location = new System.Drawing.Point(504, 50);
+            resources.ApplyResources(this.nud5eur, "nud5eur");
             this.nud5eur.Name = "nud5eur";
-            this.nud5eur.Size = new System.Drawing.Size(76, 23);
-            this.nud5eur.TabIndex = 28;
             this.nud5eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
+            // 
+            // nud500eur
+            // 
+            resources.ApplyResources(this.nud500eur, "nud500eur");
+            this.nud500eur.Name = "nud500eur";
+            this.nud500eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
+            // 
+            // nud200eur
+            // 
+            resources.ApplyResources(this.nud200eur, "nud200eur");
+            this.nud200eur.Name = "nud200eur";
+            this.nud200eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
+            // 
+            // lblTotal
+            // 
+            resources.ApplyResources(this.lblTotal, "lblTotal");
+            this.lblTotal.Name = "lblTotal";
             // 
             // btn500eur
             // 
+            resources.ApplyResources(this.btn500eur, "btn500eur");
             this.btn500eur.BackgroundImage = global::CrediNET.Properties.Resources._500eur;
-            this.btn500eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn500eur.Location = new System.Drawing.Point(651, 143);
             this.btn500eur.Name = "btn500eur";
-            this.btn500eur.Size = new System.Drawing.Size(287, 131);
-            this.btn500eur.TabIndex = 30;
             this.btn500eur.UseVisualStyleBackColor = true;
             this.btn500eur.Click += new System.EventHandler(this.btn500eur_Click);
             // 
             // btn200eur
             // 
+            resources.ApplyResources(this.btn200eur, "btn200eur");
             this.btn200eur.BackgroundImage = global::CrediNET.Properties.Resources._200eur;
-            this.btn200eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn200eur.Location = new System.Drawing.Point(651, 13);
             this.btn200eur.Name = "btn200eur";
-            this.btn200eur.Size = new System.Drawing.Size(278, 123);
-            this.btn200eur.TabIndex = 29;
             this.btn200eur.UseVisualStyleBackColor = true;
             this.btn200eur.Click += new System.EventHandler(this.btn200eur_Click);
             // 
             // btn100eur
             // 
+            resources.ApplyResources(this.btn100eur, "btn100eur");
             this.btn100eur.BackgroundImage = global::CrediNET.Properties.Resources._100eur;
-            this.btn100eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn100eur.Location = new System.Drawing.Point(241, 445);
             this.btn100eur.Name = "btn100eur";
-            this.btn100eur.Size = new System.Drawing.Size(257, 122);
-            this.btn100eur.TabIndex = 23;
             this.btn100eur.UseVisualStyleBackColor = true;
             this.btn100eur.Click += new System.EventHandler(this.btn100eur_Click);
             // 
             // btn50eur
             // 
+            resources.ApplyResources(this.btn50eur, "btn50eur");
             this.btn50eur.BackgroundImage = global::CrediNET.Properties.Resources._50eur;
-            this.btn50eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn50eur.Location = new System.Drawing.Point(241, 334);
             this.btn50eur.Name = "btn50eur";
-            this.btn50eur.Size = new System.Drawing.Size(234, 105);
-            this.btn50eur.TabIndex = 22;
             this.btn50eur.UseVisualStyleBackColor = true;
             this.btn50eur.Click += new System.EventHandler(this.btn50eur_Click);
             // 
             // btn20eur
             // 
+            resources.ApplyResources(this.btn20eur, "btn20eur");
             this.btn20eur.BackgroundImage = global::CrediNET.Properties.Resources._20eur;
-            this.btn20eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn20eur.Location = new System.Drawing.Point(241, 224);
             this.btn20eur.Name = "btn20eur";
-            this.btn20eur.Size = new System.Drawing.Size(220, 104);
-            this.btn20eur.TabIndex = 21;
             this.btn20eur.UseVisualStyleBackColor = true;
             this.btn20eur.Click += new System.EventHandler(this.btn20eur_Click);
             // 
             // btn10eur
             // 
+            resources.ApplyResources(this.btn10eur, "btn10eur");
             this.btn10eur.BackgroundImage = global::CrediNET.Properties.Resources._10eur;
-            this.btn10eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn10eur.Location = new System.Drawing.Point(241, 111);
             this.btn10eur.Name = "btn10eur";
-            this.btn10eur.Size = new System.Drawing.Size(202, 107);
-            this.btn10eur.TabIndex = 20;
             this.btn10eur.UseVisualStyleBackColor = true;
             this.btn10eur.Click += new System.EventHandler(this.btn10eur_Click);
             // 
             // btn5eur
             // 
+            resources.ApplyResources(this.btn5eur, "btn5eur");
             this.btn5eur.BackgroundImage = global::CrediNET.Properties.Resources._5eur_;
-            this.btn5eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn5eur.Location = new System.Drawing.Point(241, 13);
             this.btn5eur.Name = "btn5eur";
-            this.btn5eur.Size = new System.Drawing.Size(193, 92);
-            this.btn5eur.TabIndex = 19;
             this.btn5eur.UseVisualStyleBackColor = true;
             this.btn5eur.Click += new System.EventHandler(this.btn5eur_Click);
             // 
             // btn2eur
             // 
+            resources.ApplyResources(this.btn2eur, "btn2eur");
             this.btn2eur.BackgroundImage = global::CrediNET.Properties.Resources._2eur;
-            this.btn2eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn2eur.Location = new System.Drawing.Point(13, 516);
             this.btn2eur.Name = "btn2eur";
-            this.btn2eur.Size = new System.Drawing.Size(75, 75);
-            this.btn2eur.TabIndex = 9;
             this.btn2eur.UseVisualStyleBackColor = true;
             this.btn2eur.Click += new System.EventHandler(this.btn2eur_Click);
             // 
             // btn1eur
             // 
+            resources.ApplyResources(this.btn1eur, "btn1eur");
             this.btn1eur.BackgroundImage = global::CrediNET.Properties.Resources._1eur;
-            this.btn1eur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn1eur.Location = new System.Drawing.Point(13, 435);
             this.btn1eur.Name = "btn1eur";
-            this.btn1eur.Size = new System.Drawing.Size(75, 75);
-            this.btn1eur.TabIndex = 8;
             this.btn1eur.UseVisualStyleBackColor = true;
             this.btn1eur.Click += new System.EventHandler(this.btn1eur_Click);
             // 
             // btn50ct
             // 
+            resources.ApplyResources(this.btn50ct, "btn50ct");
             this.btn50ct.BackgroundImage = global::CrediNET.Properties.Resources._50ct;
-            this.btn50ct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn50ct.Location = new System.Drawing.Point(13, 354);
             this.btn50ct.Name = "btn50ct";
-            this.btn50ct.Size = new System.Drawing.Size(75, 75);
-            this.btn50ct.TabIndex = 7;
             this.btn50ct.UseVisualStyleBackColor = true;
             this.btn50ct.Click += new System.EventHandler(this.btn50ct_Click);
             // 
             // btn20ct
             // 
+            resources.ApplyResources(this.btn20ct, "btn20ct");
             this.btn20ct.BackgroundImage = global::CrediNET.Properties.Resources._20ct;
-            this.btn20ct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn20ct.Location = new System.Drawing.Point(13, 280);
             this.btn20ct.Name = "btn20ct";
-            this.btn20ct.Size = new System.Drawing.Size(68, 68);
-            this.btn20ct.TabIndex = 6;
             this.btn20ct.UseVisualStyleBackColor = true;
             this.btn20ct.Click += new System.EventHandler(this.btn20ct_Click);
             // 
             // btn10ct
             // 
+            resources.ApplyResources(this.btn10ct, "btn10ct");
             this.btn10ct.BackgroundImage = global::CrediNET.Properties.Resources._10ct;
-            this.btn10ct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn10ct.Location = new System.Drawing.Point(13, 206);
             this.btn10ct.Name = "btn10ct";
-            this.btn10ct.Size = new System.Drawing.Size(68, 68);
-            this.btn10ct.TabIndex = 5;
             this.btn10ct.UseVisualStyleBackColor = true;
             this.btn10ct.Click += new System.EventHandler(this.btn10ct_Click);
             // 
             // btn5ct
             // 
+            resources.ApplyResources(this.btn5ct, "btn5ct");
             this.btn5ct.BackgroundImage = global::CrediNET.Properties.Resources._5ct;
-            this.btn5ct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn5ct.Location = new System.Drawing.Point(13, 142);
             this.btn5ct.Name = "btn5ct";
-            this.btn5ct.Size = new System.Drawing.Size(58, 58);
-            this.btn5ct.TabIndex = 4;
             this.btn5ct.UseVisualStyleBackColor = true;
             this.btn5ct.Click += new System.EventHandler(this.btn5ct_Click);
             // 
             // btn2ct
             // 
+            resources.ApplyResources(this.btn2ct, "btn2ct");
             this.btn2ct.BackgroundImage = global::CrediNET.Properties.Resources._2ct;
-            this.btn2ct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn2ct.Location = new System.Drawing.Point(13, 78);
             this.btn2ct.Name = "btn2ct";
-            this.btn2ct.Size = new System.Drawing.Size(58, 58);
-            this.btn2ct.TabIndex = 3;
             this.btn2ct.UseVisualStyleBackColor = true;
             this.btn2ct.Click += new System.EventHandler(this.btn2ct_Click);
             // 
             // btn1ct
             // 
+            resources.ApplyResources(this.btn1ct, "btn1ct");
             this.btn1ct.BackgroundImage = global::CrediNET.Properties.Resources._1ct;
-            this.btn1ct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn1ct.Location = new System.Drawing.Point(13, 13);
             this.btn1ct.Name = "btn1ct";
-            this.btn1ct.Size = new System.Drawing.Size(58, 58);
-            this.btn1ct.TabIndex = 2;
             this.btn1ct.UseVisualStyleBackColor = true;
             this.btn1ct.Click += new System.EventHandler(this.btn1ct_Click);
             // 
-            // nud500eur
-            // 
-            this.nud500eur.Location = new System.Drawing.Point(944, 199);
-            this.nud500eur.Name = "nud500eur";
-            this.nud500eur.Size = new System.Drawing.Size(76, 23);
-            this.nud500eur.TabIndex = 31;
-            this.nud500eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
-            // 
-            // nud200eur
-            // 
-            this.nud200eur.Location = new System.Drawing.Point(944, 65);
-            this.nud200eur.Name = "nud200eur";
-            this.nud200eur.Size = new System.Drawing.Size(76, 23);
-            this.nud200eur.TabIndex = 32;
-            this.nud200eur.ValueChanged += new System.EventHandler(this.nud1ct_ValueChanged);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(648, 354);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(131, 30);
-            this.lblTotal.TabIndex = 33;
-            this.lblTotal.Text = "Total : 0,00 €";
-            // 
             // FrmCountSpcEuro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 603);
             this.ControlBox = false;
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.nud200eur);
@@ -434,9 +346,7 @@
             this.Controls.Add(this.btn1ct);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmCountSpcEuro";
-            this.Text = "Compter espèces en Euro";
             ((System.ComponentModel.ISupportInitialize)(this.nud2eur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud1eur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud50ct)).EndInit();

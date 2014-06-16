@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblAccountName = new System.Windows.Forms.ToolStripStatusLabel();
             this.spacer = new System.Windows.Forms.ToolStripStatusLabel();
@@ -50,6 +51,7 @@
             this.clmnCred = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnDeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip = new CrediNET.NoBorderToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripSplitButton();
@@ -63,7 +65,6 @@
             this.classeurOpenOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditAcc = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddOp = new System.Windows.Forms.ToolStripButton();
             this.btnEditOp = new System.Windows.Forms.ToolStripButton();
             this.btnDuplOp = new System.Windows.Forms.ToolStripButton();
@@ -79,104 +80,88 @@
             // 
             // statusStrip1
             // 
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblAccountName,
             this.spacer,
             this.lblTotalCredit,
             this.lblTotalDeb});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 486);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1057, 22);
             this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // lblAccountName
             // 
+            resources.ApplyResources(this.lblAccountName, "lblAccountName");
             this.lblAccountName.ForeColor = System.Drawing.Color.LightGray;
             this.lblAccountName.Name = "lblAccountName";
-            this.lblAccountName.Size = new System.Drawing.Size(140, 17);
-            this.lblAccountName.Text = "<Pas de compte chargé>";
             // 
             // spacer
             // 
+            resources.ApplyResources(this.spacer, "spacer");
             this.spacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.spacer.ForeColor = System.Drawing.Color.LightGray;
             this.spacer.Name = "spacer";
-            this.spacer.Size = new System.Drawing.Size(788, 17);
             this.spacer.Spring = true;
             // 
             // lblTotalCredit
             // 
+            resources.ApplyResources(this.lblTotalCredit, "lblTotalCredit");
             this.lblTotalCredit.ForeColor = System.Drawing.Color.PaleGreen;
             this.lblTotalCredit.Name = "lblTotalCredit";
             this.lblTotalCredit.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.lblTotalCredit.Size = new System.Drawing.Size(57, 17);
-            this.lblTotalCredit.Text = "0,00 €";
             // 
             // lblTotalDeb
             // 
+            resources.ApplyResources(this.lblTotalDeb, "lblTotalDeb");
             this.lblTotalDeb.ForeColor = System.Drawing.Color.Red;
             this.lblTotalDeb.Name = "lblTotalDeb";
             this.lblTotalDeb.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.lblTotalDeb.Size = new System.Drawing.Size(57, 17);
-            this.lblTotalDeb.Text = "0,00 €";
             // 
             // ofpCompte
             // 
             this.ofpCompte.DefaultExt = "cna";
-            this.ofpCompte.Filter = "Compte CrediNET (*.cna, *.cne)|*.cna;*.cne";
+            resources.ApplyResources(this.ofpCompte, "ofpCompte");
             // 
             // sfdCompte
             // 
-            this.sfdCompte.Filter = "Compte CrediNET (*.cna, *.cne)|*.cna;*.cne";
+            resources.ApplyResources(this.sfdCompte, "sfdCompte");
             // 
             // sfdCSV
             // 
             this.sfdCSV.DefaultExt = "csv";
-            this.sfdCSV.Filter = "Fichier CSV (*.csv)|*.csv";
+            resources.ApplyResources(this.sfdCSV, "sfdCSV");
             // 
             // sfdXLS
             // 
             this.sfdXLS.DefaultExt = "xls";
-            this.sfdXLS.Filter = "Classeur Excel 97-2003 (*.xls)|*.xls";
+            resources.ApplyResources(this.sfdXLS, "sfdXLS");
             // 
             // sfdXLSX
             // 
             this.sfdXLSX.DefaultExt = "xlsx";
-            this.sfdXLSX.Filter = "Classeur Excel (*.xlsx)|*.xlsx";
+            resources.ApplyResources(this.sfdXLSX, "sfdXLSX");
             // 
             // sfdODS
             // 
             this.sfdODS.DefaultExt = "ods";
-            this.sfdODS.Filter = "Classeur OpenOffice/LibreOffice (*.ods)|*.ods";
+            resources.ApplyResources(this.sfdODS, "sfdODS");
             // 
             // lblSolde
             // 
-            this.lblSolde.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSolde.AutoSize = true;
+            resources.ApplyResources(this.lblSolde, "lblSolde");
             this.lblSolde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lblSolde.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolde.Location = new System.Drawing.Point(788, 32);
             this.lblSolde.Name = "lblSolde";
-            this.lblSolde.Size = new System.Drawing.Size(158, 32);
-            this.lblSolde.TabIndex = 3;
-            this.lblSolde.Text = "Solde : 0,00 €";
-            this.lblSolde.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblSoldeAt
             // 
-            this.lblSoldeAt.AutoSize = true;
+            resources.ApplyResources(this.lblSoldeAt, "lblSoldeAt");
             this.lblSoldeAt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lblSoldeAt.Location = new System.Drawing.Point(792, 13);
             this.lblSoldeAt.Name = "lblSoldeAt";
-            this.lblSoldeAt.Size = new System.Drawing.Size(128, 15);
-            this.lblSoldeAt.TabIndex = 4;
-            this.lblSoldeAt.Text = "Solde au   /  /     : 0,00 €";
             // 
             // lvOps
             // 
+            resources.ApplyResources(this.lvOps, "lvOps");
             this.lvOps.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvOps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmnID,
@@ -186,13 +171,8 @@
             this.clmnComm,
             this.clmnCred,
             this.clmnDeb});
-            this.lvOps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvOps.FullRowSelect = true;
-            this.lvOps.Location = new System.Drawing.Point(0, 69);
-            this.lvOps.Margin = new System.Windows.Forms.Padding(0);
             this.lvOps.Name = "lvOps";
-            this.lvOps.Size = new System.Drawing.Size(1057, 417);
-            this.lvOps.TabIndex = 2;
             this.lvOps.UseCompatibleStateImageBehavior = false;
             this.lvOps.View = System.Windows.Forms.View.Details;
             this.lvOps.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvOps_ColumnClick);
@@ -200,39 +180,35 @@
             // 
             // clmnID
             // 
-            this.clmnID.Width = 0;
+            resources.ApplyResources(this.clmnID, "clmnID");
             // 
             // clmnDate
             // 
-            this.clmnDate.Text = "Date";
-            this.clmnDate.Width = 75;
+            resources.ApplyResources(this.clmnDate, "clmnDate");
             // 
             // clmnType
             // 
-            this.clmnType.Text = "Type";
+            resources.ApplyResources(this.clmnType, "clmnType");
             // 
             // clmnBudget
             // 
-            this.clmnBudget.Text = "Budget";
-            this.clmnBudget.Width = 100;
+            resources.ApplyResources(this.clmnBudget, "clmnBudget");
             // 
             // clmnComm
             // 
-            this.clmnComm.Text = "Commentaire";
-            this.clmnComm.Width = 598;
+            resources.ApplyResources(this.clmnComm, "clmnComm");
             // 
             // clmnCred
             // 
-            this.clmnCred.Text = "Crédit";
-            this.clmnCred.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            resources.ApplyResources(this.clmnCred, "clmnCred");
             // 
             // clmnDeb
             // 
-            this.clmnDeb.Text = "Débit";
-            this.clmnDeb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            resources.ApplyResources(this.clmnDeb, "clmnDeb");
             // 
             // toolStrip
             // 
+            resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.toolStrip.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -250,39 +226,34 @@
             this.btnFilterOp,
             this.btnOpt,
             this.btnGraph});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.MinimumSize = new System.Drawing.Size(0, 69);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip.Size = new System.Drawing.Size(1057, 69);
-            this.toolStrip.TabIndex = 0;
-            this.toolStrip.Text = "toolStrip1";
             this.toolStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip_Paint);
+            // 
+            // toolStripSeparator1
+            // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // btnNew
             // 
+            resources.ApplyResources(this.btnNew, "btnNew");
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Image = global::CrediNET.Properties.Resources.document_plus;
-            this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(39, 66);
-            this.btnNew.Text = "Créer";
-            this.btnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNew.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // btnOpen
             // 
+            resources.ApplyResources(this.btnOpen, "btnOpen");
             this.btnOpen.ForeColor = System.Drawing.Color.White;
             this.btnOpen.Image = global::CrediNET.Properties.Resources.document_import;
-            this.btnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(44, 66);
-            this.btnOpen.Text = "Ouvrir";
-            this.btnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.enregistrerSousToolStripMenuItem,
             this.cryptéToolStripMenuItem,
@@ -290,228 +261,158 @@
             this.exporterToolStripMenuItem});
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::CrediNET.Properties.Resources.save;
-            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(79, 66);
-            this.btnSave.Text = "Enregistrer";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSave.Visible = false;
             this.btnSave.ButtonClick += new System.EventHandler(this.btnSave_Click);
             // 
             // enregistrerSousToolStripMenuItem
             // 
+            resources.ApplyResources(this.enregistrerSousToolStripMenuItem, "enregistrerSousToolStripMenuItem");
             this.enregistrerSousToolStripMenuItem.Image = global::CrediNET.Properties.Resources.save_as;
-            this.enregistrerSousToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.enregistrerSousToolStripMenuItem.Name = "enregistrerSousToolStripMenuItem";
-            this.enregistrerSousToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.enregistrerSousToolStripMenuItem.Text = "Enregistrer sous";
             this.enregistrerSousToolStripMenuItem.Click += new System.EventHandler(this.enregistrerSousToolStripMenuItem_Click);
             // 
             // cryptéToolStripMenuItem
             // 
-            this.cryptéToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.cryptéToolStripMenuItem, "cryptéToolStripMenuItem");
             this.cryptéToolStripMenuItem.Image = global::CrediNET.Properties.Resources.document_protect;
-            this.cryptéToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.cryptéToolStripMenuItem.Name = "cryptéToolStripMenuItem";
-            this.cryptéToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.cryptéToolStripMenuItem.Text = "Crypté";
             this.cryptéToolStripMenuItem.CheckedChanged += new System.EventHandler(this.cryptéToolStripMenuItem_CheckedChanged);
             this.cryptéToolStripMenuItem.Click += new System.EventHandler(this.cryptéToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(154, 6);
             // 
             // exporterToolStripMenuItem
             // 
+            resources.ApplyResources(this.exporterToolStripMenuItem, "exporterToolStripMenuItem");
             this.exporterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierCSVToolStripMenuItem,
             this.fichierExcel972003ToolStripMenuItem,
             this.fichierExcelToolStripMenuItem,
             this.classeurOpenOfficeToolStripMenuItem});
-            this.exporterToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
-            this.exporterToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.exporterToolStripMenuItem.Text = "Exporter";
             // 
             // fichierCSVToolStripMenuItem
             // 
+            resources.ApplyResources(this.fichierCSVToolStripMenuItem, "fichierCSVToolStripMenuItem");
             this.fichierCSVToolStripMenuItem.Image = global::CrediNET.Properties.Resources.csv;
-            this.fichierCSVToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fichierCSVToolStripMenuItem.Name = "fichierCSVToolStripMenuItem";
-            this.fichierCSVToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.fichierCSVToolStripMenuItem.Text = "Fichier CSV";
             this.fichierCSVToolStripMenuItem.Click += new System.EventHandler(this.fichierCSVToolStripMenuItem_Click);
             // 
             // fichierExcel972003ToolStripMenuItem
             // 
+            resources.ApplyResources(this.fichierExcel972003ToolStripMenuItem, "fichierExcel972003ToolStripMenuItem");
             this.fichierExcel972003ToolStripMenuItem.Image = global::CrediNET.Properties.Resources.xls;
-            this.fichierExcel972003ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fichierExcel972003ToolStripMenuItem.Name = "fichierExcel972003ToolStripMenuItem";
-            this.fichierExcel972003ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.fichierExcel972003ToolStripMenuItem.Text = "Fichier Excel 97-2003";
             this.fichierExcel972003ToolStripMenuItem.Click += new System.EventHandler(this.fichierExcelToolStripMenuItem_Click);
             // 
             // fichierExcelToolStripMenuItem
             // 
+            resources.ApplyResources(this.fichierExcelToolStripMenuItem, "fichierExcelToolStripMenuItem");
             this.fichierExcelToolStripMenuItem.Image = global::CrediNET.Properties.Resources.icon_xlsx;
-            this.fichierExcelToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fichierExcelToolStripMenuItem.Name = "fichierExcelToolStripMenuItem";
-            this.fichierExcelToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.fichierExcelToolStripMenuItem.Text = "Fichier Excel";
             this.fichierExcelToolStripMenuItem.Click += new System.EventHandler(this.fichierExcelToolStripMenuItem_Click_1);
             // 
             // classeurOpenOfficeToolStripMenuItem
             // 
+            resources.ApplyResources(this.classeurOpenOfficeToolStripMenuItem, "classeurOpenOfficeToolStripMenuItem");
             this.classeurOpenOfficeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem});
-            this.classeurOpenOfficeToolStripMenuItem.Enabled = false;
             this.classeurOpenOfficeToolStripMenuItem.Image = global::CrediNET.Properties.Resources.pngU1X58JfMGF;
-            this.classeurOpenOfficeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.classeurOpenOfficeToolStripMenuItem.Name = "classeurOpenOfficeToolStripMenuItem";
-            this.classeurOpenOfficeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.classeurOpenOfficeToolStripMenuItem.Text = "Classeur OpenOffice";
             this.classeurOpenOfficeToolStripMenuItem.Click += new System.EventHandler(this.classeurOpenOfficeToolStripMenuItem_Click);
             // 
             // ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem
             // 
+            resources.ApplyResources(this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem, "ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem");
             this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Name = "ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem";
-            this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Size = new System.Drawing.Size(307, 22);
-            this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text = "Ce type de fichier n\'est pas encore supporté.";
             // 
             // btnEditAcc
             // 
+            resources.ApplyResources(this.btnEditAcc, "btnEditAcc");
             this.btnEditAcc.Image = global::CrediNET.Properties.Resources.document_prepare;
-            this.btnEditAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditAcc.Name = "btnEditAcc";
-            this.btnEditAcc.Size = new System.Drawing.Size(67, 66);
-            this.btnEditAcc.Text = "Modifier\n le compte";
-            this.btnEditAcc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditAcc.Visible = false;
             this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 69);
-            this.toolStripSeparator1.Visible = false;
             // 
             // btnAddOp
             // 
+            resources.ApplyResources(this.btnAddOp, "btnAddOp");
             this.btnAddOp.Image = global::CrediNET.Properties.Resources.page_add;
-            this.btnAddOp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddOp.Name = "btnAddOp";
-            this.btnAddOp.Size = new System.Drawing.Size(50, 66);
-            this.btnAddOp.Text = "Ajouter";
-            this.btnAddOp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAddOp.ToolTipText = "Ajouter";
-            this.btnAddOp.Visible = false;
             this.btnAddOp.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // btnEditOp
             // 
-            this.btnEditOp.Enabled = false;
+            resources.ApplyResources(this.btnEditOp, "btnEditOp");
             this.btnEditOp.Image = global::CrediNET.Properties.Resources.page_edit;
-            this.btnEditOp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditOp.Name = "btnEditOp";
-            this.btnEditOp.Size = new System.Drawing.Size(41, 66);
-            this.btnEditOp.Text = "Éditer";
-            this.btnEditOp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditOp.Visible = false;
             this.btnEditOp.Click += new System.EventHandler(this.btnEditOp_Click);
             // 
             // btnDuplOp
             // 
-            this.btnDuplOp.Enabled = false;
+            resources.ApplyResources(this.btnDuplOp, "btnDuplOp");
             this.btnDuplOp.Image = global::CrediNET.Properties.Resources.page_copy;
-            this.btnDuplOp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDuplOp.Name = "btnDuplOp";
-            this.btnDuplOp.Size = new System.Drawing.Size(63, 66);
-            this.btnDuplOp.Text = "Dupliquer";
-            this.btnDuplOp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDuplOp.Visible = false;
             this.btnDuplOp.Click += new System.EventHandler(this.btnDuplOp_Click);
             // 
             // btnDelOp
             // 
-            this.btnDelOp.Enabled = false;
+            resources.ApplyResources(this.btnDelOp, "btnDelOp");
             this.btnDelOp.Image = global::CrediNET.Properties.Resources.page_delete;
-            this.btnDelOp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelOp.Name = "btnDelOp";
-            this.btnDelOp.Size = new System.Drawing.Size(66, 66);
-            this.btnDelOp.Text = "Supprimer";
-            this.btnDelOp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDelOp.Visible = false;
             this.btnDelOp.Click += new System.EventHandler(this.btnDelOp_Click);
             // 
             // btnFilterOp
             // 
+            resources.ApplyResources(this.btnFilterOp, "btnFilterOp");
             this.btnFilterOp.Image = global::CrediNET.Properties.Resources.page_find;
-            this.btnFilterOp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFilterOp.Name = "btnFilterOp";
-            this.btnFilterOp.Size = new System.Drawing.Size(41, 66);
-            this.btnFilterOp.Text = "Filtrer";
-            this.btnFilterOp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnFilterOp.Visible = false;
             // 
             // btnOpt
             // 
+            resources.ApplyResources(this.btnOpt, "btnOpt");
             this.btnOpt.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnOpt.Image = global::CrediNET.Properties.Resources.application_form_edit;
-            this.btnOpt.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOpt.Name = "btnOpt";
-            this.btnOpt.Size = new System.Drawing.Size(58, 66);
-            this.btnOpt.Text = "Réglages";
-            this.btnOpt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOpt.Click += new System.EventHandler(this.btnOpt_Click_1);
             // 
             // btnGraph
             // 
+            resources.ApplyResources(this.btnGraph, "btnGraph");
             this.btnGraph.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCamembert,
             this.btnCourbes});
             this.btnGraph.Image = global::CrediNET.Properties.Resources.diagnostic_chart1;
-            this.btnGraph.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGraph.Name = "btnGraph";
-            this.btnGraph.Size = new System.Drawing.Size(75, 66);
-            this.btnGraph.Text = "Graphique";
-            this.btnGraph.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGraph.Visible = false;
             // 
             // btnCamembert
             // 
+            resources.ApplyResources(this.btnCamembert, "btnCamembert");
             this.btnCamembert.Image = global::CrediNET.Properties.Resources.chart_pie;
-            this.btnCamembert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCamembert.Name = "btnCamembert";
-            this.btnCamembert.Size = new System.Drawing.Size(137, 22);
-            this.btnCamembert.Text = "Camembert";
             this.btnCamembert.Click += new System.EventHandler(this.btnCamembert_Click);
             // 
             // btnCourbes
             // 
+            resources.ApplyResources(this.btnCourbes, "btnCourbes");
             this.btnCourbes.Image = global::CrediNET.Properties.Resources.chart_line;
-            this.btnCourbes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCourbes.Name = "btnCourbes";
-            this.btnCourbes.Size = new System.Drawing.Size(137, 22);
-            this.btnCourbes.Text = "Courbes";
             this.btnCourbes.Click += new System.EventHandler(this.btnCourbes_Click);
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.ClientSize = new System.Drawing.Size(1057, 508);
             this.Controls.Add(this.lblSoldeAt);
             this.Controls.Add(this.lblSolde);
             this.Controls.Add(this.lvOps);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.statusStrip1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "MainWindow";
-            this.Text = "CrediNET";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

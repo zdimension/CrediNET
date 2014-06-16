@@ -165,15 +165,36 @@ namespace CrediNET
     {
         public static void Init()
         {
-            BaseUnit = new CurrencyObj("Base unit", "BU", "BU", 1);
-            Euro = new CurrencyObj("Euro", "€", "EUR");
-            US_Dollar = new CurrencyObj("Dollar américain", "$", "USD");
-            AU_Dollar = new CurrencyObj("Dollar australien", "$", "AUD");
-            CA_Dollar = new CurrencyObj("Dollar canadien", "$", "CAD");
-            CHI_Yuan = new CurrencyObj("Yuan chinois", "¥", "CNY");
-            JAP_Yen = new CurrencyObj("Yen japonais", "¥", "JPY");
-            SWI_Franc = new CurrencyObj("Franc suisse", "Fr", "CHF");
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            {
+                case "en-US":
 
+                    Euro = new CurrencyObj("Euro", "€", "EUR");
+                    US_Dollar = new CurrencyObj("American dollar", "$", "USD");
+                    AU_Dollar = new CurrencyObj("Australian dollar", "$", "AUD");
+                    CA_Dollar = new CurrencyObj("Canadian dollar", "$", "CAD");
+                    CHI_Yuan = new CurrencyObj("Chinese Yuan", "¥", "CNY");
+                    JAP_Yen = new CurrencyObj("Japanese Yen", "¥", "JPY");
+                    SWI_Franc = new CurrencyObj("Swiss franc", "Fr", "CHF");
+
+                    break;
+
+                default:        //case "fr-FR"
+                    
+                    Euro = new CurrencyObj("Euro", "€", "EUR");
+                    US_Dollar = new CurrencyObj("Dollar américain", "$", "USD");
+                    AU_Dollar = new CurrencyObj("Dollar australien", "$", "AUD");
+                    CA_Dollar = new CurrencyObj("Dollar canadien", "$", "CAD");
+                    CHI_Yuan = new CurrencyObj("Yuan chinois", "¥", "CNY");
+                    JAP_Yen = new CurrencyObj("Yen japonais", "¥", "JPY");
+                    SWI_Franc = new CurrencyObj("Franc suisse", "Fr", "CHF");
+
+                    break;
+            }
+
+            BaseUnit = new CurrencyObj("Base unit", "BU", "BU", 1);
+            
+            
             All = new List<CurrencyObj>() { Euro, US_Dollar, AU_Dollar, CA_Dollar, CHI_Yuan, JAP_Yen, SWI_Franc };
         }
 
