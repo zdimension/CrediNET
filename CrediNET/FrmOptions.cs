@@ -49,11 +49,11 @@ namespace CrediNET
             {
                 case 0:
                     cultureName = "fr-FR";
-                    MessageBox.Show("Relancez le programme pour appliquer les modifications.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show("Relancez le programme pour appliquer les modifications.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case 1:
                     cultureName = "en-US";
-                    MessageBox.Show("Restart the program to apply changes", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show("Restart the program to apply changes", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
 

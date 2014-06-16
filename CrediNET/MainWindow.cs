@@ -237,7 +237,7 @@ namespace CrediNET
             }*/
             this.Controls.Clear();
             InitializeComponent();
-            resources.ApplyResources(this, "$this");
+            //resources.ApplyResources(this, "$this");      //Not needed, controls' language updated with InitializeComponent()
             
             lblTotalCredit.Text = "0,00 " + dfd;
             lblTotalDeb.Text = "0,00 " + dfd;
