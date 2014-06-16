@@ -118,71 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblSolde.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblSolde.Location" type="System.Drawing.Point, System.Drawing">
-    <value>760, 32</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 15</value>
   </data>
-  <data name="lblSolde.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 32</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Währung :</value>
   </data>
-  <data name="lblSolde.Text" xml:space="preserve">
-    <value>Kontostand : 0,00 €</value>
-  </data>
-  <data name="lblSoldeAt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblSoldeAt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>764, 13</value>
+  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblSoldeAt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 15</value>
+  <data name="btnRemB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblSoldeAt.Text" xml:space="preserve">
-    <value>Kontostand am   /  /     : 0,00 €</value>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="clmnDate.Text" xml:space="preserve">
-    <value>Datum</value>
+  <data name="lbxBudgets.Items" xml:space="preserve">
+    <value>Auto</value>
   </data>
-  <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 66</value>
+  <data name="lbxBudgets.Items1" xml:space="preserve">
+    <value>Ernährungs</value>
   </data>
-  <data name="btnNew.Text" xml:space="preserve">
-    <value>Schaffen</value>
+  <data name="lbxBudgets.Items2" xml:space="preserve">
+    <value>Gehalt</value>
   </data>
-  <data name="btnOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 66</value>
+  <data name="lbxBudgets.Items3" xml:space="preserve">
+    <value>Gesundheit</value>
   </data>
-  <data name="btnOpen.Text" xml:space="preserve">
-    <value>Öffnen</value>
+  <data name="lbxBudgets.Items4" xml:space="preserve">
+    <value>Lebensraum</value>
   </data>
-  <data name="btnEditOp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 66</value>
+  <data name="lbxBudgets.Items5" xml:space="preserve">
+    <value>verschiedene</value>
   </data>
-  <data name="btnEditOp.Text" xml:space="preserve">
-    <value>Bearbeiten</value>
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="btnDuplOp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 66</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
   </data>
-  <data name="btnDuplOp.Text" xml:space="preserve">
-    <value>Vervielfältigen</value>
+  <data name="cbxCrypt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="btnDelOp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 66</value>
+  <data name="cbxCrypt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 19</value>
   </data>
-  <data name="btnDelOp.Text" xml:space="preserve">
-    <value>Löschen</value>
+  <data name="cbxCrypt.Text" xml:space="preserve">
+    <value>Verschlüsseln Konto</value>
   </data>
-  <data name="btnOpt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 66</value>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="btnOpt.Text" xml:space="preserve">
-    <value>Einstellungen</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Passwort :</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Name :</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
 </root>

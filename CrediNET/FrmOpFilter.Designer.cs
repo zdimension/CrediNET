@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxFCmn = new System.Windows.Forms.ComboBox();
             this.cbxFType = new System.Windows.Forms.ComboBox();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.coolTabControl1 = new CrediNET.CoolTabControl();
             this.tbpC = new System.Windows.Forms.TabPage();
             this.mupC = new CrediNET.MoneyUpDown();
@@ -74,6 +76,20 @@
             resources.GetString("cbxFType.Items1"),
             resources.GetString("cbxFType.Items2")});
             this.cbxFType.Name = "cbxFType";
+            // 
+            // btnOK
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // coolTabControl1
             // 
@@ -139,6 +155,8 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
+            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.coolTabControl1);
             this.Controls.Add(this.cbxFType);
             this.Controls.Add(this.cbxFCmn);
@@ -168,5 +186,7 @@
         private MoneyUpDown mupDb;
         private System.Windows.Forms.TabPage tbpDa;
         private System.Windows.Forms.DateTimePicker dtpM;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

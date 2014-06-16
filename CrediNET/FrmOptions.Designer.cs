@@ -45,9 +45,9 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnCancel);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnOK
@@ -67,9 +67,9 @@
             // 
             // cbxDftCrc
             // 
+            resources.ApplyResources(this.cbxDftCrc, "cbxDftCrc");
             this.cbxDftCrc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDftCrc.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxDftCrc, "cbxDftCrc");
             this.cbxDftCrc.Name = "cbxDftCrc";
             // 
             // label3
@@ -79,11 +79,11 @@
             // 
             // cbxLng
             // 
+            resources.ApplyResources(this.cbxLng, "cbxLng");
             this.cbxLng.FormattingEnabled = true;
             this.cbxLng.Items.AddRange(new object[] {
             resources.GetString("cbxLng.Items"),
             resources.GetString("cbxLng.Items1")});
-            resources.ApplyResources(this.cbxLng, "cbxLng");
             this.cbxLng.Name = "cbxLng";
             // 
             // label2
@@ -99,12 +99,12 @@
             // 
             // pnlMain
             // 
+            resources.ApplyResources(this.pnlMain, "pnlMain");
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.cbxDftCrc);
             this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Controls.Add(this.cbxLng);
-            resources.ApplyResources(this.pnlMain, "pnlMain");
             this.pnlMain.Name = "pnlMain";
             // 
             // vsbMain

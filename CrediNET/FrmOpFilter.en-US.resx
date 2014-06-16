@@ -139,4 +139,7 @@
   <data name="cbxFType.Items2" xml:space="preserve">
     <value>is greater than</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>
