@@ -197,7 +197,7 @@ namespace CrediNET
         /// <param name="file">The new filename</param>
         public void SaveAs(string file)
         {
-            FromFile("c:").
+            this.
             _fp = file;
             Save();
         }
