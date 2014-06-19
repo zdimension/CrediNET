@@ -35,4 +35,4 @@ using System.Resources;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.8.0.0")]
 [assembly: AssemblyFileVersion("1.8.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("fr-FR")]
+[assembly: NeutralResourcesLanguageAttribute("en-US")]
