@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -1217,7 +1217,7 @@ namespace CrediNET
         {
             return;
 
-            bool flag = e.ToolStrip is ContextMenuStrip || e.ToolStrip is ToolStripDropDownMenu;
+            /*bool flag = e.ToolStrip is ContextMenuStrip || e.ToolStrip is ToolStripDropDownMenu;
             bool flag2 = flag;
             checked
             {
@@ -1377,7 +1377,7 @@ namespace CrediNET
                         base.OnRenderToolStripBorder(e);
                     }
                 }
-            }
+            }*/
         }
         private void RenderToolButtonBackground(Graphics g, ToolStripButton button, ToolStrip toolstrip)
         {

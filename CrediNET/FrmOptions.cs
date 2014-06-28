@@ -9,14 +9,14 @@ using System.Resources;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using CrediNET.Properties;
 
 namespace CrediNET
 {
     public partial class FrmOptions : Form
     {
-        ResXResourceWriter resourceWriter;
 
         [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
         private static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
@@ -35,6 +35,7 @@ namespace CrediNET
             cbxDftCrc.SelectedItem = ((CurrencyObj)(CrediNET.Properties.Settings.Default.DefaultCurrency)).Name;
             if (CrediNET.Properties.Settings.Default.Lang.Name == "fr-FR") cbxLng.SelectedIndex = 0;
             if (CrediNET.Properties.Settings.Default.Lang.Name == "en-US") cbxLng.SelectedIndex = 1;
+            if (CrediNET.Properties.Settings.Default.Lang.Name == "de-DE") cbxLng.SelectedIndex = 2;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace CrediNET
             // fr-FR = 0
             // en-US = 1
 
-            string cultureName = "";
+            /*string cultureName = "";
 
             switch (cbxLng.SelectedIndex)
             {
@@ -55,10 +56,13 @@ namespace CrediNET
                     cultureName = "en-US";
                     //MessageBox.Show("Restart the program to apply changes", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
-            }
+            }*/
+
+            string cultureName = cbxLng.SelectedItem.ToString().Split('(')[1].Replace(")", "");
 
             CrediNET.Properties.Settings.Default.DefaultCurrency = Currencies.All.First(x => x.Name == cbxDftCrc.SelectedItem.ToString()).ShortName;
             CrediNET.Properties.Settings.Default.Lang = (System.Globalization.CultureInfo)new CultureInfoConverter().ConvertFromString(cultureName);
+            Settings.Default.Save();
         
             
         }

@@ -127,9 +127,6 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Standard-Währung :</value>
   </data>
-  <data name="cbxLng.Items1" xml:space="preserve">
-    <value>Deutsch (de-DE)</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 20</value>
   </data>

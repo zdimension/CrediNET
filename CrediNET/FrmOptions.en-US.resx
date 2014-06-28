@@ -127,12 +127,6 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Default currency :</value>
   </data>
-  <data name="cbxLng.Items" xml:space="preserve">
-    <value>French (fr-FR)</value>
-  </data>
-  <data name="cbxLng.Items1" xml:space="preserve">
-    <value>English (en-US)</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 20</value>
   </data>

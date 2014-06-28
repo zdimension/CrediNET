@@ -34,7 +34,7 @@ namespace CrediNET
             }
             catch (Exception e)
             {
-                Console.Write("Erreur");
+                Console.Write("Error: " + e.Message);
             }
         }
 

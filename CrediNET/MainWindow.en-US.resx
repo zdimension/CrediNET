@@ -197,32 +197,20 @@
   <data name="btnOpen.Text" xml:space="preserve">
     <value>Open</value>
   </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 66</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
   <data name="enregistrerSousToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>127, 22</value>
   </data>
   <data name="enregistrerSousToolStripMenuItem.Text" xml:space="preserve">
     <value>Save as...</value>
   </data>
   <data name="cryptéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>127, 22</value>
   </data>
   <data name="cryptéToolStripMenuItem.Text" xml:space="preserve">
     <value>Encrypted</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export</value>
+    <value>124, 6</value>
   </data>
   <data name="fichierCSVToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 22</value>
@@ -242,17 +230,29 @@
   <data name="fichierExcelToolStripMenuItem.Text" xml:space="preserve">
     <value>Excel file</value>
   </data>
+  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 22</value>
+  </data>
+  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text" xml:space="preserve">
+    <value>This file type isn't supported yet.</value>
+  </data>
   <data name="classeurOpenOfficeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 22</value>
   </data>
   <data name="classeurOpenOfficeToolStripMenuItem.Text" xml:space="preserve">
     <value>OpenOffice file</value>
   </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 22</value>
   </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text" xml:space="preserve">
-    <value>This file type isn't supported yet.</value>
+  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 66</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="btnEditAcc.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 66</value>
@@ -308,22 +308,22 @@
   <data name="btnOpt.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="btnGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 66</value>
-  </data>
-  <data name="btnGraph.Text" xml:space="preserve">
-    <value>Graphic</value>
-  </data>
   <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>110, 22</value>
   </data>
   <data name="btnCamembert.Text" xml:space="preserve">
     <value>Pie</value>
   </data>
   <data name="btnCourbes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>110, 22</value>
   </data>
   <data name="btnCourbes.Text" xml:space="preserve">
     <value>Curves</value>
+  </data>
+  <data name="btnGraph.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 66</value>
+  </data>
+  <data name="btnGraph.Text" xml:space="preserve">
+    <value>Graphic</value>
   </data>
 </root>

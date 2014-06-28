@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Ookii.Dialogs;
@@ -331,7 +331,7 @@ namespace CrediNET
             try
             {
                 var ret = FromXml(filePath);
-                //#if !DEBUG
+                #if !DEBUG
                 var good = false;
                 var try_ = 0;
                 while (!good && try_ != 3)
@@ -367,7 +367,7 @@ namespace CrediNET
                 {
                     return ret;
                 }
-                //#endif
+                #endif
 
                 return ret;
             }

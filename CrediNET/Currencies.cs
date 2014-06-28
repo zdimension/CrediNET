@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Net;
 using System.Runtime.Serialization;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using System.Xml;
 
@@ -78,10 +78,21 @@ namespace CrediNET
                 (a.ShortName == b.ShortName);
         }
 
+        public override bool Equals(object obj)
+        {
+            if (!(obj is CurrencyObj)) return false;
+            return this == (CurrencyObj)obj;
+        }
+
 
         public static bool operator !=(CurrencyObj a, CurrencyObj b)
         {
             return !(a == b);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
 
         /// <summary>

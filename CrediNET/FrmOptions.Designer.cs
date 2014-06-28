@@ -83,7 +83,8 @@
             this.cbxLng.FormattingEnabled = true;
             this.cbxLng.Items.AddRange(new object[] {
             resources.GetString("cbxLng.Items"),
-            resources.GetString("cbxLng.Items1")});
+            resources.GetString("cbxLng.Items1"),
+            resources.GetString("cbxLng.Items2")});
             this.cbxLng.Name = "cbxLng";
             // 
             // label2

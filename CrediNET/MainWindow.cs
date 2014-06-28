@@ -9,7 +9,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using System.Resources;
 using OfficeOpenXml;
@@ -38,6 +38,8 @@ namespace CrediNET
             InitializeComponent();
             InitRenderers();
             SetWindowTheme(lvOps.Handle, "Explorer", null);
+
+            ClearStuff();
 
             lvOps.DrawItem += lvOps_DrawItem;
             lvOps.ListViewItemSorter = lvwColumnSorter;
@@ -179,9 +181,9 @@ namespace CrediNET
             {
                 DateTime d = CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text).Date;
                 decimal totalc = 0;
-                CompteActuel.Operations.FindAll(x => x.Date <= d).ForEach(x1 => totalc += x1.Credit);
+                CompteActuel.Operations.FindAll(x => CompteActuel.Operations.IndexOf(x) <= CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text))).ForEach(x1 => totalc += x1.Credit);
                 decimal totald = 0;
-                CompteActuel.Operations.FindAll(x => x.Date <= d).ForEach(x1 => totald += x1.Debit);
+                CompteActuel.Operations.FindAll(x => CompteActuel.Operations.IndexOf(x) <= CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text))).ForEach(x1 => totald += x1.Debit);
 
                 switch (CrediNET.Properties.Settings.Default.Lang.Name)
                 {
@@ -222,25 +224,33 @@ namespace CrediNET
 
             lvOps.Items.Clear();
 
-            /*switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
             {
-                case "en-US":
-                    lblAccountName.Text = "<No account loaded>";
-                    lblSolde.Text = "Balance : 0,00 " + dfd;
-                    lblSoldeAt.Text = "Balance of   /  /     : 0,00 " + dfd;
+                case "de-DE":
+                    lblAccountName.Text = "<Pas de compte chargé>";
+                    lblSolde.Text = "Kontostand : 0,00 " + dfd;
+                    lblSoldeAt.Text = "Kontostand am   /  /     : 0,00 " + dfd;
+                    lblTotalCredit.Text = "0,00 " + dfd;
+                    lblTotalDeb.Text = "0,00 " + dfd;
                     break;
-                default:        //case "fr-FR":
+                case "fr-FR":
                     lblAccountName.Text = "<Pas de compte chargé>";
                     lblSolde.Text = "Solde : 0,00 " + dfd;
                     lblSoldeAt.Text = "Solde au   /  /     : 0,00 " + dfd;
+                    lblTotalCredit.Text = "0,00 " + dfd;
+                    lblTotalDeb.Text = "0,00 " + dfd;
                     break;
-            }*/
+                default: //case "en-US":
+                    lblAccountName.Text = "<No account loaded>";
+                    lblSolde.Text = "Balance : " + dfd + "0.00 ";
+                    lblSoldeAt.Text = "Balance of   /  /     : " + dfd + "0.00";
+                    lblTotalCredit.Text = dfd + "0.00";
+                    lblTotalDeb.Text = dfd + "0.00";
+                    break;
+            }
             this.Controls.Clear();
             InitializeComponent();
             //resources.ApplyResources(this, "$this");      //Not needed, controls' language updated with InitializeComponent()
-            
-            lblTotalCredit.Text = "0,00 " + dfd;
-            lblTotalDeb.Text = "0,00 " + dfd;
         }
 
         public void LoadOps()
