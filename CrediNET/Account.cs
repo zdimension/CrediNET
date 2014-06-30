@@ -216,7 +216,19 @@ namespace CrediNET
             else if (Path.GetExtension(fp) == ".cne")
             {
                 var ax = new InputDialog();
-                ax.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
+                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                {
+                    case "de-DE":
+                        ax.MainInstruction = "Bitte geben Sie das Passwort des Kontos.";
+                        break;
+                    case "fr-FR":
+                        ax.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
+                        break;
+                    default: //case "en-US":
+                        ax.MainInstruction = "Please type the account's password below.";
+                        break;
+                }
+                
                 if (ax.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     var aeee = FromXmlCode(CryptorEngine.Decrypt(File.ReadAllText(fp), ax.Input, true), fp);
@@ -344,7 +356,18 @@ namespace CrediNET
                     else
                     {
                         InputDialog g = new InputDialog();
-                        g.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
+                        switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                        {
+                            case "de-DE":
+                                g.MainInstruction = "Bitte geben Sie das Passwort des Kontos.";
+                                break;
+                            case "fr-FR":
+                                g.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
+                                break;
+                            default: //case "en-US":
+                                g.MainInstruction = "Please type the account's password below.";
+                                break;
+                        }
                         if (g.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
                             var sb = MD5.CreateMD5Hash(g.Input);

@@ -199,7 +199,13 @@ namespace CrediNET
             }
         }
 
-        internal string dfd = Currencies.All.First(x => x.ShortName == CrediNET.Properties.Settings.Default.DefaultCurrency).Symbol;
+        string dfd 
+        { 
+            get
+            { 
+                return  Currencies.All.First(x => x.ShortName == CrediNET.Properties.Settings.Default.DefaultCurrency).Symbol;
+            }
+        }
 
         public void ClearStuff()
         {
@@ -223,6 +229,10 @@ namespace CrediNET
             btnGraph.Visible = false;
 
             lvOps.Items.Clear();
+
+            this.Controls.Clear();
+            InitializeComponent();
+            InitRenderers();
 
             switch (CrediNET.Properties.Settings.Default.Lang.Name)
             {
@@ -248,8 +258,7 @@ namespace CrediNET
                     lblTotalDeb.Text = dfd + "0.00";
                     break;
             }
-            this.Controls.Clear();
-            InitializeComponent();
+            
             //resources.ApplyResources(this, "$this");      //Not needed, controls' language updated with InitializeComponent()
         }
 

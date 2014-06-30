@@ -34,8 +34,18 @@ namespace CrediNET
             zg1.GraphPane.GraphObjList.Clear();
 
             a.CurveList.Clear();
-
-            a.Title.Text = "Compte : " + cmpt.Name;
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            {
+                case "de-DE":
+                    a.Title.Text = "Kontos : " + cmpt.Name;
+                    break;
+                case "fr-FR":
+                    a.Title.Text = "Compte : " + cmpt.Name;
+                    break;
+                default:
+                    a.Title.Text = "Account : " + cmpt.Name;
+                    break;
+            }
             a.Title.FontSpec.StringAlignment = StringAlignment.Center;
             a.Title.FontSpec.Family = "Segoe UI Semilight";
             a.Title.FontSpec.Size = 21.75f;
@@ -102,7 +112,18 @@ namespace CrediNET
 
             a.LineType = LineType.Normal;
             a.CurveList.Clear();
-            a.Title.Text = "Compte : " + cmpt.Name;
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            {
+                case "de-DE":
+                    a.Title.Text = "Kontos : " + cmpt.Name;
+                    break;
+                case "fr-FR":
+                    a.Title.Text = "Compte : " + cmpt.Name;
+                    break;
+                default:
+                    a.Title.Text = "Account : " + cmpt.Name;
+                    break;
+            }
             a.Title.FontSpec.StringAlignment = StringAlignment.Center;
             a.Title.FontSpec.Family = "Segoe UI Semilight";
             a.Title.FontSpec.Size = 21.75f;
@@ -110,7 +131,15 @@ namespace CrediNET
             a.Fill = new Fill(SystemColors.Control);
             a.Chart.Fill = new Fill(Color.White, Color.LightGoldenrodYellow, 45.0f);
 
-            a.XAxis.Title.Text = "Date";
+           switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            {
+                case "de-DE":
+                    a.XAxis.Title.Text = "Datum";
+                    break;
+                default:
+                    a.XAxis.Title.Text = "Date";
+                    break;
+            }
             a.XAxis.Title.FontSpec.Family = "Segoe UI";
             a.XAxis.Title.FontSpec.Size = 9f;
             a.XAxis.Type = AxisType.Date;
@@ -124,7 +153,18 @@ namespace CrediNET
             a.XAxis.MajorTic.Size = 10;
             a.XAxis.IsVisible = true;
 
-            a.YAxis.Title.Text = "€uro";
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            {
+                case "de-DE":
+                    a.YAxis.Title.Text = "Kontostand (" + cmpt.Currency.Symbol + ")";
+                    break;
+                case "fr-FR":
+                    a.YAxis.Title.Text = "Solde (" + cmpt.Currency.Symbol + ")";
+                    break;
+                default:
+                    a.YAxis.Title.Text = "Balance (" + cmpt.Currency.Symbol + ")";
+                    break;
+            }
             a.YAxis.Title.FontSpec.Family = "Segoe UI";
             a.YAxis.Title.FontSpec.Size = 9f;
             a.YAxis.MajorGrid.Color = Color.Black;
@@ -150,8 +190,19 @@ namespace CrediNET
                 crP.Add(cmpt.Operations[l].Date.ToOADate(), (double)Xp);
             }
 
-            var cr = a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
-
+            LineItem cr; // = a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            {
+                case "de-DE":
+                    cr = a.AddCurve("kontostand", crP, Color.Red, SymbolType.XCross);
+                    break;
+                case "fr-FR":
+                    cr = a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
+                    break;
+                default:
+                    cr = a.AddCurve("balance", crP, Color.Red, SymbolType.XCross);
+                    break;
+            }
 
             zg1.PointDateFormat = "dd/MM";
             zg1.IsShowPointValues = true;

@@ -172,10 +172,6 @@
       <DependentUpon>FrmOpFilter.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOpFilter.fr-FR.resx">
-      <DependentUpon>FrmOpFilter.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmOpFilter.resx">
       <DependentUpon>FrmOpFilter.cs</DependentUpon>
       <SubType>Designer</SubType>

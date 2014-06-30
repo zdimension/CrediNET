@@ -157,18 +157,11 @@
   <data name="sfdODS.Filter" xml:space="preserve">
     <value>OpenDocument Spreadsheet (*.ods)|*.ods</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblSolde.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblSolde.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 32</value>
   </data>
   <data name="lblSolde.Text" xml:space="preserve">
     <value>Balance : $0.00</value>
-  </data>
-  <data name="lblSoldeAt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="lblSoldeAt.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 15</value>
