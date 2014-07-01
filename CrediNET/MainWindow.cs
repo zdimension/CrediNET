@@ -170,6 +170,9 @@ namespace CrediNET
                     case "en-US":
                         lblSoldeAt.Text = "Balance of ";
                         break;
+                    case "de-DE":
+                        lblSoldeAt.Text = "Balance bei ";
+                        break;
                     default:        //case "fr-FR":
                         lblSoldeAt.Text = "Solde au ";
                         break;
@@ -189,6 +192,9 @@ namespace CrediNET
                 {
                     case "en-US":
                         lblSoldeAt.Text = "Balance of ";
+                        break;
+                    case "de-DE":
+                        lblSoldeAt.Text = "Kontostand am ";
                         break;
                     default:        //case "fr-FR":
                         lblSoldeAt.Text = "Solde au ";
@@ -237,7 +243,7 @@ namespace CrediNET
             switch (CrediNET.Properties.Settings.Default.Lang.Name)
             {
                 case "de-DE":
-                    lblAccountName.Text = "<Pas de compte chargé>";
+                    lblAccountName.Text = "<Kein Konto geladen>";
                     lblSolde.Text = "Kontostand : 0,00 " + dfd;
                     lblSoldeAt.Text = "Kontostand am   /  /     : 0,00 " + dfd;
                     lblTotalCredit.Text = "0,00 " + dfd;
@@ -310,6 +316,9 @@ namespace CrediNET
                 case "en-US":
                     lblSolde.Text = "Balance : ";
                     break;
+                case "de-DE":
+                    lblSoldeAt.Text = "Kontostand : ";
+                    break;
                 default:        //case "fr-FR":
                     lblSolde.Text = "Solde : ";
                     break;
@@ -363,6 +372,9 @@ namespace CrediNET
                 case "en-US":
                     sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna";
                     break;
+                case "de-DE":
+                    sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna";
+                    break;
                 default:        //case "fr-FR":
                     sfdCompte.Filter = "Compte CrediNET (*.cna)|*.cna";
                     break;
@@ -409,6 +421,9 @@ namespace CrediNET
                     case "en-US":
                         sfdCompte.Filter = "CrediNET crypted Account (*.cne)|*.cne";
                         break;
+                    case "de-DE":
+                        sfdCompte.Filter = "CrediNET versclüsseltes Konto (*.cne)|*.cne";
+                        break;
                     default:        //case "fr-FR":
                         sfdCompte.Filter = "Compte CrediNET crypté (*.cne)|*.cne";
                         break;
@@ -420,6 +435,9 @@ namespace CrediNET
                 {
                     case "en-US":
                         sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna";
+                        break;
+                    case "de-DE":
+                        sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna";
                         break;
                     default:        //case "fr-FR":
                         sfdCompte.Filter = "Compte CrediNET (*.cna)|*.cna";
@@ -515,6 +533,9 @@ namespace CrediNET
                     {
                         case "en-US":
                             wr.WriteLine("Date;Type;Budget;Comment;Credit;Debit");
+                            break;
+                        case "de-DE":
+                            wr.WriteLine("Date;Type;Budget;Kommentar;Kredit;Debit");
                             break;
                         default:        //case "fr-FR":
                             wr.WriteLine("Date;Type;Budget;Commentaire;Crédit;Débit");
@@ -625,6 +646,12 @@ namespace CrediNET
                         d.createHeaders(1, 9, "Debit", "I1", "I1", 0, Color.Gainsboro, true, 10, Color.Black);
                         break;
 
+                    case "de-DE":
+                        d.createHeaders(1, 5, "Kommentar", "E1", "G1", 0, Color.Gainsboro, true, 10, Color.Black);
+                        d.createHeaders(1, 8, "Kredit", "H1", "H1", 0, Color.Gainsboro, true, 10, Color.Black);
+                        d.createHeaders(1, 9, "Debit", "I1", "I1", 0, Color.Gainsboro, true, 10, Color.Black);
+                        break;
+
                     default:        //case "fr-FR":
                         d.createHeaders(1, 5, "Commentaire", "E1", "G1", 0, Color.Gainsboro, true, 10, Color.Black);
                         d.createHeaders(1, 8, "Crédit", "H1", "H1", 0, Color.Gainsboro, true, 10, Color.Black);
@@ -683,6 +710,13 @@ namespace CrediNET
                             w.Cells[1, 4, 1, 6].Value = "Comment";
                             w.Cells[1, 4, 1, 6].Merge = true;
                             w.Cells[1, 7].Value = "Credit";
+                            w.Cells[1, 8].Value = "Debit";
+                            break;
+
+                        case "de-DE":
+                            w.Cells[1, 4, 1, 6].Value = "Kommentar";
+                            w.Cells[1, 4, 1, 6].Merge = true;
+                            w.Cells[1, 7].Value = "Kredit";
                             w.Cells[1, 8].Value = "Debit";
                             break;
 

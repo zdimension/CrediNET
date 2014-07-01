@@ -144,7 +144,7 @@
     <value>Auto</value>
   </data>
   <data name="lbxBudgets.Items1" xml:space="preserve">
-    <value>Ernährungs</value>
+    <value>Ernährung</value>
   </data>
   <data name="lbxBudgets.Items2" xml:space="preserve">
     <value>Gehalt</value>
@@ -156,7 +156,7 @@
     <value>Lebensraum</value>
   </data>
   <data name="lbxBudgets.Items5" xml:space="preserve">
-    <value>verschiedene</value>
+    <value>Verschiedene</value>
   </data>
   <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -171,7 +171,7 @@
     <value>132, 19</value>
   </data>
   <data name="cbxCrypt.Text" xml:space="preserve">
-    <value>Verschlüsseln Konto</value>
+    <value>Konto verschlüsseln</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -196,5 +196,11 @@
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Fülle alle Felder aus um ein gültiges Konto zu errichten.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Konto erstellen</value>
   </data>
 </root>

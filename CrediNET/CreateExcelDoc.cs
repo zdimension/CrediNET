@@ -2,15 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using Microsoft.Office.Interop.Excel;
 
 namespace CrediNET
 {
     class CreateExcelDoc
     {
-        public Excel.Application app = null;
-        public Excel.Workbook workbook = null;
-        public Excel.Worksheet worksheet = null;
-        public Excel.Range workSheet_range = null;
+        public Application app = null;
+        public Workbook workbook = null;
+        public Worksheet worksheet = null;
+        public Range workSheet_range = null;
 
         /// <summary>
         /// Constructor
@@ -27,10 +28,10 @@ namespace CrediNET
         {
             try
             {
-                app = new Excel.Application();
+                app = new Application();
                 app.Visible = true;
                 workbook = app.Workbooks.Add(1);
-                worksheet = (Excel.Worksheet)workbook.Sheets[1];
+                worksheet = (Worksheet)workbook.Sheets[1];
             }
             catch (Exception e)
             {

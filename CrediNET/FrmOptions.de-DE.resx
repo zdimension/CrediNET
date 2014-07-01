@@ -131,7 +131,7 @@
     <value>191, 20</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Einstellungen von CrediNET</value>
+    <value>CrediNET Einstellungen</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 15</value>

@@ -143,7 +143,7 @@
     <value>57, 66</value>
   </data>
   <data name="btnNew.Text" xml:space="preserve">
-    <value>Schaffen</value>
+    <value>Neu</value>
   </data>
   <data name="btnOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 66</value>
@@ -161,7 +161,7 @@
     <value>86, 66</value>
   </data>
   <data name="btnDuplOp.Text" xml:space="preserve">
-    <value>Vervielfältigen</value>
+    <value>Duplizieren</value>
   </data>
   <data name="btnDelOp.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 66</value>
@@ -174,5 +174,95 @@
   </data>
   <data name="btnOpt.Text" xml:space="preserve">
     <value>Einstellungen</value>
+  </data>
+  <data name="btnAddOp.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="btnAddOp.ToolTipText" xml:space="preserve">
+    <value>Operation hinzufügen</value>
+  </data>
+  <data name="btnCourbes.Text" xml:space="preserve">
+    <value>Kurven</value>
+  </data>
+  <data name="btnDelOp.ToolTipText" xml:space="preserve">
+    <value>Ausgewählte Operation entfernen</value>
+  </data>
+  <data name="btnDuplOp.ToolTipText" xml:space="preserve">
+    <value>Ausgewählte Operation duplizieren</value>
+  </data>
+  <data name="btnEditAcc.Text" xml:space="preserve">
+    <value>Konto bearbeiten</value>
+  </data>
+  <data name="btnEditOp.ToolTipText" xml:space="preserve">
+    <value>Ausgewählte Operation bearbeiten</value>
+  </data>
+  <data name="btnFilterOp.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="btnGraph.Text" xml:space="preserve">
+    <value>Grafik</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dieser Dateityp wird noch nicht unterstützt.</value>
+  </data>
+  <data name="classeurOpenOfficeToolStripMenuItem.Text" xml:space="preserve">
+    <value>OpenOffice Datei</value>
+  </data>
+  <data name="clmnComm.Text" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="clmnCred.Text" xml:space="preserve">
+    <value>Kredit</value>
+  </data>
+  <data name="clmnDeb.Text" xml:space="preserve">
+    <value>Debit</value>
+  </data>
+  <data name="cryptéToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verschlüsselt</value>
+  </data>
+  <data name="enregistrerSousToolStripMenuItem.Text" xml:space="preserve">
+    <value>Speichern unter...</value>
+  </data>
+  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportieren</value>
+  </data>
+  <data name="fichierCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>CSV Datei</value>
+  </data>
+  <data name="fichierExcel972003ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Excel 97-2003 Datei</value>
+  </data>
+  <data name="fichierExcelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Excel Datei</value>
+  </data>
+  <data name="lblAccountName.Text" xml:space="preserve">
+    <value>&lt;Kein Konto geladen&gt;</value>
+  </data>
+  <data name="lblTotalCredit.Text" xml:space="preserve">
+    <value>$0.00</value>
+  </data>
+  <data name="lblTotalDeb.Text" xml:space="preserve">
+    <value>$0.00</value>
+  </data>
+  <data name="ofpCompte.Filter" xml:space="preserve">
+    <value>CrediNET Konto (*.cna, *.cne)|*.cna;*.cne</value>
+  </data>
+  <data name="sfdCompte.Filter" xml:space="preserve">
+    <value>CrediNET Konto(*.cna, *.cne)|*.cna;*.cne</value>
+  </data>
+  <data name="sfdCSV.Filter" xml:space="preserve">
+    <value>CSV (kommagetrennt) (*.csv)|*.csv</value>
+  </data>
+  <data name="sfdODS.Filter" xml:space="preserve">
+    <value>OpenDocument Spreadsheet (*.ods)|*.ods</value>
+  </data>
+  <data name="sfdXLS.Filter" xml:space="preserve">
+    <value>Excel 97-2003 Workbook (*.xls)|*.xls</value>
+  </data>
+  <data name="sfdXLSX.Filter" xml:space="preserve">
+    <value>Excel Workbook (*.xlsx)|*.xlsx</value>
   </data>
 </root>

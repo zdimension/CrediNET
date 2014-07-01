@@ -99,6 +99,9 @@ namespace CrediNET
                     case "en-US":
                         txtPasse.Text = "Leave this field empty to keep current password";
                         break;
+                    case "de-DE":
+                        txtPasse.Text = "Feld leer lassen um altes Passwort zu behalten";
+                        break;
                     default:        //case "fr-FR":
                         txtPasse.Text = "Laissez ce champ vide pour ne pas modifier le code";
                         break;
