@@ -45,6 +45,19 @@ namespace CrediNET
             lvOps.ListViewItemSorter = lvwColumnSorter;
         }
 
+        public MainWindow(string file)
+        {
+            InitializeComponent();
+            InitRenderers();
+            SetWindowTheme(lvOps.Handle, "Explorer", null);
+
+            ClearStuff();
+
+            lvOps.DrawItem += lvOps_DrawItem;
+            lvOps.ListViewItemSorter = lvwColumnSorter;
+            CompteActuelChemin = file;
+        }
+
         void lvOps_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
             if (e.Item.Selected)
@@ -386,7 +399,10 @@ namespace CrediNET
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            
             ClearStuff();
+
+            
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -402,6 +418,18 @@ namespace CrediNET
                 LoadAccountStuff();
                 this.Cursor = Cursors.Default;
             }
+        }
+
+        public void LoadFile(string s)
+        {
+            if (CompteActuel != null)
+                ClearStuff();
+
+                this.Cursor = Cursors.AppStarting;
+                CompteActuel = Account.FromFile(s);
+                CompteActuelChemin = s;
+                LoadAccountStuff();
+                this.Cursor = Cursors.Default;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -812,6 +840,18 @@ namespace CrediNET
 
                 LoadAccountStuff();
             }
+        }
+
+        bool onlytime = true;
+
+        private void MainWindow_Shown(object sender, EventArgs e)
+        {
+            if (onlytime)
+            {
+                if (CompteActuelChemin != "")
+                    LoadFile(CompteActuelChemin);
+            }
+            onlytime = false;
         }
     }
 }

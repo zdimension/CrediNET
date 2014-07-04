@@ -416,6 +416,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip.ResumeLayout(false);

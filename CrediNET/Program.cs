@@ -20,7 +20,7 @@ namespace CrediNET
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Currencies.Init();
             Settings.Default.PropertyChanged += new PropertyChangedEventHandler(Default_PropertyChanged);
@@ -30,7 +30,8 @@ namespace CrediNET
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+
+            Application.Run(args.Count() == 0 ? new MainWindow() : (args[0] == "" ? new MainWindow() : new MainWindow(args[0])));
         }
 
         
