@@ -24,6 +24,14 @@ namespace CrediNET
 
         protected override void UpdateEditText()
         {
+            try
+            {
+                Value = decimal.Parse(Text.Replace(Devise, "").Trim());
+            }
+            catch
+            {
+                base.UpdateEditText();
+            }
             this.Text = this.Value.ToString() + " " + Devise;
         }
     }
