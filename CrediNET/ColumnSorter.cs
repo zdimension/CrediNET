@@ -11,7 +11,9 @@ namespace CrediNET
         {
             SortByImage,
             SortByCheckbox,
-            SortByText
+            SortByText,
+            SortByDate,
+            SortByDecimal
         }
 
 		/// <summary>
@@ -57,6 +59,29 @@ namespace CrediNET
             FirstObjectCompare2 = new CheckboxTextComparer();
 		}
 
+        public ListViewColumnSorter(int newCol, SortOrder newOrder)
+        {
+            ColumnToSort = newCol;
+            OrderOfSort = newOrder;
+
+            switch (ColumnToSort)
+            {
+                case 1:
+                    mySortModifier = SortModifiers.SortByDate;
+                    break;
+                case 5:
+                case 6:
+                    mySortModifier = SortModifiers.SortByDecimal;
+                    break;
+                default:
+                    mySortModifier = SortModifiers.SortByText;
+                    break;
+            }
+
+            ObjectCompare = new NumberCaseInsensitiveComparer();
+            FirstObjectCompare = new ImageTextComparer();
+            FirstObjectCompare2 = new CheckboxTextComparer();
+        }
 		/// <summary>
 		/// This method comes right from IEnumerable. It compares two items.
 		/// </summary>
@@ -79,7 +104,7 @@ namespace CrediNET
                 return compareResult;
             }
 
-            if (mySortModifier.Equals(SortModifiers.SortByText) || ColumnToSort > 0)
+            if (mySortModifier.Equals(SortModifiers.SortByText))
             {
                 if (listviewX.SubItems.Count <= ColumnToSort &&
                     listviewY.SubItems.Count <= ColumnToSort)
@@ -99,6 +124,37 @@ namespace CrediNET
                 {
                     compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text.Trim(), listviewY.SubItems[ColumnToSort].Text.Trim());
                 }
+            }
+            else if (mySortModifier.Equals(SortModifiers.SortByDate))
+            {
+                int returnVal = -1;
+                // Parse the two objects passed as a parameter as a DateTime.
+                System.DateTime firstDate =
+                        DateTime.ParseExact(((ListViewItem)x).SubItems[ColumnToSort].Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                System.DateTime secondDate =
+                        DateTime.ParseExact(((ListViewItem)y).SubItems[ColumnToSort].Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                // Compare the two dates.
+                returnVal = DateTime.Compare(firstDate, secondDate);
+                
+                if (OrderOfSort == SortOrder.Descending)
+                    returnVal *= -1;
+                return returnVal;
+            }
+            else if (mySortModifier.Equals(SortModifiers.SortByDecimal))
+            {
+                int returnVal = -1;
+                // Parse the two objects passed as a parameter as a decimal.
+                Console.WriteLine(((ListViewItem)x).SubItems[ColumnToSort].Text);
+                decimal firstNum =
+                        decimal.Parse(Regex.Match(((ListViewItem)x).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
+                decimal secondNum =
+                        decimal.Parse(Regex.Match(((ListViewItem)y).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
+                // Compare the two dates.
+                returnVal = firstNum > secondNum ? 1 : -1;
+
+                if (OrderOfSort == SortOrder.Descending)
+                    returnVal *= -1;
+                return returnVal;
             }
             else
             {

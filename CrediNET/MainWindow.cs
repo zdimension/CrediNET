@@ -643,6 +643,7 @@ namespace CrediNET
 
             // Perform the sort with these new sort options.
             lvOps.Sort();
+            lvOps.ListViewItemSorter = new ListViewColumnSorter(e.Column, lvOps.Sorting);
             lvOps.EndUpdate();
         }
 
