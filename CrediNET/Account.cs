@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 using Ookii.Dialogs;
 using System.Xml;
 using System.Xml.Linq;
+using System.Globalization;
 
 namespace CrediNET
 {
@@ -19,8 +20,8 @@ namespace CrediNET
     /// </summary>
     public class Account
     {
-        
 
+        private static CultureInfo culture = new CultureInfo("en-US");
         private string _fp = "";
 
         /// <summary>
@@ -260,8 +261,8 @@ namespace CrediNET
                             new XAttribute("ID", x.ID),
                             new XAttribute("Date", x.Date.ToString("dd/MM/yyyy")),
                             new XAttribute("Comm", x.Commentary),
-                            new XAttribute("Cre", x.Credit.ToString()),
-                            new XAttribute("Deb", x.Debit.ToString()),
+                            new XAttribute("Cre", x.Credit.ToString(culture.NumberFormat)),
+                            new XAttribute("Deb", x.Debit.ToString(culture.NumberFormat)),
                             new XAttribute("Type", x.Type),
                             new XAttribute("Budget", x.Budget),
                             new XAttribute("Mensuel", x.Monthly.ToString())))),
@@ -304,8 +305,8 @@ namespace CrediNET
                 Operation op = new Operation(a.Attribute("ID").Value);
                 op.Date = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", null);
                 op.Commentary = a.Attribute("Comm").Value;
-                op.Credit = decimal.Parse(a.Attribute("Cre").Value);
-                op.Debit = decimal.Parse(a.Attribute("Deb").Value);
+                op.Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat);
+                op.Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat);
                 op.Type = a.Attribute("Type").Value;
                 op.Budget = a.Attribute("Budget").Value;
                 op.Monthly = bool.Parse(a.Attribute("Mensuel").Value);
