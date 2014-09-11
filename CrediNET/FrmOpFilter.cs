@@ -12,51 +12,132 @@ namespace CrediNET
 {
     public partial class FrmOpFilter : Form
     {
-        public FrmOpFilter()
+        private Account compte;
+        public FrmOpFilter(Account CompteActuel)
         {
+            this.compte = CompteActuel;
             InitializeComponent();
         }
-
-        public OpFilter ResultFilter
+        private void FrmOpFilter_Load(object sender, EventArgs e)
         {
-            get
+            dtpFrom.Enabled = false;
+            dtpTo.Enabled = false;
+            mudCreditFrom.Enabled = false;
+            mudCreditTo.Enabled = false;
+            mudDebitFrom.Enabled = false;
+            mudDebitTo.Enabled = false;
+            cbxType.Enabled = false;
+            cbxBudget.Enabled = false;
+
+            //Load operation budgets to cbxType
+            compte.Budgets.ForEach(x => cbxBudget.Items.Add(x));
+            cbxBudget.SelectedIndex = 0;
+
+            //Load operation types to cbxType
+            Program.Types.ForEach(y => cbxType.Items.Add(y));
+            cbxType.SelectedIndex = 0;
+        }
+
+        private void chbDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == false)
             {
-                return new OpFilter() { Type = (OpFilterType)cbxFCmn.SelectedIndex, Order = (OpFilterOrder)cbxFType.SelectedIndex, Value = cbxFCmn.SelectedIndex == 0 ? mupC.Value : (object)(cbxFCmn.SelectedIndex == 1 ? (object)mupDb.Value : (object)dtpM.Value) };
+                dtpFrom.Enabled = false;
+                dtpTo.Enabled = false;
+            }
+            else
+            {
+                dtpFrom.Enabled = true;
+                dtpTo.Enabled = true;
             }
         }
 
-        private void FrmOpFilter_Load(object sender, EventArgs e)
+        private void chbAll_CheckedChanged(object sender, EventArgs e)
         {
-            cbxFCmn.SelectedIndex = 0;
-            cbxFType.SelectedIndex = 0;
+            if (((CheckBox)sender).Checked == false)
+            {
+                dtpFrom.Enabled = false;
+                dtpTo.Enabled = false;
+                mudCreditFrom.Enabled = false;
+                mudCreditTo.Enabled = false;
+                mudDebitFrom.Enabled = false;
+                mudDebitTo.Enabled = false;
+                cbxType.Enabled = false;
+                cbxBudget.Enabled = false;
+                chbDate.Checked = false;
+                chbCredit.Checked = false;
+                chbDebit.Checked = false;
+                chbType.Checked = false;
+                chbBudget.Checked = false;
+            }
+            else
+            {
+                dtpFrom.Enabled = true;
+                dtpTo.Enabled = true;
+                mudCreditFrom.Enabled = true;
+                mudCreditTo.Enabled = true;
+                mudDebitFrom.Enabled = true;
+                mudDebitTo.Enabled = true;
+                cbxType.Enabled = true;
+                cbxBudget.Enabled = true;
+                chbDate.Checked = true;
+                chbCredit.Checked = true;
+                chbDebit.Checked = true;
+                chbType.Checked = true;
+                chbBudget.Checked = true;
+            }
         }
 
-        private void cbxFCmn_SelectedIndexChanged(object sender, EventArgs e)
+        private void chbCredit_CheckedChanged(object sender, EventArgs e)
         {
-            coolTabControl1.SelectTab(cbxFCmn.SelectedIndex);
+            if (((CheckBox)sender).Checked == false)
+            {
+                mudCreditFrom.Enabled = false;
+                mudCreditTo.Enabled = false;
+            }
+            else
+            {
+                mudCreditFrom.Enabled = true;
+                mudCreditTo.Enabled = true;
+            }
         }
-    }
 
-    public struct OpFilter
-    {
-        public OpFilterType Type { get; set; }
+        private void chbDebit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == false)
+            {
+                mudDebitFrom.Enabled = false;
+                mudDebitTo.Enabled = false;
+            }
+            else
+            {
+                mudDebitFrom.Enabled = true;
+                mudDebitTo.Enabled = true;
+            }
+        }
 
-        public OpFilterOrder Order { get; set; }
+        private void chbType_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == false)
+            {
+                cbxType.Enabled = false;
+            }
+            else
+            {
+                cbxType.Enabled = true;
+            }
+        }
 
-        public object Value { get; set; }
-    }
-
-    public enum OpFilterType
-    {
-        Credit = 1,
-        Debit = 2,
-        Date = 4
-    }
-
-    public enum OpFilterOrder
-    {
-        Inf = 1,
-        Equal = 2,
-        Sup = 3
+        private void chbBudget_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked == false)
+            {
+                cbxBudget.Enabled = false;
+            }
+            else
+            {
+                cbxBudget.Enabled = true;
+            }
+        }
     }
 }

@@ -854,5 +854,126 @@ namespace CrediNET
             }
             onlytime = false;
         }
+
+        private void btnFilterOp_Click(object sender, EventArgs e)
+        {
+            FrmOpFilter of = new FrmOpFilter(CompteActuel);
+
+            DateTime? dtFrom = null;
+            DateTime? dtTo = null;
+            decimal? creditFrom = null;
+            decimal? creditTo = null;
+            decimal? debitFrom = null;
+            decimal? debitTo = null;
+            string type = null;
+            string budget = null;
+
+            if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (of.chbDate.Checked)
+                {
+                    dtFrom = of.dtpFrom.Value;
+                    dtTo = of.dtpTo.Value;
+                }
+                if (of.chbCredit.Checked)
+                {
+                    creditFrom = of.mudCreditFrom.Value;
+                    creditTo = of.mudCreditTo.Value;
+                }
+                if (of.chbDebit.Checked)
+                {
+                    debitFrom = of.mudDebitFrom.Value;
+                    debitTo = of.mudDebitTo.Value;
+                }
+                if (of.chbType.Checked)
+                {
+                    type = of.cbxType.SelectedItem.ToString();
+                }
+                if (of.chbBudget.Checked)
+                {
+                    budget = of.cbxBudget.SelectedItem.ToString();
+                }
+
+                LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
+            }
+        }
+
+        public void LoadOps(DateTime? dtFrom, DateTime? dtTo, decimal? creditFrom, decimal? creditTo, decimal? debitFrom, decimal? debitTo, string type, string budget)
+        {
+            if (CompteActuel == null)
+                return;
+
+            lvOps.BeginUpdate();
+
+            lvOps.Items.Clear();
+
+            IQueryable<Operation> queryOps =
+                from op in CompteActuel.Operations.AsQueryable<Operation>()
+                select op;
+
+            if (dtFrom != null && dtTo != null)
+                queryOps = queryOps.Where(op => DateTime.Compare(op.Date, dtFrom ?? DateTime.Now) >= 0 && DateTime.Compare(op.Date, dtTo ?? DateTime.Now) <= 0);
+    
+            if (creditFrom.HasValue && creditTo.HasValue)
+                queryOps = queryOps.Where(op => op.Credit >= creditFrom && op.Credit <= creditTo);
+
+            if (debitFrom.HasValue && debitTo.HasValue)
+                queryOps = queryOps.Where(op => op.Debit >= debitFrom && op.Debit <= debitTo);
+
+            if (type != null)
+                queryOps = queryOps.Where(op => op.Type.Equals(type));
+
+            if (budget != null)
+                queryOps = queryOps.Where(op => op.Budget.Equals(budget));
+
+            foreach (Operation op in queryOps)
+            {
+                ListViewItem it = new ListViewItem();
+                it.Text = op.ID;
+                it.Name = op.ID;
+                it.SubItems.Add(op.Date.ToString("dd/MM/yyyy"));
+                it.SubItems.Add(op.Type);
+                it.SubItems.Add(op.Budget);
+                it.SubItems.Add(op.Commentary);
+                it.SubItems.Add(op.Credit + " " + CompteActuel.Currency.Symbol);
+                it.SubItems.Add(op.Debit + " " + CompteActuel.Currency.Symbol);
+
+                //if(!lvOps.Items.Contains(it))
+                lvOps.Items.Add(it);
+
+            }
+
+            if (CompteActuel.Operations.Count == 0)
+                btnCamembert.Enabled = false;
+            else
+                btnCamembert.Enabled = true;
+
+            lvOps.EndUpdate();
+
+            decimal totalc = 0;
+            queryOps.ToList().ForEach(x1 => totalc += x1.Credit);
+            lblTotalCredit.Text = totalc.ToString("0.00") + " " + CompteActuel.Currency.Symbol;
+
+            decimal totald = 0;
+            queryOps.ToList().ForEach(x1 => totald += x1.Debit);
+            lblTotalDeb.Text = totald.ToString("0.00") + " " + CompteActuel.Currency.Symbol;
+
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            {
+                case "en-US":
+                    lblSolde.Text = "Balance : ";
+                    break;
+                case "de-DE":
+                    lblSoldeAt.Text = "Kontostand : ";
+                    break;
+                default:        //case "fr-FR":
+                    lblSolde.Text = "Solde : ";
+                    break;
+            }
+
+            lblSolde.Text += (totalc - totald).ToString("0.00") + " " + CompteActuel.Currency.Symbol;
+
+            SoldeActuel = totalc - totald;
+        }
     }
 }
