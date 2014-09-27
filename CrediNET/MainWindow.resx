@@ -121,27 +121,6 @@
     <value>115, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblAccountName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 17</value>
-  </data>
-  <data name="lblAccountName.Text" xml:space="preserve">
-    <value>&lt;Pas de compte chargé&gt;</value>
-  </data>
-  <data name="spacer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>788, 17</value>
-  </data>
-  <data name="lblTotalCredit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 17</value>
-  </data>
-  <data name="lblTotalCredit.Text" xml:space="preserve">
-    <value>0,00 €</value>
-  </data>
-  <data name="lblTotalDeb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 17</value>
-  </data>
-  <data name="lblTotalDeb.Text" xml:space="preserve">
-    <value>0,00 €</value>
-  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 486</value>
   </data>
@@ -166,6 +145,27 @@
   </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="lblAccountName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 17</value>
+  </data>
+  <data name="lblAccountName.Text" xml:space="preserve">
+    <value>&lt;Pas de compte chargé&gt;</value>
+  </data>
+  <data name="spacer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>788, 17</value>
+  </data>
+  <data name="lblTotalCredit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="lblTotalCredit.Text" xml:space="preserve">
+    <value>0,00 €</value>
+  </data>
+  <data name="lblTotalDeb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="lblTotalDeb.Text" xml:space="preserve">
+    <value>0,00 €</value>
   </data>
   <metadata name="ofpCompte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>231, 17</value>
@@ -270,6 +270,33 @@
   <data name="&gt;&gt;lblSoldeAt.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lvOps.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvOps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 69</value>
+  </data>
+  <data name="lvOps.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lvOps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1057, 417</value>
+  </data>
+  <data name="lvOps.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvOps.Name" xml:space="preserve">
+    <value>lvOps</value>
+  </data>
+  <data name="&gt;&gt;lvOps.Type" xml:space="preserve">
+    <value>CrediNET.DoubleBufferListView, CrediNET, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvOps.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lvOps.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="clmnID.Width" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -306,33 +333,6 @@
   <data name="clmnDeb.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="lvOps.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvOps.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 69</value>
-  </data>
-  <data name="lvOps.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="lvOps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1057, 417</value>
-  </data>
-  <data name="lvOps.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lvOps.Name" xml:space="preserve">
-    <value>lvOps</value>
-  </data>
-  <data name="&gt;&gt;lvOps.Type" xml:space="preserve">
-    <value>CrediNET.DoubleBufferListView, CrediNET, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvOps.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lvOps.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -359,84 +359,6 @@
   </data>
   <data name="btnOpen.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
-  </data>
-  <data name="enregistrerSousToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="enregistrerSousToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
-  </data>
-  <data name="enregistrerSousToolStripMenuItem.Text" xml:space="preserve">
-    <value>Enregistrer sous</value>
-  </data>
-  <data name="cryptéToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="cryptéToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="cryptéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
-  </data>
-  <data name="cryptéToolStripMenuItem.Text" xml:space="preserve">
-    <value>Crypté</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 6</value>
-  </data>
-  <data name="fichierCSVToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="fichierCSVToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="fichierCSVToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fichier CSV</value>
-  </data>
-  <data name="fichierExcel972003ToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="fichierExcel972003ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="fichierExcel972003ToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fichier Excel 97-2003</value>
-  </data>
-  <data name="fichierExcelToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="fichierExcelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="fichierExcelToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fichier Excel</value>
-  </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 22</value>
-  </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ce type de fichier n'est pas encore supporté.</value>
-  </data>
-  <data name="classeurOpenOfficeToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="classeurOpenOfficeToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="classeurOpenOfficeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="classeurOpenOfficeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Classeur OpenOffice</value>
-  </data>
-  <data name="exporterToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exporter</value>
   </data>
   <data name="btnSave.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -574,24 +496,6 @@
   <data name="btnOpt.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageAboveText</value>
   </data>
-  <data name="btnCamembert.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="btnCamembert.Text" xml:space="preserve">
-    <value>Camembert</value>
-  </data>
-  <data name="btnCourbes.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="btnCourbes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="btnCourbes.Text" xml:space="preserve">
-    <value>Courbes</value>
-  </data>
   <data name="btnGraph.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -633,6 +537,102 @@
   </data>
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="enregistrerSousToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="enregistrerSousToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="enregistrerSousToolStripMenuItem.Text" xml:space="preserve">
+    <value>Enregistrer sous</value>
+  </data>
+  <data name="cryptéToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cryptéToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cryptéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="cryptéToolStripMenuItem.Text" xml:space="preserve">
+    <value>Crypté</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 6</value>
+  </data>
+  <data name="exporterToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="fichierCSVToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fichierCSVToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 22</value>
+  </data>
+  <data name="fichierCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fichier CSV</value>
+  </data>
+  <data name="fichierExcel972003ToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fichierExcel972003ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 22</value>
+  </data>
+  <data name="fichierExcel972003ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fichier Excel 97-2003</value>
+  </data>
+  <data name="fichierExcelToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fichierExcelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 22</value>
+  </data>
+  <data name="fichierExcelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fichier Excel</value>
+  </data>
+  <data name="classeurOpenOfficeToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="classeurOpenOfficeToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="classeurOpenOfficeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 22</value>
+  </data>
+  <data name="classeurOpenOfficeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Classeur OpenOffice</value>
+  </data>
+  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 22</value>
+  </data>
+  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ce type de fichier n'est pas encore supporté.</value>
+  </data>
+  <data name="btnCamembert.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
+  </data>
+  <data name="btnCamembert.Text" xml:space="preserve">
+    <value>Camembert</value>
+  </data>
+  <data name="btnCourbes.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCourbes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
+  </data>
+  <data name="btnCourbes.Text" xml:space="preserve">
+    <value>Courbes</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

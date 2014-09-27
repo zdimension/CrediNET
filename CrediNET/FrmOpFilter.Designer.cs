@@ -40,37 +40,37 @@
             this.chbAll = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chbCredit = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chbDebit = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.chbType = new System.Windows.Forms.CheckBox();
-            this.chbBudget = new System.Windows.Forms.CheckBox();
-            this.cbxType = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cbxBudget = new System.Windows.Forms.ComboBox();
+            this.chbBudget = new System.Windows.Forms.CheckBox();
+            this.chbType = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.chbDebit = new System.Windows.Forms.CheckBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             this.mudDebitTo = new CrediNET.MoneyUpDown();
             this.mudDebitFrom = new CrediNET.MoneyUpDown();
             this.mudCreditTo = new CrediNET.MoneyUpDown();
             this.mudCreditFrom = new CrediNET.MoneyUpDown();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mudDebitTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mudDebitFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mudCreditTo)).BeginInit();
@@ -88,6 +88,7 @@
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -146,6 +147,11 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Name = "panel1";
             // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
             // panel2
             // 
             resources.ApplyResources(this.panel2, "panel2");
@@ -175,42 +181,37 @@
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
-            // panel3
+            // panel6
             // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.mudCreditTo);
-            this.panel3.Controls.Add(this.mudCreditFrom);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Name = "panel3";
+            resources.ApplyResources(this.panel6, "panel6");
+            this.panel6.Controls.Add(this.label13);
+            this.panel6.Controls.Add(this.cbxBudget);
+            this.panel6.Name = "panel6";
             // 
-            // label6
+            // label13
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
             // 
-            // label5
+            // cbxBudget
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            this.cbxBudget.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxBudget, "cbxBudget");
+            this.cbxBudget.Name = "cbxBudget";
             // 
-            // label7
+            // chbBudget
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.chbBudget, "chbBudget");
+            this.chbBudget.Name = "chbBudget";
+            this.chbBudget.UseVisualStyleBackColor = true;
+            this.chbBudget.CheckedChanged += new System.EventHandler(this.chbBudget_CheckedChanged);
             // 
-            // label8
+            // chbType
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // chbDebit
-            // 
-            resources.ApplyResources(this.chbDebit, "chbDebit");
-            this.chbDebit.Name = "chbDebit";
-            this.chbDebit.UseVisualStyleBackColor = true;
-            this.chbDebit.CheckedChanged += new System.EventHandler(this.chbDebit_CheckedChanged);
+            resources.ApplyResources(this.chbType, "chbType");
+            this.chbType.Name = "chbType";
+            this.chbType.UseVisualStyleBackColor = true;
+            this.chbType.CheckedChanged += new System.EventHandler(this.chbType_CheckedChanged);
             // 
             // panel4
             // 
@@ -227,35 +228,47 @@
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
             // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
             // label11
             // 
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
             // 
-            // chbType
+            // label10
             // 
-            resources.ApplyResources(this.chbType, "chbType");
-            this.chbType.Name = "chbType";
-            this.chbType.UseVisualStyleBackColor = true;
-            this.chbType.CheckedChanged += new System.EventHandler(this.chbType_CheckedChanged);
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
-            // chbBudget
+            // chbDebit
             // 
-            resources.ApplyResources(this.chbBudget, "chbBudget");
-            this.chbBudget.Name = "chbBudget";
-            this.chbBudget.UseVisualStyleBackColor = true;
-            this.chbBudget.CheckedChanged += new System.EventHandler(this.chbBudget_CheckedChanged);
+            resources.ApplyResources(this.chbDebit, "chbDebit");
+            this.chbDebit.Name = "chbDebit";
+            this.chbDebit.UseVisualStyleBackColor = true;
+            this.chbDebit.CheckedChanged += new System.EventHandler(this.chbDebit_CheckedChanged);
             // 
-            // cbxType
+            // panel3
             // 
-            this.cbxType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxType, "cbxType");
-            this.cbxType.Name = "cbxType";
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.mudCreditTo);
+            this.panel3.Controls.Add(this.mudCreditFrom);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Name = "panel3";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
             // 
             // panel5
             // 
@@ -264,28 +277,16 @@
             this.panel5.Controls.Add(this.cbxType);
             this.panel5.Name = "panel5";
             // 
-            // panel6
-            // 
-            resources.ApplyResources(this.panel6, "panel6");
-            this.panel6.Controls.Add(this.label13);
-            this.panel6.Controls.Add(this.cbxBudget);
-            this.panel6.Name = "panel6";
-            // 
             // label12
             // 
             resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
             // 
-            // label13
+            // cbxType
             // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
-            // cbxBudget
-            // 
-            this.cbxBudget.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxBudget, "cbxBudget");
-            this.cbxBudget.Name = "cbxBudget";
+            this.cbxType.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxType, "cbxType");
+            this.cbxType.Name = "cbxType";
             // 
             // mudDebitTo
             // 
@@ -350,14 +351,14 @@
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mudDebitTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mudDebitFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mudCreditTo)).EndInit();

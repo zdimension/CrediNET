@@ -868,34 +868,48 @@ namespace CrediNET
             string type = null;
             string budget = null;
 
-            if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                if (of.chbDate.Checked)
-                {
-                    dtFrom = of.dtpFrom.Value;
-                    dtTo = of.dtpTo.Value;
-                }
-                if (of.chbCredit.Checked)
-                {
-                    creditFrom = of.mudCreditFrom.Value;
-                    creditTo = of.mudCreditTo.Value;
-                }
-                if (of.chbDebit.Checked)
-                {
-                    debitFrom = of.mudDebitFrom.Value;
-                    debitTo = of.mudDebitTo.Value;
-                }
-                if (of.chbType.Checked)
-                {
-                    type = of.cbxType.SelectedItem.ToString();
-                }
-                if (of.chbBudget.Checked)
-                {
-                    budget = of.cbxBudget.SelectedItem.ToString();
-                }
 
+            if (btnFilterOp.Checked)
+            {
                 LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
+                btnFilterOp.Checked = false;
             }
+            else
+            {
+                if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (of.chbDate.Checked)
+                    {
+                        dtFrom = of.dtpFrom.Value;
+                        dtTo = of.dtpTo.Value;
+                    }
+                    if (of.chbCredit.Checked)
+                    {
+                        creditFrom = of.mudCreditFrom.Value;
+                        creditTo = of.mudCreditTo.Value;
+                    }
+                    if (of.chbDebit.Checked)
+                    {
+                        debitFrom = of.mudDebitFrom.Value;
+                        debitTo = of.mudDebitTo.Value;
+                    }
+                    if (of.chbType.Checked)
+                    {
+                        type = of.cbxType.SelectedItem.ToString();
+                    }
+                    if (of.chbBudget.Checked)
+                    {
+                        budget = of.cbxBudget.SelectedItem.ToString();
+                    }
+
+
+
+                    LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
+                    btnFilterOp.Checked = true;
+                }
+            }
+
+
         }
 
         public void LoadOps(DateTime? dtFrom, DateTime? dtTo, decimal? creditFrom, decimal? creditTo, decimal? debitFrom, decimal? debitTo, string type, string budget)

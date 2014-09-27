@@ -371,6 +371,7 @@
             this.btnFilterOp.Image = global::CrediNET.Properties.Resources.page_find;
             resources.ApplyResources(this.btnFilterOp, "btnFilterOp");
             this.btnFilterOp.Name = "btnFilterOp";
+            this.btnFilterOp.Click += new System.EventHandler(this.btnFilterOp_Click);
             // 
             // btnOpt
             // 
