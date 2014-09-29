@@ -27,6 +27,7 @@ namespace CrediNET
         private const int WIN_1252_CP = 1252;
 
         public Account CompteActuel = null;
+        public Account filteredAccount = null;
         public decimal SoldeActuel = 0;
         public string CompteActuelChemin = null;
 
@@ -818,12 +819,12 @@ namespace CrediNET
 
         private void btnCamembert_Click(object sender, EventArgs e)
         {
-            new FrmGraph(1, CompteActuel).ShowDialog(this);
+            new FrmGraph(1, filteredAccount == null ? CompteActuel : filteredAccount).ShowDialog(this);
         }
 
         private void btnCourbes_Click(object sender, EventArgs e)
         {
-            new FrmGraph(2, CompteActuel).ShowDialog(this);
+            new FrmGraph(2, filteredAccount == null ? CompteActuel : filteredAccount).ShowDialog(this);
         }
 
         private void btnEditAcc_Click(object sender, EventArgs e)
@@ -872,6 +873,7 @@ namespace CrediNET
             if (btnFilterOp.Checked)
             {
                 LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
+                filteredAccount = null;
                 btnFilterOp.Checked = false;
             }
             else
@@ -901,9 +903,7 @@ namespace CrediNET
                     {
                         budget = of.cbxBudget.SelectedItem.ToString();
                     }
-
-
-
+                    
                     LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
                     btnFilterOp.Checked = true;
                 }
@@ -940,6 +940,11 @@ namespace CrediNET
             if (budget != null)
                 queryOps = queryOps.Where(op => op.Budget.Equals(budget));
 
+            //filteredAccount is used as input for graph representations
+            filteredAccount = new Account();
+            filteredAccount.Name = CompteActuel.Name;
+            filteredAccount.Currency = CompteActuel.Currency;
+
             foreach (Operation op in queryOps)
             {
                 ListViewItem it = new ListViewItem();
@@ -955,6 +960,7 @@ namespace CrediNET
                 //if(!lvOps.Items.Contains(it))
                 lvOps.Items.Add(it);
 
+                filteredAccount.Operations.Add(op);
             }
 
             if (CompteActuel.Operations.Count == 0)

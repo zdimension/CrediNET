@@ -182,6 +182,9 @@ namespace CrediNET
             var crP = new PointPairList();
             decimal Xp = 0;
 
+            //Operations need to be sorted before being displayed in the curve graph
+            cmpt.Operations.Sort((op1, op2) => op1.Date.CompareTo(op2.Date));
+
             for(int l = 0; l<cmpt.Operations.Count; l++)
             {
                 if (cmpt.Operations[l].Credit > 0) Xp += cmpt.Operations[l].Credit;

@@ -51,6 +51,7 @@ namespace CrediNET
         public CurrencyObj Currency
         {
             get { return _currency; }
+            set { _currency = value; }
         }
 
         /// <summary>
