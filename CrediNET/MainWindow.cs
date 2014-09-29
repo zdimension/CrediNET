@@ -836,7 +836,7 @@ namespace CrediNET
                 if(ae.txtPasse.Font.Style != FontStyle.Italic) CompteActuel.DefPass(ae.txtPasse.Text);
                 CompteActuel.Budgets = ae.lbxBudgets.Items.Cast<string>().ToList();
 
-                CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()));
+                CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()), CompteActuel.Currency != Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()));
 
                 CompteActuel.Encrypted = ae.cbxCrypt.Checked;
 
