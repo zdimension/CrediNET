@@ -36,6 +36,9 @@ namespace CrediNET
             //Load operation types to cbxType
             Program.Types.ForEach(y => cbxType.Items.Add(y));
             cbxType.SelectedIndex = 0;
+
+            dtpFrom.Value = compte.Operations.Min(x => x.Date);
+            dtpTo.Value = compte.Operations.Max(x => x.Date);
         }
 
         private void chbDate_CheckedChanged(object sender, EventArgs e)
