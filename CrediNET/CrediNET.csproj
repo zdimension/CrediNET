@@ -61,12 +61,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="ZedGraph">
-      <HintPath>..\..\Downloads\CrediNET\ZedGraph.dll</HintPath>
-    </Reference>
-    <Reference Include="ZedGraph.resources">
-      <HintPath>..\..\Downloads\CrediNET\ZedGraph.resources.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColumnSorter.cs" />
@@ -333,6 +327,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="round.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZedGraph.csproj">
+      <Project>{2541686b-1673-43bf-af89-3163945db009}</Project>
+      <Name>ZedGraph</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
