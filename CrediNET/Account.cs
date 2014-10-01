@@ -12,6 +12,7 @@ using Ookii.Dialogs;
 using System.Xml;
 using System.Xml.Linq;
 using System.Globalization;
+using System.Drawing;
 
 namespace CrediNET
 {
@@ -121,14 +122,14 @@ namespace CrediNET
             get { return _ops; }
         }
 
-        private List<string> _budgets = new List<string>() { "alimentaire", "divers", "habitat", "santé", "salaire", "voiture" };
+        private Dictionary<string, Color> _budgets = new Dictionary<string, Color> { {"alimentaire", Color.White}, {"divers", Color.White}, {"habitat", Color.White}, {"santé", Color.White}, {"salaire", Color.White}, {"voiture", Color.White} };
         /// <summary>
         /// The categories of operations
         /// </summary>
-        public List<string> Budgets
+        public Dictionary<string, Color> Budgets
         {
-            get { _budgets.Sort((x, y) => string.Compare(x, y)); return _budgets; }
-            set { _budgets = value; _budgets.Sort((x, y) => string.Compare(x, y)); }
+            get { _budgets.OrderBy(x => x.Key); return _budgets; }
+            set { _budgets = value; _budgets.OrderBy(x => x.Key); }
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace CrediNET
                             new XAttribute("Budget", x.Budget),
                             new XAttribute("Mensuel", x.Monthly.ToString())))),
                     new XElement("Budgets", 
-                        cm.Budgets.Select(y => new XElement("B", y)))));
+                        cm.Budgets.Select(y => new XElement("B", new XAttribute("color", ColorTranslator.ToHtml(y.Value)), y.Key)))));
 
             if(autosave)
                 doc.Save(filepath);
@@ -317,7 +318,7 @@ namespace CrediNET
             cb.Budgets.Clear();
             foreach(XElement b in c.Element("Budgets").Nodes())
             {
-                cb.Budgets.Add(b.Value);
+                cb.Budgets.Add(b.Value, ColorTranslator.FromHtml(b.Attribute("color").Value));
             }
 
             return cb;

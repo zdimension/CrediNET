@@ -18,7 +18,7 @@ namespace CrediNET
         {
             InitializeComponent();
 
-            compte.Budgets.ForEach(x => cbxBudget.Items.Add(x));
+            compte.Budgets.All(x => { cbxBudget.Items.Add(new ColorComboBox.ColorInfo(x.Key, x.Value)); return true; });
             cbxBudget.SelectedIndex = 0;
             Program.Types.ForEach(y => cbxType.Items.Add(y));
             cbxType.SelectedIndex = 0;
@@ -37,7 +37,7 @@ namespace CrediNET
                 cbxType.SelectedItem = op.Type;
                 mupCredit.Value = op.Credit;
                 mupDebit.Value = op.Debit;
-                cbxBudget.SelectedItem = op.Budget;
+                cbxBudget.SelectedItem = cbxBudget.Items.OfType<ColorComboBox.ColorInfo>().First(x => x.Text == op.Budget);
                 mcDate.SelectionStart = op.Date;
                 mcDate.SelectionEnd = op.Date;
                 txtComm.Text = op.Commentary;

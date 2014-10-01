@@ -157,8 +157,8 @@
             // 
             // lblSoldeAt
             // 
-            this.lblSoldeAt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             resources.ApplyResources(this.lblSoldeAt, "lblSoldeAt");
+            this.lblSoldeAt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lblSoldeAt.Name = "lblSoldeAt";
             // 
             // lvOps

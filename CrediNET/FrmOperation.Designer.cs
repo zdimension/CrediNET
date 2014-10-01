@@ -37,7 +37,7 @@
             this.mupCredit = new CrediNET.MoneyUpDown();
             this.mupDebit = new CrediNET.MoneyUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbxBudget = new System.Windows.Forms.ComboBox();
+            this.cbxBudget = new ColorComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtComm = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -194,7 +194,7 @@
         public System.Windows.Forms.ComboBox cbxType;
         public MoneyUpDown mupCredit;
         public MoneyUpDown mupDebit;
-        public System.Windows.Forms.ComboBox cbxBudget;
+        public ColorComboBox cbxBudget;
         public System.Windows.Forms.TextBox txtComm;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;

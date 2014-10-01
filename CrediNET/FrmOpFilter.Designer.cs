@@ -46,7 +46,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbxBudget = new System.Windows.Forms.ComboBox();
+            this.cbxBudget = new ColorComboBox();
             this.chbBudget = new System.Windows.Forms.CheckBox();
             this.chbType = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -399,7 +399,7 @@
         public MoneyUpDown mudDebitTo;
         public MoneyUpDown mudDebitFrom;
         public System.Windows.Forms.ComboBox cbxType;
-        public System.Windows.Forms.ComboBox cbxBudget;
+        public ColorComboBox cbxBudget;
         public System.Windows.Forms.CheckBox chbDate;
         public System.Windows.Forms.CheckBox chbCredit;
         public System.Windows.Forms.CheckBox chbDebit;

@@ -165,7 +165,8 @@ namespace CrediNET
                 CompteActuel = new Account();
                 CompteActuel.Name = ae.txtNom.Text;
                 CompteActuel.DefPass(ae.txtPasse.Text);
-                CompteActuel.Budgets = ae.lbxBudgets.Items.Cast<string>().ToList();
+                CompteActuel.Budgets.Clear();
+                ae.lbxBudgets.Items.OfType<ListViewItem>().All(x => { CompteActuel.Budgets.Add(x.Text, x.BackColor); return true; });
 
                 CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == (string)(ae.cbxDevise.SelectedItem)));
 
@@ -304,6 +305,8 @@ namespace CrediNET
                 it.SubItems.Add(op.Commentary);
                 it.SubItems.Add(op.Credit + " " + CompteActuel.Currency.Symbol);
                 it.SubItems.Add(op.Debit + " " + CompteActuel.Currency.Symbol);
+                it.BackColor = CompteActuel.Budgets[op.Budget];
+                
 
                 //if(!lvOps.Items.Contains(it))
                 lvOps.Items.Add(it);
@@ -834,7 +837,9 @@ namespace CrediNET
             {
                 CompteActuel.Name = ae.txtNom.Text;
                 if(ae.txtPasse.Font.Style != FontStyle.Italic) CompteActuel.DefPass(ae.txtPasse.Text);
-                CompteActuel.Budgets = ae.lbxBudgets.Items.Cast<string>().ToList();
+                CompteActuel.Budgets.Clear();
+                ae.lbxBudgets.Items.OfType<ListViewItem>().All(x => { CompteActuel.Budgets.Add(x.Text, x.BackColor); return true; });
+
 
                 CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()), CompteActuel.Currency != Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()));
 
@@ -901,7 +906,7 @@ namespace CrediNET
                     }
                     if (of.chbBudget.Checked)
                     {
-                        budget = of.cbxBudget.SelectedItem.ToString();
+                        budget = of.cbxBudget.SelectedItem.Text;
                     }
                     
                     LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
@@ -956,6 +961,7 @@ namespace CrediNET
                 it.SubItems.Add(op.Commentary);
                 it.SubItems.Add(op.Credit + " " + CompteActuel.Currency.Symbol);
                 it.SubItems.Add(op.Debit + " " + CompteActuel.Currency.Symbol);
+                it.BackColor = CompteActuel.Budgets[op.Budget];
 
                 //if(!lvOps.Items.Contains(it))
                 lvOps.Items.Add(it);

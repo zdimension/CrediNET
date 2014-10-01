@@ -22,6 +22,7 @@ namespace CrediNET
         {
             InitializeComponent();
             Currencies.All.ForEach(x => cbxDevise.Items.Add(x.Name));
+            cbxClr.AddStandardColors();
             if(editCompt != null)
             {
                 edit = true;
@@ -29,7 +30,7 @@ namespace CrediNET
 
                 lbxBudgets.Items.Clear();
 
-                editCompt.Budgets.ForEach(x => lbxBudgets.Items.Add(x));
+                editCompt.Budgets.All(x => { lbxBudgets.Items.Add(new ListViewItem() { Text = x.Key, BackColor = x.Value }); return true; });
                 if (editCompt.Currency == null)
                     cbxDevise.SelectedItem = "";
                 else
@@ -50,8 +51,12 @@ namespace CrediNET
             {
                 btnAdd.Enabled = true;
 
-                if(!removing)
+                if (!removing)
+                {
                     txtItemName.Text = "";
+                    cbxClr.SelectedValue = Color.White;
+                }
+
                 btnRemB.Enabled = false;
             }
             else
@@ -59,8 +64,12 @@ namespace CrediNET
                 btnAdd.Enabled = false;
                 btnRemB.Enabled = true;
 
-                if(!removing)
-                    txtItemName.Text = lbxBudgets.SelectedItem.ToString();
+                if (!removing)
+                {
+                    txtItemName.Text = lbxBudgets.SelectedItems[0].Text;
+                    //cbxClr.SelectedValue = lbxBudgets.SelectedItems[0].BackColor;
+                    cbxClr.SelectedItem = cbxClr.Items.OfType<ColorComboBox.ColorInfo>().First(x => x.Color.ToArgb() == lbxBudgets.SelectedItems[0].BackColor.ToArgb());
+                }
             }
         }
 
@@ -74,7 +83,7 @@ namespace CrediNET
             if (lbxBudgets.SelectedItems.Count == 0)
                 return;
 
-            lbxBudgets.Items.Remove(lbxBudgets.SelectedItem);
+            lbxBudgets.Items.Remove(lbxBudgets.SelectedItems[0]);
 
             if (lbxBudgets.SelectedItems.Count == 1)
                 btnRemB.Enabled = false;
@@ -114,8 +123,8 @@ namespace CrediNET
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!lbxBudgets.Items.Contains(txtItemName.Text))
-                lbxBudgets.Items.Add(txtItemName.Text);
+            if (!lbxBudgets.Items.OfType<ListViewItem>().Any(x => x.Text == txtItemName.Text))
+                lbxBudgets.Items.Add(new ListViewItem() { Text = txtItemName.Text, BackColor = cbxClr.SelectedValue });
 
             txtItemName.Text = "";
         }
@@ -127,19 +136,12 @@ namespace CrediNET
         {
             if (lbxBudgets.SelectedItems.Count == 0) return;
 
-            if (txtItemName.Text != lbxBudgets.SelectedItem.ToString())
+            if (txtItemName.Text != lbxBudgets.SelectedItems[0].Text)
             {
 
-                int index = lbxBudgets.SelectedIndex;
-                string s = txtItemName.Text;
-                removing = true;
+                int index = lbxBudgets.SelectedIndices[0];
 
-                lbxBudgets.Items.RemoveAt(index);
-                lbxBudgets.Items.Insert(index, txtItemName.Text);
-
-                removing = false;
-
-                lbxBudgets.SetSelected(lbxBudgets.Items.IndexOf(s), true); 
+                lbxBudgets.SelectedItems[0].Text = txtItemName.Text;
             }
         }
 
@@ -158,6 +160,20 @@ namespace CrediNET
         private void cbxDevise_SelectedIndexChanged(object sender, EventArgs e)
         {
             errorProvider.SetError(cbxDevise, null);
+        }
+
+        private void cbxClr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbxBudgets.SelectedItems.Count == 0) return;
+
+            if (cbxClr.SelectedValue != lbxBudgets.SelectedItems[0].BackColor)
+            {
+
+                int index = lbxBudgets.SelectedIndices[0];
+
+                lbxBudgets.SelectedItems[0].BackColor = cbxClr.SelectedValue;
+
+            }
         }
 
     }

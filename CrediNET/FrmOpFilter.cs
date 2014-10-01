@@ -30,7 +30,7 @@ namespace CrediNET
             cbxBudget.Enabled = false;
 
             //Load operation budgets to cbxType
-            compte.Budgets.ForEach(x => cbxBudget.Items.Add(x));
+            compte.Budgets.All(x => { cbxBudget.Items.Add((ColorComboBox.ColorInfo)x); return true; });
             cbxBudget.SelectedIndex = 0;
 
             //Load operation types to cbxType
