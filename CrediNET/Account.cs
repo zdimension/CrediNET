@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
-
 using System.Windows.Forms;
-using System.Xml.Serialization;
-using Ookii.Dialogs;
-using System.Xml;
 using System.Xml.Linq;
-using System.Globalization;
-using System.Drawing;
+using Ookii.Dialogs;
 
 namespace CrediNET
 {
@@ -21,7 +17,6 @@ namespace CrediNET
     /// </summary>
     public class Account
     {
-
         private static CultureInfo culture = new CultureInfo("en-US");
         private string _fp = "";
 
@@ -45,7 +40,7 @@ namespace CrediNET
         }
 
         private CurrencyObj _currency;
-       
+
         /// <summary>
         /// The currency of the account
         /// </summary>
@@ -68,6 +63,7 @@ namespace CrediNET
         /// The password of the account
         /// </summary>
         private string _pass = "";
+
         public string Pass
         {
             get { return _pass; }
@@ -105,6 +101,7 @@ namespace CrediNET
         }
 
         private DateTime _crdate;
+
         /// <summary>
         /// The account's creation date
         /// </summary>
@@ -114,6 +111,7 @@ namespace CrediNET
         }
 
         private List<Operation> _ops = new List<Operation>();
+
         /// <summary>
         /// The operations on the account
         /// </summary>
@@ -122,7 +120,8 @@ namespace CrediNET
             get { return _ops; }
         }
 
-        private Dictionary<string, Color> _budgets = new Dictionary<string, Color> { {"alimentaire", Color.White}, {"divers", Color.White}, {"habitat", Color.White}, {"santé", Color.White}, {"salaire", Color.White}, {"voiture", Color.White} };
+        private Dictionary<string, Color> _budgets = new Dictionary<string, Color> { { "alimentaire", Color.White }, { "divers", Color.White }, { "habitat", Color.White }, { "santé", Color.White }, { "salaire", Color.White }, { "voiture", Color.White } };
+
         /// <summary>
         /// The categories of operations
         /// </summary>
@@ -158,17 +157,17 @@ namespace CrediNET
         /// <param name="convert">Convert all the operations to the given currency</param>
         public void ChangeCurrency(CurrencyObj d, bool convert = true)
         {
-            if(!convert)
+            if (!convert)
             {
                 _currency = d;
             }
             else
             {
-                _ops.All(x => 
+                _ops.All(x =>
                 {
                     x.Credit = _currency.ToCur(d, (double)x.Credit);
                     x.Debit = _currency.ToCur(d, (double)x.Debit);
-                    return true; 
+                    return true;
                 });
 
                 _currency = d;
@@ -191,7 +190,6 @@ namespace CrediNET
             {
                 File.WriteAllText(_fp, CryptorEngine.Encrypt(ToXml(this, _fp, false).ToString(), this.Pass, true));
             }
-            
         }
 
         /// <summary>
@@ -224,14 +222,16 @@ namespace CrediNET
                     case "de-DE":
                         ax.MainInstruction = "Bitte geben Sie das Passwort des Kontos.";
                         break;
+
                     case "fr-FR":
                         ax.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
                         break;
+
                     default: //case "en-US":
                         ax.MainInstruction = "Please type the account's password below.";
                         break;
                 }
-                
+
                 if (ax.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     var aeee = FromXmlCode(CryptorEngine.Decrypt(File.ReadAllText(fp), ax.Input, true), fp);
@@ -244,6 +244,7 @@ namespace CrediNET
         }
 
         #region Sauvegarde
+
         /// <summary>
         /// Saves the given account to an XML file
         /// </summary>
@@ -252,7 +253,7 @@ namespace CrediNET
         /// <param name="autosave">Automatically save the file</param>
         /// <returns>The generated XDocument</returns>
         public XDocument ToXml(Account cm, string filepath = "", bool autosave = true)
-        {           
+        {
             var doc = new XDocument(new XElement("Compte",
                     new XElement("Nom", cm.Name),
                     new XElement("CrDate", cm.CreationDate.ToString("dd/MM/yyyy")),
@@ -268,15 +269,15 @@ namespace CrediNET
                             new XAttribute("Type", x.Type),
                             new XAttribute("Budget", x.Budget),
                             new XAttribute("Mensuel", x.Monthly.ToString())))),
-                    new XElement("Budgets", 
+                    new XElement("Budgets",
                         cm.Budgets.Select(y => new XElement("B", new XAttribute("color", ColorTranslator.ToHtml(y.Value)), y.Key)))));
 
-            if(autosave)
+            if (autosave)
                 doc.Save(filepath);
 
             return doc;
         }
-       
+
         /// <summary>
         /// Gets the account from XML code
         /// </summary>
@@ -286,7 +287,7 @@ namespace CrediNET
         public static Account FromXmlCode(string xml, string filepath)
         {
             Account cb;
-          
+
             byte[] encodedString = Encoding.UTF8.GetBytes(xml);
 
             MemoryStream ms = new MemoryStream(encodedString);
@@ -316,7 +317,7 @@ namespace CrediNET
             }
 
             cb.Budgets.Clear();
-            foreach(XElement b in c.Element("Budgets").Nodes())
+            foreach (XElement b in c.Element("Budgets").Nodes())
             {
                 cb.Budgets.Add(b.Value, ColorTranslator.FromHtml(b.Attribute("color").Value));
             }
@@ -334,7 +335,8 @@ namespace CrediNET
             string xml = File.ReadAllText(filePath);
             return FromXmlCode(xml, filePath);
         }
-        #endregion
+
+        #endregion Sauvegarde
 
         /// <summary>
         /// Loads the account from account file
@@ -346,7 +348,7 @@ namespace CrediNET
             try
             {
                 var ret = FromXml(filePath);
-                #if !DEBUG
+#if !DEBUG
                 var good = false;
                 var try_ = 0;
                 while (!good && try_ != 3)
@@ -364,9 +366,11 @@ namespace CrediNET
                             case "de-DE":
                                 g.MainInstruction = "Bitte geben Sie das Passwort des Kontos.";
                                 break;
+
                             case "fr-FR":
                                 g.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
                                 break;
+
                             default: //case "en-US":
                                 g.MainInstruction = "Please type the account's password below.";
                                 break;
@@ -393,7 +397,7 @@ namespace CrediNET
                 {
                     return ret;
                 }
-                #endif
+#endif
 
                 return ret;
             }
@@ -428,7 +432,7 @@ namespace CrediNET
         public static byte[] Decrypt(byte[] cipherData,
                                     byte[] Key, byte[] IV)
         {
-            MemoryStream ms = new MemoryStream(); 
+            MemoryStream ms = new MemoryStream();
             Rijndael alg = Rijndael.Create();
 
             alg.Key = Key;
@@ -444,6 +448,7 @@ namespace CrediNET
 
             return decryptedData;
         }
-        #endregion
+
+        #endregion Cryptage
     }
 }

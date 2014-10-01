@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 
 using System.Windows.Forms;
 
@@ -13,6 +7,7 @@ namespace CrediNET
     public partial class FrmCountSpcEuro : Form
     {
         private decimal _total = 0.00M;
+
         public decimal Total
         {
             get { return _total; }

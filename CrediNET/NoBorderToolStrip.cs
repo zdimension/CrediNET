@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CrediNET
 {
@@ -15,9 +9,8 @@ namespace CrediNET
             this.Renderer.RenderToolStripBorder += Renderer_RenderToolStripBorder;
         }
 
-        void Renderer_RenderToolStripBorder(object sender, ToolStripRenderEventArgs e)
+        private void Renderer_RenderToolStripBorder(object sender, ToolStripRenderEventArgs e)
         {
-
         }
 
         protected override void OnPaint(PaintEventArgs e)

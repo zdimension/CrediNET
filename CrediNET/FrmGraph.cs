@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 
 using System.Windows.Forms;
 using ZedGraph;
 
 namespace CrediNET
 {
-    
     public partial class FrmGraph : Form
     {
         public FrmGraph(int graphType, Account cmpt)
@@ -22,7 +18,6 @@ namespace CrediNET
                 Camembert(cmpt);
             else if (graphType == 2)
                 Courbes(cmpt);
-            
         }
 
         public void Camembert(Account cmpt)
@@ -39,9 +34,11 @@ namespace CrediNET
                 case "de-DE":
                     a.Title.Text = "Kontos : " + cmpt.Name;
                     break;
+
                 case "fr-FR":
                     a.Title.Text = "Compte : " + cmpt.Name;
                     break;
+
                 default:
                     a.Title.Text = "Account : " + cmpt.Name;
                     break;
@@ -63,14 +60,13 @@ namespace CrediNET
             var nb_seg = cmpt.Operations.Count;
             var segs = new PieItem[nb_seg];
 
-            
             var rnd = new Random();
 
             var totalC = new Dictionary<string, decimal>();
             var totalD = new Dictionary<string, decimal>();
 
             // LINQ RULES!
-            cmpt.Operations.All(x => 
+            cmpt.Operations.All(x =>
             {
                 if (!totalC.ContainsKey(x.Budget))
                     totalC.Add(x.Budget, 0);
@@ -79,7 +75,7 @@ namespace CrediNET
 
                 totalC[x.Budget] += x.Credit;
                 totalD[x.Budget] += x.Debit;
-                return true; 
+                return true;
             });
 
             var ls = new List<string>();
@@ -117,9 +113,11 @@ namespace CrediNET
                 case "de-DE":
                     a.Title.Text = "Kontos : " + cmpt.Name;
                     break;
+
                 case "fr-FR":
                     a.Title.Text = "Compte : " + cmpt.Name;
                     break;
+
                 default:
                     a.Title.Text = "Account : " + cmpt.Name;
                     break;
@@ -131,11 +129,12 @@ namespace CrediNET
             a.Fill = new Fill(SystemColors.Control);
             a.Chart.Fill = new Fill(Color.White, Color.LightGoldenrodYellow, 45.0f);
 
-           switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (CrediNET.Properties.Settings.Default.Lang.Name)
             {
                 case "de-DE":
                     a.XAxis.Title.Text = "Datum";
                     break;
+
                 default:
                     a.XAxis.Title.Text = "Date";
                     break;
@@ -158,9 +157,11 @@ namespace CrediNET
                 case "de-DE":
                     a.YAxis.Title.Text = "Kontostand (" + cmpt.Currency.Symbol + ")";
                     break;
+
                 case "fr-FR":
                     a.YAxis.Title.Text = "Solde (" + cmpt.Currency.Symbol + ")";
                     break;
+
                 default:
                     a.YAxis.Title.Text = "Balance (" + cmpt.Currency.Symbol + ")";
                     break;
@@ -178,14 +179,13 @@ namespace CrediNET
             a.YAxis.MajorGrid.IsVisible = true;
             a.YAxis.IsVisible = true;
 
-
             var crP = new PointPairList();
             decimal Xp = 0;
 
             //Operations need to be sorted before being displayed in the curve graph
             cmpt.Operations.Sort((op1, op2) => op1.Date.CompareTo(op2.Date));
 
-            for(int l = 0; l<cmpt.Operations.Count; l++)
+            for (int l = 0; l < cmpt.Operations.Count; l++)
             {
                 if (cmpt.Operations[l].Credit > 0) Xp += cmpt.Operations[l].Credit;
                 if (cmpt.Operations[l].Debit > 0) Xp -= cmpt.Operations[l].Debit;
@@ -199,9 +199,11 @@ namespace CrediNET
                 case "de-DE":
                     cr = a.AddCurve("kontostand", crP, Color.Red, SymbolType.XCross);
                     break;
+
                 case "fr-FR":
                     cr = a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
                     break;
+
                 default:
                     cr = a.AddCurve("balance", crP, Color.Red, SymbolType.XCross);
                     break;

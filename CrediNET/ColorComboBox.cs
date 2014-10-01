@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -14,6 +12,7 @@ namespace CrediNET
         public class ColorInfo
         {
             public string Text { get; set; }
+
             public Color Color { get; set; }
 
             public ColorInfo(string text, Color color)
@@ -44,8 +43,6 @@ namespace CrediNET
         public void AddStandardColors()
         {
             Items.Clear();
-
-            
 
             System.Enum.GetNames(typeof(KnownColor)).OrderBy(y => y).All(x =>
             {

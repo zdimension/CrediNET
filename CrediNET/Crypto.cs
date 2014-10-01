@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-
 
 namespace CrediNET
 {
@@ -38,7 +34,6 @@ namespace CrediNET
             byte[] keyArray;
             byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
-
             string key = password;
             if (useHashing)
             {
@@ -59,6 +54,7 @@ namespace CrediNET
             tdes.Clear();
             return Convert.ToBase64String(resultArray, 0, resultArray.Length);
         }
+
         /// <summary>
         /// DeCrypt a string using dual encryption method. Return a DeCrypted clear string
         /// </summary>

@@ -1,29 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 using System.Text;
 
 using System.Windows.Forms;
-using System.Resources;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using Ookii.Dialogs;
-using System.Globalization;
-using System.Threading;
 
 namespace CrediNET
 {
     public partial class MainWindow : Form
     {
-      
-
         private const int WIN_1252_CP = 1252;
 
         public Account CompteActuel = null;
@@ -59,7 +49,7 @@ namespace CrediNET
             CompteActuelChemin = file;
         }
 
-        void lvOps_DrawItem(object sender, DrawListViewItemEventArgs e)
+        private void lvOps_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
             if (e.Item.Selected)
             {
@@ -130,23 +120,21 @@ namespace CrediNET
             rend.Colors.gripDark = Color.FromArgb(0, 0, 0);
             rend.Colors.gripLight = Color.FromArgb(0, 0, 0);
             rend.Colors.foreColor = System.Drawing.Color.LightGray;
-            
 
             toolStrip.Renderer = rend.GetRenderer();
-            
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             var ae = new FrmOperation(CompteActuel);
-            if(ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Operation op = new Operation();
                 op.Type = ae.cbxType.SelectedItem.ToString();
                 op.Credit = ae.mupCredit.Value;
                 op.Debit = ae.mupDebit.Value;
                 op.Budget = ae.cbxBudget.SelectedItem.ToString();
-                op.Date = ae.mcDate.SelectionStart;                
+                op.Date = ae.mcDate.SelectionStart;
                 op.Commentary = ae.txtComm.Text;
 
                 CompteActuel.Operations.Add(op);
@@ -178,16 +166,18 @@ namespace CrediNET
 
         public void ChargerSoldeAu()
         {
-            if(lvOps.SelectedItems.Count == 0)
+            if (lvOps.SelectedItems.Count == 0)
             {
                 switch (CrediNET.Properties.Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         lblSoldeAt.Text = "Balance of ";
                         break;
+
                     case "de-DE":
                         lblSoldeAt.Text = "Balance bei ";
                         break;
+
                     default:        //case "fr-FR":
                         lblSoldeAt.Text = "Solde au ";
                         break;
@@ -208,9 +198,11 @@ namespace CrediNET
                     case "en-US":
                         lblSoldeAt.Text = "Balance of ";
                         break;
+
                     case "de-DE":
                         lblSoldeAt.Text = "Kontostand am ";
                         break;
+
                     default:        //case "fr-FR":
                         lblSoldeAt.Text = "Solde au ";
                         break;
@@ -220,11 +212,11 @@ namespace CrediNET
             }
         }
 
-        string dfd 
-        { 
+        private string dfd
+        {
             get
-            { 
-                return  Currencies.All.First(x => x.ShortName == CrediNET.Properties.Settings.Default.DefaultCurrency).Symbol;
+            {
+                return Currencies.All.First(x => x.ShortName == CrediNET.Properties.Settings.Default.DefaultCurrency).Symbol;
             }
         }
 
@@ -264,6 +256,7 @@ namespace CrediNET
                     lblTotalCredit.Text = "0,00 " + dfd;
                     lblTotalDeb.Text = "0,00 " + dfd;
                     break;
+
                 case "fr-FR":
                     lblAccountName.Text = "<Pas de compte chargé>";
                     lblSolde.Text = "Solde : 0,00 " + dfd;
@@ -271,6 +264,7 @@ namespace CrediNET
                     lblTotalCredit.Text = "0,00 " + dfd;
                     lblTotalDeb.Text = "0,00 " + dfd;
                     break;
+
                 default: //case "en-US":
                     lblAccountName.Text = "<No account loaded>";
                     lblSolde.Text = "Balance : " + dfd + "0.00 ";
@@ -279,7 +273,7 @@ namespace CrediNET
                     lblTotalDeb.Text = dfd + "0.00";
                     break;
             }
-            
+
             //resources.ApplyResources(this, "$this");      //Not needed, controls' language updated with InitializeComponent()
         }
 
@@ -294,8 +288,6 @@ namespace CrediNET
 
             foreach (Operation op in CompteActuel.Operations)
             {
-                
-
                 ListViewItem it = new ListViewItem();
                 it.Text = op.ID;
                 it.Name = op.ID;
@@ -306,11 +298,9 @@ namespace CrediNET
                 it.SubItems.Add(op.Credit + " " + CompteActuel.Currency.Symbol);
                 it.SubItems.Add(op.Debit + " " + CompteActuel.Currency.Symbol);
                 it.BackColor = CompteActuel.Budgets[op.Budget];
-                
 
                 //if(!lvOps.Items.Contains(it))
                 lvOps.Items.Add(it);
-                
             }
 
             if (CompteActuel.Operations.Count == 0)
@@ -333,9 +323,11 @@ namespace CrediNET
                 case "en-US":
                     lblSolde.Text = "Balance : ";
                     break;
+
                 case "de-DE":
                     lblSoldeAt.Text = "Kontostand : ";
                     break;
+
                 default:        //case "fr-FR":
                     lblSolde.Text = "Solde : ";
                     break;
@@ -369,8 +361,6 @@ namespace CrediNET
 
             lblAccountName.Text = CompteActuelChemin;
 
-            
-
             CheckCrypt();
             //cryptéToolStripMenuItem.Checked = CompteActuel.Crypte;
         }
@@ -379,7 +369,7 @@ namespace CrediNET
         {
             /*if(CompteActuel.Crypte)
             {
-                sfdCompte.Filter = "Compte crypté CrediNET (*.cne)|*.cne";               
+                sfdCompte.Filter = "Compte crypté CrediNET (*.cne)|*.cne";
             }
             else
             {*/
@@ -389,24 +379,22 @@ namespace CrediNET
                 case "en-US":
                     sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna";
                     break;
+
                 case "de-DE":
                     sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna";
                     break;
+
                 default:        //case "fr-FR":
                     sfdCompte.Filter = "Compte CrediNET (*.cna)|*.cna";
                     break;
             }
 
             //}
-            
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            
             ClearStuff();
-
-            
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -414,7 +402,7 @@ namespace CrediNET
             if (CompteActuel != null)
                 ClearStuff();
 
-            if(ofpCompte.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ofpCompte.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 this.Cursor = Cursors.AppStarting;
                 CompteActuel = Account.FromFile(ofpCompte.FileName);
@@ -429,11 +417,11 @@ namespace CrediNET
             if (CompteActuel != null)
                 ClearStuff();
 
-                this.Cursor = Cursors.AppStarting;
-                CompteActuel = Account.FromFile(s);
-                CompteActuelChemin = s;
-                LoadAccountStuff();
-                this.Cursor = Cursors.Default;
+            this.Cursor = Cursors.AppStarting;
+            CompteActuel = Account.FromFile(s);
+            CompteActuelChemin = s;
+            LoadAccountStuff();
+            this.Cursor = Cursors.Default;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -453,9 +441,11 @@ namespace CrediNET
                     case "en-US":
                         sfdCompte.Filter = "CrediNET crypted Account (*.cne)|*.cne";
                         break;
+
                     case "de-DE":
                         sfdCompte.Filter = "CrediNET versclüsseltes Konto (*.cne)|*.cne";
                         break;
+
                     default:        //case "fr-FR":
                         sfdCompte.Filter = "Compte CrediNET crypté (*.cne)|*.cne";
                         break;
@@ -468,15 +458,17 @@ namespace CrediNET
                     case "en-US":
                         sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna";
                         break;
+
                     case "de-DE":
                         sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna";
                         break;
+
                     default:        //case "fr-FR":
                         sfdCompte.Filter = "Compte CrediNET (*.cna)|*.cna";
                         break;
                 }
             }
-            if(sfdCompte.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfdCompte.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 CompteActuel.SaveAs(sfdCompte.FileName);
             }
@@ -554,7 +546,7 @@ namespace CrediNET
 
         private void fichierCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(sfdCSV.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfdCSV.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 if (File.Exists(sfdCSV.FileName))
                     File.Delete(sfdCSV.FileName);
@@ -566,16 +558,17 @@ namespace CrediNET
                         case "en-US":
                             wr.WriteLine("Date;Type;Budget;Comment;Credit;Debit");
                             break;
+
                         case "de-DE":
                             wr.WriteLine("Date;Type;Budget;Kommentar;Kredit;Debit");
                             break;
+
                         default:        //case "fr-FR":
                             wr.WriteLine("Date;Type;Budget;Commentaire;Crédit;Débit");
                             break;
                     }
 
-
-                    foreach(Operation op in CompteActuel.Operations)
+                    foreach (Operation op in CompteActuel.Operations)
                     {
                         string s = "";
                         s += op.Date.ToString("dd/MM/yyyy");
@@ -691,8 +684,8 @@ namespace CrediNET
                         d.createHeaders(1, 9, "Débit", "I1", "I1", 0, Color.Gainsboro, true, 10, Color.Black);
                         break;
                 }
-                
-                foreach(Operation op in CompteActuel.Operations)
+
+                foreach (Operation op in CompteActuel.Operations)
                 {
                     int id = CompteActuel.Operations.IndexOf(op) + 2;
                     d.addData(id, 1, op.Date.ToString("dd/MM/yyyy"), "A" + id, "A" + id, "dd/mm/yyyy");
@@ -700,7 +693,6 @@ namespace CrediNET
                     d.addData(id, 2, op.Type, "B" + id, "B" + id, "");
                     d.addData(id, 3, op.Budget, "C" + id, "D" + id, "", 1);
                     d.addData(id, 5, op.Commentary, "E" + id, "G" + id, "", 2);
-
 
                     d.addData(id, 8, op.Credit, "H" + id, "H" + id, "# ###,00 " + CompteActuel.Currency.Symbol);
                     d.addData(id, 9, op.Debit, "I" + id, "I" + id, "# ###,00 " + CompteActuel.Currency.Symbol);
@@ -710,10 +702,6 @@ namespace CrediNET
                 d.worksheet.Columns[2].AutoFit();
 
                 //d.app.SaveWorkspace(sfdXLS.FileName);
-
-                
-
-                
 
                 //Process.Start(sfdXLS.FileName);
             }
@@ -728,9 +716,7 @@ namespace CrediNET
 
                 using (ExcelPackage pkg = new ExcelPackage())
                 {
-
                     OfficeOpenXml.ExcelWorksheet w = pkg.Workbook.Worksheets.Add(CompteActuel.Name);
-
 
                     // en-tête
                     w.Cells[1, 1].Value = "Date";
@@ -760,7 +746,6 @@ namespace CrediNET
                             w.Cells[1, 8].Value = "Débit";
                             break;
                     }
-                                       
 
                     w.Cells[1, 1, 1, 8].Style.Fill.PatternType = ExcelFillStyle.Solid;
                     w.Cells[1, 1, 1, 8].Style.Fill.BackgroundColor.SetColor(Color.Gainsboro);
@@ -785,7 +770,6 @@ namespace CrediNET
 
                         w.Cells[id, 7].Value = op.Credit;
                         w.Cells[id, 8].Value = op.Debit;
-
                     }
 
                     w.Cells.AutoFitColumns(1);
@@ -798,9 +782,6 @@ namespace CrediNET
 
                     Process.Start(sfdXLSX.FileName);
                 }
-
-                
-
             }
         }
 
@@ -836,10 +817,9 @@ namespace CrediNET
             if (ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 CompteActuel.Name = ae.txtNom.Text;
-                if(ae.txtPasse.Font.Style != FontStyle.Italic) CompteActuel.DefPass(ae.txtPasse.Text);
+                if (ae.txtPasse.Font.Style != FontStyle.Italic) CompteActuel.DefPass(ae.txtPasse.Text);
                 CompteActuel.Budgets.Clear();
                 ae.lbxBudgets.Items.OfType<ListViewItem>().All(x => { CompteActuel.Budgets.Add(x.Text, x.BackColor); return true; });
-
 
                 CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()), CompteActuel.Currency != Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()));
 
@@ -849,7 +829,7 @@ namespace CrediNET
             }
         }
 
-        bool onlytime = true;
+        private bool onlytime = true;
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
@@ -873,7 +853,6 @@ namespace CrediNET
             decimal? debitTo = null;
             string type = null;
             string budget = null;
-
 
             if (btnFilterOp.Checked)
             {
@@ -908,13 +887,11 @@ namespace CrediNET
                     {
                         budget = of.cbxBudget.SelectedItem.Text;
                     }
-                    
+
                     LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
                     btnFilterOp.Checked = true;
                 }
             }
-
-
         }
 
         public void LoadOps(DateTime? dtFrom, DateTime? dtTo, decimal? creditFrom, decimal? creditTo, decimal? debitFrom, decimal? debitTo, string type, string budget)
@@ -932,7 +909,7 @@ namespace CrediNET
 
             if (dtFrom != null && dtTo != null)
                 queryOps = queryOps.Where(op => DateTime.Compare(op.Date, dtFrom ?? DateTime.Now) >= 0 && DateTime.Compare(op.Date, dtTo ?? DateTime.Now) <= 0);
-    
+
             if (creditFrom.HasValue && creditTo.HasValue)
                 queryOps = queryOps.Where(op => op.Credit >= creditFrom && op.Credit <= creditTo);
 
@@ -989,9 +966,11 @@ namespace CrediNET
                 case "en-US":
                     lblSolde.Text = "Balance : ";
                     break;
+
                 case "de-DE":
                     lblSoldeAt.Text = "Kontostand : ";
                     break;
+
                 default:        //case "fr-FR":
                     lblSolde.Text = "Solde : ";
                     break;

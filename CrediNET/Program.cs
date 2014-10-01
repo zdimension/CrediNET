@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
 using System.Linq;
 using System.Threading;
 
@@ -10,7 +9,7 @@ using CrediNET.Properties;
 
 namespace CrediNET
 {
-    static class Program
+    internal static class Program
     {
         //public static string EncryptionKey = "bW90ZGVwYXNzZWNyZWRpbmV0X3Npdm91c2xpc2V6Y2VtZXNzYWdlY2VzdHF1ZXZvdXNldGVzdW5oYWNrZXI=";
 
@@ -20,7 +19,7 @@ namespace CrediNET
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Currencies.Init();
             Settings.Default.PropertyChanged += new PropertyChangedEventHandler(Default_PropertyChanged);
@@ -34,9 +33,7 @@ namespace CrediNET
             Application.Run(args.Count() == 0 ? new MainWindow() : (args[0] == "" ? new MainWindow() : new MainWindow(args[0])));
         }
 
-        
-
-        static void Default_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private static void Default_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             Settings.Default.Save();
             Thread.CurrentThread.CurrentCulture = Settings.Default.Lang;

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Globalization;
 using System.Net;
-using System.Runtime.Serialization;
-using System.Text;
-
-using System.Windows.Forms;
 using System.Xml;
 
 namespace CrediNET
 {
-    static class CurrencyExtensions
+    internal static class CurrencyExtensions
     {
         /// <summary>
         /// Gets the exchange rates of the specified currencies
@@ -48,6 +43,7 @@ namespace CrediNET
             double rt = ExchangeRate(d, b);
             return (decimal)(montant * rt);
         }
+
         /// <summary>
         /// Convertit un montant d'une devise vers une autre.
         /// </summary>
@@ -61,7 +57,7 @@ namespace CrediNET
             return (decimal)(montant * rt);
         }
     }
-   
+
     public class CurrencyObj
     {
         public static bool operator ==(CurrencyObj a, CurrencyObj b)
@@ -84,7 +80,6 @@ namespace CrediNET
             return this == (CurrencyObj)obj;
         }
 
-
         public static bool operator !=(CurrencyObj a, CurrencyObj b)
         {
             return !(a == b);
@@ -99,6 +94,7 @@ namespace CrediNET
         /// Symbol of the currency (example : €)
         /// </summary>
         private string _symbol = "";
+
         public string Symbol
         {
             get { return _symbol; }
@@ -108,6 +104,7 @@ namespace CrediNET
         /// Long name of the currency
         /// </summary>
         private string _name = "";
+
         public string Name
         {
             get { return _name + " (" + _sname + ")"; }
@@ -117,9 +114,10 @@ namespace CrediNET
         /// (for debugging purposes) Exchange rate from this currency to Euro
         /// </summary>
         private double _rapp = -1;
+
         public double RappBase
         {
-            get 
+            get
             {
                 if (_rapp == -1)
                     return CurrencyExtensions.ExchangeRate(Currencies.Euro, this);
@@ -132,6 +130,7 @@ namespace CrediNET
         /// Short name (example : EUR, USD)
         /// </summary>
         private string _sname = "";
+
         public string ShortName
         {
             get { return _sname; }
@@ -152,7 +151,6 @@ namespace CrediNET
         /// </summary>
         public CurrencyObj()
         {
-
         }
 
         /// <summary>
@@ -171,7 +169,7 @@ namespace CrediNET
             _sname = abb;
         }
     }
-    
+
     public class Currencies
     {
         public static void Init()
@@ -191,7 +189,7 @@ namespace CrediNET
                     break;
 
                 default:        //case "fr-FR"
-                    
+
                     Euro = new CurrencyObj("Euro", "€", "EUR");
                     US_Dollar = new CurrencyObj("Dollar américain", "$", "USD");
                     AU_Dollar = new CurrencyObj("Dollar australien", "$", "AUD");
@@ -204,8 +202,7 @@ namespace CrediNET
             }
 
             BaseUnit = new CurrencyObj("Base unit", "BU", "BU", 1);
-            
-            
+
             All = new List<CurrencyObj>() { Euro, US_Dollar, AU_Dollar, CA_Dollar, CHI_Yuan, JAP_Yen, SWI_Franc };
         }
 
@@ -221,4 +218,3 @@ namespace CrediNET
         public static CurrencyObj SWI_Franc;
     }
 }
-        

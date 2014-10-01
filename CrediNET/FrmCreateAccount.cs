@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 
 using System.Windows.Forms;
 
@@ -16,14 +12,14 @@ namespace CrediNET
         [DllImport("uxtheme.dll")]
         public static extern int SetWindowTheme([In] IntPtr hwnd, [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubAppName, [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubIdList);
 
-        bool edit = false;
+        private bool edit = false;
 
         public FrmCreateAccount(Account editCompt = null)
         {
             InitializeComponent();
             Currencies.All.ForEach(x => cbxDevise.Items.Add(x.Name));
             cbxClr.AddStandardColors();
-            if(editCompt != null)
+            if (editCompt != null)
             {
                 edit = true;
                 txtNom.Text = editCompt.Name;
@@ -47,7 +43,7 @@ namespace CrediNET
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lbxBudgets.SelectedItems.Count == 0)
+            if (lbxBudgets.SelectedItems.Count == 0)
             {
                 btnAdd.Enabled = true;
 
@@ -101,16 +97,18 @@ namespace CrediNET
 
         private void txtPasse_Leave(object sender, EventArgs e)
         {
-            if(txtPasse.Text == "" && edit)
+            if (txtPasse.Text == "" && edit)
             {
                 switch (CrediNET.Properties.Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         txtPasse.Text = "Leave this field empty to keep current password";
                         break;
+
                     case "de-DE":
                         txtPasse.Text = "Feld leer lassen um altes Passwort zu behalten";
                         break;
+
                     default:        //case "fr-FR":
                         txtPasse.Text = "Laissez ce champ vide pour ne pas modifier le code";
                         break;
@@ -129,8 +127,7 @@ namespace CrediNET
             txtItemName.Text = "";
         }
 
-        bool removing = false;
-
+        private bool removing = false;
 
         private void txtItemName_TextChanged(object sender, EventArgs e)
         {
@@ -138,7 +135,6 @@ namespace CrediNET
 
             if (txtItemName.Text != lbxBudgets.SelectedItems[0].Text)
             {
-
                 int index = lbxBudgets.SelectedIndices[0];
 
                 lbxBudgets.SelectedItems[0].Text = txtItemName.Text;
@@ -168,13 +164,10 @@ namespace CrediNET
 
             if (cbxClr.SelectedValue != lbxBudgets.SelectedItems[0].BackColor)
             {
-
                 int index = lbxBudgets.SelectedIndices[0];
 
                 lbxBudgets.SelectedItems[0].BackColor = cbxClr.SelectedValue;
-
             }
         }
-
     }
 }

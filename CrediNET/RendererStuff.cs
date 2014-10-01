@@ -4,8 +4,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-using System.Linq;
-using System.Text;
 
 using System.Windows.Forms;
 
@@ -14,15 +12,18 @@ namespace CrediNET
     public class Renderer
     {
         public RenderParams Colors;
+
         public Renderer()
         {
             this.Colors = new RenderParams();
         }
+
         public ToolStripRenderer GetRenderer()
         {
             return new TemplateRenderer(this.Colors);
         }
     }
+
     public class RenderParams
     {
         public Color foreColor;
@@ -80,11 +81,13 @@ namespace CrediNET
         public Color statusStripBorderLight;
         public Color gripDark;
         public Color gripLight;
+
         public RenderParams()
         {
             this.ColorTable = new TemplateColorTable();
         }
     }
+
     internal class TemplateColorTable : ProfessionalColorTable
     {
         internal static Color _contextMenuBack = Color.FromArgb(255, 255, 255);
@@ -115,6 +118,7 @@ namespace CrediNET
         internal static Color _toolStripEnd = Color.FromArgb(255, 255, 255);
         internal static Color _toolStripMiddle = Color.FromArgb(255, 255, 255);
         internal static Color _buttonBorder = Color.FromArgb(229, 195, 101);
+
         public override Color ButtonPressedGradientBegin
         {
             get
@@ -122,6 +126,7 @@ namespace CrediNET
                 return TemplateColorTable._buttonPressedBegin;
             }
         }
+
         public override Color ButtonPressedGradientEnd
         {
             get
@@ -129,6 +134,7 @@ namespace CrediNET
                 return TemplateColorTable._buttonPressedEnd;
             }
         }
+
         public override Color ButtonPressedGradientMiddle
         {
             get
@@ -136,6 +142,7 @@ namespace CrediNET
                 return TemplateColorTable._buttonPressedMiddle;
             }
         }
+
         public override Color ButtonSelectedGradientBegin
         {
             get
@@ -143,6 +150,7 @@ namespace CrediNET
                 return TemplateColorTable._buttonSelectedBegin;
             }
         }
+
         public override Color ButtonSelectedGradientEnd
         {
             get
@@ -150,6 +158,7 @@ namespace CrediNET
                 return TemplateColorTable._buttonSelectedEnd;
             }
         }
+
         public override Color ButtonSelectedGradientMiddle
         {
             get
@@ -157,6 +166,7 @@ namespace CrediNET
                 return TemplateColorTable._buttonSelectedMiddle;
             }
         }
+
         public override Color ButtonSelectedHighlightBorder
         {
             get
@@ -164,6 +174,7 @@ namespace CrediNET
                 return TemplateColorTable._buttonBorder;
             }
         }
+
         public override Color CheckBackground
         {
             get
@@ -171,6 +182,7 @@ namespace CrediNET
                 return TemplateColorTable._checkBack;
             }
         }
+
         public override Color GripDark
         {
             get
@@ -178,6 +190,7 @@ namespace CrediNET
                 return TemplateColorTable._gripDark;
             }
         }
+
         public override Color GripLight
         {
             get
@@ -185,6 +198,7 @@ namespace CrediNET
                 return TemplateColorTable._gripLight;
             }
         }
+
         public override Color ImageMarginGradientBegin
         {
             get
@@ -192,6 +206,7 @@ namespace CrediNET
                 return TemplateColorTable._imageMargin;
             }
         }
+
         public override Color MenuBorder
         {
             get
@@ -199,6 +214,7 @@ namespace CrediNET
                 return TemplateColorTable._menuBorder;
             }
         }
+
         public override Color MenuItemPressedGradientBegin
         {
             get
@@ -206,6 +222,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripBegin;
             }
         }
+
         public override Color MenuItemPressedGradientEnd
         {
             get
@@ -213,6 +230,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripEnd;
             }
         }
+
         public override Color MenuItemPressedGradientMiddle
         {
             get
@@ -220,6 +238,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripMiddle;
             }
         }
+
         public override Color MenuItemSelectedGradientBegin
         {
             get
@@ -227,6 +246,7 @@ namespace CrediNET
                 return TemplateColorTable._menuItemSelectedBegin;
             }
         }
+
         public override Color MenuItemSelectedGradientEnd
         {
             get
@@ -234,6 +254,7 @@ namespace CrediNET
                 return TemplateColorTable._menuItemSelectedEnd;
             }
         }
+
         public override Color MenuStripGradientBegin
         {
             get
@@ -241,6 +262,7 @@ namespace CrediNET
                 return TemplateColorTable._menuToolBack;
             }
         }
+
         public override Color MenuStripGradientEnd
         {
             get
@@ -248,6 +270,7 @@ namespace CrediNET
                 return TemplateColorTable._menuToolBack;
             }
         }
+
         public override Color OverflowButtonGradientBegin
         {
             get
@@ -255,6 +278,7 @@ namespace CrediNET
                 return TemplateColorTable._overflowBegin;
             }
         }
+
         public override Color OverflowButtonGradientEnd
         {
             get
@@ -262,6 +286,7 @@ namespace CrediNET
                 return TemplateColorTable._overflowEnd;
             }
         }
+
         public override Color OverflowButtonGradientMiddle
         {
             get
@@ -269,6 +294,7 @@ namespace CrediNET
                 return TemplateColorTable._overflowMiddle;
             }
         }
+
         public override Color RaftingContainerGradientBegin
         {
             get
@@ -276,6 +302,7 @@ namespace CrediNET
                 return TemplateColorTable._menuToolBack;
             }
         }
+
         public override Color RaftingContainerGradientEnd
         {
             get
@@ -283,6 +310,7 @@ namespace CrediNET
                 return TemplateColorTable._menuToolBack;
             }
         }
+
         public override Color SeparatorDark
         {
             get
@@ -290,6 +318,7 @@ namespace CrediNET
                 return TemplateColorTable._separatorDark;
             }
         }
+
         public override Color SeparatorLight
         {
             get
@@ -297,6 +326,7 @@ namespace CrediNET
                 return TemplateColorTable._separatorLight;
             }
         }
+
         public override Color StatusStripGradientBegin
         {
             get
@@ -304,6 +334,7 @@ namespace CrediNET
                 return TemplateColorTable._statusStripLight;
             }
         }
+
         public override Color StatusStripGradientEnd
         {
             get
@@ -311,6 +342,7 @@ namespace CrediNET
                 return TemplateColorTable._statusStripDark;
             }
         }
+
         public override Color ToolStripBorder
         {
             get
@@ -318,6 +350,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripBorder;
             }
         }
+
         public override Color ToolStripContentPanelGradientBegin
         {
             get
@@ -325,6 +358,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripContentEnd;
             }
         }
+
         public override Color ToolStripContentPanelGradientEnd
         {
             get
@@ -332,6 +366,7 @@ namespace CrediNET
                 return TemplateColorTable._menuToolBack;
             }
         }
+
         public override Color ToolStripDropDownBackground
         {
             get
@@ -339,6 +374,7 @@ namespace CrediNET
                 return TemplateColorTable._contextMenuBack;
             }
         }
+
         public override Color ToolStripGradientBegin
         {
             get
@@ -346,6 +382,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripBegin;
             }
         }
+
         public override Color ToolStripGradientEnd
         {
             get
@@ -353,6 +390,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripEnd;
             }
         }
+
         public override Color ToolStripGradientMiddle
         {
             get
@@ -360,6 +398,7 @@ namespace CrediNET
                 return TemplateColorTable._toolStripMiddle;
             }
         }
+
         public override Color ToolStripPanelGradientBegin
         {
             get
@@ -367,6 +406,7 @@ namespace CrediNET
                 return TemplateColorTable._menuToolBack;
             }
         }
+
         public override Color ToolStripPanelGradientEnd
         {
             get
@@ -374,11 +414,13 @@ namespace CrediNET
                 return TemplateColorTable._menuToolBack;
             }
         }
+
         [DebuggerNonUserCode]
         public TemplateColorTable()
         {
         }
     }
+
     internal class TemplateRenderer : ToolStripProfessionalRenderer
     {
         private class GradientItemColors
@@ -393,6 +435,7 @@ namespace CrediNET
             public Color cFillBottom2;
             public Color cBorder1;
             public Color cBorder2;
+
             public GradientItemColors(Color insideTop1, Color insideTop2, Color insideBottom1, Color insideBottom2, Color fillTop1, Color fillTop2, Color fillBottom1, Color fillBottom2, Color border1, Color border2)
             {
                 this.cInsideTop1 = insideTop1;
@@ -407,6 +450,7 @@ namespace CrediNET
                 this.cBorder2 = border2;
             }
         }
+
         private Color forecolor;
         private bool m_IsGlassDesired;
         private static int _gripOffset;
@@ -469,6 +513,7 @@ namespace CrediNET
         private static TemplateRenderer.GradientItemColors _itemToolItemPressedColors;
         private static TemplateRenderer.GradientItemColors _itemToolItemCheckedColors;
         private static TemplateRenderer.GradientItemColors _itemToolItemCheckPressColors;
+
         public bool IsGlassDesired
         {
             get
@@ -480,6 +525,7 @@ namespace CrediNET
                 this.m_IsGlassDesired = value;
             }
         }
+
         public TemplateRenderer(RenderParams @params)
         {
             this.RoundedEdges = false;
@@ -564,10 +610,12 @@ namespace CrediNET
 				0.95f
 			};
         }
+
         public TemplateRenderer()
             : base(TemplateRenderer.ColorTable)
         {
         }
+
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
         {
             bool flag = e.ArrowRectangle.Width > 0 && e.ArrowRectangle.Height > 0;
@@ -594,12 +642,15 @@ namespace CrediNET
                         case ArrowDirection.Left:
                             angle = 180f;
                             break;
+
                         case ArrowDirection.Up:
                             angle = 270f;
                             break;
+
                         case ArrowDirection.Right:
                             angle = 0f;
                             break;
+
                         case ArrowDirection.Down:
                             angle = 90f;
                             break;
@@ -630,11 +681,13 @@ namespace CrediNET
                 }
             }
         }
+
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
             e.TextColor = this.forecolor;
             base.OnRenderItemText(e);
         }
+
         protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
         {
             ToolStripButton toolStripButton = (ToolStripButton)e.Item;
@@ -659,6 +712,7 @@ namespace CrediNET
                 this.RenderToolButtonBackground(e.Graphics, toolStripButton, e.ToolStrip);
             }
         }
+
         protected override void OnRenderDropDownButtonBackground(ToolStripItemRenderEventArgs e)
         {
             bool flag = e.Item.Selected || e.Item.Pressed;
@@ -668,6 +722,7 @@ namespace CrediNET
                 this.RenderToolDropButtonBackground(e.Graphics, e.Item, e.ToolStrip);
             }
         }
+
         protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
         {
             Rectangle imageRectangle = e.ImageRectangle;
@@ -770,6 +825,7 @@ namespace CrediNET
                                         }
                                     }
                                     break;
+
                                 case CheckState.Indeterminate:
                                     flag2 = true;
                                     if (flag2)
@@ -827,6 +883,7 @@ namespace CrediNET
                 }
             }
         }
+
         protected override void OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
         {
             bool flag = e.ToolStrip is ContextMenuStrip || e.ToolStrip is ToolStripDropDownMenu;
@@ -854,6 +911,7 @@ namespace CrediNET
                 base.OnRenderItemImage(e);
             }
         }
+
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
             bool flag = !(e.ToolStrip is MenuStrip) && !(e.ToolStrip is ContextMenuStrip);
@@ -928,6 +986,7 @@ namespace CrediNET
                 base.OnRenderMenuItemBackground(e);
             }
         }
+
         protected override void OnRenderSplitButtonBackground(ToolStripItemRenderEventArgs e)
         {
             bool flag = e.Item.Selected || e.Item.Pressed;
@@ -944,6 +1003,7 @@ namespace CrediNET
                 base.OnRenderSplitButtonBackground(e);
             }
         }
+
         protected override void OnRenderStatusStripSizingGrip(ToolStripRenderEventArgs e)
         {
             SolidBrush solidBrush = new SolidBrush(TemplateRenderer._gripDark);
@@ -1008,6 +1068,7 @@ namespace CrediNET
                 }
             }
         }
+
         protected override void OnRenderToolStripContentPanelBackground(ToolStripContentPanelRenderEventArgs e)
         {
             base.OnRenderToolStripContentPanelBackground(e);
@@ -1031,6 +1092,7 @@ namespace CrediNET
                 }
             }
         }
+
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
             //e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(45, 45, 48)), e.AffectedBounds);
@@ -1132,6 +1194,7 @@ namespace CrediNET
                 }
             }
         }
+
         protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
         {
             bool flag = e.ToolStrip is ContextMenuStrip || e.ToolStrip is ToolStripDropDownMenu;
@@ -1213,6 +1276,7 @@ namespace CrediNET
                 }
             }
         }
+
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
             return;
@@ -1379,6 +1443,7 @@ namespace CrediNET
                 }
             }*/
         }
+
         private void RenderToolButtonBackground(Graphics g, ToolStripButton button, ToolStrip toolstrip)
         {
             bool enabled = button.Enabled;
@@ -1444,6 +1509,7 @@ namespace CrediNET
                 }
             }
         }
+
         private void RenderToolDropButtonBackground(Graphics g, ToolStripItem item, ToolStrip toolstrip)
         {
             bool flag = item.Selected || item.Pressed;
@@ -1477,6 +1543,7 @@ namespace CrediNET
                 }
             }
         }
+
         private void RenderToolSplitButtonBackground(Graphics g, ToolStripSplitButton splitButton, ToolStrip toolstrip)
         {
             bool flag = splitButton.Selected || splitButton.Pressed;
@@ -1519,6 +1586,7 @@ namespace CrediNET
                 }
             }
         }
+
         public GraphicsPath DrawArc(Rectangle Rectangle, int Radius = 4)
         {
             GraphicsPath graphicsPath = new GraphicsPath();
@@ -1532,11 +1600,13 @@ namespace CrediNET
                 return graphicsPath;
             }
         }
+
         private void DrawGradientToolItem(Graphics g, ToolStripItem item, TemplateRenderer.GradientItemColors colors)
         {
             Rectangle backRect = new Rectangle(Point.Empty, item.Bounds.Size);
             this.DrawGradientItem(g, backRect, colors);
         }
+
         private void DrawGradientToolSplitItem(Graphics g, ToolStripSplitButton splitButton, TemplateRenderer.GradientItemColors colorsButton, TemplateRenderer.GradientItemColors colorsDrop, TemplateRenderer.GradientItemColors colorsSplit)
         {
             Point empty = Point.Empty;
@@ -1615,6 +1685,7 @@ namespace CrediNET
                 }
             }
         }
+
         private void DrawContextMenuHeader(Graphics g, ToolStripItem item)
         {
             Rectangle rect = new Rectangle(Point.Empty, item.Bounds.Size);
@@ -1699,11 +1770,13 @@ namespace CrediNET
                 }
             }
         }
+
         private void DrawGradientContextMenuItem(Graphics g, ToolStripItem item, TemplateRenderer.GradientItemColors colors)
         {
             Rectangle backRect = new Rectangle(2, 0, checked(item.Bounds.Width - 3), item.Bounds.Height);
             this.DrawGradientItem(g, backRect, colors);
         }
+
         private void DrawGradientItem(Graphics g, Rectangle backRect, TemplateRenderer.GradientItemColors colors)
         {
             bool flag = backRect.Width > 0 && backRect.Height > 0;
@@ -1714,6 +1787,7 @@ namespace CrediNET
                 this.DrawGradientBorder(g, backRect, colors);
             }
         }
+
         private void DrawGradientBack(Graphics g, Rectangle backRect, TemplateRenderer.GradientItemColors colors)
         {
             backRect.Inflate(-1, -1);
@@ -1795,6 +1869,7 @@ namespace CrediNET
                 }
             }
         }
+
         private void DrawGradientBorder(Graphics g, Rectangle backRect, TemplateRenderer.GradientItemColors colors)
         {
             UseAntiAlias useAntiAlias = new UseAntiAlias(g);
@@ -1854,6 +1929,7 @@ namespace CrediNET
                 }
             }
         }
+
         private void DrawGripGlyph(Graphics g, int x, int y, Brush darkBrush, Brush lightBrush)
         {
             checked
@@ -1862,6 +1938,7 @@ namespace CrediNET
                 g.FillRectangle(darkBrush, x, y, TemplateRenderer._gripSquare, TemplateRenderer._gripSquare);
             }
         }
+
         private GraphicsPath CreateBorderPath(Rectangle rect, Rectangle exclude, float cut)
         {
             bool flag = exclude.IsEmpty;
@@ -1997,6 +2074,7 @@ namespace CrediNET
                 return result;
             }
         }
+
         private GraphicsPath CreateBorderPath(Rectangle rect, float cut)
         {
             GraphicsPath graphicsPath;
@@ -2016,16 +2094,19 @@ namespace CrediNET
             graphicsPath.AddLine((float)rect.Left, (float)rect.Top + cut, (float)rect.Left + cut, (float)rect.Top);
             return graphicsPath;
         }
+
         private GraphicsPath CreateInsideBorderPath(Rectangle rect, float cut)
         {
             rect.Inflate(-1, -1);
             return this.CreateBorderPath(rect, cut);
         }
+
         private GraphicsPath CreateInsideBorderPath(Rectangle rect, Rectangle exclude, float cut)
         {
             rect.Inflate(-1, -1);
             return this.CreateBorderPath(rect, exclude, cut);
         }
+
         private GraphicsPath CreateClipBorderPath(Rectangle rect, float cut)
         {
             checked
@@ -2035,6 +2116,7 @@ namespace CrediNET
                 return this.CreateBorderPath(rect, cut);
             }
         }
+
         private GraphicsPath CreateClipBorderPath(Rectangle rect, Rectangle exclude, float cut)
         {
             checked
@@ -2044,6 +2126,7 @@ namespace CrediNET
                 return this.CreateBorderPath(rect, exclude, cut);
             }
         }
+
         private GraphicsPath CreateArrowPath(ToolStripItem item, Rectangle rect, ArrowDirection direction)
         {
             bool flag = direction == ArrowDirection.Left || direction == ArrowDirection.Right;
@@ -2076,6 +2159,7 @@ namespace CrediNET
                         graphicsPath.AddLine(num, num2 - 4, num, num2 + 4);
                         graphicsPath.AddLine(num, num2 + 4, num - 4, num2);
                         break;
+
                     case ArrowDirection.Up:
                         unchecked
                         {
@@ -2089,6 +2173,7 @@ namespace CrediNET
                         graphicsPath.AddLine(num - 4, num2 - 4, num - 4, num2 + 4);
                         graphicsPath.AddLine(num - 4, num2 + 4, num, num2);
                         break;
+
                     case ArrowDirection.Down:
                         unchecked
                         {
@@ -2101,6 +2186,7 @@ namespace CrediNET
                 return graphicsPath;
             }
         }
+
         private GraphicsPath CreateTickPath(Rectangle rect)
         {
             checked
@@ -2113,6 +2199,7 @@ namespace CrediNET
                 return graphicsPath;
             }
         }
+
         private GraphicsPath CreateIndeterminatePath(Rectangle rect)
         {
             checked
@@ -2128,40 +2215,48 @@ namespace CrediNET
             }
         }
     }
+
     internal class UseAntiAlias : IDisposable
     {
         private Graphics _g;
         private SmoothingMode _old;
+
         public UseAntiAlias(Graphics g)
         {
             this._g = g;
             this._old = this._g.SmoothingMode;
             this._g.SmoothingMode = SmoothingMode.AntiAlias;
         }
+
         public void Dispose()
         {
             this._g.SmoothingMode = this._old;
         }
     }
+
     internal class UseClearTypeGridFit : IDisposable
     {
         private Graphics _g;
         private TextRenderingHint _old;
+
         public UseClearTypeGridFit(Graphics g)
         {
             this._g = g;
             this._old = this._g.TextRenderingHint;
             this._g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
         }
+
         public void Dispose()
         {
             this._g.TextRenderingHint = this._old;
         }
     }
+
     internal class UseClipping : IDisposable
     {
         private Graphics _g;
         private Region _old;
+
         public UseClipping(Graphics g, GraphicsPath path)
         {
             this._g = g;
@@ -2170,6 +2265,7 @@ namespace CrediNET
             region.Intersect(path);
             this._g.Clip = region;
         }
+
         public UseClipping(Graphics g, Region region)
         {
             this._g = g;
@@ -2178,6 +2274,7 @@ namespace CrediNET
             region2.Intersect(region);
             this._g.Clip = region2;
         }
+
         public void Dispose()
         {
             this._g.Clip = this._old;

@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using Microsoft.Office.Interop.Excel;
 
 namespace CrediNET
 {
-    class CreateExcelDoc
+    internal class CreateExcelDoc
     {
         public Application app = null;
         public Workbook workbook = null;
@@ -63,8 +61,8 @@ namespace CrediNET
             workSheet_range.Font.Bold = font;
             workSheet_range.ColumnWidth = size;
             workSheet_range.Font.Color = fcolor.ToArgb();
-
         }
+
         public void addData(int row, int col, string data, string cell1, string cell2, string format, int mergeColumns = 0)
         {
             worksheet.Cells[row, col] = data;
@@ -82,6 +80,5 @@ namespace CrediNET
             workSheet_range.Borders.Color = System.Drawing.Color.Black.ToArgb();
             workSheet_range.NumberFormat = format;
         }
-
     }
 }
