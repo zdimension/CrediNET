@@ -5553,9 +5553,6 @@
         rEHAA6xB8A+sQQ==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>CrediNET</value>
   </data>

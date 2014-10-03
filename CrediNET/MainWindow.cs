@@ -133,7 +133,7 @@ namespace CrediNET
                 op.Type = ae.cbxType.SelectedItem.ToString();
                 op.Credit = ae.mupCredit.Value;
                 op.Debit = ae.mupDebit.Value;
-                op.Budget = ae.cbxBudget.SelectedItem.ToString();
+                op.Budget = ae.cbxBudget.SelectedText;
                 op.Date = ae.mcDate.SelectionStart;
                 op.Commentary = ae.txtComm.Text;
 
@@ -515,7 +515,7 @@ namespace CrediNET
                 op.Type = ae.cbxType.SelectedItem.ToString();
                 op.Credit = ae.mupCredit.Value;
                 op.Debit = ae.mupDebit.Value;
-                op.Budget = ae.cbxBudget.SelectedItem.ToString();
+                op.Budget = ae.cbxBudget.SelectedText;
                 op.Date = ae.mcDate.SelectionStart;
                 op.Commentary = ae.txtComm.Text;
 
@@ -535,7 +535,7 @@ namespace CrediNET
                 op.Type = ae.cbxType.SelectedItem.ToString();
                 op.Credit = ae.mupCredit.Value;
                 op.Debit = ae.mupDebit.Value;
-                op.Budget = ae.cbxBudget.SelectedItem.ToString();
+                op.Budget = ae.cbxBudget.SelectedText;
                 op.Date = ae.mcDate.SelectionStart;
                 op.Commentary = ae.txtComm.Text;
 
