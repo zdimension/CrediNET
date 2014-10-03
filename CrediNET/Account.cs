@@ -319,7 +319,7 @@ namespace CrediNET
             cb.Budgets.Clear();
             foreach (XElement b in c.Element("Budgets").Nodes())
             {
-                cb.Budgets.Add(b.Value, ColorTranslator.FromHtml(b.Attribute("color").Value));
+                cb.Budgets.Add(b.Value, b.Attribute("color") == null ? Color.White : ColorTranslator.FromHtml(b.Attribute("color").Value));
             }
 
             return cb;
