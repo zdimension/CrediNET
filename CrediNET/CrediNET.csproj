@@ -129,6 +129,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RendererStuff.cs" />
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmCountSpcEuro.de-DE.resx">
       <DependentUpon>FrmCountSpcEuro.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +201,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Splash.en-US.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -329,6 +341,7 @@
     <None Include="Resources\chart_line.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\splash.png" />
     <Content Include="round.ico" />
   </ItemGroup>
   <ItemGroup>

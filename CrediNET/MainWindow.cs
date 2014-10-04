@@ -26,6 +26,11 @@ namespace CrediNET
 
         public MainWindow()
         {
+            if(new Splash().ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+
+            }
+
             InitializeComponent();
             InitRenderers();
             SetWindowTheme(lvOps.Handle, "Explorer", null);
