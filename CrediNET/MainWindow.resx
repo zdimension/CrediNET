@@ -328,7 +328,7 @@
     <value>lvOps</value>
   </data>
   <data name="&gt;&gt;lvOps.Type" xml:space="preserve">
-    <value>CrediNET.DoubleBufferListView, CrediNET, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CrediNET.DoubleBufferListView, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvOps.Parent" xml:space="preserve">
     <value>$this</value>
@@ -629,7 +629,7 @@
     <value>toolStrip</value>
   </data>
   <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
-    <value>CrediNET.NoBorderToolStrip, CrediNET, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CrediNET.NoBorderToolStrip, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -637,6 +637,9 @@
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>de-DE</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

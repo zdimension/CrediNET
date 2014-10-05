@@ -297,7 +297,7 @@ namespace CrediNET
             var d = XDocument.Load(ms);
 
             var c = d.Element("Compte");
-            cb = new Account(DateTime.ParseExact(c.Element("CrDate").Value, "dd/MM/yyyy", null), filepath);
+            cb = new Account(DateTime.ParseExact(c.Element("CrDate").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture), filepath);
             cb.Name = c.Element("Nom").Value;
             cb.DefPassMd5(c.Element("Passe").Value);
             CurrencyObj dvs = Currencies.All.First(x => x.ShortName == c.Element("Devise").Value);
@@ -306,7 +306,7 @@ namespace CrediNET
             foreach (XElement a in c.Element("Operations").Nodes())
             {
                 Operation op = new Operation(a.Attribute("ID").Value);
-                op.Date = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", null);
+                op.Date = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 op.Commentary = a.Attribute("Comm").Value;
                 op.Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat);
                 op.Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat);

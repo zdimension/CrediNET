@@ -180,7 +180,7 @@ namespace CrediNET
                         break;
 
                     case "de-DE":
-                        lblSoldeAt.Text = "Balance bei ";
+                        lblSoldeAt.Text = "Kontostand am ";
                         break;
 
                     default:        //case "fr-FR":
@@ -330,7 +330,7 @@ namespace CrediNET
                     break;
 
                 case "de-DE":
-                    lblSoldeAt.Text = "Kontostand : ";
+                    lblSolde.Text = "Kontostand : ";
                     break;
 
                 default:        //case "fr-FR":
