@@ -166,7 +166,7 @@
             "SourcePath" = "8:..\\CrediNET\\bin\\Release\\en-US\\CrediNET.resources.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_117A0970A08C44978A5DFF18ED28E888"
+            "Folder" = "8:_F2D705C4D4EE48778691F46ED711F652"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -197,7 +197,7 @@
             "SourcePath" = "8:..\\CrediNET\\bin\\Release\\de-DE\\CrediNET.resources.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_5725A58994944DB6903CF5B07CA6F527"
+            "Folder" = "8:_5C49E941FC824C6EACEE61AC99A614E5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -228,7 +228,7 @@
             "SourcePath" = "8:..\\CrediNET\\bin\\Release\\final\\CrediNET.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_40D73277C0FE42F29DEB074535729AA1"
+            "Folder" = "8:_034DA4C537054575BF5201AF5AC712FE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -248,7 +248,7 @@
             "SourcePath" = "8:..\\CrediNET\\round.ico"
             "TargetName" = "8:round.ico"
             "Tag" = "8:"
-            "Folder" = "8:_40D73277C0FE42F29DEB074535729AA1"
+            "Folder" = "8:_034DA4C537054575BF5201AF5AC712FE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -269,7 +269,7 @@
             "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_B0FFC0D4F06649F781C57EB6E555E612"
             {
             "Name" = "8:CrediNET Account"
-            "Description" = "8:"
+            "Description" = "8:CrediNET Account"
             "Extensions" = "8:cna"
             "MIME" = "8:"
             "Icon" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
@@ -294,7 +294,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_034DA4C537054575BF5201AF5AC712FE"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -302,6 +302,28 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5C49E941FC824C6EACEE61AC99A614E5"
+                    {
+                    "Name" = "8:de-DE"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_64EB32E7EE2543038BC21ABFBAE5DD7D"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F2D705C4D4EE48778691F46ED711F652"
+                    {
+                    "Name" = "8:en-US"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_E5A09CFF9081457CA50080D71C4095F1"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_62A029BAD5324C6896D20392025FC932"
@@ -322,50 +344,6 @@
                     "Property" = "8:_BEC8090739EF4B1BBCC2E2B8A6E831D3"
                         "Folders"
                         {
-                        }
-                    }
-                }
-            }
-            "{1525181F-901A-416C-8A58-119130FE478E}:_6FC34FD7DBC8404A96B02D8B03723354"
-            {
-            "Name" = "8:#1912"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:ProgramFilesFolder"
-                "Folders"
-                {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_40D73277C0FE42F29DEB074535729AA1"
-                    {
-                    "Name" = "8:CrediNET"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_FECA9124B1674B509BBA5DE8280193F4"
-                        "Folders"
-                        {
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_117A0970A08C44978A5DFF18ED28E888"
-                            {
-                            "Name" = "8:en-US"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_E5A09CFF9081457CA50080D71C4095F1"
-                                "Folders"
-                                {
-                                }
-                            }
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_5725A58994944DB6903CF5B07CA6F527"
-                            {
-                            "Name" = "8:de-DE"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_64EB32E7EE2543038BC21ABFBAE5DD7D"
-                                "Folders"
-                                {
-                                }
-                            }
                         }
                     }
                 }
@@ -398,7 +376,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CrediNET"
         "ProductCode" = "8:{E7B19393-5590-4971-960A-9605BD8DB526}"
-        "PackageCode" = "8:{03A197CC-AB59-4725-BDB3-23CDAA950F8E}"
+        "PackageCode" = "8:{98E926EA-760E-4588-AEB0-8F7E412459AC}"
         "UpgradeCode" = "8:{B60B0E93-817A-42A7-B0B5-C710793036B2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -406,12 +384,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:2.0"
-        "Manufacturer" = "8:zDimension"
+        "Manufacturer" = "8:CrediNET team"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://credinet.codeplex.com"
         "Title" = "8:CrediNET"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:zDimension"
+        "ARPCONTACT" = "8:CrediNET team"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
