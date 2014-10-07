@@ -357,8 +357,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"$(TargetDir)ILMerge.exe" /ndebug /copyattrs /targetplatform:4.0,"C:\Windows\Microsoft.NET\Framework64\v4.0.30319" /out:"$(TargetDir)final\CrediNET.exe" "$(TargetPath)" "$(TargetDir)EPPlus.dll" "$(TargetDir)Ookii.Dialogs.dll" "$(TargetDir)ZedGraph.dll" "$(TargetDir)ZedGraph.resources.dll"
-xcopy "$(TargetDir)en-US" "$(TargetDir)final\en-US" /i
-xcopy "$(TargetDir)de-DE" "$(TargetDir)final\de-DE" /i</PostBuildEvent>
+xcopy "$(TargetDir)en-US" "$(TargetDir)final\en-US\*"
+xcopy "$(TargetDir)de-DE" "$(TargetDir)final\de-DE\*"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
