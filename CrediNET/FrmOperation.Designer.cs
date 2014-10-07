@@ -37,7 +37,7 @@
             this.mupCredit = new CrediNET.MoneyUpDown();
             this.mupDebit = new CrediNET.MoneyUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbxBudget = new ColorComboBox();
+            this.cbxBudget = new CrediNET.ColorComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtComm = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -109,8 +109,12 @@
             // cbxBudget
             // 
             resources.ApplyResources(this.cbxBudget, "cbxBudget");
+            this.cbxBudget.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxBudget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBudget.FormattingEnabled = true;
             this.cbxBudget.Name = "cbxBudget";
+            this.cbxBudget.SelectedItem = null;
+            this.cbxBudget.SelectedValue = System.Drawing.Color.White;
             // 
             // label5
             // 

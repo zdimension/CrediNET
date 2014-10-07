@@ -120,10 +120,10 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Type :</value>
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 212</value>
+  </data>
   <data name="btnCmptSpc.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 23</value>
   </data>
@@ -139,11 +139,15 @@
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 15</value>
   </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btnCmptSpc.Text" xml:space="preserve">
     <value>Compter espèces</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 66</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="mcDate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -151,14 +155,14 @@
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>448, 245</value>
+  </data>
   <data name="&gt;&gt;btnCmptSpc.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="mupCredit.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
-  </data>
-  <data name="&gt;&gt;cbxBudget.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="ofpCompte.Filter" xml:space="preserve">
     <value>Compte CrediNET (*.cna, *.cne)|*.cna;*.cne</value>
@@ -166,15 +170,14 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 181</value>
   </data>
-  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
-    <value>btnCancel</value>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>$this</value>
@@ -185,8 +188,8 @@
   <data name="&gt;&gt;cbxType.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Débit :</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 15</value>
@@ -200,14 +203,11 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
   </data>
-  <data name="mcDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 5</value>
-  </data>
   <data name="mupDebit.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Nouvelle opération</value>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;mcDate.Name" xml:space="preserve">
     <value>mcDate</value>
@@ -216,23 +216,22 @@
     <value>ofpCompte</value>
   </data>
   <data name="&gt;&gt;cbxBudget.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>CrediNET.ColorComboBox, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 212</value>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="mcDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 66</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmOperation</value>
   </data>
   <data name="&gt;&gt;btnVirCaC.Name" xml:space="preserve">
     <value>btnVirCaC</value>
@@ -246,17 +245,15 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 15</value>
   </data>
-  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="mupDebit.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;btnCmptSpc.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtComm.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -264,8 +261,8 @@
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
-  <data name="&gt;&gt;btnVirCaC.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnVirCaC.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>11</value>
@@ -282,6 +279,9 @@
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
@@ -290,12 +290,6 @@
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 37</value>
-  </data>
-  <data name="&gt;&gt;mupDebit.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -315,11 +309,11 @@
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;mupCredit.Name" xml:space="preserve">
-    <value>mupCredit</value>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Débit :</value>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 212</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -327,17 +321,20 @@
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;cbxBudget.Name" xml:space="preserve">
+    <value>cbxBudget</value>
+  </data>
   <data name="&gt;&gt;cbxType.Name" xml:space="preserve">
     <value>cbxType</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 212</value>
+  <data name="&gt;&gt;btnVirCaC.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;mupCredit.Type" xml:space="preserve">
-    <value>CrediNET.MoneyUpDown, CrediNET, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;btnCmptSpc.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;txtComm.Parent" xml:space="preserve">
     <value>$this</value>
@@ -345,8 +342,8 @@
   <data name="&gt;&gt;ofpCompte.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;cbxBudget.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -354,11 +351,11 @@
   <data name="&gt;&gt;cbxBudget.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;mupDebit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;txtComm.Name" xml:space="preserve">
     <value>txtComm</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -366,8 +363,11 @@
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;mupCredit.Type" xml:space="preserve">
+    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -414,8 +414,8 @@
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 9</value>
   </data>
-  <data name="&gt;&gt;cbxBudget.Name" xml:space="preserve">
-    <value>cbxBudget</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Nouvelle opération</value>
   </data>
   <data name="cbxBudget.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 93</value>
@@ -429,17 +429,17 @@
   <data name="&gt;&gt;btnCmptSpc.Name" xml:space="preserve">
     <value>btnCmptSpc</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="mupDebit.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;btnCmptSpc.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 37</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 96</value>
   </data>
-  <data name="btnVirCaC.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="&gt;&gt;mupCredit.Name" xml:space="preserve">
+    <value>mupCredit</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 15</value>
@@ -447,8 +447,8 @@
   <data name="mupDebit.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 64</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrmOperation</value>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;mcDate.Parent" xml:space="preserve">
     <value>$this</value>
@@ -456,11 +456,11 @@
   <data name="&gt;&gt;mcDate.Type" xml:space="preserve">
     <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;mupDebit.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="mcDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 5</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -468,11 +468,11 @@
   <data name="&gt;&gt;cbxType.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="mcDate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="mcDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
   </data>
   <data name="mupCredit.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -483,26 +483,26 @@
   <data name="txtComm.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 23</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>448, 245</value>
+  <data name="&gt;&gt;mupDebit.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="mupCredit.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 35</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mupDebit.Type" xml:space="preserve">
-    <value>CrediNET.MoneyUpDown, CrediNET, Version=1.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="btnVirCaC.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="txtComm.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtComm.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -515,9 +515,6 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
   </metadata>
   <metadata name="ofpCompte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

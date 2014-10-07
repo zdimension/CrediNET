@@ -70,9 +70,23 @@ namespace CrediNET
         }
 
         /// <summary>
-        /// Monthly
+        /// Number of repetition
         /// </summary>
-        public bool Monthly
+        public int NbOfRepetition
+        {
+            get;
+            set;
+        }
+
+        public enum ERepititionType
+        {
+            Daily, Weekly, Monthly, Yearly
+        }
+
+        /// <summary>
+        /// Repetition type
+        /// </summary>
+        public ERepititionType RepetitionType
         {
             get;
             set;
