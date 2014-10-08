@@ -66,6 +66,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\Calendar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calendar\CalendarColorTable.cs" />
+    <Compile Include="Calendar\CalendarDay.cs" />
+    <Compile Include="Calendar\CalendarDayEventArgs.cs" />
+    <Compile Include="Calendar\CalendarDaysMode.cs" />
+    <Compile Include="Calendar\CalendarDayTop.cs" />
+    <Compile Include="Calendar\CalendarHighlightRange.cs" />
+    <Compile Include="Calendar\CalendarItem.cs" />
+    <Compile Include="Calendar\CalendarItemCancelEventArgs.cs" />
+    <Compile Include="Calendar\CalendarItemCollection.cs" />
+    <Compile Include="Calendar\CalendarItemEventArgs.cs" />
+    <Compile Include="Calendar\CalendarItemImageAlign.cs" />
+    <Compile Include="Calendar\CalendarLoadEventArgs.cs" />
+    <Compile Include="Calendar\CalendarProfessionalRenderer.cs" />
+    <Compile Include="Calendar\CalendarRenderer.cs" />
+    <Compile Include="Calendar\CalendarRendererBoxEventArgs.cs" />
+    <Compile Include="Calendar\CalendarRendererDayEventArgs.cs" />
+    <Compile Include="Calendar\CalendarRendererEventArgs.cs" />
+    <Compile Include="Calendar\CalendarRendererItemBoundsEventArgs.cs" />
+    <Compile Include="Calendar\CalendarRendererItemEventArgs.cs" />
+    <Compile Include="Calendar\CalendarRendererTimeUnitEventArgs.cs" />
+    <Compile Include="Calendar\CalendarSelectableElement.cs" />
+    <Compile Include="Calendar\CalendarSystemRenderer.cs" />
+    <Compile Include="Calendar\CalendarTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calendar\CalendarTimeScale.cs" />
+    <Compile Include="Calendar\CalendarTimeScaleUnit.cs" />
+    <Compile Include="Calendar\CalendarWeek.cs" />
+    <Compile Include="Calendar\ICalendarSelectableElement.cs" />
+    <Compile Include="Calendar\ISelectableElement.cs" />
+    <Compile Include="Calendar\MonthView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calendar\MonthViewBoxEventArgs.cs" />
+    <Compile Include="Calendar\MonthViewDay.cs" />
+    <Compile Include="Calendar\MonthViewMontEventArgs.cs" />
+    <Compile Include="Calendar\MonthViewMonth.cs" />
     <Compile Include="ColorComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -168,12 +208,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateAccount.resx">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGraph.en-US.resx">
       <DependentUpon>FrmGraph.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGraph.resx">
       <DependentUpon>FrmGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReminder.en-US.resx">
+      <DependentUpon>FrmReminder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReminderOperation.en-US.resx">
       <DependentUpon>FrmReminderOperation.cs</DependentUpon>
@@ -186,6 +230,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOperation.resx">
       <DependentUpon>FrmOperation.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOpFilter.en-US.resx">
       <DependentUpon>FrmOpFilter.cs</DependentUpon>
@@ -371,13 +416,10 @@
   <ItemGroup>
     <None Include="Resources\splash.png" />
     <Content Include="bin\Release\ILMerge.exe" />
+    <None Include="Resources\page_refresh.png" />
     <Content Include="round.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\System.Windows.Forms.Calendar\System.Windows.Forms.Calendar.csproj">
-      <Project>{25649F08-3046-4891-ADB8-7EA787B57063}</Project>
-      <Name>System.Windows.Forms.Calendar</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ZedGraph.csproj">
       <Project>{2541686b-1673-43bf-af89-3163945db009}</Project>
       <Name>ZedGraph</Name>

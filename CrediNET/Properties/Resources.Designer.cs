@@ -413,6 +413,16 @@ namespace CrediNET.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap page_refresh {
+            get {
+                object obj = ResourceManager.GetObject("page_refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngU1X58JfMGF {
             get {
                 object obj = ResourceManager.GetObject("pngU1X58JfMGF", resourceCulture);

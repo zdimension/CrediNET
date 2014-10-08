@@ -53,6 +53,7 @@
             this.clmnCred = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnDeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip = new CrediNET.NoBorderToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripSplitButton();
@@ -66,7 +67,6 @@
             this.classeurOpenOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditAcc = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddOp = new System.Windows.Forms.ToolStripButton();
             this.btnEditOp = new System.Windows.Forms.ToolStripButton();
             this.btnDuplOp = new System.Windows.Forms.ToolStripButton();
@@ -234,6 +234,11 @@
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip_Paint);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
             // btnNew
             // 
             this.btnNew.ForeColor = System.Drawing.Color.White;
@@ -335,11 +340,6 @@
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
             // btnAddOp
             // 
             this.btnAddOp.Image = global::CrediNET.Properties.Resources.page_add;
@@ -385,7 +385,7 @@
             // 
             // btnReminder
             // 
-            this.btnReminder.Image = global::CrediNET.Properties.Resources.page_find;
+            this.btnReminder.Image = global::CrediNET.Properties.Resources.page_refresh;
             resources.ApplyResources(this.btnReminder, "btnReminder");
             this.btnReminder.Name = "btnReminder";
             this.btnReminder.Click += new System.EventHandler(this.btnReminder_Click);

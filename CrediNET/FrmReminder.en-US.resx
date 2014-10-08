@@ -117,68 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Credit :</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Debit :</value>
+  <data name="clmnDueDate.Text" xml:space="preserve">
+    <value>Due date</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 15</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 15</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Comment :</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Repeated operations:</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="calReminder.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
-  <data name="btnCmptSpc.Text" xml:space="preserve">
-    <value>Calculate money</value>
+  <data name="btnModifyReminder.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="btnVirCaC.Text" xml:space="preserve">
-    <value>Transfer account to account</value>
+  <data name="btnDeleteReminder.Text" xml:space="preserve">
+    <value>Remove</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 15</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Repeat</value>
-  </data>
-  <data name="cbxRepetitionType.Items" xml:space="preserve">
-    <value>Day</value>
-  </data>
-  <data name="cbxRepetitionType.Items1" xml:space="preserve">
-    <value>Week</value>
-  </data>
-  <data name="cbxRepetitionType.Items2" xml:space="preserve">
-    <value>Month</value>
-  </data>
-  <data name="cbxRepetitionType.Items3" xml:space="preserve">
-    <value>Yeay</value>
-  </data>
-  <data name="cbxRepetitionType.Items4" xml:space="preserve">
-    <value>Every Monday</value>
-  </data>
-  <data name="cbxRepetitionType.Items5" xml:space="preserve">
-    <value>Every Tuesday</value>
-  </data>
-  <data name="cbxRepetitionType.Items6" xml:space="preserve">
-    <value>Every Wednesday</value>
-  </data>
-  <data name="cbxRepetitionType.Items7" xml:space="preserve">
-    <value>Every Thursday</value>
-  </data>
-  <data name="cbxRepetitionType.Items8" xml:space="preserve">
-    <value>Every Friday</value>
-  </data>
-  <data name="cbxRepetitionType.Items9" xml:space="preserve">
-    <value>Every Saturday</value>
-  </data>
-  <data name="cbxRepetitionType.Items10" xml:space="preserve">
-    <value>Every Sunday</value>
+  <data name="btnAddReminder.Text" xml:space="preserve">
+    <value>Add</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>New operation</value>
+    <value>Repeat</value>
   </data>
 </root>

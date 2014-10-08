@@ -136,17 +136,17 @@
   <data name="page_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="document_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="20eur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\20eur.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="page_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +163,14 @@
   <data name="10ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="20ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="diagnostic_chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diagnostic_chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="application_form_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application_form_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="50ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\50ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chart_pie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart_pie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,9 +184,6 @@
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chart_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chart_line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="document_import" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document_import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,8 +196,8 @@
   <data name="icon_xlsx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_xlsx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\csv.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chart_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chart_line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngU1X58JfMGF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngU1X58JfMGF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,17 +205,17 @@
   <data name="5ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csv.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="document_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="diagnostic_chart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diagnostic_chart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1eur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1eur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="10eur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10eur.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,13 +226,19 @@
   <data name="icon_xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_xls.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="20ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="50ct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\50ct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="document_prepare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document_prepare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1eur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1eur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\page_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

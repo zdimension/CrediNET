@@ -69,14 +69,7 @@ namespace CrediNET
             set;
         }
 
-        /// <summary>
-        /// Monthly
-        /// </summary>
-        public bool Monthly
-        {
-            get;
-            set;
-        }
+
 
         /// <summary>
         /// Simple constructor
@@ -95,7 +88,7 @@ namespace CrediNET
             this._id = id;
         }
 
-        public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget, bool monthly)
+        public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget)
         {
             this._id = System.Guid.NewGuid().ToString();
             this.Date = date;
@@ -104,7 +97,6 @@ namespace CrediNET
             this.Debit = debit;
             this.Type = type;
             this.Budget = budget;
-            this.Monthly = monthly;
         }
     }
 }

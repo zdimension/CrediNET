@@ -81,7 +81,14 @@ namespace CrediNET
 
         public enum ERepititionType
         {
-            Day = 0, Week = 1, Month = 2, Year = 3
+            Day = 0, Week = 1, Month = 2, Year = 3,
+            Monday = 4,
+            Tuesday = 5,
+            Wednesday = 6,
+            Thursday = 7,
+            Friday = 8,
+            Saturday = 9,
+            Sunday = 10
         }
 
         /// <summary>

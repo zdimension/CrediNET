@@ -298,8 +298,7 @@ namespace CrediNET
                             new XAttribute("Cre", x.Credit.ToString(culture.NumberFormat)),
                             new XAttribute("Deb", x.Debit.ToString(culture.NumberFormat)),
                             new XAttribute("Type", x.Type),
-                            new XAttribute("Budget", x.Budget),
-                            new XAttribute("Mensuel", x.Monthly.ToString())))),
+                            new XAttribute("Budget", x.Budget)))),
                     new XElement("ReminderOperations",
                         cm.ReminderOperations.Select(x => new XElement("Op",
                             new XAttribute("ID", x.ID),
@@ -354,7 +353,6 @@ namespace CrediNET
                 op.Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat);
                 op.Type = a.Attribute("Type").Value;
                 op.Budget = a.Attribute("Budget").Value;
-                op.Monthly = bool.Parse(a.Attribute("Mensuel").Value);
                 cb.Operations.Add(op);
             }
 
