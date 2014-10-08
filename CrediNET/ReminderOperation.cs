@@ -134,7 +134,7 @@ namespace CrediNET
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddDays(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, false));
+                lstOps.Add(new Operation(this.DueDate.AddDays(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
             }
             return lstOps;
         }
@@ -146,7 +146,7 @@ namespace CrediNET
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddDays(i * 7), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, false));
+                lstOps.Add(new Operation(this.DueDate.AddDays(i * 7), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
             }
             return lstOps;
         }
@@ -158,7 +158,7 @@ namespace CrediNET
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddMonths(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, false));
+                lstOps.Add(new Operation(this.DueDate.AddMonths(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
             }
             return lstOps;
         }
@@ -170,7 +170,7 @@ namespace CrediNET
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddYears(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, false));
+                lstOps.Add(new Operation(this.DueDate.AddYears(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
             }
             return lstOps;
         }
