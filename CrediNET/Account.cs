@@ -120,6 +120,27 @@ namespace CrediNET
             get { return _ops; }
         }
 
+        private List<ReminderOperation> _reminderOps = new List<ReminderOperation>();
+
+        /// <summary>
+        /// The reminder operations of the account
+        /// </summary>
+        public List<ReminderOperation> ReminderOperations
+        {
+            get { return _reminderOps; }
+        }
+
+        private List<Operation> _forcastOps = new List<Operation>();
+
+        /// <summary>
+        /// The forcast operations of the account
+        /// </summary>
+        public List<Operation> ForecastOperations
+        {
+            get;
+            set;
+        }
+
         private Dictionary<string, Color> _budgets = new Dictionary<string, Color> { { "alimentaire", Color.White }, { "divers", Color.White }, { "habitat", Color.White }, { "santé", Color.White }, { "salaire", Color.White }, { "voiture", Color.White } };
 
         /// <summary>
@@ -243,6 +264,16 @@ namespace CrediNET
             return null;
         }
 
+        public void populateForcastOperations()
+        {
+            this.ForecastOperations = new List<Operation>();
+            foreach (var item in this.ReminderOperations)
+            {
+                item.populateForcastOperations();
+                this.ForecastOperations.AddRange(item.ForcastOperations);
+            }
+        }
+
         #region Sauvegarde
 
         /// <summary>
@@ -269,6 +300,17 @@ namespace CrediNET
                             new XAttribute("Type", x.Type),
                             new XAttribute("Budget", x.Budget),
                             new XAttribute("Mensuel", x.Monthly.ToString())))),
+                    new XElement("ReminderOperations",
+                        cm.ReminderOperations.Select(x => new XElement("Op",
+                            new XAttribute("ID", x.ID),
+                            new XAttribute("Date", x.DueDate.ToString("dd/MM/yyyy")),
+                            new XAttribute("Comm", x.Commentary),
+                            new XAttribute("Cre", x.Credit.ToString(culture.NumberFormat)),
+                            new XAttribute("Deb", x.Debit.ToString(culture.NumberFormat)),
+                            new XAttribute("Type", x.Type),
+                            new XAttribute("Budget", x.Budget),
+                            new XAttribute("NbOfRepetition", x.NbOfRepetition),
+                            new XAttribute("TypeOfRepetition", (int)x.RepetitionType)))),
                     new XElement("Budgets",
                         cm.Budgets.Select(y => new XElement("B", new XAttribute("color", ColorTranslator.ToHtml(y.Value)), y.Key)))));
 
@@ -315,6 +357,21 @@ namespace CrediNET
                 op.Monthly = bool.Parse(a.Attribute("Mensuel").Value);
                 cb.Operations.Add(op);
             }
+
+            if (c.Element("ReminderOperations") != null)
+                foreach (XElement a in c.Element("ReminderOperations").Nodes())
+                {
+                    ReminderOperation op = new ReminderOperation(a.Attribute("ID").Value);
+                    op.DueDate = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    op.Commentary = a.Attribute("Comm").Value;
+                    op.Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat);
+                    op.Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat);
+                    op.Type = a.Attribute("Type").Value;
+                    op.Budget = a.Attribute("Budget").Value;
+                    op.NbOfRepetition = decimal.Parse(a.Attribute("NbOfRepetition").Value);
+                    op.RepetitionType = (ReminderOperation.ERepititionType)decimal.Parse(a.Attribute("TypeOfRepetition").Value);
+                    cb.ReminderOperations.Add(op);
+                }
 
             cb.Budgets.Clear();
             foreach (XElement b in c.Element("Budgets").Nodes())

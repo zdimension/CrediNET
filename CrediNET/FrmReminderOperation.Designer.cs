@@ -1,6 +1,6 @@
 ﻿namespace CrediNET
 {
-    partial class FrmOperation
+    partial class FrmReminderOperation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOperation));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReminderOperation));
             this.mcDate = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.mupCredit = new CrediNET.MoneyUpDown();
-            this.mupDebit = new CrediNET.MoneyUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbxBudget = new CrediNET.ColorComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtComm = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -45,6 +42,14 @@
             this.btnCmptSpc = new System.Windows.Forms.Button();
             this.btnVirCaC = new System.Windows.Forms.Button();
             this.ofpCompte = new System.Windows.Forms.OpenFileDialog();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nudNbOfRepetitions = new System.Windows.Forms.NumericUpDown();
+            this.cbxRepetitionType = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.mupCredit = new CrediNET.MoneyUpDown();
+            this.mupDebit = new CrediNET.MoneyUpDown();
+            this.cbxBudget = new CrediNET.ColorComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNbOfRepetitions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mupCredit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mupDebit)).BeginInit();
             this.SuspendLayout();
@@ -62,8 +67,8 @@
             // 
             // cbxType
             // 
-            resources.ApplyResources(this.cbxType, "cbxType");
             this.cbxType.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxType, "cbxType");
             this.cbxType.Name = "cbxType";
             this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             // 
@@ -77,44 +82,10 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // mupCredit
-            // 
-            resources.ApplyResources(this.mupCredit, "mupCredit");
-            this.mupCredit.DecimalPlaces = 2;
-            this.mupCredit.Devise = "€";
-            this.mupCredit.Maximum = new decimal(new int[] {
-            -727379969,
-            232,
-            0,
-            0});
-            this.mupCredit.Name = "mupCredit";
-            // 
-            // mupDebit
-            // 
-            resources.ApplyResources(this.mupDebit, "mupDebit");
-            this.mupDebit.DecimalPlaces = 2;
-            this.mupDebit.Devise = "€";
-            this.mupDebit.Maximum = new decimal(new int[] {
-            -727379969,
-            232,
-            0,
-            0});
-            this.mupDebit.Name = "mupDebit";
-            // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            // 
-            // cbxBudget
-            // 
-            resources.ApplyResources(this.cbxBudget, "cbxBudget");
-            this.cbxBudget.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxBudget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxBudget.FormattingEnabled = true;
-            this.cbxBudget.Name = "cbxBudget";
-            this.cbxBudget.SelectedItem = null;
-            this.cbxBudget.SelectedValue = System.Drawing.Color.White;
             // 
             // label5
             // 
@@ -128,15 +99,15 @@
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
@@ -158,11 +129,85 @@
             this.ofpCompte.DefaultExt = "cna";
             resources.ApplyResources(this.ofpCompte, "ofpCompte");
             // 
-            // FrmOperation
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // nudNbOfRepetitions
+            // 
+            resources.ApplyResources(this.nudNbOfRepetitions, "nudNbOfRepetitions");
+            this.nudNbOfRepetitions.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudNbOfRepetitions.Name = "nudNbOfRepetitions";
+            this.nudNbOfRepetitions.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // cbxRepetitionType
+            // 
+            this.cbxRepetitionType.FormattingEnabled = true;
+            this.cbxRepetitionType.Items.AddRange(new object[] {
+            resources.GetString("cbxRepetitionType.Items"),
+            resources.GetString("cbxRepetitionType.Items1"),
+            resources.GetString("cbxRepetitionType.Items2"),
+            resources.GetString("cbxRepetitionType.Items3")});
+            resources.ApplyResources(this.cbxRepetitionType, "cbxRepetitionType");
+            this.cbxRepetitionType.Name = "cbxRepetitionType";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // mupCredit
+            // 
+            this.mupCredit.DecimalPlaces = 2;
+            this.mupCredit.Devise = "€";
+            resources.ApplyResources(this.mupCredit, "mupCredit");
+            this.mupCredit.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.mupCredit.Name = "mupCredit";
+            // 
+            // mupDebit
+            // 
+            this.mupDebit.DecimalPlaces = 2;
+            this.mupDebit.Devise = "€";
+            resources.ApplyResources(this.mupDebit, "mupDebit");
+            this.mupDebit.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.mupDebit.Name = "mupDebit";
+            // 
+            // cbxBudget
+            // 
+            this.cbxBudget.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxBudget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxBudget.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxBudget, "cbxBudget");
+            this.cbxBudget.Name = "cbxBudget";
+            this.cbxBudget.SelectedItem = null;
+            this.cbxBudget.SelectedValue = System.Drawing.Color.White;
+            // 
+            // FrmReminderOperation
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
+            this.Controls.Add(this.cbxRepetitionType);
+            this.Controls.Add(this.nudNbOfRepetitions);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnVirCaC);
             this.Controls.Add(this.btnCmptSpc);
             this.Controls.Add(this.btnOK);
@@ -178,7 +223,8 @@
             this.Controls.Add(this.cbxType);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mcDate);
-            this.Name = "FrmOperation";
+            this.Name = "FrmReminderOperation";
+            ((System.ComponentModel.ISupportInitialize)(this.nudNbOfRepetitions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mupCredit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mupDebit)).EndInit();
             this.ResumeLayout(false);
@@ -205,6 +251,10 @@
         private System.Windows.Forms.Button btnCmptSpc;
         private System.Windows.Forms.Button btnVirCaC;
         private System.Windows.Forms.OpenFileDialog ofpCompte;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.NumericUpDown nudNbOfRepetitions;
+        public System.Windows.Forms.ComboBox cbxRepetitionType;
 
     }
 }
