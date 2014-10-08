@@ -101,6 +101,7 @@ namespace CrediNET
 
         private void FrmReminder_Load(object sender, EventArgs e)
         {
+            LoadReminderOps();
             loadCalendar();
         }
 
