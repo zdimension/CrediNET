@@ -98,6 +98,12 @@
     <Compile Include="FrmGraph.Designer.cs">
       <DependentUpon>FrmGraph.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReminderOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReminderOperation.Designer.cs">
+      <DependentUpon>FrmReminderOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOperation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,7 +143,7 @@
     <Compile Include="Operation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reminder.cs" />
+    <Compile Include="ReminderOperation.cs" />
     <Compile Include="RendererStuff.cs" />
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
@@ -168,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGraph.resx">
       <DependentUpon>FrmGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReminderOperation.en-US.resx">
+      <DependentUpon>FrmReminderOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReminderOperation.resx">
+      <DependentUpon>FrmReminderOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOperation.en-US.resx">
       <DependentUpon>FrmOperation.cs</DependentUpon>
@@ -374,8 +386,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"$(TargetDir)ILMerge.exe" /ndebug /copyattrs /targetplatform:4.0,"C:\Windows\Microsoft.NET\Framework64\v4.0.30319" /out:"$(TargetDir)final\CrediNET.exe" "$(TargetPath)" "$(TargetDir)EPPlus.dll" "$(TargetDir)Ookii.Dialogs.dll" "$(TargetDir)ZedGraph.dll" "$(TargetDir)ZedGraph.resources.dll"
-xcopy "$(TargetDir)en-US" "$(TargetDir)final\en-US\*"
-xcopy "$(TargetDir)de-DE" "$(TargetDir)final\de-DE\*"</PostBuildEvent>
+xcopy "$(TargetDir)en-US" "$(TargetDir)final\en-US\*" /y
+xcopy "$(TargetDir)de-DE" "$(TargetDir)final\de-DE\*" /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

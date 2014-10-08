@@ -29,38 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReminder));
-            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange1 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
-            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange2 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
-            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange3 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
-            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange4 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
-            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange5 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
+            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange6 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
+            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange7 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
+            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange8 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
+            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange9 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
+            System.Windows.Forms.Calendar.CalendarHighlightRange calendarHighlightRange10 = new System.Windows.Forms.Calendar.CalendarHighlightRange();
             this.mthCalReminder = new System.Windows.Forms.MonthCalendar();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvReminderOps = new System.Windows.Forms.ListView();
             this.clmnId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnBudget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnDueDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddReminder = new System.Windows.Forms.Button();
             this.btnDeleteReminder = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnModifyReminder = new System.Windows.Forms.Button();
             this.calReminder = new System.Windows.Forms.Calendar.Calendar();
+            this.btnOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mthCalReminder
             // 
             resources.ApplyResources(this.mthCalReminder, "mthCalReminder");
             this.mthCalReminder.Name = "mthCalReminder";
+            this.mthCalReminder.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mthCalReminder_DateChanged);
             // 
-            // listView1
+            // lvReminderOps
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvReminderOps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmnId,
             this.clmnBudget,
             this.clmnDueDate});
-            resources.ApplyResources(this.listView1, "listView1");
-            this.listView1.Name = "listView1";
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvReminderOps.FullRowSelect = true;
+            this.lvReminderOps.GridLines = true;
+            resources.ApplyResources(this.lvReminderOps, "lvReminderOps");
+            this.lvReminderOps.Name = "lvReminderOps";
+            this.lvReminderOps.UseCompatibleStateImageBehavior = false;
+            this.lvReminderOps.View = System.Windows.Forms.View.Details;
             // 
             // clmnId
             // 
@@ -85,6 +89,7 @@
             resources.ApplyResources(this.btnAddReminder, "btnAddReminder");
             this.btnAddReminder.Name = "btnAddReminder";
             this.btnAddReminder.UseVisualStyleBackColor = true;
+            this.btnAddReminder.Click += new System.EventHandler(this.btnAddReminder_Click);
             // 
             // btnDeleteReminder
             // 
@@ -92,52 +97,63 @@
             resources.ApplyResources(this.btnDeleteReminder, "btnDeleteReminder");
             this.btnDeleteReminder.Name = "btnDeleteReminder";
             this.btnDeleteReminder.UseVisualStyleBackColor = true;
+            this.btnDeleteReminder.Click += new System.EventHandler(this.btnDeleteReminder_Click);
             // 
-            // button1
+            // btnModifyReminder
             // 
-            this.button1.Image = global::CrediNET.Properties.Resources.page_edit;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnModifyReminder.Image = global::CrediNET.Properties.Resources.page_edit;
+            resources.ApplyResources(this.btnModifyReminder, "btnModifyReminder");
+            this.btnModifyReminder.Name = "btnModifyReminder";
+            this.btnModifyReminder.UseVisualStyleBackColor = true;
+            this.btnModifyReminder.Click += new System.EventHandler(this.btnModifyReminder_Click);
             // 
             // calReminder
             // 
             resources.ApplyResources(this.calReminder, "calReminder");
-            calendarHighlightRange1.DayOfWeek = System.DayOfWeek.Monday;
-            calendarHighlightRange1.EndTime = System.TimeSpan.Parse("17:00:00");
-            calendarHighlightRange1.StartTime = System.TimeSpan.Parse("08:00:00");
-            calendarHighlightRange2.DayOfWeek = System.DayOfWeek.Tuesday;
-            calendarHighlightRange2.EndTime = System.TimeSpan.Parse("17:00:00");
-            calendarHighlightRange2.StartTime = System.TimeSpan.Parse("08:00:00");
-            calendarHighlightRange3.DayOfWeek = System.DayOfWeek.Wednesday;
-            calendarHighlightRange3.EndTime = System.TimeSpan.Parse("17:00:00");
-            calendarHighlightRange3.StartTime = System.TimeSpan.Parse("08:00:00");
-            calendarHighlightRange4.DayOfWeek = System.DayOfWeek.Thursday;
-            calendarHighlightRange4.EndTime = System.TimeSpan.Parse("17:00:00");
-            calendarHighlightRange4.StartTime = System.TimeSpan.Parse("08:00:00");
-            calendarHighlightRange5.DayOfWeek = System.DayOfWeek.Friday;
-            calendarHighlightRange5.EndTime = System.TimeSpan.Parse("17:00:00");
-            calendarHighlightRange5.StartTime = System.TimeSpan.Parse("08:00:00");
+            calendarHighlightRange6.DayOfWeek = System.DayOfWeek.Monday;
+            calendarHighlightRange6.EndTime = System.TimeSpan.Parse("17:00:00");
+            calendarHighlightRange6.StartTime = System.TimeSpan.Parse("08:00:00");
+            calendarHighlightRange7.DayOfWeek = System.DayOfWeek.Tuesday;
+            calendarHighlightRange7.EndTime = System.TimeSpan.Parse("17:00:00");
+            calendarHighlightRange7.StartTime = System.TimeSpan.Parse("08:00:00");
+            calendarHighlightRange8.DayOfWeek = System.DayOfWeek.Wednesday;
+            calendarHighlightRange8.EndTime = System.TimeSpan.Parse("17:00:00");
+            calendarHighlightRange8.StartTime = System.TimeSpan.Parse("08:00:00");
+            calendarHighlightRange9.DayOfWeek = System.DayOfWeek.Thursday;
+            calendarHighlightRange9.EndTime = System.TimeSpan.Parse("17:00:00");
+            calendarHighlightRange9.StartTime = System.TimeSpan.Parse("08:00:00");
+            calendarHighlightRange10.DayOfWeek = System.DayOfWeek.Friday;
+            calendarHighlightRange10.EndTime = System.TimeSpan.Parse("17:00:00");
+            calendarHighlightRange10.StartTime = System.TimeSpan.Parse("08:00:00");
             this.calReminder.HighlightRanges = new System.Windows.Forms.Calendar.CalendarHighlightRange[] {
-        calendarHighlightRange1,
-        calendarHighlightRange2,
-        calendarHighlightRange3,
-        calendarHighlightRange4,
-        calendarHighlightRange5};
+        calendarHighlightRange6,
+        calendarHighlightRange7,
+        calendarHighlightRange8,
+        calendarHighlightRange9,
+        calendarHighlightRange10};
             this.calReminder.Name = "calReminder";
+            // 
+            // btnOK
+            // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
             // 
             // FrmReminder
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnModifyReminder);
             this.Controls.Add(this.btnDeleteReminder);
             this.Controls.Add(this.btnAddReminder);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvReminderOps);
             this.Controls.Add(this.calReminder);
             this.Controls.Add(this.mthCalReminder);
             this.Name = "FrmReminder";
+            this.Load += new System.EventHandler(this.FrmReminder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,13 +163,14 @@
 
         private System.Windows.Forms.MonthCalendar mthCalReminder;
         private System.Windows.Forms.Calendar.Calendar calReminder;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvReminderOps;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddReminder;
         private System.Windows.Forms.Button btnDeleteReminder;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnModifyReminder;
         private System.Windows.Forms.ColumnHeader clmnId;
         private System.Windows.Forms.ColumnHeader clmnBudget;
         private System.Windows.Forms.ColumnHeader clmnDueDate;
+        private System.Windows.Forms.Button btnOK;
     }
 }

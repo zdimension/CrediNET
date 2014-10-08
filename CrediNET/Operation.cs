@@ -94,5 +94,17 @@ namespace CrediNET
         {
             this._id = id;
         }
+
+        public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget, bool monthly)
+        {
+            this._id = System.Guid.NewGuid().ToString();
+            this.Date = date;
+            this.Commentary = commentary;
+            this.Credit = credit;
+            this.Debit = debit;
+            this.Type = type;
+            this.Budget = budget;
+            this.Monthly = monthly;
+        }
     }
 }

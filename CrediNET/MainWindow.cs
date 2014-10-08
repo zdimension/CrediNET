@@ -243,6 +243,7 @@ namespace CrediNET
             btnDelOp.Visible = false;
             btnFilterOp.Visible = false;
             btnSave.Visible = false;
+            btnReminder.Visible = false;
 
             btnGraph.Visible = false;
 
@@ -357,6 +358,7 @@ namespace CrediNET
             btnDelOp.Visible = true;
             btnFilterOp.Visible = true;
             btnSave.Visible = true;
+            btnReminder.Visible = true;
 
             btnGraph.Visible = true;
 
@@ -984,6 +986,15 @@ namespace CrediNET
             lblSolde.Text += (totalc - totald).ToString("0.00") + " " + CompteActuel.Currency.Symbol;
 
             SoldeActuel = totalc - totald;
+        }
+
+        private void btnReminder_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmReminder(CompteActuel);
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                
+            }
         }
     }
 }
