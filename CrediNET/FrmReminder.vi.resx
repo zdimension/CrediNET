@@ -117,33 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="clmnDueDate.Text" xml:space="preserve">
-    <value>Due date</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 15</value>
+    <value>62, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Repeated operations:</value>
+    <value>Nhắc nhở:</value>
   </data>
   <data name="calReminder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="btnModifyReminder.Text" xml:space="preserve">
-    <value>Edit</value>
+    <value>Sửa</value>
   </data>
   <data name="btnDeleteReminder.Text" xml:space="preserve">
-    <value>Remove</value>
+    <value>Xóa</value>
   </data>
   <data name="btnAddReminder.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>Thêm</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Repeat</value>
+    <value>Nhắc nhở</value>
   </data>
 </root>

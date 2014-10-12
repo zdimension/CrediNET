@@ -84,7 +84,8 @@
             this.cbxLng.Items.AddRange(new object[] {
             resources.GetString("cbxLng.Items"),
             resources.GetString("cbxLng.Items1"),
-            resources.GetString("cbxLng.Items2")});
+            resources.GetString("cbxLng.Items2"),
+            resources.GetString("cbxLng.Items3")});
             this.cbxLng.Name = "cbxLng";
             // 
             // label2

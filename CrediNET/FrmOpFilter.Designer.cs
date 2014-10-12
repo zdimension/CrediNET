@@ -46,7 +46,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbxBudget = new ColorComboBox();
+            this.cbxBudget = new CrediNET.ColorComboBox();
             this.chbBudget = new System.Windows.Forms.CheckBox();
             this.chbType = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -194,9 +194,13 @@
             // 
             // cbxBudget
             // 
-            this.cbxBudget.FormattingEnabled = true;
             resources.ApplyResources(this.cbxBudget, "cbxBudget");
+            this.cbxBudget.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxBudget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxBudget.FormattingEnabled = true;
             this.cbxBudget.Name = "cbxBudget";
+            this.cbxBudget.SelectedItem = null;
+            this.cbxBudget.SelectedValue = System.Drawing.Color.White;
             // 
             // chbBudget
             // 
@@ -234,9 +238,9 @@
             // 
             // mudDebitTo
             // 
+            resources.ApplyResources(this.mudDebitTo, "mudDebitTo");
             this.mudDebitTo.DecimalPlaces = 2;
             this.mudDebitTo.Devise = "€";
-            resources.ApplyResources(this.mudDebitTo, "mudDebitTo");
             this.mudDebitTo.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -251,9 +255,9 @@
             // 
             // mudDebitFrom
             // 
+            resources.ApplyResources(this.mudDebitFrom, "mudDebitFrom");
             this.mudDebitFrom.DecimalPlaces = 2;
             this.mudDebitFrom.Devise = "€";
-            resources.ApplyResources(this.mudDebitFrom, "mudDebitFrom");
             this.mudDebitFrom.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -285,9 +289,9 @@
             // 
             // mudCreditTo
             // 
+            resources.ApplyResources(this.mudCreditTo, "mudCreditTo");
             this.mudCreditTo.DecimalPlaces = 2;
             this.mudCreditTo.Devise = "€";
-            resources.ApplyResources(this.mudCreditTo, "mudCreditTo");
             this.mudCreditTo.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -297,9 +301,9 @@
             // 
             // mudCreditFrom
             // 
+            resources.ApplyResources(this.mudCreditFrom, "mudCreditFrom");
             this.mudCreditFrom.DecimalPlaces = 2;
             this.mudCreditFrom.Devise = "€";
-            resources.ApplyResources(this.mudCreditFrom, "mudCreditFrom");
             this.mudCreditFrom.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -331,8 +335,8 @@
             // 
             // cbxType
             // 
-            this.cbxType.FormattingEnabled = true;
             resources.ApplyResources(this.cbxType, "cbxType");
+            this.cbxType.FormattingEnabled = true;
             this.cbxType.Name = "cbxType";
             // 
             // FrmOpFilter

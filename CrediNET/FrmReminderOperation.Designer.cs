@@ -68,8 +68,8 @@
             // 
             // cbxType
             // 
-            this.cbxType.FormattingEnabled = true;
             resources.ApplyResources(this.cbxType, "cbxType");
+            this.cbxType.FormattingEnabled = true;
             this.cbxType.Name = "cbxType";
             this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             // 
@@ -100,15 +100,15 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -153,6 +153,7 @@
             // 
             // cbxRepetitionType
             // 
+            resources.ApplyResources(this.cbxRepetitionType, "cbxRepetitionType");
             this.cbxRepetitionType.FormattingEnabled = true;
             this.cbxRepetitionType.Items.AddRange(new object[] {
             resources.GetString("cbxRepetitionType.Items"),
@@ -166,7 +167,6 @@
             resources.GetString("cbxRepetitionType.Items8"),
             resources.GetString("cbxRepetitionType.Items9"),
             resources.GetString("cbxRepetitionType.Items10")});
-            resources.ApplyResources(this.cbxRepetitionType, "cbxRepetitionType");
             this.cbxRepetitionType.Name = "cbxRepetitionType";
             // 
             // label7
@@ -182,9 +182,9 @@
             // 
             // mupCredit
             // 
+            resources.ApplyResources(this.mupCredit, "mupCredit");
             this.mupCredit.DecimalPlaces = 2;
             this.mupCredit.Devise = "€";
-            resources.ApplyResources(this.mupCredit, "mupCredit");
             this.mupCredit.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -194,9 +194,9 @@
             // 
             // mupDebit
             // 
+            resources.ApplyResources(this.mupDebit, "mupDebit");
             this.mupDebit.DecimalPlaces = 2;
             this.mupDebit.Devise = "€";
-            resources.ApplyResources(this.mupDebit, "mupDebit");
             this.mupDebit.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -206,10 +206,10 @@
             // 
             // cbxBudget
             // 
+            resources.ApplyResources(this.cbxBudget, "cbxBudget");
             this.cbxBudget.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxBudget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBudget.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxBudget, "cbxBudget");
             this.cbxBudget.Name = "cbxBudget";
             this.cbxBudget.SelectedItem = null;
             this.cbxBudget.SelectedValue = System.Drawing.Color.White;

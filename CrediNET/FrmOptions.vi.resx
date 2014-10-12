@@ -117,33 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="clmnDueDate.Text" xml:space="preserve">
-    <value>Due date</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tiền tệ:</value>
+  </data>
+  <data name="cbxLng.Items3" xml:space="preserve">
+    <value>Tiếng việt (vi-VN)</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 20</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Cấu hình CrediNET</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 15</value>
+    <value>64, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Repeated operations:</value>
-  </data>
-  <data name="calReminder.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="btnModifyReminder.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="btnDeleteReminder.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="btnAddReminder.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>Ngôn ngữ:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Repeat</value>
+    <value>Cấu hình</value>
   </data>
 </root>

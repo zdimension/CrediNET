@@ -37,9 +37,9 @@
             // 
             // lblVersion
             // 
+            resources.ApplyResources(this.lblVersion, "lblVersion");
             this.lblVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
             this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(201)))), ((int)(((byte)(225)))));
-            resources.ApplyResources(this.lblVersion, "lblVersion");
             this.lblVersion.Name = "lblVersion";
             // 
             // label1

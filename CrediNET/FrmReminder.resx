@@ -303,6 +303,9 @@
   <data name="&gt;&gt;btnDeleteReminder.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;clmnBudget.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="clmnDueDate.Width" type="System.Int32, mscorlib">
     <value>170</value>
   </data>
@@ -311,9 +314,6 @@
   </data>
   <data name="btnDeleteReminder.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 54</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
   </data>
   <data name="calReminder.Location" type="System.Drawing.Point, System.Drawing">
     <value>246, 12</value>
@@ -324,8 +324,8 @@
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 183</value>
   </data>
-  <data name="&gt;&gt;clmnBudget.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="clmnId.Width" type="System.Int32, mscorlib">
     <value>0</value>
@@ -397,6 +397,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
+    <value>vi</value>
   </metadata>
 </root>

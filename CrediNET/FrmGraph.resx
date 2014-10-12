@@ -181,7 +181,7 @@
     <value>2</value>
   </data>
   <data name="&gt;&gt;zg1.Type" xml:space="preserve">
-    <value>ZedGraph.ZedGraphControl, ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
+    <value>ZedGraph.ZedGraphControl, ZedGraph, Version=0.0.0.0, Culture=neutral, PublicKeyToken=02a83cbd123fcd60</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>954, 559</value>
@@ -204,6 +204,9 @@
   <data name="&gt;&gt;pnlBottom.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
   <data name="&gt;&gt;pnlBottom.Name" xml:space="preserve">
     <value>pnlBottom</value>
   </data>
@@ -212,9 +215,6 @@
   </data>
   <data name="pnlBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
     <value>btnClose</value>
@@ -240,8 +240,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
+  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Graphique</value>
@@ -253,6 +253,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
+    <value>vi</value>
   </metadata>
 </root>

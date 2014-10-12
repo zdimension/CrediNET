@@ -119,205 +119,175 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblAccountName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
+    <value>123, 17</value>
   </data>
   <data name="lblAccountName.Text" xml:space="preserve">
-    <value>&lt;No account loaded&gt;</value>
+    <value>&lt;Chưa tạo tài khoản&gt;</value>
   </data>
   <data name="spacer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 17</value>
+    <value>803, 17</value>
   </data>
   <data name="lblTotalCredit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 17</value>
+    <value>58, 17</value>
   </data>
   <data name="lblTotalCredit.Text" xml:space="preserve">
-    <value>$0.00</value>
+    <value>0,00 đ</value>
   </data>
   <data name="lblTotalDeb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 17</value>
+    <value>58, 17</value>
   </data>
   <data name="lblTotalDeb.Text" xml:space="preserve">
-    <value>$0.00</value>
-  </data>
-  <data name="ofpCompte.Filter" xml:space="preserve">
-    <value>CrediNET account (*.cna, *.cne)|*.cna;*.cne</value>
-  </data>
-  <data name="sfdCompte.Filter" xml:space="preserve">
-    <value>CrediNET account (*.cna, *.cne)|*.cna;*.cne</value>
-  </data>
-  <data name="sfdCSV.Filter" xml:space="preserve">
-    <value>CSV (comma-delimited) (*.csv)|*.csv</value>
-  </data>
-  <data name="sfdXLS.Filter" xml:space="preserve">
-    <value>Excel 97-2003 Workbook (*.xls)|*.xls</value>
-  </data>
-  <data name="sfdXLSX.Filter" xml:space="preserve">
-    <value>Excel Workbook (*.xlsx)|*.xlsx</value>
-  </data>
-  <data name="sfdODS.Filter" xml:space="preserve">
-    <value>OpenDocument Spreadsheet (*.ods)|*.ods</value>
-  </data>
-  <data name="lblSolde.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 32</value>
+    <value>0,00 đ</value>
   </data>
   <data name="lblSolde.Text" xml:space="preserve">
-    <value>Balance : $0.00</value>
-  </data>
-  <data name="lblSoldeAt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 15</value>
+    <value>Số dư : 0,00 đ</value>
   </data>
   <data name="lblSoldeAt.Text" xml:space="preserve">
-    <value>Balance of   /  /     : $0.00</value>
+    <value>Số dư   /  /     : 0,00 đ</value>
+  </data>
+  <data name="clmnDate.Text" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <data name="clmnType.Text" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="clmnBudget.Text" xml:space="preserve">
+    <value>Mục</value>
   </data>
   <data name="clmnComm.Text" xml:space="preserve">
-    <value>Comment</value>
+    <value>Ghi chú</value>
   </data>
   <data name="clmnCred.Text" xml:space="preserve">
-    <value>Credit</value>
+    <value>Dư</value>
   </data>
   <data name="clmnDeb.Text" xml:space="preserve">
-    <value>Debit</value>
+    <value>Nợ</value>
   </data>
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 66</value>
+    <value>36, 66</value>
   </data>
   <data name="btnNew.Text" xml:space="preserve">
-    <value>Create</value>
+    <value>Tạo</value>
   </data>
   <data name="btnOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 66</value>
+    <value>36, 66</value>
   </data>
   <data name="btnOpen.Text" xml:space="preserve">
-    <value>Open</value>
-  </data>
-  <data name="enregistrerSousToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 22</value>
-  </data>
-  <data name="enregistrerSousToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save as...</value>
-  </data>
-  <data name="cryptéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 22</value>
-  </data>
-  <data name="cryptéToolStripMenuItem.Text" xml:space="preserve">
-    <value>Encrypted</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 6</value>
-  </data>
-  <data name="fichierCSVToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
-  </data>
-  <data name="fichierCSVToolStripMenuItem.Text" xml:space="preserve">
-    <value>CSV file</value>
-  </data>
-  <data name="fichierExcel972003ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
-  </data>
-  <data name="fichierExcel972003ToolStripMenuItem.Text" xml:space="preserve">
-    <value>Excel 97-2003 file</value>
-  </data>
-  <data name="fichierExcelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
-  </data>
-  <data name="fichierExcelToolStripMenuItem.Text" xml:space="preserve">
-    <value>Excel file</value>
-  </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
-  </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text" xml:space="preserve">
-    <value>This file type isn't supported yet.</value>
-  </data>
-  <data name="classeurOpenOfficeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
-  </data>
-  <data name="classeurOpenOfficeToolStripMenuItem.Text" xml:space="preserve">
-    <value>OpenOffice file</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 22</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export</value>
+    <value>Mở</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 66</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
+    <value>Lưu</value>
+  </data>
+  <data name="enregistrerSousToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="enregistrerSousToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lưu với</value>
+  </data>
+  <data name="cryptéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="cryptéToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mã hóa</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 6</value>
+  </data>
+  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xuất</value>
+  </data>
+  <data name="fichierCSVToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="fichierCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tập tin CSV</value>
+  </data>
+  <data name="fichierExcel972003ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="fichierExcel972003ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tập tin Excel 97-2003</value>
+  </data>
+  <data name="fichierExcelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="fichierExcelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tập tin Excel</value>
+  </data>
+  <data name="classeurOpenOfficeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
   </data>
   <data name="btnEditAcc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 66</value>
+    <value>82, 66</value>
   </data>
   <data name="btnEditAcc.Text" xml:space="preserve">
-    <value>Modify account</value>
+    <value>Sửa tài khoản</value>
   </data>
   <data name="btnAddOp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 66</value>
+    <value>42, 66</value>
   </data>
   <data name="btnAddOp.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="btnAddOp.ToolTipText" xml:space="preserve">
-    <value>Add an operation</value>
+    <value>Thêm</value>
   </data>
   <data name="btnEditOp.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 66</value>
   </data>
   <data name="btnEditOp.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="btnEditOp.ToolTipText" xml:space="preserve">
-    <value>Edit the selected operation</value>
+    <value>Sửa</value>
   </data>
   <data name="btnDuplOp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 66</value>
+    <value>45, 66</value>
   </data>
   <data name="btnDuplOp.Text" xml:space="preserve">
-    <value>Duplicate</value>
-  </data>
-  <data name="btnDuplOp.ToolTipText" xml:space="preserve">
-    <value>Duplicate the selected operation</value>
+    <value>Lặp lại</value>
   </data>
   <data name="btnDelOp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 66</value>
+    <value>36, 66</value>
   </data>
   <data name="btnDelOp.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="btnDelOp.ToolTipText" xml:space="preserve">
-    <value>Delete the selected operation</value>
+    <value>Xóa</value>
   </data>
   <data name="btnFilterOp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 66</value>
+    <value>36, 66</value>
   </data>
   <data name="btnFilterOp.Text" xml:space="preserve">
-    <value>Filter</value>
+    <value>Lọc</value>
   </data>
   <data name="btnOpt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 66</value>
+    <value>59, 66</value>
   </data>
   <data name="btnOpt.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Cấu hình</value>
   </data>
-  <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+  <data name="btnReminder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 66</value>
   </data>
-  <data name="btnCamembert.Text" xml:space="preserve">
-    <value>Pie</value>
-  </data>
-  <data name="btnCourbes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
-  </data>
-  <data name="btnCourbes.Text" xml:space="preserve">
-    <value>Curves</value>
+  <data name="btnReminder.Text" xml:space="preserve">
+    <value>Nhắc nhở</value>
   </data>
   <data name="btnGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 66</value>
+    <value>60, 66</value>
   </data>
   <data name="btnGraph.Text" xml:space="preserve">
-    <value>Graphic</value>
+    <value>Biểu đồ</value>
+  </data>
+  <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="btnCamembert.Text" xml:space="preserve">
+    <value>Dạng bánh</value>
+  </data>
+  <data name="btnCourbes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="btnCourbes.Text" xml:space="preserve">
+    <value>Dạng đường</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
