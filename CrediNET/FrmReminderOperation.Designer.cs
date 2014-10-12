@@ -46,6 +46,7 @@
             this.nudNbOfRepetitions = new System.Windows.Forms.NumericUpDown();
             this.cbxRepetitionType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbAddOperations = new System.Windows.Forms.CheckBox();
             this.mupCredit = new CrediNET.MoneyUpDown();
             this.mupDebit = new CrediNET.MoneyUpDown();
             this.cbxBudget = new CrediNET.ColorComboBox();
@@ -67,8 +68,8 @@
             // 
             // cbxType
             // 
-            resources.ApplyResources(this.cbxType, "cbxType");
             this.cbxType.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxType, "cbxType");
             this.cbxType.Name = "cbxType";
             this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             // 
@@ -99,17 +100,18 @@
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCmptSpc
             // 
@@ -151,7 +153,6 @@
             // 
             // cbxRepetitionType
             // 
-            resources.ApplyResources(this.cbxRepetitionType, "cbxRepetitionType");
             this.cbxRepetitionType.FormattingEnabled = true;
             this.cbxRepetitionType.Items.AddRange(new object[] {
             resources.GetString("cbxRepetitionType.Items"),
@@ -165,6 +166,7 @@
             resources.GetString("cbxRepetitionType.Items8"),
             resources.GetString("cbxRepetitionType.Items9"),
             resources.GetString("cbxRepetitionType.Items10")});
+            resources.ApplyResources(this.cbxRepetitionType, "cbxRepetitionType");
             this.cbxRepetitionType.Name = "cbxRepetitionType";
             // 
             // label7
@@ -172,11 +174,17 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // cbAddOperations
+            // 
+            resources.ApplyResources(this.cbAddOperations, "cbAddOperations");
+            this.cbAddOperations.Name = "cbAddOperations";
+            this.cbAddOperations.UseVisualStyleBackColor = true;
+            // 
             // mupCredit
             // 
-            resources.ApplyResources(this.mupCredit, "mupCredit");
             this.mupCredit.DecimalPlaces = 2;
             this.mupCredit.Devise = "€";
+            resources.ApplyResources(this.mupCredit, "mupCredit");
             this.mupCredit.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -186,9 +194,9 @@
             // 
             // mupDebit
             // 
-            resources.ApplyResources(this.mupDebit, "mupDebit");
             this.mupDebit.DecimalPlaces = 2;
             this.mupDebit.Devise = "€";
+            resources.ApplyResources(this.mupDebit, "mupDebit");
             this.mupDebit.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -198,10 +206,10 @@
             // 
             // cbxBudget
             // 
-            resources.ApplyResources(this.cbxBudget, "cbxBudget");
             this.cbxBudget.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxBudget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBudget.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxBudget, "cbxBudget");
             this.cbxBudget.Name = "cbxBudget";
             this.cbxBudget.SelectedItem = null;
             this.cbxBudget.SelectedValue = System.Drawing.Color.White;
@@ -211,6 +219,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
+            this.Controls.Add(this.cbAddOperations);
             this.Controls.Add(this.cbxRepetitionType);
             this.Controls.Add(this.nudNbOfRepetitions);
             this.Controls.Add(this.label7);
@@ -262,6 +271,7 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.NumericUpDown nudNbOfRepetitions;
         public System.Windows.Forms.ComboBox cbxRepetitionType;
+        public System.Windows.Forms.CheckBox cbAddOperations;
 
     }
 }

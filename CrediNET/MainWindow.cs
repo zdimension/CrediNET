@@ -993,7 +993,7 @@ namespace CrediNET
             var frm = new FrmReminder(CompteActuel);
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                
+                LoadOps();
             }
         }
     }

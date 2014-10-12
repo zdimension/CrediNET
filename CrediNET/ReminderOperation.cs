@@ -100,6 +100,11 @@ namespace CrediNET
             set;
         }
 
+        public bool AutomaticallyAdded
+        {
+            get;
+            set;
+        }
         /// <summary>
         /// Simple constructor
         /// </summary>
@@ -128,17 +133,27 @@ namespace CrediNET
             set;
         }
 
+        /// <summary>
+        /// Generate daily forcast operations
+        /// </summary>
+        /// <returns>A list of daily forcast operations</returns>
         private List<Operation> populateDailyOperations()
         {
             List<Operation> lstOps = new List<Operation>();
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddDays(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
+                //Consider only due dates in the future
+                if (DateTime.Compare(this.DueDate.AddDays(i), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(this.DueDate.AddDays(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
             }
             return lstOps;
         }
 
+        /// <summary>
+        /// Generate weekly forcast operations
+        /// </summary>
+        /// <returns>A list of weekly forcast operations</returns>
         private List<Operation> populateWeeklyOperations()
         {
             DateTime beginningDay = this.DueDate;
@@ -146,11 +161,17 @@ namespace CrediNET
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddDays(i * 7), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
+                //Consider only due dates in the future
+                if (DateTime.Compare(this.DueDate.AddDays(i * 7), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(this.DueDate.AddDays(i * 7), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
             }
             return lstOps;
         }
 
+        /// <summary>
+        /// Generate monthly forcast operations
+        /// </summary>
+        /// <returns>A list of monthly forcast operations</returns>
         private List<Operation> populateMonthlyOperations()
         {
             DateTime beginningDay = this.DueDate;
@@ -158,11 +179,17 @@ namespace CrediNET
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddMonths(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
+                //Consider only due dates in the future
+                if (DateTime.Compare(this.DueDate.AddMonths(i), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(this.DueDate.AddMonths(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
             }
             return lstOps;
         }
 
+        /// <summary>
+        /// Generate yearly forcast operations
+        /// </summary>
+        /// <returns>A list of yearly forcast operations</returns>
         private List<Operation> populateYearlyOperations()
         {
             DateTime beginningDay = this.DueDate;
@@ -170,11 +197,16 @@ namespace CrediNET
 
             for (int i = 0; i < this.NbOfRepetition; i++)
             {
-                lstOps.Add(new Operation(this.DueDate.AddYears(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget));
+                //Consider only due dates in the future
+                if (DateTime.Compare(this.DueDate.AddYears(i), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(this.DueDate.AddYears(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
             }
             return lstOps;
         }
 
+        /// <summary>
+        /// Depending on repetition type, generate forcast operations
+        /// </summary>
         public void populateForcastOperations()
         {
             switch (this.RepetitionType)
@@ -196,9 +228,26 @@ namespace CrediNET
             }
         }
 
+        /// <summary>
+        /// Filter the list of operations according to starting day and ending day
+        /// </summary>
+        /// <param name="lstOps">List of operations for filtering</param>
+        /// <param name="start">Start day</param>
+        /// <param name="end">End day</param>
+        /// <returns>List of filtered operations</returns>
         public static List<Operation> filterOperation(List<Operation> lstOps, DateTime start, DateTime end)
         {
             return lstOps.FindAll(x => {return DateTime.Compare(x.Date, start) >= 0 && DateTime.Compare(x.Date, end) <= 0; });
+        }
+
+        public void addNormalOperations(Account acc)
+        {
+            acc.Operations.AddRange(ForcastOperations);
+        }
+
+        public static void deleteNormalOperations(Account acc, string rmdOptID)
+        {
+            acc.Operations.RemoveAll(x => x.RmdOptID == rmdOptID && DateTime.Compare(x.Date, DateTime.Now) > 0);
         }
     }
 }

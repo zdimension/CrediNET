@@ -69,7 +69,14 @@ namespace CrediNET
             set;
         }
 
-
+        /// <summary>
+        /// The reminder operation from which this operation is generated
+        /// </summary>
+        public string RmdOptID
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Simple constructor
@@ -97,6 +104,18 @@ namespace CrediNET
             this.Debit = debit;
             this.Type = type;
             this.Budget = budget;
+        }
+
+        public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget, string rmdOptID)
+        {
+            this._id = System.Guid.NewGuid().ToString();
+            this.Date = date;
+            this.Commentary = commentary;
+            this.Credit = credit;
+            this.Debit = debit;
+            this.Type = type;
+            this.Budget = budget;
+            this.RmdOptID = rmdOptID;
         }
     }
 }

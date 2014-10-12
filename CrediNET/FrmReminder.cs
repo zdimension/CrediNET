@@ -40,9 +40,18 @@ namespace CrediNET
                 op.Commentary = frm.txtComm.Text;
                 op.NbOfRepetition = frm.nudNbOfRepetitions.Value;
                 op.RepetitionType = (ReminderOperation.ERepititionType)frm.cbxRepetitionType.SelectedIndex;
-                
+                op.AutomaticallyAdded = frm.cbAddOperations.Checked;
+
+                //Add new reminder operation
                 CompteActuel.ReminderOperations.Add(op);
+
                 LoadReminderOps();
+
+                if (frm.cbAddOperations.Checked)
+                    //Add normal operations generated from the reminder operation
+                    op.addNormalOperations(CompteActuel);           
+                else
+                    ReminderOperation.deleteNormalOperations(CompteActuel, op.ID);
             }
         }
 
@@ -74,6 +83,7 @@ namespace CrediNET
         private void btnDeleteReminder_Click(object sender, EventArgs e)
         {
             CompteActuel.ReminderOperations.RemoveAll(x => x.ID == lvReminderOps.SelectedItems[0].Text);
+            ReminderOperation.deleteNormalOperations(CompteActuel, lvReminderOps.SelectedItems[0].Text);
             LoadReminderOps();
         }
 
@@ -82,7 +92,7 @@ namespace CrediNET
             var frm = new FrmReminderOperation(CompteActuel, false, true, CompteActuel.ReminderOperations.First(x => x.ID == lvReminderOps.SelectedItems[0].Text));
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                ReminderOperation op = new ReminderOperation();
+                ReminderOperation op = new ReminderOperation(lvReminderOps.SelectedItems[0].Text);
                 op.Type = frm.cbxType.SelectedItem.ToString();
                 op.Credit = frm.mupCredit.Value;
                 op.Debit = frm.mupDebit.Value;
@@ -91,16 +101,26 @@ namespace CrediNET
                 op.Commentary = frm.txtComm.Text;
                 op.NbOfRepetition = (int)frm.nudNbOfRepetitions.Value;
                 op.RepetitionType = (ReminderOperation.ERepititionType)frm.cbxRepetitionType.SelectedIndex;
+                op.AutomaticallyAdded = frm.cbAddOperations.Checked;
 
                 int a = CompteActuel.ReminderOperations.IndexOf(CompteActuel.ReminderOperations.First(x => x.ID == lvReminderOps.SelectedItems[0].Text));
                 CompteActuel.ReminderOperations.RemoveAll(x => x.ID == lvReminderOps.SelectedItems[0].Text);
                 CompteActuel.ReminderOperations.Insert(a, op);
+
+                //Delete old normal operations
+                ReminderOperation.deleteNormalOperations(CompteActuel, op.ID);
+
                 LoadReminderOps();
+
+                if (frm.cbAddOperations.Checked)
+                    //Add normal operations generated from the reminder operation
+                    op.addNormalOperations(CompteActuel);
             }
         }
 
         private void FrmReminder_Load(object sender, EventArgs e)
         {
+            //Initialize reminder operations and reminder calendar
             LoadReminderOps();
             loadCalendar();
         }
@@ -120,6 +140,7 @@ namespace CrediNET
             DateTime startOfMonth = new DateTime(today.Year, today.Month, 1);
             DateTime endOfMonth = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
 
+            //Filter only reminder operations that fit the calendar
             List<Operation> ops = ReminderOperation.filterOperation(CompteActuel.ForecastOperations, startOfMonth, endOfMonth);
 
             calReminder.SetViewRange(startOfMonth, endOfMonth);

@@ -12,7 +12,6 @@ namespace CrediNET
 {
     public partial class FrmReminderOperation : Form
     {
-        
         public FrmReminderOperation(Account compte, bool vir = false, bool edit = false, ReminderOperation op = null)
         {
             InitializeComponent();
@@ -21,7 +20,6 @@ namespace CrediNET
             cbxBudget.SelectedIndex = 0;
             Program.Types.ForEach(y => cbxType.Items.Add(y));
             cbxType.SelectedIndex = 0;
-            //Enum.GetValues(typeof(ReminderOperation.ERepititionType)).Cast<ReminderOperation.ERepititionType>().All(x => { cbxRepetitionType.Items.Add(x); return true; });
             cbxRepetitionType.SelectedIndex = 0;
 
             if(vir)
@@ -44,6 +42,7 @@ namespace CrediNET
                 txtComm.Text = op.Commentary;
                 nudNbOfRepetitions.Value = op.NbOfRepetition;
                 cbxRepetitionType.SelectedIndex = (int)op.RepetitionType;
+                cbAddOperations.Checked = op.AutomaticallyAdded;
             }
         }
 
@@ -59,6 +58,11 @@ namespace CrediNET
         private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnVirCaC.Visible = cbxType.SelectedItem.ToString() == "VIR";
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+                
         }
     }
 }

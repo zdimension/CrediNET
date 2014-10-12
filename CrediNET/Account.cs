@@ -264,11 +264,15 @@ namespace CrediNET
             return null;
         }
 
+        /// <summary>
+        /// Generate forcast operations from reminder operations
+        /// </summary>
         public void populateForcastOperations()
         {
             this.ForecastOperations = new List<Operation>();
             foreach (var item in this.ReminderOperations)
             {
+                //For each reminder operation, generate corresponding forcast operations
                 item.populateForcastOperations();
                 this.ForecastOperations.AddRange(item.ForcastOperations);
             }
@@ -298,7 +302,8 @@ namespace CrediNET
                             new XAttribute("Cre", x.Credit.ToString(culture.NumberFormat)),
                             new XAttribute("Deb", x.Debit.ToString(culture.NumberFormat)),
                             new XAttribute("Type", x.Type),
-                            new XAttribute("Budget", x.Budget)))),
+                            new XAttribute("Budget", x.Budget),
+                            new XAttribute("ReminderOperationID", x.RmdOptID)))),
                     new XElement("ReminderOperations",
                         cm.ReminderOperations.Select(x => new XElement("Op",
                             new XAttribute("ID", x.ID),
@@ -309,7 +314,8 @@ namespace CrediNET
                             new XAttribute("Type", x.Type),
                             new XAttribute("Budget", x.Budget),
                             new XAttribute("NbOfRepetition", x.NbOfRepetition),
-                            new XAttribute("TypeOfRepetition", (int)x.RepetitionType)))),
+                            new XAttribute("TypeOfRepetition", (int)x.RepetitionType),
+                            new XAttribute("AutomaticallyAdded", x.AutomaticallyAdded)))),
                     new XElement("Budgets",
                         cm.Budgets.Select(y => new XElement("B", new XAttribute("color", ColorTranslator.ToHtml(y.Value)), y.Key)))));
 
@@ -353,6 +359,10 @@ namespace CrediNET
                 op.Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat);
                 op.Type = a.Attribute("Type").Value;
                 op.Budget = a.Attribute("Budget").Value;
+                if (a.Attribute("ReminderOperationID") != null)
+                    op.RmdOptID = a.Attribute("ReminderOperationID").Value;
+                else
+                    op.RmdOptID = "";
                 cb.Operations.Add(op);
             }
 
@@ -368,6 +378,8 @@ namespace CrediNET
                     op.Budget = a.Attribute("Budget").Value;
                     op.NbOfRepetition = decimal.Parse(a.Attribute("NbOfRepetition").Value);
                     op.RepetitionType = (ReminderOperation.ERepititionType)decimal.Parse(a.Attribute("TypeOfRepetition").Value);
+                    if (a.Attribute("AutomaticallyAdded") != null)
+                        op.AutomaticallyAdded = bool.Parse(a.Attribute("AutomaticallyAdded").Value);
                     cb.ReminderOperations.Add(op);
                 }
 
