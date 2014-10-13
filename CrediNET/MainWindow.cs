@@ -996,5 +996,17 @@ namespace CrediNET
                 LoadOps();
             }
         }
+
+        private void lvOps_DoubleClick(object sender, EventArgs e)
+        {
+            if(lvOps.SelectedItems.Count == 0 && CompteActuel != null)
+            {
+                btnEditAcc_Click(sender, e);
+            }
+            else if(lvOps.SelectedItems.Count != 0)
+            {
+                btnEditOp_Click(sender, e);
+            }
+        }
     }
 }

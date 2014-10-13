@@ -175,12 +175,6 @@
   <data name="btnOpen.Text" xml:space="preserve">
     <value>Mở</value>
   </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 66</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Lưu</value>
-  </data>
   <data name="enregistrerSousToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
   </data>
@@ -195,12 +189,6 @@
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 6</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
-  </data>
-  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Xuất</value>
   </data>
   <data name="fichierCSVToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -222,6 +210,18 @@
   </data>
   <data name="classeurOpenOfficeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
+  </data>
+  <data name="exporterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="exporterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xuất</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 66</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Lưu</value>
   </data>
   <data name="btnEditAcc.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 66</value>
@@ -271,12 +271,6 @@
   <data name="btnReminder.Text" xml:space="preserve">
     <value>Nhắc nhở</value>
   </data>
-  <data name="btnGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 66</value>
-  </data>
-  <data name="btnGraph.Text" xml:space="preserve">
-    <value>Biểu đồ</value>
-  </data>
   <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 22</value>
   </data>
@@ -288,6 +282,12 @@
   </data>
   <data name="btnCourbes.Text" xml:space="preserve">
     <value>Dạng đường</value>
+  </data>
+  <data name="btnGraph.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 66</value>
+  </data>
+  <data name="btnGraph.Text" xml:space="preserve">
+    <value>Biểu đồ</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -164,21 +164,14 @@
   <data name="btnVirCaC.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 23</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Répéter</value>
+  <data name="cbxRepetitionType.Items" xml:space="preserve">
+    <value>Jour</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="ofpCompte.Filter" xml:space="preserve">
-    <value>Compte CrediNET (*.cna, *.cne)|*.cna;*.cne</value>
-  </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>$this</value>
@@ -186,12 +179,16 @@
   <data name="cbxRepetitionType.Items9" xml:space="preserve">
     <value>Tous les samedis</value>
   </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;mupCredit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbAddOperations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -255,6 +252,9 @@
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 214</value>
+  </data>
   <data name="&gt;&gt;btnVirCaC.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -312,6 +312,9 @@
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cbAddOperations.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -326,9 +329,6 @@
   </data>
   <data name="cbxRepetitionType.Items2" xml:space="preserve">
     <value>Mois</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -387,9 +387,6 @@
   <data name="cbxType.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
   <data name="btnCmptSpc.Text" xml:space="preserve">
     <value>Compter espèces</value>
   </data>
@@ -402,17 +399,17 @@
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btnCmptSpc.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="mupDebit.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 64</value>
   </data>
   <data name="txtComm.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="cbxRepetitionType.Items" xml:space="preserve">
-    <value>Jour</value>
-  </data>
-  <data name="&gt;&gt;mupCredit.Type" xml:space="preserve">
-    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
   </data>
   <data name="cbxRepetitionType.Items7" xml:space="preserve">
     <value>Tous les jeudis</value>
@@ -422,6 +419,9 @@
   </data>
   <data name="&gt;&gt;btnCmptSpc.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mcDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="mcDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 5</value>
@@ -440,9 +440,6 @@
   </data>
   <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;mupCredit.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="nudNbOfRepetitions.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 23</value>
@@ -468,11 +465,14 @@
   <data name="&gt;&gt;mcDate.Type" xml:space="preserve">
     <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Répéter</value>
+  </data>
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;cbAddOperations.Name" xml:space="preserve">
-    <value>cbAddOperations</value>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -501,6 +501,9 @@
   <data name="btnVirCaC.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;cbAddOperations.Name" xml:space="preserve">
+    <value>cbAddOperations</value>
+  </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
@@ -516,14 +519,14 @@
   <data name="cbxBudget.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
-    <value>btnOK</value>
+  <data name="cbxRepetitionType.Items10" xml:space="preserve">
+    <value>Tous les dimanches</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="mcDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="cbAddOperations.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -558,11 +561,8 @@
   <data name="cbxRepetitionType.Items3" xml:space="preserve">
     <value>An</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 214</value>
-  </data>
-  <data name="&gt;&gt;ofpCompte.Name" xml:space="preserve">
-    <value>ofpCompte</value>
+  <data name="&gt;&gt;mupCredit.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="&gt;&gt;cbAddOperations.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -573,14 +573,17 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="&gt;&gt;cbAddOperations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="cbxRepetitionType.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 15</value>
   </data>
-  <data name="&gt;&gt;cbAddOperations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;mupCredit.Type" xml:space="preserve">
+    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="cbxRepetitionType.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 23</value>
@@ -612,8 +615,8 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="&gt;&gt;btnCmptSpc.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="ofpCompte.Filter" xml:space="preserve">
+    <value>Compte CrediNET (*.cna, *.cne)|*.cna;*.cne</value>
   </data>
   <data name="mupCredit.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
@@ -621,14 +624,11 @@
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 37</value>
   </data>
-  <data name="cbxRepetitionType.Items10" xml:space="preserve">
-    <value>Tous les dimanches</value>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>448, 291</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;mupCredit.Name" xml:space="preserve">
     <value>mupCredit</value>
@@ -675,8 +675,8 @@
   <data name="&gt;&gt;cbxRepetitionType.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbAddOperations.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="&gt;&gt;ofpCompte.Name" xml:space="preserve">
+    <value>ofpCompte</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 15</value>
@@ -702,7 +702,7 @@
   <data name="cbAddOperations.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 240</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Text" xml:space="preserve">

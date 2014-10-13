@@ -83,43 +83,43 @@
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblAccountName,
             this.spacer,
             this.lblTotalCredit,
             this.lblTotalDeb});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.SizingGrip = false;
             // 
             // lblAccountName
             // 
-            resources.ApplyResources(this.lblAccountName, "lblAccountName");
             this.lblAccountName.ForeColor = System.Drawing.Color.LightGray;
             this.lblAccountName.Name = "lblAccountName";
+            resources.ApplyResources(this.lblAccountName, "lblAccountName");
             // 
             // spacer
             // 
-            resources.ApplyResources(this.spacer, "spacer");
             this.spacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.spacer.ForeColor = System.Drawing.Color.LightGray;
             this.spacer.Name = "spacer";
+            resources.ApplyResources(this.spacer, "spacer");
             this.spacer.Spring = true;
             // 
             // lblTotalCredit
             // 
-            resources.ApplyResources(this.lblTotalCredit, "lblTotalCredit");
             this.lblTotalCredit.ForeColor = System.Drawing.Color.PaleGreen;
             this.lblTotalCredit.Name = "lblTotalCredit";
             this.lblTotalCredit.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            resources.ApplyResources(this.lblTotalCredit, "lblTotalCredit");
             // 
             // lblTotalDeb
             // 
-            resources.ApplyResources(this.lblTotalDeb, "lblTotalDeb");
             this.lblTotalDeb.ForeColor = System.Drawing.Color.Red;
             this.lblTotalDeb.Name = "lblTotalDeb";
             this.lblTotalDeb.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            resources.ApplyResources(this.lblTotalDeb, "lblTotalDeb");
             // 
             // ofpCompte
             // 
@@ -164,7 +164,6 @@
             // 
             // lvOps
             // 
-            resources.ApplyResources(this.lvOps, "lvOps");
             this.lvOps.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvOps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmnID,
@@ -174,12 +173,14 @@
             this.clmnComm,
             this.clmnCred,
             this.clmnDeb});
+            resources.ApplyResources(this.lvOps, "lvOps");
             this.lvOps.FullRowSelect = true;
             this.lvOps.Name = "lvOps";
             this.lvOps.UseCompatibleStateImageBehavior = false;
             this.lvOps.View = System.Windows.Forms.View.Details;
             this.lvOps.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvOps_ColumnClick);
             this.lvOps.SelectedIndexChanged += new System.EventHandler(this.lvOps_SelectedIndexChanged);
+            this.lvOps.DoubleClick += new System.EventHandler(this.lvOps_DoubleClick);
             // 
             // clmnID
             // 
@@ -211,7 +212,6 @@
             // 
             // toolStrip
             // 
-            resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.toolStrip.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -230,29 +230,29 @@
             this.btnOpt,
             this.btnReminder,
             this.btnGraph});
+            resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip_Paint);
             // 
             // btnNew
             // 
-            resources.ApplyResources(this.btnNew, "btnNew");
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Image = global::CrediNET.Properties.Resources.document_plus;
+            resources.ApplyResources(this.btnNew, "btnNew");
             this.btnNew.Name = "btnNew";
             this.btnNew.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // btnOpen
             // 
-            resources.ApplyResources(this.btnOpen, "btnOpen");
             this.btnOpen.ForeColor = System.Drawing.Color.White;
             this.btnOpen.Image = global::CrediNET.Properties.Resources.document_import;
+            resources.ApplyResources(this.btnOpen, "btnOpen");
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
-            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.enregistrerSousToolStripMenuItem,
             this.cryptéToolStripMenuItem,
@@ -260,13 +260,14 @@
             this.exporterToolStripMenuItem});
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::CrediNET.Properties.Resources.save;
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Name = "btnSave";
             this.btnSave.ButtonClick += new System.EventHandler(this.btnSave_Click);
             // 
             // enregistrerSousToolStripMenuItem
             // 
-            resources.ApplyResources(this.enregistrerSousToolStripMenuItem, "enregistrerSousToolStripMenuItem");
             this.enregistrerSousToolStripMenuItem.Image = global::CrediNET.Properties.Resources.save_as;
+            resources.ApplyResources(this.enregistrerSousToolStripMenuItem, "enregistrerSousToolStripMenuItem");
             this.enregistrerSousToolStripMenuItem.Name = "enregistrerSousToolStripMenuItem";
             this.enregistrerSousToolStripMenuItem.Click += new System.EventHandler(this.enregistrerSousToolStripMenuItem_Click);
             // 
@@ -280,70 +281,70 @@
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // exporterToolStripMenuItem
             // 
-            resources.ApplyResources(this.exporterToolStripMenuItem, "exporterToolStripMenuItem");
             this.exporterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierCSVToolStripMenuItem,
             this.fichierExcel972003ToolStripMenuItem,
             this.fichierExcelToolStripMenuItem,
             this.classeurOpenOfficeToolStripMenuItem});
+            resources.ApplyResources(this.exporterToolStripMenuItem, "exporterToolStripMenuItem");
             this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
             // 
             // fichierCSVToolStripMenuItem
             // 
-            resources.ApplyResources(this.fichierCSVToolStripMenuItem, "fichierCSVToolStripMenuItem");
             this.fichierCSVToolStripMenuItem.Image = global::CrediNET.Properties.Resources.csv;
+            resources.ApplyResources(this.fichierCSVToolStripMenuItem, "fichierCSVToolStripMenuItem");
             this.fichierCSVToolStripMenuItem.Name = "fichierCSVToolStripMenuItem";
             this.fichierCSVToolStripMenuItem.Click += new System.EventHandler(this.fichierCSVToolStripMenuItem_Click);
             // 
             // fichierExcel972003ToolStripMenuItem
             // 
-            resources.ApplyResources(this.fichierExcel972003ToolStripMenuItem, "fichierExcel972003ToolStripMenuItem");
             this.fichierExcel972003ToolStripMenuItem.Image = global::CrediNET.Properties.Resources.xls;
+            resources.ApplyResources(this.fichierExcel972003ToolStripMenuItem, "fichierExcel972003ToolStripMenuItem");
             this.fichierExcel972003ToolStripMenuItem.Name = "fichierExcel972003ToolStripMenuItem";
             this.fichierExcel972003ToolStripMenuItem.Click += new System.EventHandler(this.fichierExcelToolStripMenuItem_Click);
             // 
             // fichierExcelToolStripMenuItem
             // 
-            resources.ApplyResources(this.fichierExcelToolStripMenuItem, "fichierExcelToolStripMenuItem");
             this.fichierExcelToolStripMenuItem.Image = global::CrediNET.Properties.Resources.icon_xlsx;
+            resources.ApplyResources(this.fichierExcelToolStripMenuItem, "fichierExcelToolStripMenuItem");
             this.fichierExcelToolStripMenuItem.Name = "fichierExcelToolStripMenuItem";
             this.fichierExcelToolStripMenuItem.Click += new System.EventHandler(this.fichierExcelToolStripMenuItem_Click_1);
             // 
             // classeurOpenOfficeToolStripMenuItem
             // 
-            resources.ApplyResources(this.classeurOpenOfficeToolStripMenuItem, "classeurOpenOfficeToolStripMenuItem");
             this.classeurOpenOfficeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem});
+            resources.ApplyResources(this.classeurOpenOfficeToolStripMenuItem, "classeurOpenOfficeToolStripMenuItem");
             this.classeurOpenOfficeToolStripMenuItem.Image = global::CrediNET.Properties.Resources.pngU1X58JfMGF;
             this.classeurOpenOfficeToolStripMenuItem.Name = "classeurOpenOfficeToolStripMenuItem";
             this.classeurOpenOfficeToolStripMenuItem.Click += new System.EventHandler(this.classeurOpenOfficeToolStripMenuItem_Click);
             // 
             // ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem
             // 
-            resources.ApplyResources(this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem, "ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem");
             this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Name = "ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem";
+            resources.ApplyResources(this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem, "ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem");
             // 
             // btnEditAcc
             // 
-            resources.ApplyResources(this.btnEditAcc, "btnEditAcc");
             this.btnEditAcc.Image = global::CrediNET.Properties.Resources.document_prepare;
+            resources.ApplyResources(this.btnEditAcc, "btnEditAcc");
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // btnAddOp
             // 
-            resources.ApplyResources(this.btnAddOp, "btnAddOp");
             this.btnAddOp.Image = global::CrediNET.Properties.Resources.page_add;
+            resources.ApplyResources(this.btnAddOp, "btnAddOp");
             this.btnAddOp.Name = "btnAddOp";
             this.btnAddOp.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -370,46 +371,46 @@
             // 
             // btnFilterOp
             // 
-            resources.ApplyResources(this.btnFilterOp, "btnFilterOp");
             this.btnFilterOp.Image = global::CrediNET.Properties.Resources.page_find;
+            resources.ApplyResources(this.btnFilterOp, "btnFilterOp");
             this.btnFilterOp.Name = "btnFilterOp";
             this.btnFilterOp.Click += new System.EventHandler(this.btnFilterOp_Click);
             // 
             // btnOpt
             // 
-            resources.ApplyResources(this.btnOpt, "btnOpt");
             this.btnOpt.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnOpt.Image = global::CrediNET.Properties.Resources.application_form_edit;
+            resources.ApplyResources(this.btnOpt, "btnOpt");
             this.btnOpt.Name = "btnOpt";
             this.btnOpt.Click += new System.EventHandler(this.btnOpt_Click_1);
             // 
             // btnReminder
             // 
-            resources.ApplyResources(this.btnReminder, "btnReminder");
             this.btnReminder.Image = global::CrediNET.Properties.Resources.page_refresh;
+            resources.ApplyResources(this.btnReminder, "btnReminder");
             this.btnReminder.Name = "btnReminder";
             this.btnReminder.Click += new System.EventHandler(this.btnReminder_Click);
             // 
             // btnGraph
             // 
-            resources.ApplyResources(this.btnGraph, "btnGraph");
             this.btnGraph.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCamembert,
             this.btnCourbes});
             this.btnGraph.Image = global::CrediNET.Properties.Resources.diagnostic_chart1;
+            resources.ApplyResources(this.btnGraph, "btnGraph");
             this.btnGraph.Name = "btnGraph";
             // 
             // btnCamembert
             // 
-            resources.ApplyResources(this.btnCamembert, "btnCamembert");
             this.btnCamembert.Image = global::CrediNET.Properties.Resources.chart_pie;
+            resources.ApplyResources(this.btnCamembert, "btnCamembert");
             this.btnCamembert.Name = "btnCamembert";
             this.btnCamembert.Click += new System.EventHandler(this.btnCamembert_Click);
             // 
             // btnCourbes
             // 
-            resources.ApplyResources(this.btnCourbes, "btnCourbes");
             this.btnCourbes.Image = global::CrediNET.Properties.Resources.chart_line;
+            resources.ApplyResources(this.btnCourbes, "btnCourbes");
             this.btnCourbes.Name = "btnCourbes";
             this.btnCourbes.Click += new System.EventHandler(this.btnCourbes_Click);
             // 
