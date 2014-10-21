@@ -77,6 +77,7 @@
             this.btnGraph = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnCamembert = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCourbes = new System.Windows.Forms.ToolStripMenuItem();
+            this.bwkSave = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -414,6 +415,11 @@
             this.btnCourbes.Name = "btnCourbes";
             this.btnCourbes.Click += new System.EventHandler(this.btnCourbes_Click);
             // 
+            // bwkSave
+            // 
+            this.bwkSave.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkSave_DoWork);
+            this.bwkSave.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkSave_RunWorkerCompleted);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -486,6 +492,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnCourbes;
         private System.Windows.Forms.Label lblSoldeAt;
         private System.Windows.Forms.ToolStripButton btnReminder;
+        private System.ComponentModel.BackgroundWorker bwkSave;
     }
 }
 

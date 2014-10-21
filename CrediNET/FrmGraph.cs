@@ -223,19 +223,4 @@ namespace CrediNET
             zg1.Visible = true;
         }
     }
-
-    public static class Extensions
-    {
-        public static void AddOrUpdate(this Dictionary<string, decimal> dic, string key, decimal value)
-        {
-            if (dic.ContainsKey(key))
-            {
-                dic[key] = value;
-            }
-            else
-            {
-                dic.Add(key, value);
-            }
-        }
-    }
 }

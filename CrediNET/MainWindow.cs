@@ -440,7 +440,9 @@ namespace CrediNET
             if (CompteActuelChemin == null)
                 enregistrerSousToolStripMenuItem_Click(sender, e);
 
-            CompteActuel.Save();
+            this.Cursor = Cursors.WaitCursor;
+            bwkSave.RunWorkerAsync();
+            
         }
 
         private void enregistrerSousToolStripMenuItem_Click(object sender, EventArgs e)
@@ -467,24 +469,29 @@ namespace CrediNET
                 switch (CrediNET.Properties.Settings.Default.Lang.Name)
                 {
                     case "en-US":
-                        sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna";
+                        sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna|SQLite CrediNET Account (*.cnsql)|*.cnsqm";
                         break;
 
                     case "de-DE":
-                        sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna";
+                        sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna|SQLite CrediNET Konto (*.cnsql)|*.cnsql";
                         break;
 
                     default:        //case "fr-FR":
-                        sfdCompte.Filter = "Compte CrediNET (*.cna)|*.cna";
+                        sfdCompte.Filter = "Compte CrediNET (*.cna)|*.cna|Compte CrediNET SQLite (*.cnsql)|*.cnsql";
                         break;
                 }
             }
             if (sfdCompte.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                CompteActuel.SaveAs(sfdCompte.FileName);
+                tmpf = sfdCompte.FileName;
+                this.Cursor = Cursors.WaitCursor;
+                bwkSave.RunWorkerAsync();
+                
             }
         }
 
+
+        string tmpf = "";
         private void cryptéToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*CompteActuel.Crypte = !CompteActuel.Crypte;
@@ -1017,6 +1024,20 @@ namespace CrediNET
         {
             // 685
             clmnComm.Width = this.ClientSize.Width - 372;
+        }
+
+        private void bwkSave_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            if (tmpf == "")
+                CompteActuel.Save();
+            else
+                CompteActuel.SaveAs(tmpf);
+        }
+
+        private void bwkSave_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+            tmpf = "";
         }
     }
 }

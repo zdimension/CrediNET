@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -203,13 +204,20 @@ namespace CrediNET
             if (_fp == "")
                 return;
 
-            if (!Encrypted)
+            if (Path.GetExtension(_fp) == ".cnsql")
             {
-                ToXml(this, _fp);
+                SaveSQLite(_fp);
             }
             else
             {
-                File.WriteAllText(_fp, CryptorEngine.Encrypt(ToXml(this, _fp, false).ToString(), this.Pass, true));
+                if (!Encrypted)
+                {
+                    ToXml(this, _fp);
+                }
+                else
+                {
+                    File.WriteAllText(_fp, CryptorEngine.Encrypt(ToXml(this, _fp, false).ToString(), this.Pass, true));
+                }
             }
         }
 
@@ -260,6 +268,10 @@ namespace CrediNET
                     return aeee;
                 }
             }
+            else if (Path.GetExtension(fp) == ".cnsql")
+            {
+                return FromSQLite(fp);
+            }
 
             return null;
         }
@@ -288,7 +300,7 @@ namespace CrediNET
         /// <param name="autosave">Automatically save the file</param>
         /// <returns>The generated XDocument</returns>
         public XDocument ToXml(Account cm, string filepath = "", bool autosave = true)
-        {
+        {          
             var doc = new XDocument(new XElement("Compte",
                     new XElement("Nom", cm.Name),
                     new XElement("CrDate", cm.CreationDate.ToString("dd/MM/yyyy")),
@@ -403,6 +415,103 @@ namespace CrediNET
             return FromXmlCode(xml, filePath);
         }
 
+        public void SaveSQLite(string filePath)
+        {
+            if (File.Exists(filePath))
+                File.Delete(filePath);
+            else
+                SQLiteConnection.CreateFile(filePath);
+
+            SQLiteConnection dbc = new SQLiteConnection("Data Source=" + filePath + ";Version=3;");
+            dbc.Open();
+
+            // tables
+            new SQLiteCommand("create table Account (name varchar(50), crdate varchar(20), devise varchar(10), passe varchar(32));", dbc).ExecuteNonQuery();
+            new SQLiteCommand("create table Operations (id varchar(36), date varchar(20), comm text, cred varchar(20), deb varchar(20), type varchar(10), budget varchar(50), remid varchar(36));", dbc).ExecuteNonQuery();
+            new SQLiteCommand("create table ReminderOperations (id varchar(36), date varchar(20), comm text, cred varchar(20), deb varchar(20), type varchar(10), budget varchar(50), nbrep int, typerep int, auto int);", dbc).ExecuteNonQuery();
+            new SQLiteCommand("create table Budgets (name varchar(50), color varchar(20));", dbc).ExecuteNonQuery();
+
+            // account info
+            new SQLiteCommand("insert into Account (name, crdate, devise, passe) values ('" + this.Name.Sanitize() + "', '" + this.CreationDate.ToString("dd/MM/yyyy") + "', '" + this.Currency.ShortName + "', '" + this.Pass + "')", dbc).ExecuteNonQuery();
+            
+            // operations
+            foreach(Operation o in this.Operations)
+            {
+                new SQLiteCommand("insert into Operations (id, date, comm, cred, deb, type, budget, remid) values ('" + o.ID + "', '" + o.Date.ToString("dd/MM/yyyy") + "', '" + o.Commentary.Sanitize() + "', '" + o.Credit.ToString(culture.NumberFormat) + "', '" + o.Debit.ToString(culture.NumberFormat) + "', '" + o.Type + "', '" + o.Budget.Sanitize() + "', '" + o.RmdOptID + "')", dbc).ExecuteNonQuery();
+            }
+
+            // reminder operations
+            foreach (ReminderOperation o in this.ReminderOperations)
+            {
+                new SQLiteCommand("insert into ReminderOperations (id, date, comm, cred, deb, type, budget, nbrep, typerep, auto) values ('" + o.ID + "', '" + o.DueDate.ToString("dd/MM/yyyy") + "', '" + o.Commentary.Sanitize() + "', '" + o.Credit.ToString(culture.NumberFormat) + "', '" + o.Debit.ToString(culture.NumberFormat) + "', '" + o.Type + "', '" + o.Budget.Sanitize() + "', " + o.NbOfRepetition + ", " + (int)o.RepetitionType + ", " + (o.AutomaticallyAdded ? 1 : 0) + ")", dbc).ExecuteNonQuery();
+            }
+
+            // budgets
+            foreach (var b in this.Budgets)
+            {
+                new SQLiteCommand("insert into Budgets (name, color) values ('" + b.Key.Sanitize() + "', '" + ColorTranslator.ToHtml(b.Value) + "')", dbc).ExecuteNonQuery();
+            }
+
+            dbc.Close();
+        }
+
+        public static Account FromSQLite(string filepath)
+        {
+            Account cb;
+
+            SQLiteConnection dbc = new SQLiteConnection("Data Source=" + filepath + ";Version=3;");
+            dbc.Open();
+
+            // account
+            SQLiteDataReader acrd = new SQLiteCommand("select * from Account", dbc).ExecuteReader();
+            acrd.Read();
+            cb = new Account(DateTime.ParseExact(acrd["crdate"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture), filepath);
+            cb.Name = acrd["name"].ToString();
+            cb.DefPassMd5(acrd["passe"].ToString());
+            CurrencyObj dvs = Currencies.All.First(x => x.ShortName == acrd["devise"].ToString());
+            cb.ChangeCurrency(dvs, false);
+
+
+            SQLiteDataReader oprd = new SQLiteCommand("select * from Operations", dbc).ExecuteReader();
+            while(oprd.Read())
+            {
+                Operation op = new Operation(oprd["id"].ToString());
+                op.Date = DateTime.ParseExact(oprd["date"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                op.Commentary = oprd["comm"].ToString();
+                op.Credit = decimal.Parse(oprd["cred"].ToString(), culture.NumberFormat);
+                op.Debit = decimal.Parse(oprd["deb"].ToString(), culture.NumberFormat);
+                op.Type = oprd["type"].ToString();
+                op.Budget = oprd["budget"].ToString();
+                op.RmdOptID = oprd["remid"].ToString();
+                cb.Operations.Add(op);
+            }
+
+            SQLiteDataReader remrd = new SQLiteCommand("select * from ReminderOperations", dbc).ExecuteReader();
+            while (remrd.Read())
+            {
+                ReminderOperation op = new ReminderOperation(remrd["id"].ToString());
+                op.DueDate = DateTime.ParseExact(remrd["date"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                op.Commentary = remrd["comm"].ToString();
+                op.Credit = decimal.Parse(remrd["cred"].ToString(), culture.NumberFormat);
+                op.Debit = decimal.Parse(remrd["deb"].ToString(), culture.NumberFormat);
+                op.Type = remrd["type"].ToString();
+                op.Budget = remrd["budget"].ToString();
+                op.NbOfRepetition = int.Parse(remrd["nbrep"].ToString());
+                op.RepetitionType = (ReminderOperation.ERepititionType)(int.Parse(remrd["typerep"].ToString()));
+                op.AutomaticallyAdded = remrd["auto"].ToString() == "1";
+                cb.ReminderOperations.Add(op);
+            }
+
+            cb.Budgets.Clear();
+            SQLiteDataReader btrd = new SQLiteCommand("select * from Budgets", dbc).ExecuteReader();
+            while (btrd.Read())
+            {
+                cb.Budgets.Add(btrd["name"].ToString(), ColorTranslator.FromHtml(btrd["color"].ToString()));
+            }
+
+            dbc.Close();
+            return cb;
+        }
         #endregion Sauvegarde
 
         /// <summary>

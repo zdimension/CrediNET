@@ -52,13 +52,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3DCDECD4728E40E6837053034450B624"
+        "OwnerKey" = "8:_5FC63D22456A43FE89ED2E52B73789D8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5FC63D22456A43FE89ED2E52B73789D8"
+        "OwnerKey" = "8:_3DCDECD4728E40E6837053034450B624"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -309,6 +309,29 @@
         }
         "FileType"
         {
+            "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_6AF57F24A67745DEB072F289778212C3"
+            {
+            "Name" = "8:CrediNET SQLite Account"
+            "Description" = "8:CrediNET Account"
+            "Extensions" = "8:cnsql"
+            "MIME" = "8:"
+            "Icon" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
+            "IconIndex" = "3:0"
+                "Command"
+                {
+                "Command" = "8:_84D66329114048838C8DC33927E8D557"
+                }
+                "Verbs"
+                {
+                    "{95C0C507-CBF0-42B8-B119-07219E384A4A}:_375AD9D6B6884900B03C49E084669F01"
+                    {
+                    "Command" = "8:&Open"
+                    "Verb" = "8:open"
+                    "Arguments" = "8:\"%1\""
+                    "Order" = "3:0"
+                    }
+                }
+            }
             "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_B0FFC0D4F06649F781C57EB6E555E612"
             {
             "Name" = "8:CrediNET Account"
