@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.cbxSplash = new System.Windows.Forms.CheckBox();
             this.vsbMain = new System.Windows.Forms.VScrollBar();
             this.panel1.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -102,12 +103,22 @@
             // pnlMain
             // 
             resources.ApplyResources(this.pnlMain, "pnlMain");
+            this.pnlMain.Controls.Add(this.cbxSplash);
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.cbxDftCrc);
             this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Controls.Add(this.cbxLng);
             this.pnlMain.Name = "pnlMain";
+            // 
+            // cbxSplash
+            // 
+            resources.ApplyResources(this.cbxSplash, "cbxSplash");
+            this.cbxSplash.Checked = global::CrediNET.Properties.Settings.Default.ShowSplash;
+            this.cbxSplash.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxSplash.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::CrediNET.Properties.Settings.Default, "ShowSplash", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbxSplash.Name = "cbxSplash";
+            this.cbxSplash.UseVisualStyleBackColor = true;
             // 
             // vsbMain
             // 
@@ -144,6 +155,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.VScrollBar vsbMain;
+        private System.Windows.Forms.CheckBox cbxSplash;
 
     }
 }

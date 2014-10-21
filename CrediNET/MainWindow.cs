@@ -26,11 +26,12 @@ namespace CrediNET
 
         public MainWindow()
         {
-            if(new Splash().ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (CrediNET.Properties.Settings.Default.ShowSplash)
             {
-
+                if (new Splash().ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                }
             }
-
             InitializeComponent();
             InitRenderers();
             SetWindowTheme(lvOps.Handle, "Explorer", null);
@@ -280,6 +281,8 @@ namespace CrediNET
                     break;
             }
 
+            this.Text = "CrediNET";
+
             //resources.ApplyResources(this, "$this");      //Not needed, controls' language updated with InitializeComponent()
         }
 
@@ -367,6 +370,7 @@ namespace CrediNET
             ChargerSoldeAu();
 
             lblAccountName.Text = CompteActuelChemin;
+            this.Text = "CrediNET - " + CompteActuel.Name;
 
             CheckCrypt();
             //cryptéToolStripMenuItem.Checked = CompteActuel.Crypte;
@@ -1007,6 +1011,12 @@ namespace CrediNET
             {
                 btnEditOp_Click(sender, e);
             }
+        }
+
+        private void MainWindow_SizeChanged(object sender, EventArgs e)
+        {
+            // 685
+            clmnComm.Width = this.ClientSize.Width - 372;
         }
     }
 }

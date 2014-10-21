@@ -295,7 +295,7 @@
     <value>Commentaire</value>
   </data>
   <data name="clmnComm.Width" type="System.Int32, mscorlib">
-    <value>598</value>
+    <value>685</value>
   </data>
   <data name="clmnCred.Text" xml:space="preserve">
     <value>Crédit</value>
@@ -5567,6 +5567,9 @@
         AAAAAAAA8A+sQcADrEGAAaxBgAGsQQAArEEAAKxBAACsQQAArEEAAKxBAACsQQAArEEAAKxBgAGsQYAB
         rEHAA6xB8A+sQQ==
 </value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>941, 400</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

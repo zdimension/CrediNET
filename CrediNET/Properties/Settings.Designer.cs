@@ -46,5 +46,17 @@ namespace CrediNET.Properties {
                 this["DefaultCurrency"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowSplash {
+            get {
+                return ((bool)(this["ShowSplash"]));
+            }
+            set {
+                this["ShowSplash"] = value;
+            }
+        }
     }
 }

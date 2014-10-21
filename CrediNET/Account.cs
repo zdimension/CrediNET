@@ -303,7 +303,7 @@ namespace CrediNET
                             new XAttribute("Deb", x.Debit.ToString(culture.NumberFormat)),
                             new XAttribute("Type", x.Type),
                             new XAttribute("Budget", x.Budget),
-                            new XAttribute("ReminderOperationID", x.RmdOptID)))),
+                            new XAttribute("ReminderOperationID", x.RmdOptID ?? "")))),
                     new XElement("ReminderOperations",
                         cm.ReminderOperations.Select(x => new XElement("Op",
                             new XAttribute("ID", x.ID),
