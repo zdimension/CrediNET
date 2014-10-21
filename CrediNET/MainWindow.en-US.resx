@@ -124,8 +124,14 @@
   <data name="lblAccountName.Text" xml:space="preserve">
     <value>&lt;No account loaded&gt;</value>
   </data>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>               Creation date :</value>
+  </data>
   <data name="spacer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 17</value>
+    <value>681, 17</value>
   </data>
   <data name="lblTotalCredit.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 17</value>

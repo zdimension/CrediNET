@@ -371,6 +371,7 @@ namespace CrediNET
 
             lblAccountName.Text = CompteActuelChemin;
             this.Text = "CrediNET - " + CompteActuel.Name;
+            lblCrDate.Text = CompteActuel.CreationDate.ToString("dd/MM/yyyy");
 
             CheckCrypt();
             //cryptéToolStripMenuItem.Checked = CompteActuel.Crypte;
