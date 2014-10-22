@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_1744E56866924F60AF897F1B58610054"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_30F39146A2F3473587CFD5C3F6F4D40E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -39,7 +45,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
+        "MsmKey" = "8:_9F344DC04B8A4B1BA90327D8E29C5F77"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D2387F2AAF2A4A2F89DB6411DC7EDB60"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DAC011938A8B4277B7CE7DCA6E5870AD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -47,6 +65,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_84D66329114048838C8DC33927E8D557"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1744E56866924F60AF897F1B58610054"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -162,6 +186,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1744E56866924F60AF897F1B58610054"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_1744E56866924F60AF897F1B58610054"
+                    {
+                    "Name" = "8:System.Data.SQLite.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\CrediNET\\bin\\Release\\System.Data.SQLite.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_034DA4C537054575BF5201AF5AC712FE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_30F39146A2F3473587CFD5C3F6F4D40E"
             {
             "AssemblyRegister" = "3:1"
@@ -286,10 +341,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8E989DC31C7743E298B3E54B45EFE4F5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9F344DC04B8A4B1BA90327D8E29C5F77"
             {
-            "SourcePath" = "8:..\\CrediNET\\round.ico"
-            "TargetName" = "8:round.ico"
+            "SourcePath" = "8:..\\icons\\icon.ico"
+            "TargetName" = "8:icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_034DA4C537054575BF5201AF5AC712FE"
             "Condition" = "8:"
@@ -306,6 +361,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D2387F2AAF2A4A2F89DB6411DC7EDB60"
+            {
+            "SourcePath" = "8:..\\icons\\sqlite.ico"
+            "TargetName" = "8:sqlite.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_034DA4C537054575BF5201AF5AC712FE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DAC011938A8B4277B7CE7DCA6E5870AD"
+            {
+            "SourcePath" = "8:C:\\Windows\\System32\\msiexec.exe"
+            "TargetName" = "8:msiexec.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_22E64AD2B6B54BC88E340D7A890DC52E"
+            "Condition" = "8:Not Installed"
+            "Transitive" = "11:TRUE"
+            "Vital" = "11:FALSE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:TRUE"
+            "Permanent" = "11:TRUE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -315,7 +410,7 @@
             "Description" = "8:CrediNET Account"
             "Extensions" = "8:cnsql"
             "MIME" = "8:"
-            "Icon" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
+            "Icon" = "8:_D2387F2AAF2A4A2F89DB6411DC7EDB60"
             "IconIndex" = "3:0"
                 "Command"
                 {
@@ -338,7 +433,7 @@
             "Description" = "8:CrediNET Account"
             "Extensions" = "8:cna"
             "MIME" = "8:"
-            "Icon" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
+            "Icon" = "8:_9F344DC04B8A4B1BA90327D8E29C5F77"
             "IconIndex" = "3:0"
                 "Command"
                 {
@@ -401,6 +496,17 @@
                         {
                         }
                     }
+                }
+            }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_22E64AD2B6B54BC88E340D7A890DC52E"
+            {
+            "Name" = "8:#1914"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:SystemFolder"
+                "Folders"
+                {
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_62A029BAD5324C6896D20392025FC932"
@@ -470,7 +576,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
+        "ARPPRODUCTICON" = "8:_9F344DC04B8A4B1BA90327D8E29C5F77"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -584,7 +690,21 @@
             "Target" = "8:_84D66329114048838C8DC33927E8D557"
             "Folder" = "8:_F5C7355B61F14C5DB250EF29DF32E044"
             "WorkingFolder" = "8:_034DA4C537054575BF5201AF5AC712FE"
-            "Icon" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
+            "Icon" = "8:_9F344DC04B8A4B1BA90327D8E29C5F77"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6E13454CBED4461C867830DE62CFA3F9"
+            {
+            "Name" = "8:Uninstall CrediNET"
+            "Arguments" = "8:/x [ProductCode]"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_DAC011938A8B4277B7CE7DCA6E5870AD"
+            "Folder" = "8:_917569FE75394819A243D3875B9EC17F"
+            "WorkingFolder" = "8:_22E64AD2B6B54BC88E340D7A890DC52E"
+            "Icon" = "8:_9F344DC04B8A4B1BA90327D8E29C5F77"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D3066F938B154E97A99690947AD2251C"
@@ -598,7 +718,7 @@
             "Target" = "8:_84D66329114048838C8DC33927E8D557"
             "Folder" = "8:_917569FE75394819A243D3875B9EC17F"
             "WorkingFolder" = "8:_034DA4C537054575BF5201AF5AC712FE"
-            "Icon" = "8:_8E989DC31C7743E298B3E54B45EFE4F5"
+            "Icon" = "8:_9F344DC04B8A4B1BA90327D8E29C5F77"
             "Feature" = "8:"
             }
         }

@@ -39,7 +39,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>round.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
@@ -466,7 +466,7 @@
     <None Include="Resources\splash.png" />
     <Content Include="bin\Release\ILMerge.exe" />
     <None Include="Resources\page_refresh.png" />
-    <Content Include="round.ico" />
+    <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZedGraph.csproj">
