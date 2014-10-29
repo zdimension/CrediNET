@@ -1,0 +1,52 @@
+﻿<metro:Window xmlns:CrediNET="clr-namespace:CrediNET"  x:Class="CrediNET.FrmCreateAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:metro="http://schemas.codeplex.com/elysium"
+        xmlns:params="http://schemas.codeplex.com/elysium/params"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        params:Manager.AccentBrush="{DynamicResource accentColor}"
+        Title="Create an account" Height="353" Width="435" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <SolidColorBrush x:Key="accentColor" Color="#FF017BCD"/>
+        <SolidColorBrush x:Key="borderColor" Color="#FF016CB4"/>
+        <ObjectDataProvider 
+    ObjectInstance="{x:Type Colors}" 
+    MethodName="GetProperties" 
+    x:Key="colorPropertiesOdp" />
+    </Window.Resources>
+    <Grid>
+        <Label Content="Fill in all fields below to create a valid account." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name :" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="83,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336" BorderThickness="1" TextChanged="txtName_TextChanged"/>
+        <Label Content="Password :" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="83,64,0,0" VerticalAlignment="Top" Width="336" BorderThickness="1" PasswordChanged="txtPassword_PasswordChanged"/>
+        <ComboBox x:Name="cbxCurrency" HorizontalAlignment="Left" Margin="83,92,0,0" VerticalAlignment="Top" Width="336" Height="23" Padding="4,2,2,2" FontSize="12" SelectedIndex="0"/>
+        <Label Content="Currency :" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBudgetAdd" HorizontalAlignment="Left" Margin="83,120,0,0" VerticalAlignment="Top" Width="25" Height="25" Padding="2" MinWidth="0" UseLayoutRounding="True" Click="btnBudgetAdd_Click" IsEnabled="False">
+            <Image Source="Resources/add.png" Width="16" Height="16" Stretch="None" />
+        </Button>
+        <Button x:Name="btnBudgetRemove" HorizontalAlignment="Left" Margin="394,120,0,0" VerticalAlignment="Top" Width="25" Height="25" Padding="2" MinWidth="0" UseLayoutRounding="True" Click="btnBudgetRemove_Click" IsEnabled="False">
+            <Image Source="Resources/delete.png" Width="16" Height="16" Stretch="None" Margin="1,1,0,0" />
+        </Button>
+        <TextBox x:Name="txtBudgetName" HorizontalAlignment="Left" Height="25" Margin="113,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135.5" BorderThickness="1" TextChanged="txtBudgetName_TextChanged"/>
+        <ComboBox x:Name="cbxColor" HorizontalAlignment="Left" Margin="254,120,0,0" VerticalAlignment="Top" Width="135" Padding="4,2,2,1" FontSize="12" Height="25" ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}" SelectedValuePath="Name" SelectionChanged="cbxColor_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Height="18" Margin="0,0,0,2">
+                        <Border BorderThickness="1" CornerRadius="2" 
+                  BorderBrush="Black" Width="50" VerticalAlignment="Stretch"
+                  Background="{Binding Name}"/>
+                        <TextBlock Text="{Binding Name}" Margin="8,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ListView x:Name="lbxBudgets" HorizontalAlignment="Left" Height="124" Margin="83,150,0,0" VerticalAlignment="Top" Width="336" Padding="4" FontSize="12" BorderThickness="1" SelectionChanged="lbxBudgets_SelectionChanged">
+        </ListView>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="344,283,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" FontSize="12" Height="31"/>
+        <Label Content="Budgets :" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="264,283,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" FontSize="12" Height="31" Click="Button_Click" IsEnabled="False"/>
+
+    </Grid>
+</metro:Window>

@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CrediNET.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Lang" Type="System.Globalization.CultureInfo" Scope="User">
+      <Value Profile="(Default)">en-US</Value>
+    </Setting>
+    <Setting Name="DefaultCurrency" Type="System.String" Scope="User">
+      <Value Profile="(Default)">USD</Value>
+    </Setting>
+    <Setting Name="ShowSplash" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AccentColor" Type="System.Windows.Media.Color" Scope="User">
+      <Value Profile="(Default)">#FF339933</Value>
+    </Setting>
+    <Setting Name="Theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dark</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

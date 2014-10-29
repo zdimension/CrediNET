@@ -1,0 +1,134 @@
+﻿<metro:Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:metro="http://schemas.codeplex.com/elysium"
+        xmlns:params="http://schemas.codeplex.com/elysium/params"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="CrediNET.MainWindow"
+        xmlns:properties="clr-namespace:CrediNET.Properties"
+        IsMainWindow="True"
+    params:Manager.AccentBrush="{DynamicResource accentColor}"
+        Title="CrediNET" Height="419" Width="1093" Loaded="Window_Loaded" params:Design.Theme="Dark" SizeChanged="Window_SizeChanged" MinWidth="1093" MinHeight="419">
+    <metro:Window.TitleBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </metro:Window.TitleBar>
+    <Window.Resources>
+        <SolidColorBrush x:Key="accentColor" Color="#FF017BCD"/>
+        <SolidColorBrush x:Key="borderColor" Color="#FF016CB4"/>
+    </Window.Resources>
+    <Grid>
+
+        <StackPanel x:Name="pnlToolbar" Height="64" VerticalAlignment="Top" Orientation="Horizontal" Background="{DynamicResource accentColor}">
+            <Button x:Name="btnNew" Width="48" FontWeight="Normal" UseLayoutRounding="True" Click="btnNew_Click">
+                <StackPanel>
+                    <Image Source="Resources/document_plus.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="New" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnOpen" Width="48" FontWeight="Normal" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/document_import.png" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Open" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnSave" Width="48" FontWeight="Normal" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/save.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Save" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnEditAccount" FontWeight="Normal" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/document_prepare.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Edit account" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnAddOp" FontWeight="Normal" Margin="20,0,0,0" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/page_add.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Add" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnEditOp" FontWeight="Normal" Margin="0" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/page_edit.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Edit" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnDuplicateOp" FontWeight="Normal" Margin="0" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/page_copy.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Duplicate" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnDeleteOp" FontWeight="Normal" Margin="0" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/page_delete.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Delete" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnFilterOp" FontWeight="Normal" Margin="0" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/page_find.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Filter" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnReminderOp" FontWeight="Normal" Margin="0" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/page_refresh.png" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Repeat" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnGraph" FontWeight="Normal" UseLayoutRounding="True">
+                <StackPanel>
+                    <Image Source="Resources/diagnostic_chart1.png" Stretch="None"/>
+                    <TextBlock HorizontalAlignment="Center" Text="Graph" FontSize="12"/>
+                </StackPanel>
+            </Button>
+            <StackPanel Name="pnlTool2" Orientation="Horizontal" Background="{DynamicResource accentColor}" FlowDirection="RightToLeft" Width="279">
+                <Button x:Name="btnSettings" FontWeight="Normal" UseLayoutRounding="True">
+                    <StackPanel>
+                        <Image Source="Resources/application_form_edit.png" Stretch="None"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Settings" FontSize="12"/>
+                    </StackPanel>
+                </Button>
+                <StackPanel Width="208" HorizontalAlignment="Left">
+                    <Label x:Name="lblSolde" Content="Balance : $ 0.00" Foreground="White" FontSize="24" Margin="10,0,0,0"/>
+                    <Label x:Name="lblSoldeAt" Content="Balance on     /  /   : $ 0.00" Foreground="White" FontSize="14" Margin="11,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StatusBar x:Name="status" Margin="0,337,0,0" VerticalAlignment="Bottom" Background="{DynamicResource accentColor}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Bottom" Height="32">
+            <StatusBarItem x:Name="lblAccountName" Content="&lt;No account loaded&gt;" Foreground="White" HorizontalAlignment="Left" Margin="5,0,0,0" />
+            <StatusBarItem Content="Creation date :" Foreground="White" Margin="50,0,0,0" HorizontalAlignment="Left"/>
+            <StatusBarItem HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal">
+                    <StatusBarItem x:Name="lblTotalCredit" Content="$ 0.00" Foreground="PaleGreen"/>
+                    <StatusBarItem x:Name="lblTotalDebit" Content="$ 0.00" Foreground="Red" Margin="10,0,5,0"/>
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+        <Rectangle x:Name="separator" HorizontalAlignment="Left" Height="48" Margin="304,8,0,0" VerticalAlignment="Top" Width="1" Fill="{DynamicResource borderColor}"/>
+        <DataGrid x:Name="dgOps" HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top" Height="292" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" params:Manager.Theme="Light" params:Design.Theme="Dark">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" CanUserResize="False" MaxWidth="0" MinWidth="0" Width="0" />
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Date" Width="75"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Type" Width="75"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Budget" Width="100"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Commentary" Width="*"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Credit"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Debit"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <TextBlock Text="lol" Margin="10" />
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+    </Grid>
+</metro:Window>
