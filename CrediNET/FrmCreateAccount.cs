@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 
 using System.Windows.Forms;
+using CrediNET.Properties;
 
 namespace CrediNET
 {
@@ -99,7 +100,7 @@ namespace CrediNET
         {
             if (txtPasse.Text == "" && edit)
             {
-                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         txtPasse.Text = "Leave this field empty to keep current password";
@@ -135,7 +136,7 @@ namespace CrediNET
 
             if (txtItemName.Text != lbxBudgets.SelectedItems[0].Text)
             {
-                int index = lbxBudgets.SelectedIndices[0];
+                var index = lbxBudgets.SelectedIndices[0];
 
                 lbxBudgets.SelectedItems[0].Text = txtItemName.Text;
             }
@@ -143,7 +144,7 @@ namespace CrediNET
 
         private void FrmCreateAccount_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.DialogResult == DialogResult.OK)
+            if (DialogResult == DialogResult.OK)
             {
                 if (cbxDevise.SelectedItem == null)
                 {
@@ -164,7 +165,7 @@ namespace CrediNET
 
             if (cbxClr.SelectedValue != lbxBudgets.SelectedItems[0].BackColor)
             {
-                int index = lbxBudgets.SelectedIndices[0];
+                var index = lbxBudgets.SelectedIndices[0];
 
                 lbxBudgets.SelectedItems[0].BackColor = cbxClr.SelectedValue;
             }

@@ -110,7 +110,7 @@ namespace CrediNET
         /// </summary>
         public ReminderOperation()
         {
-            _id = System.Guid.NewGuid().ToString();
+            _id = Guid.NewGuid().ToString();
             ForcastOperations = new List<Operation>();
         }
 
@@ -120,7 +120,7 @@ namespace CrediNET
         /// <param name="id">The GUID</param>
         public ReminderOperation(string id)
         {
-            this._id = id;
+            _id = id;
             ForcastOperations = new List<Operation>();
         }
 
@@ -139,13 +139,13 @@ namespace CrediNET
         /// <returns>A list of daily forcast operations</returns>
         private List<Operation> populateDailyOperations()
         {
-            List<Operation> lstOps = new List<Operation>();
+            var lstOps = new List<Operation>();
 
-            for (int i = 0; i < this.NbOfRepetition; i++)
+            for (var i = 0; i < NbOfRepetition; i++)
             {
                 //Consider only due dates in the future
-                if (DateTime.Compare(this.DueDate.AddDays(i), DateTime.Now) >= 0)
-                    lstOps.Add(new Operation(this.DueDate.AddDays(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
+                if (DateTime.Compare(DueDate.AddDays(i), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(DueDate.AddDays(i), Commentary, Credit, Debit, Type, Budget, ID));
             }
             return lstOps;
         }
@@ -156,14 +156,14 @@ namespace CrediNET
         /// <returns>A list of weekly forcast operations</returns>
         private List<Operation> populateWeeklyOperations()
         {
-            DateTime beginningDay = this.DueDate;
-            List<Operation> lstOps = new List<Operation>();
+            var beginningDay = DueDate;
+            var lstOps = new List<Operation>();
 
-            for (int i = 0; i < this.NbOfRepetition; i++)
+            for (var i = 0; i < NbOfRepetition; i++)
             {
                 //Consider only due dates in the future
-                if (DateTime.Compare(this.DueDate.AddDays(i * 7), DateTime.Now) >= 0)
-                    lstOps.Add(new Operation(this.DueDate.AddDays(i * 7), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
+                if (DateTime.Compare(DueDate.AddDays(i * 7), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(DueDate.AddDays(i * 7), Commentary, Credit, Debit, Type, Budget, ID));
             }
             return lstOps;
         }
@@ -174,14 +174,14 @@ namespace CrediNET
         /// <returns>A list of monthly forcast operations</returns>
         private List<Operation> populateMonthlyOperations()
         {
-            DateTime beginningDay = this.DueDate;
-            List<Operation> lstOps = new List<Operation>();
+            var beginningDay = DueDate;
+            var lstOps = new List<Operation>();
 
-            for (int i = 0; i < this.NbOfRepetition; i++)
+            for (var i = 0; i < NbOfRepetition; i++)
             {
                 //Consider only due dates in the future
-                if (DateTime.Compare(this.DueDate.AddMonths(i), DateTime.Now) >= 0)
-                    lstOps.Add(new Operation(this.DueDate.AddMonths(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
+                if (DateTime.Compare(DueDate.AddMonths(i), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(DueDate.AddMonths(i), Commentary, Credit, Debit, Type, Budget, ID));
             }
             return lstOps;
         }
@@ -192,14 +192,14 @@ namespace CrediNET
         /// <returns>A list of yearly forcast operations</returns>
         private List<Operation> populateYearlyOperations()
         {
-            DateTime beginningDay = this.DueDate;
-            List<Operation> lstOps = new List<Operation>();
+            var beginningDay = DueDate;
+            var lstOps = new List<Operation>();
 
-            for (int i = 0; i < this.NbOfRepetition; i++)
+            for (var i = 0; i < NbOfRepetition; i++)
             {
                 //Consider only due dates in the future
-                if (DateTime.Compare(this.DueDate.AddYears(i), DateTime.Now) >= 0)
-                    lstOps.Add(new Operation(this.DueDate.AddYears(i), this.Commentary, this.Credit, this.Debit, this.Type, this.Budget, this.ID));
+                if (DateTime.Compare(DueDate.AddYears(i), DateTime.Now) >= 0)
+                    lstOps.Add(new Operation(DueDate.AddYears(i), Commentary, Credit, Debit, Type, Budget, ID));
             }
             return lstOps;
         }
@@ -209,7 +209,7 @@ namespace CrediNET
         /// </summary>
         public void populateForcastOperations()
         {
-            switch (this.RepetitionType)
+            switch (RepetitionType)
             {
                 case ERepititionType.Day:
                     ForcastOperations = populateDailyOperations();

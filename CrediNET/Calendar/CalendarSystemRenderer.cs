@@ -60,7 +60,7 @@ namespace System.Windows.Forms.Calendar
 
         public override void OnDrawDay(CalendarRendererDayEventArgs e)
         {
-            Rectangle r = e.Day.Bounds;
+            var r = e.Day.Bounds;
 
             if (e.Day.Selected)
             {
@@ -91,10 +91,10 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnDrawDayBorder(e);
 
-            Rectangle r = e.Day.Bounds;
-            bool today = e.Day.Date.Date.Equals(DateTime.Today.Date);
+            var r = e.Day.Bounds;
+            var today = e.Day.Date.Date.Equals(DateTime.Today.Date);
 
-            using (Pen p = new Pen(today ? ColorTable.TodayBorder : ColorTable.DayBorder, today ? 2 : 1))
+            using (var p = new Pen(today ? ColorTable.TodayBorder : ColorTable.DayBorder, today ? 2 : 1))
             {
                 if (e.Calendar.DaysMode == CalendarDaysMode.Short)
                 {
@@ -115,14 +115,14 @@ namespace System.Windows.Forms.Calendar
 
         public override void OnDrawDayTop(CalendarRendererDayEventArgs e)
         {
-            bool s = e.Day.DayTop.Selected;
+            var s = e.Day.DayTop.Selected;
 
             using (Brush b = new SolidBrush( s ? ColorTable.DayTopSelectedBackground : ColorTable.DayTopBackground))
             {
                 e.Graphics.FillRectangle(b, e.Day.DayTop.Bounds);
             }
 
-            using (Pen p = new Pen(s ? ColorTable.DayTopSelectedBorder : ColorTable.DayTopBorder))
+            using (var p = new Pen(s ? ColorTable.DayTopSelectedBorder : ColorTable.DayTopBorder))
             {
                 e.Graphics.DrawRectangle(p, e.Day.DayTop.Bounds);
             }
@@ -132,7 +132,7 @@ namespace System.Windows.Forms.Calendar
 
         public override void OnDrawDayHeaderBackground(CalendarRendererDayEventArgs e)
         {
-            bool today = e.Day.Date.Date.Equals(DateTime.Today.Date);
+            var today = e.Day.Date.Date.Equals(DateTime.Today.Date);
 
             using (Brush b = new SolidBrush(today ? ColorTable.TodayTopBackground : ColorTable.DayHeaderBackground))
             {
@@ -149,7 +149,7 @@ namespace System.Windows.Forms.Calendar
                 e.Graphics.FillRectangle(b, e.Bounds);
             }
 
-            using (Pen p = new Pen(ColorTable.WeekHeaderBorder))
+            using (var p = new Pen(ColorTable.WeekHeaderBorder))
             {
                 e.Graphics.DrawRectangle(p, e.Bounds);
             }
@@ -163,7 +163,7 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnDrawDayTimeUnit(e);
 
-            using (SolidBrush b = new SolidBrush(ColorTable.TimeUnitBackground))
+            using (var b = new SolidBrush(ColorTable.TimeUnitBackground))
             {
                 if (e.Unit.Selected)
                 {
@@ -177,7 +177,7 @@ namespace System.Windows.Forms.Calendar
                 e.Graphics.FillRectangle(b, e.Unit.Bounds);
             }
 
-            using (Pen p = new Pen(e.Unit.Minutes == 0 ? ColorTable.TimeUnitBorderDark : ColorTable.TimeUnitBorderLight))
+            using (var p = new Pen(e.Unit.Minutes == 0 ? ColorTable.TimeUnitBorderDark : ColorTable.TimeUnitBorderLight))
             {
                 e.Graphics.DrawLine(p, e.Unit.Bounds.Location, new Point(e.Unit.Bounds.Right, e.Unit.Bounds.Top)); 
             }
@@ -187,17 +187,17 @@ namespace System.Windows.Forms.Calendar
 
         public override void OnDrawTimeScale(CalendarRendererEventArgs e)
         {
-            int margin = 5;
-            int largeX1 = TimeScaleBounds.Left + margin;
-            int largeX2 = TimeScaleBounds.Right - margin;
-            int shortX1 = TimeScaleBounds.Left + TimeScaleBounds.Width / 2;
-            int shortX2 = largeX2;
-            int top = 0;
-            Pen p = new Pen(ColorTable.TimeScaleLine);
+            var margin = 5;
+            var largeX1 = TimeScaleBounds.Left + margin;
+            var largeX2 = TimeScaleBounds.Right - margin;
+            var shortX1 = TimeScaleBounds.Left + TimeScaleBounds.Width / 2;
+            var shortX2 = largeX2;
+            var top = 0;
+            var p = new Pen(ColorTable.TimeScaleLine);
 
-            for (int i = 0; i < e.Calendar.Days[0].TimeUnits.Length; i++)
+            for (var i = 0; i < e.Calendar.Days[0].TimeUnits.Length; i++)
             {
-                CalendarTimeScaleUnit unit = e.Calendar.Days[0].TimeUnits[i];
+                var unit = e.Calendar.Days[0].TimeUnits[i];
 
                 if (!unit.Visible) continue;
 
@@ -247,7 +247,7 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnDrawItemBackground(e);
 
-            int alpha = 255;
+            var alpha = 255;
 
             if (e.Item.IsDragging)
             {
@@ -258,8 +258,8 @@ namespace System.Windows.Forms.Calendar
                 alpha = 200;
             }
 
-            Color color1 = Color.White;
-            Color color2 = e.Item.Selected ? ColorTable.ItemSelectedBackground : ColorTable.ItemBackground;
+            var color1 = Color.White;
+            var color2 = e.Item.Selected ? ColorTable.ItemSelectedBackground : ColorTable.ItemBackground;
 
             if (!e.Item.BackgroundColorLighter.IsEmpty)
             {
@@ -284,10 +284,10 @@ namespace System.Windows.Forms.Calendar
                 return;
             }
 
-            Rectangle r = e.Bounds;
+            var r = e.Bounds;
             r.Offset(ItemShadowPadding, ItemShadowPadding);
 
-            using (SolidBrush b = new SolidBrush(ColorTable.ItemShadow))
+            using (var b = new SolidBrush(ColorTable.ItemShadow))
             {
                 ItemFill(e, r, ColorTable.ItemShadow, ColorTable.ItemShadow);
             }
@@ -297,9 +297,9 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnDrawItemBorder(e);
 
-            Color a = e.Item.BorderColor.IsEmpty ? ColorTable.ItemBorder : e.Item.BorderColor;
-            Color b = e.Item.Selected && !e.Item.IsDragging ? ColorTable.ItemSelectedBorder : a;
-            Color c = Color.FromArgb(e.Item.IsDragging ? 120 : 255, b);
+            var a = e.Item.BorderColor.IsEmpty ? ColorTable.ItemBorder : e.Item.BorderColor;
+            var b = e.Item.Selected && !e.Item.IsDragging ? ColorTable.ItemSelectedBorder : a;
+            var c = Color.FromArgb(e.Item.IsDragging ? 120 : 255, b);
 
             ItemBorder(e, e.Bounds, c, e.Item.Selected && !e.Item.IsDragging ? SelectedItemBorder : 1f);
             
@@ -327,7 +327,7 @@ namespace System.Windows.Forms.Calendar
 
         public override void OnDrawItemText(CalendarRendererBoxEventArgs e)
         {
-            CalendarItem item = e.Tag as CalendarItem;
+            var item = e.Tag as CalendarItem;
             
             if (item != null)
             {
@@ -351,7 +351,7 @@ namespace System.Windows.Forms.Calendar
 
             base.OnDrawDayNameHeader(e);
 
-            using (Pen p = new Pen(ColorTable.WeekDayName))
+            using (var p = new Pen(ColorTable.WeekDayName))
             {
                 e.Graphics.DrawLine(p, e.Bounds.Right, e.Bounds.Top, e.Bounds.Right, e.Bounds.Bottom);
             }
@@ -359,9 +359,9 @@ namespace System.Windows.Forms.Calendar
 
         public override void OnDrawDayOverflowEnd(CalendarRendererDayEventArgs e)
         {
-            using (GraphicsPath path = new GraphicsPath())
+            using (var path = new GraphicsPath())
             {
-                int top = e.Day.OverflowEndBounds.Top + e.Day.OverflowEndBounds.Height / 2;
+                var top = e.Day.OverflowEndBounds.Top + e.Day.OverflowEndBounds.Height / 2;
                 path.AddPolygon(new Point[] { 
                     new Point(e.Day.OverflowEndBounds.Left, top),
                     new Point(e.Day.OverflowEndBounds.Right, top),
@@ -373,7 +373,7 @@ namespace System.Windows.Forms.Calendar
                     e.Graphics.FillPath(b, path);
                 }
 
-                using (Pen p = new Pen(ColorTable.DayOverflowBorder))
+                using (var p = new Pen(ColorTable.DayOverflowBorder))
                 {
                     e.Graphics.DrawPath(p, path);
                 }

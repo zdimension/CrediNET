@@ -76,7 +76,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public virtual int CompareTo(ICalendarSelectableElement element)
         {
-            return this.Date.CompareTo(element.Date);
+            return Date.CompareTo(element.Date);
         }
 
         #endregion

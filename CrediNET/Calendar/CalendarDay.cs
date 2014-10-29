@@ -260,7 +260,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         internal void UpdateUnits()
         {
-            int factor = 0;
+            var factor = 0;
 
             switch (Calendar.TimeScale)
             {
@@ -275,10 +275,10 @@ namespace System.Windows.Forms.Calendar
 
             _timeUnits = new CalendarTimeScaleUnit[24 * factor];
             
-            int hourSum = 0;
-            int minSum = 0;
+            var hourSum = 0;
+            var minSum = 0;
 
-            for (int i = 0; i < _timeUnits.Length; i++)
+            for (var i = 0; i < _timeUnits.Length; i++)
             {
                 _timeUnits[i] = new CalendarTimeScaleUnit(this, i, hourSum, minSum);
 
@@ -302,7 +302,7 @@ namespace System.Windows.Forms.Calendar
             if (TimeUnits == null) 
                 return;
 
-            for (int i = 0; i < TimeUnits.Length; i++)
+            for (var i = 0; i < TimeUnits.Length; i++)
             {
                 TimeUnits[i].SetHighlighted(TimeUnits[i].CheckHighlighted());
             }

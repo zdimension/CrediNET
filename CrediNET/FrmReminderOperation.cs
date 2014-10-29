@@ -29,7 +29,7 @@ namespace CrediNET
             }
 
             if (edit)
-                this.Text = "Éditer l'opération";
+                Text = "Éditer l'opération";
 
             if(op != null)
             {
@@ -49,7 +49,7 @@ namespace CrediNET
         private void btnCmptSpc_Click(object sender, EventArgs e)
         {
             var fr = new FrmCountSpcEuro();
-            if(fr.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if(fr.ShowDialog() == DialogResult.OK)
             {
                 mupCredit.Value = fr.Total;
             }

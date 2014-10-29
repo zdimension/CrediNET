@@ -96,7 +96,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns><c>true</c> if item is successfully removed; otherwise, <c>false</c>. This method also returns false if item was not found in the collection.</returns>
         public new bool Remove(CalendarItem item) 
         {
-            bool result = base.Remove(item); 
+            var result = base.Remove(item); 
             
             CollectionChanged();
 
@@ -120,7 +120,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns>The number of items removed from the collection.</returns>
         public new int RemoveAll(Predicate<CalendarItem> match) 
         {
-            int result = base.RemoveAll(match); 
+            var result = base.RemoveAll(match); 
             
             CollectionChanged();
 

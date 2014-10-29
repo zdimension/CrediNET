@@ -73,7 +73,7 @@ namespace System.Windows.Forms.Calendar
 
         public static void GradientRect(Graphics g, Rectangle bounds, Color a, Color b)
         {
-            using (LinearGradientBrush br = new LinearGradientBrush(bounds, b, a, -90))
+            using (var br = new LinearGradientBrush(bounds, b, a, -90))
             {
                 g.FillRectangle(br, bounds);
             }
@@ -81,8 +81,8 @@ namespace System.Windows.Forms.Calendar
 
         public static void GlossyRect(Graphics g, Rectangle bounds, Color a, Color b, Color c, Color d)
         {
-            Rectangle top = new Rectangle(bounds.Left, bounds.Top, bounds.Width, bounds.Height / 2);
-            Rectangle bot = Rectangle.FromLTRB(bounds.Left, top.Bottom, bounds.Right, bounds.Bottom);
+            var top = new Rectangle(bounds.Left, bounds.Top, bounds.Width, bounds.Height / 2);
+            var bot = Rectangle.FromLTRB(bounds.Left, top.Bottom, bounds.Right, bounds.Bottom);
 
             GradientRect(g, top, a, b);
             GradientRect(g, bot, c, d);
@@ -112,7 +112,7 @@ namespace System.Windows.Forms.Calendar
 
         public override void OnDrawDayHeaderBackground(CalendarRendererDayEventArgs e)
         {
-            Rectangle r = e.Day.HeaderBounds;
+            var r = e.Day.HeaderBounds;
 
             if (e.Day.Date == DateTime.Today)
             {
@@ -125,7 +125,7 @@ namespace System.Windows.Forms.Calendar
 
             if (e.Calendar.DaysMode == CalendarDaysMode.Short)
             {
-                using (Pen p = new Pen(ColorTable.DayBorder))
+                using (var p = new Pen(ColorTable.DayBorder))
                 {
                     e.Graphics.DrawLine(p, r.Left, r.Top, r.Right, r.Top);
                     e.Graphics.DrawLine(p, r.Left, r.Bottom, r.Right, r.Bottom);
@@ -137,17 +137,17 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnDrawItemBorder(e);
 
-            using (Pen p = new Pen(Color.FromArgb(150, Color.White)))
+            using (var p = new Pen(Color.FromArgb(150, Color.White)))
             {
                 e.Graphics.DrawLine(p, e.Bounds.Left + ItemRoundness, e.Bounds.Top + 1, e.Bounds.Right - ItemRoundness, e.Bounds.Top + 1); 
             }
 
             if (e.Item.Selected && !e.Item.IsDragging)
             {
-                bool horizontal = false;
-                bool vertical = false;
-                Rectangle r1 = new Rectangle(0, 0, 5, 5);
-                Rectangle r2 = new Rectangle(0, 0, 5, 5);
+                var horizontal = false;
+                var vertical = false;
+                var r1 = new Rectangle(0, 0, 5, 5);
+                var r2 = new Rectangle(0, 0, 5, 5);
 
                 horizontal = e.Item.IsOnDayTop;
                 vertical = !e.Item.IsOnDayTop && e.Calendar.DaysMode == CalendarDaysMode.Expanded;

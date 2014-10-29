@@ -11,7 +11,7 @@ namespace CrediNET
 
         public FrmOpFilter(Account CompteActuel)
         {
-            this.compte = CompteActuel;
+            compte = CompteActuel;
             InitializeComponent();
         }
 

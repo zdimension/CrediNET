@@ -44,7 +44,7 @@ namespace CrediNET
         {
             Items.Clear();
 
-            System.Enum.GetNames(typeof(KnownColor)).OrderBy(y => y).All(x =>
+            Enum.GetNames(typeof(KnownColor)).OrderBy(y => y).All(x =>
             {
                 try { Items.Add(new ColorInfo(x, (Color)(typeof(Color).GetProperty(x).GetValue(null, null)))); }
                 catch { Items.Add(new ColorInfo(x, (Color)(typeof(SystemColors).GetProperty(x).GetValue(null, null)))); }
@@ -58,13 +58,13 @@ namespace CrediNET
             if (e.Index >= 0)
             {
                 // Get this color
-                ColorInfo color = (ColorInfo)Items[e.Index];
+                var color = (ColorInfo)Items[e.Index];
 
                 // Fill background
                 e.DrawBackground();
 
                 // Draw color box
-                Rectangle rect = new Rectangle();
+                var rect = new Rectangle();
                 rect.X = e.Bounds.X + 2;
                 rect.Y = e.Bounds.Y + 2;
                 rect.Width = 18;
@@ -117,7 +117,7 @@ namespace CrediNET
             }
             set
             {
-                for (int i = 0; i < Items.Count; i++)
+                for (var i = 0; i < Items.Count; i++)
                 {
                     if (((ColorInfo)Items[i]).Text == value)
                     {
@@ -142,7 +142,7 @@ namespace CrediNET
             }
             set
             {
-                for (int i = 0; i < Items.Count; i++)
+                for (var i = 0; i < Items.Count; i++)
                 {
                     if (((ColorInfo)Items[i]).Color == value)
                     {

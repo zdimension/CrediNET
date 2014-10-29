@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 
@@ -22,10 +23,10 @@ namespace CrediNET
 
         private void FrmOptions_Load(object sender, EventArgs e)
         {
-            cbxDftCrc.SelectedItem = ((CurrencyObj)(CrediNET.Properties.Settings.Default.DefaultCurrency)).Name;
-            if (CrediNET.Properties.Settings.Default.Lang.Name == "fr-FR") cbxLng.SelectedIndex = 0;
-            if (CrediNET.Properties.Settings.Default.Lang.Name == "en-US") cbxLng.SelectedIndex = 1;
-            if (CrediNET.Properties.Settings.Default.Lang.Name == "de-DE") cbxLng.SelectedIndex = 2;
+            cbxDftCrc.SelectedItem = ((CurrencyObj)(Settings.Default.DefaultCurrency)).Name;
+            if (Settings.Default.Lang.Name == "fr-FR") cbxLng.SelectedIndex = 0;
+            if (Settings.Default.Lang.Name == "en-US") cbxLng.SelectedIndex = 1;
+            if (Settings.Default.Lang.Name == "de-DE") cbxLng.SelectedIndex = 2;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -49,10 +50,10 @@ namespace CrediNET
                     break;
             }*/
 
-            string cultureName = cbxLng.SelectedItem.ToString().Split('(')[1].Replace(")", "");
+            var cultureName = cbxLng.SelectedItem.ToString().Split('(')[1].Replace(")", "");
 
-            CrediNET.Properties.Settings.Default.DefaultCurrency = Currencies.All.First(x => x.Name == cbxDftCrc.SelectedItem.ToString()).ShortName;
-            CrediNET.Properties.Settings.Default.Lang = (System.Globalization.CultureInfo)new CultureInfoConverter().ConvertFromString(cultureName);
+            Settings.Default.DefaultCurrency = Currencies.All.First(x => x.Name == cbxDftCrc.SelectedItem.ToString()).ShortName;
+            Settings.Default.Lang = (CultureInfo)new CultureInfoConverter().ConvertFromString(cultureName);
             Settings.Default.Save();
         }
     }

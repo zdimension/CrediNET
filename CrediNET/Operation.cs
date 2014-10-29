@@ -83,7 +83,7 @@ namespace CrediNET
         /// </summary>
         public Operation()
         {
-            _id = System.Guid.NewGuid().ToString();
+            _id = Guid.NewGuid().ToString();
         }
 
         /// <summary>
@@ -92,30 +92,30 @@ namespace CrediNET
         /// <param name="id">The GUID</param>
         public Operation(string id)
         {
-            this._id = id;
+            _id = id;
         }
 
         public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget)
         {
-            this._id = System.Guid.NewGuid().ToString();
-            this.Date = date;
-            this.Commentary = commentary;
-            this.Credit = credit;
-            this.Debit = debit;
-            this.Type = type;
-            this.Budget = budget;
+            _id = Guid.NewGuid().ToString();
+            Date = date;
+            Commentary = commentary;
+            Credit = credit;
+            Debit = debit;
+            Type = type;
+            Budget = budget;
         }
 
         public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget, string rmdOptID)
         {
-            this._id = System.Guid.NewGuid().ToString();
-            this.Date = date;
-            this.Commentary = commentary;
-            this.Credit = credit;
-            this.Debit = debit;
-            this.Type = type;
-            this.Budget = budget;
-            this.RmdOptID = rmdOptID;
+            _id = Guid.NewGuid().ToString();
+            Date = date;
+            Commentary = commentary;
+            Credit = credit;
+            Debit = debit;
+            Type = type;
+            Budget = budget;
+            RmdOptID = rmdOptID;
         }
     }
 }

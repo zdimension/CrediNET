@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Drawing;
 
@@ -40,9 +41,9 @@ namespace System.Windows.Forms.Calendar
             if (hex.Length != 6) throw new Exception("Color not valid");
 
             return Color.FromArgb(
-                int.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber),
-                int.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber),
-                int.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber));
+                int.Parse(hex.Substring(0, 2), NumberStyles.HexNumber),
+                int.Parse(hex.Substring(2, 2), NumberStyles.HexNumber),
+                int.Parse(hex.Substring(4, 2), NumberStyles.HexNumber));
         }
 
         #endregion

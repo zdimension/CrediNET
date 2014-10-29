@@ -57,7 +57,7 @@ namespace CrediNET
             workSheet_range.Merge(mergeColumns);
             workSheet_range.Interior.Color = color.ToArgb();
 
-            workSheet_range.Borders.Color = System.Drawing.Color.Black.ToArgb();
+            workSheet_range.Borders.Color = Color.Black.ToArgb();
             workSheet_range.Font.Bold = font;
             workSheet_range.ColumnWidth = size;
             workSheet_range.Font.Color = fcolor.ToArgb();
@@ -68,7 +68,7 @@ namespace CrediNET
             worksheet.Cells[row, col] = data;
             workSheet_range = worksheet.get_Range(cell1, cell2);
             workSheet_range.Merge(mergeColumns);
-            workSheet_range.Borders.Color = System.Drawing.Color.Black.ToArgb();
+            workSheet_range.Borders.Color = Color.Black.ToArgb();
             workSheet_range.NumberFormat = format;
         }
 
@@ -77,7 +77,7 @@ namespace CrediNET
             worksheet.Cells[row, col] = data;
             workSheet_range = worksheet.get_Range(cell1, cell2);
             workSheet_range.Merge(mergeColumns);
-            workSheet_range.Borders.Color = System.Drawing.Color.Black.ToArgb();
+            workSheet_range.Borders.Color = Color.Black.ToArgb();
             workSheet_range.NumberFormat = format;
         }
     }

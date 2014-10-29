@@ -246,8 +246,8 @@ namespace System.Windows.Forms.Calendar
         {
             get
             {
-                string date = string.Empty;
-                string time = string.Empty;
+                var date = string.Empty;
+                var time = string.Empty;
 
                 if (IsOpenEnd)
                 {
@@ -337,10 +337,10 @@ namespace System.Windows.Forms.Calendar
             get
             {
                 //Checks for an intersection of item's dates against calendar dates
-                DateTime fd = Calendar.Days[0].Date;
-                DateTime ld = Calendar.Days[Calendar.Days.Length - 1].Date.Add(new TimeSpan(23,59,59));
-                DateTime sd = StartDate;
-                DateTime ed = EndDate;
+                var fd = Calendar.Days[0].Date;
+                var ld = Calendar.Days[Calendar.Days.Length - 1].Date.Add(new TimeSpan(23,59,59));
+                var sd = StartDate;
+                var ed = EndDate;
                 return sd < ld && fd < ed;
             }
         }
@@ -457,7 +457,7 @@ namespace System.Windows.Forms.Calendar
         {
             get
             {
-                return IsOpenStart || ((this.IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) && !StartDate.TimeOfDay.Equals(new TimeSpan(0, 0, 0)));
+                return IsOpenStart || ((IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) && !StartDate.TimeOfDay.Equals(new TimeSpan(0, 0, 0)));
             }
         }
 
@@ -469,7 +469,7 @@ namespace System.Windows.Forms.Calendar
             get
             {
                 return (IsOpenEnd || 
-                    ((this.IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) && !EndDate.TimeOfDay.Equals(new TimeSpan(23, 59, 59)))) &&
+                    ((IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) && !EndDate.TimeOfDay.Equals(new TimeSpan(23, 59, 59)))) &&
                     !(Calendar.DaysMode == CalendarDaysMode.Short && StartDate.Date == EndDate.Date);
             }
         }
@@ -481,8 +481,8 @@ namespace System.Windows.Forms.Calendar
         {
             get
             {
-                string date = string.Empty;
-                string time = string.Empty;
+                var date = string.Empty;
+                var time = string.Empty;
 
                 if (IsOpenStart)
                 {
@@ -550,7 +550,7 @@ namespace System.Windows.Forms.Calendar
                 Convert.ToInt32(Convert.ToSingle(color.G) * .8f), 
                 Convert.ToInt32(Convert.ToSingle(color.B) * .8f));
 
-            int avg = (color.R + color.G + color.B )/3;
+            var avg = (color.R + color.G + color.B )/3;
 
             if (avg > 255 / 2)
             {
@@ -571,7 +571,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public IEnumerable<Rectangle> GetAllBounds()
         {
-            List<Rectangle> r = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] { } : AditionalBounds);
+            var r = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] { } : AditionalBounds);
             r.Add(Bounds);
 
             r.Sort(CompareBounds);
@@ -596,11 +596,11 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public bool ResizeStartDateZone(Point p)
         {
-            int margin = 4;
+            var margin = 4;
 
-            List<Rectangle> rects = new List<Rectangle>(GetAllBounds());
-            Rectangle first = rects[0];
-            Rectangle last = rects[rects.Count - 1];
+            var rects = new List<Rectangle>(GetAllBounds());
+            var first = rects[0];
+            var last = rects[rects.Count - 1];
 
             if (IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short)
             {
@@ -619,11 +619,11 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public bool ResizeEndDateZone(Point p)
         {
-            int margin = 4;
+            var margin = 4;
 
-            List<Rectangle> rects = new List<Rectangle>(GetAllBounds());
-            Rectangle first = rects[0];
-            Rectangle last = rects[rects.Count - 1];
+            var rects = new List<Rectangle>(GetAllBounds());
+            var first = rects[0];
+            var last = rects[rects.Count - 1];
 
             if (IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short)
             {
@@ -651,8 +651,8 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public bool IntersectsWith(TimeSpan timeStart, TimeSpan timeEnd)
         {
-            Rectangle r1 = Rectangle.FromLTRB(0, Convert.ToInt32(StartDate.TimeOfDay.TotalMinutes), 5, Convert.ToInt32(EndDate.TimeOfDay.TotalMinutes));
-            Rectangle r2 = Rectangle.FromLTRB(0, Convert.ToInt32(timeStart.TotalMinutes), 5, Convert.ToInt32(timeEnd.TotalMinutes - 1));
+            var r1 = Rectangle.FromLTRB(0, Convert.ToInt32(StartDate.TimeOfDay.TotalMinutes), 5, Convert.ToInt32(EndDate.TimeOfDay.TotalMinutes));
+            var r2 = Rectangle.FromLTRB(0, Convert.ToInt32(timeStart.TotalMinutes), 5, Convert.ToInt32(timeEnd.TotalMinutes - 1));
             return r1.IntersectsWith(r2);
         }
 
@@ -679,7 +679,7 @@ namespace System.Windows.Forms.Calendar
             }
             else
             {
-                List<Rectangle> rs = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] { } : AditionalBounds);
+                var rs = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] { } : AditionalBounds);
                 rs.Add(r);
                 AditionalBounds = rs.ToArray();
             }
@@ -714,7 +714,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         internal void ClearPassings()
         {
-            foreach (CalendarTimeScaleUnit unit in UnitsPassing)
+            foreach (var unit in UnitsPassing)
             {
                 unit.ClearItemExistance(this);
             }
@@ -748,13 +748,13 @@ namespace System.Windows.Forms.Calendar
             {
                 if (AditionalBounds != null && AditionalBounds.Length > 0)
                 {
-                    Rectangle r = AditionalBounds[AditionalBounds.Length - 1];
+                    var r = AditionalBounds[AditionalBounds.Length - 1];
                     AditionalBounds[AditionalBounds.Length - 1] = Rectangle.FromLTRB(
                         r.Left, r.Top, r.Right - Calendar.Renderer.ItemsPadding, r.Bottom);
                 }
                 else
                 {
-                    Rectangle r = Bounds;
+                    var r = Bounds;
                     SetBounds(Rectangle.FromLTRB(
                         r.Left, r.Top, r.Right - Calendar.Renderer.ItemsPadding, r.Bottom));
                 } 

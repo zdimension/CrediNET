@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 using System.Windows.Forms;
+using CrediNET.Properties;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 
@@ -26,9 +28,9 @@ namespace CrediNET
 
         public MainWindow()
         {
-            if (CrediNET.Properties.Settings.Default.ShowSplash)
+            if (Settings.Default.ShowSplash)
             {
-                if (new Splash().ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (new Splash().ShowDialog() == DialogResult.OK)
                 {
                 }
             }
@@ -71,7 +73,7 @@ namespace CrediNET
 
         public void InitRenderers()
         {
-            Renderer rend = new Renderer();
+            var rend = new Renderer();
             rend.Colors.gripOffset = 1;
             rend.Colors.gripSquare = 2;
             rend.Colors.gripSize = 3;
@@ -106,10 +108,10 @@ namespace CrediNET
             rend.Colors.disabledBorderColor1 = Color.FromArgb(130, 130, 130);
             rend.Colors.disabledBorderColor2 = Color.FromArgb(130, 130, 130);
             rend.Colors.textDisabled = Color.FromArgb(160, 160, 160);
-            rend.Colors.textMenuStripItem = System.Drawing.Color.LightGray;
-            rend.Colors.textStatusStripItem = System.Drawing.Color.LightGray;
-            rend.Colors.textContextMenuItem = System.Drawing.Color.LightGray;
-            rend.Colors.textSelected = System.Drawing.Color.LightGray;
+            rend.Colors.textMenuStripItem = Color.LightGray;
+            rend.Colors.textStatusStripItem = Color.LightGray;
+            rend.Colors.textContextMenuItem = Color.LightGray;
+            rend.Colors.textSelected = Color.LightGray;
             rend.Colors.arrowDisabled = Color.WhiteSmoke;
             rend.Colors.arrowLight = Color.WhiteSmoke;
             rend.Colors.arrowDark = Color.WhiteSmoke;
@@ -125,7 +127,7 @@ namespace CrediNET
             rend.Colors.statusStripBorderLight = Color.FromArgb(50, 50, 50);
             rend.Colors.gripDark = Color.FromArgb(0, 0, 0);
             rend.Colors.gripLight = Color.FromArgb(0, 0, 0);
-            rend.Colors.foreColor = System.Drawing.Color.LightGray;
+            rend.Colors.foreColor = Color.LightGray;
 
             toolStrip.Renderer = rend.GetRenderer();
         }
@@ -133,9 +135,9 @@ namespace CrediNET
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             var ae = new FrmOperation(CompteActuel);
-            if (ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ae.ShowDialog() == DialogResult.OK)
             {
-                Operation op = new Operation();
+                var op = new Operation();
                 op.Type = ae.cbxType.SelectedItem.ToString();
                 op.Credit = ae.mupCredit.Value;
                 op.Debit = ae.mupDebit.Value;
@@ -154,7 +156,7 @@ namespace CrediNET
                 ClearStuff();
 
             var ae = new FrmCreateAccount();
-            if (ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ae.ShowDialog() == DialogResult.OK)
             {
                 CompteActuel = new Account();
                 CompteActuel.Name = ae.txtNom.Text;
@@ -174,7 +176,7 @@ namespace CrediNET
         {
             if (lvOps.SelectedItems.Count == 0)
             {
-                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         lblSoldeAt.Text = "Balance of ";
@@ -193,13 +195,13 @@ namespace CrediNET
             }
             else
             {
-                DateTime d = CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text).Date;
+                var d = CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text).Date;
                 decimal totalc = 0;
                 CompteActuel.Operations.FindAll(x => CompteActuel.Operations.IndexOf(x) <= CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text))).ForEach(x1 => totalc += x1.Credit);
                 decimal totald = 0;
                 CompteActuel.Operations.FindAll(x => CompteActuel.Operations.IndexOf(x) <= CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text))).ForEach(x1 => totald += x1.Debit);
 
-                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         lblSoldeAt.Text = "Balance of ";
@@ -222,7 +224,7 @@ namespace CrediNET
         {
             get
             {
-                return Currencies.All.First(x => x.ShortName == CrediNET.Properties.Settings.Default.DefaultCurrency).Symbol;
+                return Currencies.All.First(x => x.ShortName == Settings.Default.DefaultCurrency).Symbol;
             }
         }
 
@@ -250,11 +252,11 @@ namespace CrediNET
 
             lvOps.Items.Clear();
 
-            this.Controls.Clear();
+            Controls.Clear();
             InitializeComponent();
             InitRenderers();
 
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "de-DE":
                     lblAccountName.Text = "<Kein Konto geladen>";
@@ -281,7 +283,7 @@ namespace CrediNET
                     break;
             }
 
-            this.Text = "CrediNET";
+            Text = "CrediNET";
 
             //resources.ApplyResources(this, "$this");      //Not needed, controls' language updated with InitializeComponent()
         }
@@ -295,9 +297,9 @@ namespace CrediNET
 
             lvOps.Items.Clear();
 
-            foreach (Operation op in CompteActuel.Operations)
+            foreach (var op in CompteActuel.Operations)
             {
-                ListViewItem it = new ListViewItem();
+                var it = new ListViewItem();
                 it.Text = op.ID;
                 it.Name = op.ID;
                 it.SubItems.Add(op.Date.ToString("dd/MM/yyyy"));
@@ -327,7 +329,7 @@ namespace CrediNET
             CompteActuel.Operations.ForEach(x1 => totald += x1.Debit);
             lblTotalDeb.Text = totald.ToString("0.00") + " " + CompteActuel.Currency.Symbol;
 
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "en-US":
                     lblSolde.Text = "Balance : ";
@@ -370,7 +372,7 @@ namespace CrediNET
             ChargerSoldeAu();
 
             lblAccountName.Text = CompteActuelChemin;
-            this.Text = "CrediNET - " + CompteActuel.Name;
+            Text = "CrediNET - " + CompteActuel.Name;
             lblCrDate.Text = CompteActuel.CreationDate.ToString("dd/MM/yyyy");
 
             CheckCrypt();
@@ -386,7 +388,7 @@ namespace CrediNET
             else
             {*/
 
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "en-US":
                     sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna";
@@ -414,13 +416,13 @@ namespace CrediNET
             if (CompteActuel != null)
                 ClearStuff();
 
-            if (ofpCompte.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ofpCompte.ShowDialog() == DialogResult.OK)
             {
-                this.Cursor = Cursors.AppStarting;
+                Cursor = Cursors.AppStarting;
                 CompteActuel = Account.FromFile(ofpCompte.FileName);
                 CompteActuelChemin = ofpCompte.FileName;
                 LoadAccountStuff();
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 
@@ -429,11 +431,11 @@ namespace CrediNET
             if (CompteActuel != null)
                 ClearStuff();
 
-            this.Cursor = Cursors.AppStarting;
+            Cursor = Cursors.AppStarting;
             CompteActuel = Account.FromFile(s);
             CompteActuelChemin = s;
             LoadAccountStuff();
-            this.Cursor = Cursors.Default;
+            Cursor = Cursors.Default;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -441,7 +443,7 @@ namespace CrediNET
             if (CompteActuelChemin == null)
                 enregistrerSousToolStripMenuItem_Click(sender, e);
 
-            this.Cursor = Cursors.WaitCursor;
+            Cursor = Cursors.WaitCursor;
             bwkSave.RunWorkerAsync();
             
         }
@@ -450,7 +452,7 @@ namespace CrediNET
         {
             if (CompteActuel.Encrypted)
             {
-                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         sfdCompte.Filter = "CrediNET crypted Account (*.cne)|*.cne";
@@ -467,7 +469,7 @@ namespace CrediNET
             }
             else
             {
-                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         sfdCompte.Filter = "CrediNET Account (*.cna)|*.cna|SQLite CrediNET Account (*.cnsql)|*.cnsqm";
@@ -482,10 +484,10 @@ namespace CrediNET
                         break;
                 }
             }
-            if (sfdCompte.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfdCompte.ShowDialog() == DialogResult.OK)
             {
                 tmpf = sfdCompte.FileName;
-                this.Cursor = Cursors.WaitCursor;
+                Cursor = Cursors.WaitCursor;
                 bwkSave.RunWorkerAsync();
                 
             }
@@ -528,9 +530,9 @@ namespace CrediNET
         private void btnEditOp_Click(object sender, EventArgs e)
         {
             var ae = new FrmOperation(CompteActuel, false, true, CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
-            if (ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ae.ShowDialog() == DialogResult.OK)
             {
-                Operation op = new Operation();
+                var op = new Operation();
                 op.Type = ae.cbxType.SelectedItem.ToString();
                 op.Credit = ae.mupCredit.Value;
                 op.Debit = ae.mupDebit.Value;
@@ -538,7 +540,7 @@ namespace CrediNET
                 op.Date = ae.mcDate.SelectionStart;
                 op.Commentary = ae.txtComm.Text;
 
-                int a = CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
+                var a = CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
                 CompteActuel.Operations.RemoveAll(x => x.ID == lvOps.SelectedItems[0].Text);
                 CompteActuel.Operations.Insert(a, op);
                 LoadOps();
@@ -548,9 +550,9 @@ namespace CrediNET
         private void btnDuplOp_Click(object sender, EventArgs e)
         {
             var ae = new FrmOperation(CompteActuel, false, true, CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
-            if (ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ae.ShowDialog() == DialogResult.OK)
             {
-                Operation op = new Operation();
+                var op = new Operation();
                 op.Type = ae.cbxType.SelectedItem.ToString();
                 op.Credit = ae.mupCredit.Value;
                 op.Debit = ae.mupDebit.Value;
@@ -565,14 +567,14 @@ namespace CrediNET
 
         private void fichierCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (sfdCSV.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfdCSV.ShowDialog() == DialogResult.OK)
             {
                 if (File.Exists(sfdCSV.FileName))
                     File.Delete(sfdCSV.FileName);
 
-                using (StreamWriter wr = new StreamWriter(sfdCSV.FileName, false, Encoding.GetEncoding(WIN_1252_CP)))
+                using (var wr = new StreamWriter(sfdCSV.FileName, false, Encoding.GetEncoding(WIN_1252_CP)))
                 {
-                    switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                    switch (Settings.Default.Lang.Name)
                     {
                         case "en-US":
                             wr.WriteLine("Date;Type;Budget;Comment;Credit;Debit");
@@ -587,9 +589,9 @@ namespace CrediNET
                             break;
                     }
 
-                    foreach (Operation op in CompteActuel.Operations)
+                    foreach (var op in CompteActuel.Operations)
                     {
-                        string s = "";
+                        var s = "";
                         s += op.Date.ToString("dd/MM/yyyy");
                         s += ";";
                         s += op.Type;
@@ -613,7 +615,7 @@ namespace CrediNET
         private void toolStrip_Paint(object sender, PaintEventArgs e)
         {
             var clr = Color.FromArgb(45, 45, 48);
-            int a = toolStrip.Width;
+            var a = toolStrip.Width;
             e.Graphics.DrawLine(new Pen(clr), a, 0, a, toolStrip.Height);
         }
 
@@ -623,7 +625,7 @@ namespace CrediNET
         {
             get
             {
-                CreateParams cp = base.CreateParams;
+                var cp = base.CreateParams;
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
@@ -665,7 +667,7 @@ namespace CrediNET
 
         private void fichierExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (sfdXLS.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfdXLS.ShowDialog() == DialogResult.OK)
             {
                 if (File.Exists(sfdXLS.FileName))
                     File.Delete(sfdXLS.FileName);
@@ -676,14 +678,14 @@ namespace CrediNET
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
                 Excel.Range workSheet_range = null;*/
 
-                CreateExcelDoc d = new CreateExcelDoc();
+                var d = new CreateExcelDoc();
 
                 //Same for English and French lang
                 d.createHeaders(1, 1, "Date", "A1", "A1", 0, Color.Gainsboro, true, 10, Color.Black);
                 d.createHeaders(1, 2, "Type", "B1", "B1", 0, Color.Gainsboro, true, 10, Color.Black);
                 d.createHeaders(1, 3, "Budget", "C1", "D1", 1, Color.Gainsboro, true, 10, Color.Black);
 
-                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
                         d.createHeaders(1, 5, "Comment", "E1", "G1", 0, Color.Gainsboro, true, 10, Color.Black);
@@ -704,9 +706,9 @@ namespace CrediNET
                         break;
                 }
 
-                foreach (Operation op in CompteActuel.Operations)
+                foreach (var op in CompteActuel.Operations)
                 {
-                    int id = CompteActuel.Operations.IndexOf(op) + 2;
+                    var id = CompteActuel.Operations.IndexOf(op) + 2;
                     d.addData(id, 1, op.Date.ToString("dd/MM/yyyy"), "A" + id, "A" + id, "dd/mm/yyyy");
 
                     d.addData(id, 2, op.Type, "B" + id, "B" + id, "");
@@ -728,21 +730,21 @@ namespace CrediNET
 
         private void fichierExcelToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (sfdXLSX.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfdXLSX.ShowDialog() == DialogResult.OK)
             {
                 if (File.Exists(sfdXLSX.FileName))
                     File.Delete(sfdXLSX.FileName);
 
-                using (ExcelPackage pkg = new ExcelPackage())
+                using (var pkg = new ExcelPackage())
                 {
-                    OfficeOpenXml.ExcelWorksheet w = pkg.Workbook.Worksheets.Add(CompteActuel.Name);
+                    var w = pkg.Workbook.Worksheets.Add(CompteActuel.Name);
 
                     // en-tête
                     w.Cells[1, 1].Value = "Date";
                     w.Cells[1, 2].Value = "Type";
                     w.Cells[1, 3].Value = "Budget";
 
-                    switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                    switch (Settings.Default.Lang.Name)
                     {
                         case "en-US":
                             w.Cells[1, 4, 1, 6].Value = "Comment";
@@ -770,9 +772,9 @@ namespace CrediNET
                     w.Cells[1, 1, 1, 8].Style.Fill.BackgroundColor.SetColor(Color.Gainsboro);
                     w.Cells[1, 1, 1, 8].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 
-                    foreach (Operation op in CompteActuel.Operations)
+                    foreach (var op in CompteActuel.Operations)
                     {
-                        int id = CompteActuel.Operations.IndexOf(op) + 2;
+                        var id = CompteActuel.Operations.IndexOf(op) + 2;
                         w.Cells[id, 1].Value = op.Date.ToString("dd/MM/yyyy");
                         w.Cells[id, 2].Value = op.Type;
                         w.Cells[id, 3].Value = op.Budget;
@@ -833,7 +835,7 @@ namespace CrediNET
         private void btnEditAcc_Click(object sender, EventArgs e)
         {
             var ae = new FrmCreateAccount(CompteActuel);
-            if (ae.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ae.ShowDialog() == DialogResult.OK)
             {
                 CompteActuel.Name = ae.txtNom.Text;
                 if (ae.txtPasse.Font.Style != FontStyle.Italic) CompteActuel.DefPass(ae.txtPasse.Text);
@@ -862,7 +864,7 @@ namespace CrediNET
 
         private void btnFilterOp_Click(object sender, EventArgs e)
         {
-            FrmOpFilter of = new FrmOpFilter(CompteActuel);
+            var of = new FrmOpFilter(CompteActuel);
 
             DateTime? dtFrom = null;
             DateTime? dtTo = null;
@@ -881,7 +883,7 @@ namespace CrediNET
             }
             else
             {
-                if (of.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (of.ShowDialog() == DialogResult.OK)
                 {
                     if (of.chbDate.Checked)
                     {
@@ -922,7 +924,7 @@ namespace CrediNET
 
             lvOps.Items.Clear();
 
-            IQueryable<Operation> queryOps =
+            var queryOps =
                 from op in CompteActuel.Operations.AsQueryable<Operation>()
                 select op;
 
@@ -946,9 +948,9 @@ namespace CrediNET
             filteredAccount.Name = CompteActuel.Name;
             filteredAccount.Currency = CompteActuel.Currency;
 
-            foreach (Operation op in queryOps)
+            foreach (var op in queryOps)
             {
-                ListViewItem it = new ListViewItem();
+                var it = new ListViewItem();
                 it.Text = op.ID;
                 it.Name = op.ID;
                 it.SubItems.Add(op.Date.ToString("dd/MM/yyyy"));
@@ -980,7 +982,7 @@ namespace CrediNET
             queryOps.ToList().ForEach(x1 => totald += x1.Debit);
             lblTotalDeb.Text = totald.ToString("0.00") + " " + CompteActuel.Currency.Symbol;
 
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "en-US":
                     lblSolde.Text = "Balance : ";
@@ -1003,7 +1005,7 @@ namespace CrediNET
         private void btnReminder_Click(object sender, EventArgs e)
         {
             var frm = new FrmReminder(CompteActuel);
-            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadOps();
             }
@@ -1024,10 +1026,10 @@ namespace CrediNET
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
             // 685
-            clmnComm.Width = this.ClientSize.Width - 372;
+            clmnComm.Width = ClientSize.Width - 372;
         }
 
-        private void bwkSave_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void bwkSave_DoWork(object sender, DoWorkEventArgs e)
         {
             if (tmpf == "")
                 CompteActuel.Save();
@@ -1035,9 +1037,9 @@ namespace CrediNET
                 CompteActuel.SaveAs(tmpf);
         }
 
-        private void bwkSave_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        private void bwkSave_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.Cursor = Cursors.Default;
+            Cursor = Cursors.Default;
             tmpf = "";
         }
     }

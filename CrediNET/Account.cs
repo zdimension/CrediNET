@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using CrediNET.Properties;
 using Ookii.Dialogs;
 
 namespace CrediNET
@@ -29,27 +30,15 @@ namespace CrediNET
             get { return _fp; }
         }
 
-        private bool _cry = false;
-
         /// <summary>
         /// The encryption state of the account
         /// </summary>
-        public bool Encrypted
-        {
-            get { return _cry; }
-            set { _cry = value; }
-        }
-
-        private CurrencyObj _currency;
+        public bool Encrypted { get; set; }
 
         /// <summary>
         /// The currency of the account
         /// </summary>
-        public CurrencyObj Currency
-        {
-            get { return _currency; }
-            set { _currency = value; }
-        }
+        public CurrencyObj Currency { get; set; }
 
         /// <summary>
         /// The name of the account
@@ -95,10 +84,7 @@ namespace CrediNET
         /// <returns>pass is the password</returns>
         public bool CheckPass(string pass)
         {
-            if (MD5.CreateMD5Hash(pass) == _pass)
-                return true;
-
-            return false;
+            return MD5.CreateMD5Hash(pass) == _pass;
         }
 
         private DateTime _crdate;
@@ -158,6 +144,7 @@ namespace CrediNET
         /// </summary>
         public Account()
         {
+            Encrypted = false;
             _crdate = DateTime.Now;
         }
 
@@ -168,6 +155,7 @@ namespace CrediNET
         /// <param name="filepath">Filepath</param>
         public Account(DateTime _cd, string filepath)
         {
+            Encrypted = false;
             _crdate = _cd;
             _fp = filepath;
         }
@@ -181,18 +169,18 @@ namespace CrediNET
         {
             if (!convert)
             {
-                _currency = d;
+                Currency = d;
             }
             else
             {
                 _ops.All(x =>
                 {
-                    x.Credit = _currency.ToCur(d, (double)x.Credit);
-                    x.Debit = _currency.ToCur(d, (double)x.Debit);
+                    x.Credit = Currency.ToCur(d, (double)x.Credit);
+                    x.Debit = Currency.ToCur(d, (double)x.Debit);
                     return true;
                 });
 
-                _currency = d;
+                Currency = d;
             }
         }
 
@@ -216,7 +204,7 @@ namespace CrediNET
                 }
                 else
                 {
-                    File.WriteAllText(_fp, CryptorEngine.Encrypt(ToXml(this, _fp, false).ToString(), this.Pass, true));
+                    File.WriteAllText(_fp, CryptorEngine.Encrypt(ToXml(this, _fp, false).ToString(), Pass, true));
                 }
             }
         }
@@ -227,7 +215,6 @@ namespace CrediNET
         /// <param name="file">The new filename</param>
         public void SaveAs(string file)
         {
-            this.
             _fp = file;
             Save();
         }
@@ -239,38 +226,38 @@ namespace CrediNET
         /// <returns>The account from <paramref name="fp"/></returns>
         public static Account FromFile(string fp)
         {
-            if (Path.GetExtension(fp) == ".cna")
+            switch (Path.GetExtension(fp))
             {
-                return LoadAlt(fp);
-            }
-            else if (Path.GetExtension(fp) == ".cne")
-            {
-                var ax = new InputDialog();
-                switch (CrediNET.Properties.Settings.Default.Lang.Name)
+                case ".cna":
+                    return LoadAlt(fp);
+                case ".cne":
                 {
-                    case "de-DE":
-                        ax.MainInstruction = "Bitte geben Sie das Passwort des Kontos.";
-                        break;
+                    var ax = new InputDialog();
+                    switch (Settings.Default.Lang.Name)
+                    {
+                        case "de-DE":
+                            ax.MainInstruction = "Bitte geben Sie das Passwort des Kontos.";
+                            break;
 
-                    case "fr-FR":
-                        ax.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
-                        break;
+                        case "fr-FR":
+                            ax.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
+                            break;
 
-                    default: //case "en-US":
-                        ax.MainInstruction = "Please type the account's password below.";
-                        break;
+                        default: //case "en-US":
+                            ax.MainInstruction = "Please type the account's password below.";
+                            break;
+                    }
+
+                    if (ax.ShowDialog() == DialogResult.OK)
+                    {
+                        var aeee = FromXmlCode(CryptorEngine.Decrypt(File.ReadAllText(fp), ax.Input, true), fp);
+                        aeee.Encrypted = true;
+                        return aeee;
+                    }
                 }
-
-                if (ax.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    var aeee = FromXmlCode(CryptorEngine.Decrypt(File.ReadAllText(fp), ax.Input, true), fp);
-                    aeee.Encrypted = true;
-                    return aeee;
-                }
-            }
-            else if (Path.GetExtension(fp) == ".cnsql")
-            {
-                return FromSQLite(fp);
+                    break;
+                case ".cnsql":
+                    return FromSQLite(fp);
             }
 
             return null;
@@ -281,12 +268,12 @@ namespace CrediNET
         /// </summary>
         public void populateForcastOperations()
         {
-            this.ForecastOperations = new List<Operation>();
-            foreach (var item in this.ReminderOperations)
+            ForecastOperations = new List<Operation>();
+            foreach (var item in ReminderOperations)
             {
                 //For each reminder operation, generate corresponding forcast operations
                 item.populateForcastOperations();
-                this.ForecastOperations.AddRange(item.ForcastOperations);
+                ForecastOperations.AddRange(item.ForcastOperations);
             }
         }
 
@@ -347,9 +334,9 @@ namespace CrediNET
         {
             Account cb;
 
-            byte[] encodedString = Encoding.UTF8.GetBytes(xml);
+            var encodedString = Encoding.UTF8.GetBytes(xml);
 
-            MemoryStream ms = new MemoryStream(encodedString);
+            var ms = new MemoryStream(encodedString);
             ms.Flush();
             ms.Position = 0;
 
@@ -359,12 +346,12 @@ namespace CrediNET
             cb = new Account(DateTime.ParseExact(c.Element("CrDate").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture), filepath);
             cb.Name = c.Element("Nom").Value;
             cb.DefPassMd5(c.Element("Passe").Value);
-            CurrencyObj dvs = Currencies.All.First(x => x.ShortName == c.Element("Devise").Value);
+            var dvs = Currencies.All.First(x => x.ShortName == c.Element("Devise").Value);
             cb.ChangeCurrency(dvs, false);
 
             foreach (XElement a in c.Element("Operations").Nodes())
             {
-                Operation op = new Operation(a.Attribute("ID").Value);
+                var op = new Operation(a.Attribute("ID").Value);
                 op.Date = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 op.Commentary = a.Attribute("Comm").Value;
                 op.Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat);
@@ -381,7 +368,7 @@ namespace CrediNET
             if (c.Element("ReminderOperations") != null)
                 foreach (XElement a in c.Element("ReminderOperations").Nodes())
                 {
-                    ReminderOperation op = new ReminderOperation(a.Attribute("ID").Value);
+                    var op = new ReminderOperation(a.Attribute("ID").Value);
                     op.DueDate = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     op.Commentary = a.Attribute("Comm").Value;
                     op.Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat);
@@ -411,7 +398,7 @@ namespace CrediNET
         /// <returns></returns>
         public static Account FromXml(string filePath)
         {
-            string xml = File.ReadAllText(filePath);
+            var xml = File.ReadAllText(filePath);
             return FromXmlCode(xml, filePath);
         }
 
@@ -422,7 +409,7 @@ namespace CrediNET
             else
                 SQLiteConnection.CreateFile(filePath);
 
-            SQLiteConnection dbc = new SQLiteConnection("Data Source=" + filePath + ";Version=3;");
+            var dbc = new SQLiteConnection("Data Source=" + filePath + ";Version=3;");
             dbc.Open();
 
             // tables
@@ -432,22 +419,22 @@ namespace CrediNET
             new SQLiteCommand("create table Budgets (name varchar(50), color varchar(20));", dbc).ExecuteNonQuery();
 
             // account info
-            new SQLiteCommand("insert into Account (name, crdate, devise, passe) values ('" + this.Name.Sanitize() + "', '" + this.CreationDate.ToString("dd/MM/yyyy") + "', '" + this.Currency.ShortName + "', '" + this.Pass + "')", dbc).ExecuteNonQuery();
+            new SQLiteCommand("insert into Account (name, crdate, devise, passe) values ('" + Name.Sanitize() + "', '" + CreationDate.ToString("dd/MM/yyyy") + "', '" + Currency.ShortName + "', '" + Pass + "')", dbc).ExecuteNonQuery();
             
             // operations
-            foreach(Operation o in this.Operations)
+            foreach(var o in Operations)
             {
                 new SQLiteCommand("insert into Operations (id, date, comm, cred, deb, type, budget, remid) values ('" + o.ID + "', '" + o.Date.ToString("dd/MM/yyyy") + "', '" + o.Commentary.Sanitize() + "', '" + o.Credit.ToString(culture.NumberFormat) + "', '" + o.Debit.ToString(culture.NumberFormat) + "', '" + o.Type + "', '" + o.Budget.Sanitize() + "', '" + o.RmdOptID + "')", dbc).ExecuteNonQuery();
             }
 
             // reminder operations
-            foreach (ReminderOperation o in this.ReminderOperations)
+            foreach (var o in ReminderOperations)
             {
                 new SQLiteCommand("insert into ReminderOperations (id, date, comm, cred, deb, type, budget, nbrep, typerep, auto) values ('" + o.ID + "', '" + o.DueDate.ToString("dd/MM/yyyy") + "', '" + o.Commentary.Sanitize() + "', '" + o.Credit.ToString(culture.NumberFormat) + "', '" + o.Debit.ToString(culture.NumberFormat) + "', '" + o.Type + "', '" + o.Budget.Sanitize() + "', " + o.NbOfRepetition + ", " + (int)o.RepetitionType + ", " + (o.AutomaticallyAdded ? 1 : 0) + ")", dbc).ExecuteNonQuery();
             }
 
             // budgets
-            foreach (var b in this.Budgets)
+            foreach (var b in Budgets)
             {
                 new SQLiteCommand("insert into Budgets (name, color) values ('" + b.Key.Sanitize() + "', '" + ColorTranslator.ToHtml(b.Value) + "')", dbc).ExecuteNonQuery();
             }
@@ -459,23 +446,23 @@ namespace CrediNET
         {
             Account cb;
 
-            SQLiteConnection dbc = new SQLiteConnection("Data Source=" + filepath + ";Version=3;");
+            var dbc = new SQLiteConnection("Data Source=" + filepath + ";Version=3;");
             dbc.Open();
 
             // account
-            SQLiteDataReader acrd = new SQLiteCommand("select * from Account", dbc).ExecuteReader();
+            var acrd = new SQLiteCommand("select * from Account", dbc).ExecuteReader();
             acrd.Read();
             cb = new Account(DateTime.ParseExact(acrd["crdate"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture), filepath);
             cb.Name = acrd["name"].ToString();
             cb.DefPassMd5(acrd["passe"].ToString());
-            CurrencyObj dvs = Currencies.All.First(x => x.ShortName == acrd["devise"].ToString());
+            var dvs = Currencies.All.First(x => x.ShortName == acrd["devise"].ToString());
             cb.ChangeCurrency(dvs, false);
 
 
-            SQLiteDataReader oprd = new SQLiteCommand("select * from Operations", dbc).ExecuteReader();
+            var oprd = new SQLiteCommand("select * from Operations", dbc).ExecuteReader();
             while(oprd.Read())
             {
-                Operation op = new Operation(oprd["id"].ToString());
+                var op = new Operation(oprd["id"].ToString());
                 op.Date = DateTime.ParseExact(oprd["date"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 op.Commentary = oprd["comm"].ToString();
                 op.Credit = decimal.Parse(oprd["cred"].ToString(), culture.NumberFormat);
@@ -486,10 +473,10 @@ namespace CrediNET
                 cb.Operations.Add(op);
             }
 
-            SQLiteDataReader remrd = new SQLiteCommand("select * from ReminderOperations", dbc).ExecuteReader();
+            var remrd = new SQLiteCommand("select * from ReminderOperations", dbc).ExecuteReader();
             while (remrd.Read())
             {
-                ReminderOperation op = new ReminderOperation(remrd["id"].ToString());
+                var op = new ReminderOperation(remrd["id"].ToString());
                 op.DueDate = DateTime.ParseExact(remrd["date"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 op.Commentary = remrd["comm"].ToString();
                 op.Credit = decimal.Parse(remrd["cred"].ToString(), culture.NumberFormat);
@@ -503,7 +490,7 @@ namespace CrediNET
             }
 
             cb.Budgets.Clear();
-            SQLiteDataReader btrd = new SQLiteCommand("select * from Budgets", dbc).ExecuteReader();
+            var btrd = new SQLiteCommand("select * from Budgets", dbc).ExecuteReader();
             while (btrd.Read())
             {
                 cb.Budgets.Add(btrd["name"].ToString(), ColorTranslator.FromHtml(btrd["color"].ToString()));
@@ -588,19 +575,19 @@ namespace CrediNET
 
         public static byte[] Encrypt(byte[] clearData, byte[] Key, byte[] IV)
         {
-            MemoryStream ms = new MemoryStream();
-            Rijndael alg = Rijndael.Create();
+            var ms = new MemoryStream();
+            var alg = Rijndael.Create();
 
             alg.Key = Key;
             alg.IV = IV;
 
-            CryptoStream cs = new CryptoStream(ms,
+            var cs = new CryptoStream(ms,
                alg.CreateEncryptor(), CryptoStreamMode.Write);
 
             cs.Write(clearData, 0, clearData.Length);
             cs.Close();
 
-            byte[] encryptedData = ms.ToArray();
+            var encryptedData = ms.ToArray();
 
             return encryptedData;
         }
@@ -608,19 +595,19 @@ namespace CrediNET
         public static byte[] Decrypt(byte[] cipherData,
                                     byte[] Key, byte[] IV)
         {
-            MemoryStream ms = new MemoryStream();
-            Rijndael alg = Rijndael.Create();
+            var ms = new MemoryStream();
+            var alg = Rijndael.Create();
 
             alg.Key = Key;
             alg.IV = IV;
 
-            CryptoStream cs = new CryptoStream(ms,
+            var cs = new CryptoStream(ms,
                 alg.CreateDecryptor(), CryptoStreamMode.Write);
 
             cs.Write(cipherData, 0, cipherData.Length);
             cs.Close();
 
-            byte[] decryptedData = ms.ToArray();
+            var decryptedData = ms.ToArray();
 
             return decryptedData;
         }

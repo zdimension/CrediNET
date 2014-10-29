@@ -8,12 +8,12 @@ namespace CrediNET
     {
         public static string CreateMD5Hash(string input)
         {
-            System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
-            byte[] hashBytes = md5.ComputeHash(inputBytes);
+            var md5 = System.Security.Cryptography.MD5.Create();
+            var inputBytes = Encoding.ASCII.GetBytes(input);
+            var hashBytes = md5.ComputeHash(inputBytes);
 
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < hashBytes.Length; i++)
+            var sb = new StringBuilder();
+            for (var i = 0; i < hashBytes.Length; i++)
             {
                 sb.Append(hashBytes[i].ToString("X2"));
             }
@@ -32,25 +32,25 @@ namespace CrediNET
         public static string Encrypt(string toEncrypt, string password, bool useHashing)
         {
             byte[] keyArray;
-            byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
+            var toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
-            string key = password;
+            var key = password;
             if (useHashing)
             {
-                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+                var hashmd5 = new MD5CryptoServiceProvider();
                 keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
                 hashmd5.Clear();
             }
             else
                 keyArray = UTF8Encoding.UTF8.GetBytes(key);
 
-            TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
+            var tdes = new TripleDESCryptoServiceProvider();
             tdes.Key = keyArray;
             tdes.Mode = CipherMode.ECB;
             tdes.Padding = PaddingMode.PKCS7;
 
-            ICryptoTransform cTransform = tdes.CreateEncryptor();
-            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+            var cTransform = tdes.CreateEncryptor();
+            var resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
             tdes.Clear();
             return Convert.ToBase64String(resultArray, 0, resultArray.Length);
         }
@@ -64,27 +64,27 @@ namespace CrediNET
         public static string Decrypt(string cipherString, string password, bool useHashing)
         {
             byte[] keyArray;
-            byte[] toEncryptArray = Convert.FromBase64String(cipherString);
+            var toEncryptArray = Convert.FromBase64String(cipherString);
 
             //Get your key from config file to open the lock!
-            string key = password;
+            var key = password;
 
             if (useHashing)
             {
-                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+                var hashmd5 = new MD5CryptoServiceProvider();
                 keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
                 hashmd5.Clear();
             }
             else
                 keyArray = UTF8Encoding.UTF8.GetBytes(key);
 
-            TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
+            var tdes = new TripleDESCryptoServiceProvider();
             tdes.Key = keyArray;
             tdes.Mode = CipherMode.ECB;
             tdes.Padding = PaddingMode.PKCS7;
 
-            ICryptoTransform cTransform = tdes.CreateDecryptor();
-            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+            var cTransform = tdes.CreateDecryptor();
+            var resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
 
             tdes.Clear();
             return UTF8Encoding.UTF8.GetString(resultArray);

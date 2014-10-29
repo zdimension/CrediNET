@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -96,13 +97,13 @@ namespace CrediNET
         /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y.</returns>
         public int Compare(object x, object y)
         {
-            int compareResult = 0;
+            var compareResult = 0;
             ListViewItem listviewX, listviewY;
 
             listviewX = (ListViewItem)x;
             listviewY = (ListViewItem)y;
 
-            ListView listViewMain = listviewX.ListView;
+            var listViewMain = listviewX.ListView;
 
             if (listViewMain.Sorting != SortOrder.Ascending &&
                 listViewMain.Sorting != SortOrder.Descending)
@@ -133,12 +134,12 @@ namespace CrediNET
             }
             else if (mySortModifier.Equals(SortModifiers.SortByDate))
             {
-                int returnVal = -1;
+                var returnVal = -1;
                 // Parse the two objects passed as a parameter as a DateTime.
-                System.DateTime firstDate =
-                        DateTime.ParseExact(((ListViewItem)x).SubItems[ColumnToSort].Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                System.DateTime secondDate =
-                        DateTime.ParseExact(((ListViewItem)y).SubItems[ColumnToSort].Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                var firstDate =
+                        DateTime.ParseExact(((ListViewItem)x).SubItems[ColumnToSort].Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                var secondDate =
+                        DateTime.ParseExact(((ListViewItem)y).SubItems[ColumnToSort].Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 // Compare the two dates.
                 returnVal = DateTime.Compare(firstDate, secondDate);
 
@@ -148,12 +149,12 @@ namespace CrediNET
             }
             else if (mySortModifier.Equals(SortModifiers.SortByDecimal))
             {
-                int returnVal = -1;
+                var returnVal = -1;
                 // Parse the two objects passed as a parameter as a decimal.
                 Console.WriteLine(((ListViewItem)x).SubItems[ColumnToSort].Text);
-                decimal firstNum =
+                var firstNum =
                         decimal.Parse(Regex.Match(((ListViewItem)x).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
-                decimal secondNum =
+                var secondNum =
                         decimal.Parse(Regex.Match(((ListViewItem)y).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
                 // Compare the two dates.
                 returnVal = firstNum > secondNum ? 1 : -1;
@@ -282,8 +283,8 @@ namespace CrediNET
         /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y.</returns>
         public int Compare(object x, object y)
         {
-            ListViewItem listviewX = (ListViewItem)x;
-            ListViewItem listviewY = (ListViewItem)y;
+            var listviewX = (ListViewItem)x;
+            var listviewY = (ListViewItem)y;
 
             if (listviewX.Checked && !listviewY.Checked)
             {
@@ -337,7 +338,7 @@ namespace CrediNET
             {
                 return 1;
             }
-            if ((x is System.String) && IsWholeNumber((string)x) && (y is System.String) && IsWholeNumber((string)y))
+            if ((x is String) && IsWholeNumber((string)x) && (y is String) && IsWholeNumber((string)y))
             {
                 try
                 {
@@ -361,7 +362,7 @@ namespace CrediNET
         /// <returns>Number is whole</returns>
         private bool IsWholeNumber(string strNumber)
         {
-            Regex wholePattern = new Regex(@"^\d+$");
+            var wholePattern = new Regex(@"^\d+$");
             return wholePattern.IsMatch(strNumber);
         }
     }

@@ -29,9 +29,9 @@ namespace CrediNET
         private void btnAddReminder_Click(object sender, EventArgs e)
         {
             var frm = new FrmReminderOperation(CompteActuel);
-            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                ReminderOperation op = new ReminderOperation();
+                var op = new ReminderOperation();
                 op.Type = frm.cbxType.SelectedItem.ToString();
                 op.Credit = frm.mupCredit.Value;
                 op.Debit = frm.mupDebit.Value;
@@ -64,9 +64,9 @@ namespace CrediNET
 
             lvReminderOps.Items.Clear();
 
-            foreach (ReminderOperation op in CompteActuel.ReminderOperations)
+            foreach (var op in CompteActuel.ReminderOperations)
             {
-                ListViewItem it = new ListViewItem();
+                var it = new ListViewItem();
                 it.Text = op.ID;
                 it.Name = op.ID;
                 it.SubItems.Add(op.Budget);
@@ -90,9 +90,9 @@ namespace CrediNET
         private void btnModifyReminder_Click(object sender, EventArgs e)
         {
             var frm = new FrmReminderOperation(CompteActuel, false, true, CompteActuel.ReminderOperations.First(x => x.ID == lvReminderOps.SelectedItems[0].Text));
-            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                ReminderOperation op = new ReminderOperation(lvReminderOps.SelectedItems[0].Text);
+                var op = new ReminderOperation(lvReminderOps.SelectedItems[0].Text);
                 op.Type = frm.cbxType.SelectedItem.ToString();
                 op.Credit = frm.mupCredit.Value;
                 op.Debit = frm.mupDebit.Value;
@@ -103,7 +103,7 @@ namespace CrediNET
                 op.RepetitionType = (ReminderOperation.ERepititionType)frm.cbxRepetitionType.SelectedIndex;
                 op.AutomaticallyAdded = frm.cbAddOperations.Checked;
 
-                int a = CompteActuel.ReminderOperations.IndexOf(CompteActuel.ReminderOperations.First(x => x.ID == lvReminderOps.SelectedItems[0].Text));
+                var a = CompteActuel.ReminderOperations.IndexOf(CompteActuel.ReminderOperations.First(x => x.ID == lvReminderOps.SelectedItems[0].Text));
                 CompteActuel.ReminderOperations.RemoveAll(x => x.ID == lvReminderOps.SelectedItems[0].Text);
                 CompteActuel.ReminderOperations.Insert(a, op);
 
@@ -134,19 +134,19 @@ namespace CrediNET
         {
             CompteActuel.populateForcastOperations();
             calReminder.Items.Clear();
-            DateTime today = mthCalReminder.SelectionStart;
-            int numberOfDaysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
+            var today = mthCalReminder.SelectionStart;
+            var numberOfDaysInMonth = DateTime.DaysInMonth(today.Year, today.Month);
 
-            DateTime startOfMonth = new DateTime(today.Year, today.Month, 1);
-            DateTime endOfMonth = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
+            var startOfMonth = new DateTime(today.Year, today.Month, 1);
+            var endOfMonth = new DateTime(today.Year, today.Month, numberOfDaysInMonth);
 
             //Filter only reminder operations that fit the calendar
-            List<Operation> ops = ReminderOperation.filterOperation(CompteActuel.ForecastOperations, startOfMonth, endOfMonth);
+            var ops = ReminderOperation.filterOperation(CompteActuel.ForecastOperations, startOfMonth, endOfMonth);
 
             calReminder.SetViewRange(startOfMonth, endOfMonth);
             foreach (var item in ops)
             {
-                CalendarItem cal = new CalendarItem(calReminder, item.Date, item.Date, item.Budget);
+                var cal = new CalendarItem(calReminder, item.Date, item.Date, item.Budget);
                 cal.ApplyColor(Color.FromName(CompteActuel.Budgets[item.Budget].ToKnownColor().ToString()));
                 calReminder.Items.Add(cal);    
             }

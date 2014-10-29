@@ -87,7 +87,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public string ToStringShort()
         {
-            DateTime saturday = StartDate.AddDays(6);
+            var saturday = StartDate.AddDays(6);
 
             if (saturday.Month != StartDate.Month)
             {
@@ -111,7 +111,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns>The week in a string format</returns>
         public string ToStringLarge()
         {
-            DateTime saturday = StartDate.AddDays(6);
+            var saturday = StartDate.AddDays(6);
 
             if (saturday.Month != StartDate.Month)
             {

@@ -7,7 +7,7 @@ namespace CrediNET
     {
         private void InitializeComponent()
         {
-            this.TextChanged += new System.EventHandler(this.textChanged);
+            TextChanged += new EventHandler(textChanged);
         }
 
         private void textChanged(object sender, EventArgs e)
@@ -25,8 +25,8 @@ namespace CrediNET
         public MoneyUpDown()
         {
             InitializeComponent();
-            this.Maximum = 999999999999;
-            this.DecimalPlaces = 2;
+            Maximum = 999999999999;
+            DecimalPlaces = 2;
         }
 
         private string _dev = "€";
@@ -39,7 +39,7 @@ namespace CrediNET
 
         protected override void UpdateEditText()
         {
-            this.Text = this.Value.ToString() + " " + Devise;
+            Text = Value.ToString() + " " + Devise;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 
 using System.Windows.Forms;
+using CrediNET.Properties;
 using ZedGraph;
 
 namespace CrediNET
@@ -29,7 +30,7 @@ namespace CrediNET
             zg1.GraphPane.GraphObjList.Clear();
 
             a.CurveList.Clear();
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "de-DE":
                     a.Title.Text = "Kontos : " + cmpt.Name;
@@ -88,8 +89,8 @@ namespace CrediNET
             ls.ForEach(x => totalD.Remove(x));
             ls.Clear();
 
-            totalC.All(x => { a.AddPieSlice(Convert.ToDouble(x.Value), System.Drawing.Color.FromArgb(255, rnd.Next(0, 150), 255, rnd.Next(0, 150)), Color.White, 45.0f, 0, x.Key); return true; });
-            totalD.All(x => { a.AddPieSlice(Convert.ToDouble(x.Value), System.Drawing.Color.FromArgb(255, 255, rnd.Next(0, 150), rnd.Next(0, 150)), Color.White, 45.0f, 0, x.Key); return true; });
+            totalC.All(x => { a.AddPieSlice(Convert.ToDouble(x.Value), Color.FromArgb(255, rnd.Next(0, 150), 255, rnd.Next(0, 150)), Color.White, 45.0f, 0, x.Key); return true; });
+            totalD.All(x => { a.AddPieSlice(Convert.ToDouble(x.Value), Color.FromArgb(255, 255, rnd.Next(0, 150), rnd.Next(0, 150)), Color.White, 45.0f, 0, x.Key); return true; });
 
             zg1.IsShowPointValues = true;
             zg1.AxisChange();
@@ -108,7 +109,7 @@ namespace CrediNET
 
             a.LineType = LineType.Normal;
             a.CurveList.Clear();
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "de-DE":
                     a.Title.Text = "Kontos : " + cmpt.Name;
@@ -129,7 +130,7 @@ namespace CrediNET
             a.Fill = new Fill(SystemColors.Control);
             a.Chart.Fill = new Fill(Color.White, Color.LightGoldenrodYellow, 45.0f);
 
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "de-DE":
                     a.XAxis.Title.Text = "Datum";
@@ -152,7 +153,7 @@ namespace CrediNET
             a.XAxis.MajorTic.Size = 10;
             a.XAxis.IsVisible = true;
 
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "de-DE":
                     a.YAxis.Title.Text = "Kontostand (" + cmpt.Currency.Symbol + ")";
@@ -185,7 +186,7 @@ namespace CrediNET
             //Operations need to be sorted before being displayed in the curve graph
             cmpt.Operations.Sort((op1, op2) => op1.Date.CompareTo(op2.Date));
 
-            for (int l = 0; l < cmpt.Operations.Count; l++)
+            for (var l = 0; l < cmpt.Operations.Count; l++)
             {
                 if (cmpt.Operations[l].Credit > 0) Xp += cmpt.Operations[l].Credit;
                 if (cmpt.Operations[l].Debit > 0) Xp -= cmpt.Operations[l].Debit;
@@ -194,7 +195,7 @@ namespace CrediNET
             }
 
             LineItem cr; // = a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "de-DE":
                     cr = a.AddCurve("kontostand", crP, Color.Red, SymbolType.XCross);

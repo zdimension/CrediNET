@@ -12,11 +12,11 @@ namespace CrediNET
 
         public DoubleBufferListView()
         {
-            SetWindowTheme(this.Handle, "Explorer", null);
-            this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw, true);
+            SetWindowTheme(Handle, "Explorer", null);
+            DoubleBuffered = true;
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw, true);
 
-            this.SetStyle(ControlStyles.EnableNotifyMessage, true);
+            SetStyle(ControlStyles.EnableNotifyMessage, true);
         }
 
         protected override void OnNotifyMessage(Message m)
@@ -31,7 +31,7 @@ namespace CrediNET
         {
             get
             {
-                CreateParams cp = base.CreateParams;
+                var cp = base.CreateParams;
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
@@ -40,7 +40,7 @@ namespace CrediNET
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            SetWindowTheme(this.Handle, "Explorer", null);
+            SetWindowTheme(Handle, "Explorer", null);
         }
     }
 }

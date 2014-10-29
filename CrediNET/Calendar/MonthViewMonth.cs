@@ -34,12 +34,12 @@ namespace System.Windows.Forms.Calendar
             _monthview = monthView;
             _date = date;
 
-            int preDays = (new int[] { 0, 1, 2, 3, 4, 5, 6 })[(int)date.DayOfWeek] - (int)MonthView.FirstDayOfWeek;
+            var preDays = (new int[] { 0, 1, 2, 3, 4, 5, 6 })[(int)date.DayOfWeek] - (int)MonthView.FirstDayOfWeek;
             days = new MonthViewDay[6 * 7];
-            DateTime curDate = date.AddDays(-preDays);
+            var curDate = date.AddDays(-preDays);
             DayHeaders = new string[7];
 
-            for (int i = 0; i < days.Length; i++)
+            for (var i = 0; i < days.Length; i++)
             {
                 days[i] = new MonthViewDay(this, curDate);
 
@@ -123,10 +123,10 @@ namespace System.Windows.Forms.Calendar
         internal void SetLocation(Point location)
         {
 
-            int startX = location.X;
-            int startY = location.Y;
-            int curX = startX;
-            int curY = startY;
+            var startX = location.X;
+            var startY = location.Y;
+            var curX = startX;
+            var curY = startY;
 
             _location = location;
 
@@ -136,7 +136,7 @@ namespace System.Windows.Forms.Calendar
             {
                 dayNamesBounds = new Rectangle[7];
                 curY = location.Y + MonthView.DaySize.Height;
-                for (int i = 0; i < dayNamesBounds.Length; i++)
+                for (var i = 0; i < dayNamesBounds.Length; i++)
                 {
                     DayNamesBounds[i] = new Rectangle(curX, curY, MonthView.DaySize.Width, MonthView.DaySize.Height);
 
@@ -152,7 +152,7 @@ namespace System.Windows.Forms.Calendar
             curX = startX;
             curY = startY + MonthView.DaySize.Height * 2;
 
-            for (int i = 0; i < Days.Length; i++)
+            for (var i = 0; i < Days.Length; i++)
             {
                 Days[i].SetBounds(new Rectangle(new Point(curX, curY), MonthView.DaySize));
 

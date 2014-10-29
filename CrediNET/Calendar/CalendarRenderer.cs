@@ -88,13 +88,13 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public static GraphicsPath RoundRectangle(Rectangle r, int radius, Corners corners)
         {
-            GraphicsPath path = new GraphicsPath(); if (r.Width <= 0 || r.Height <= 0) return path;
-            int d = radius * 2;
+            var path = new GraphicsPath(); if (r.Width <= 0 || r.Height <= 0) return path;
+            var d = radius * 2;
 
-            int nw = (corners & Corners.NorthWest) == Corners.NorthWest ? d : 0;
-            int ne = (corners & Corners.NorthEast) == Corners.NorthEast ? d : 0;
-            int se = (corners & Corners.SouthEast) == Corners.SouthEast ? d : 0;
-            int sw = (corners & Corners.SouthWest) == Corners.SouthWest ? d : 0;
+            var nw = (corners & Corners.NorthWest) == Corners.NorthWest ? d : 0;
+            var ne = (corners & Corners.NorthEast) == Corners.NorthEast ? d : 0;
+            var se = (corners & Corners.SouthEast) == Corners.SouthEast ? d : 0;
+            var sw = (corners & Corners.SouthWest) == Corners.SouthWest ? d : 0;
 
             path.AddLine(r.Left + nw, r.Top, r.Right - ne, r.Top);
 
@@ -435,16 +435,16 @@ namespace System.Windows.Forms.Calendar
             if (Calendar.Days == null || Calendar.Days.Length == 0) 
                 return 0;
             
-            CalendarDay fisrtDay = Calendar.Days[0];
-            CalendarTimeScaleUnit firstUnit = fisrtDay.TimeUnits[0];
-            double duration = Convert.ToDouble(firstUnit.Duration.TotalMinutes);
-            double totalmins = time.TotalMinutes;
-            int unitIndex = Convert.ToInt32(Math.Floor(totalmins / duration));
+            var fisrtDay = Calendar.Days[0];
+            var firstUnit = fisrtDay.TimeUnits[0];
+            var duration = Convert.ToDouble(firstUnit.Duration.TotalMinutes);
+            var totalmins = time.TotalMinutes;
+            var unitIndex = Convert.ToInt32(Math.Floor(totalmins / duration));
             double module = Convert.ToInt32(Math.Floor(totalmins % duration));
             
-            CalendarTimeScaleUnit unit = Calendar.Days[0].TimeUnits[unitIndex];
+            var unit = Calendar.Days[0].TimeUnits[unitIndex];
 
-            int minuteHeight = Convert.ToInt32(Convert.ToDouble(unit.Bounds.Height) / duration);
+            var minuteHeight = Convert.ToInt32(Convert.ToDouble(unit.Bounds.Height) / duration);
 
             return unit.Bounds.Top + minuteHeight * Convert.ToInt32(module);
             
@@ -457,7 +457,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public GraphicsPath ItemRectangle(CalendarRendererItemBoundsEventArgs evtData, Rectangle bounds)
         {
-            int pointerPadding = 5;
+            var pointerPadding = 5;
             
 
             if ((evtData.Item.Bounds.Top != evtData.Item.MinuteStartTop ||
@@ -477,18 +477,18 @@ namespace System.Windows.Forms.Calendar
                  *     F--------------------E
                 */
 
-                int sq = ItemRoundness * 2;
-                Point a = new Point(bounds.Left, evtData.Item.MinuteStartTop);
-                Point b = new Point(a.X + pointerPadding, a.Y);
-                Point c = new Point(b.X, bounds.Top);
-                Point d = new Point(bounds.Right, c.Y);
-                Point e = new Point(d.X, bounds.Bottom);
-                Point f = new Point(b.X, e.Y);
-                Point g = new Point(b.X, evtData.Item.MinuteEndTop);
-                Point h = new Point(a.X, g.Y);
+                var sq = ItemRoundness * 2;
+                var a = new Point(bounds.Left, evtData.Item.MinuteStartTop);
+                var b = new Point(a.X + pointerPadding, a.Y);
+                var c = new Point(b.X, bounds.Top);
+                var d = new Point(bounds.Right, c.Y);
+                var e = new Point(d.X, bounds.Bottom);
+                var f = new Point(b.X, e.Y);
+                var g = new Point(b.X, evtData.Item.MinuteEndTop);
+                var h = new Point(a.X, g.Y);
                 
 
-                GraphicsPath path = new GraphicsPath();
+                var path = new GraphicsPath();
 
                 path.AddLine(a, b);
                 path.AddLine(b, c);
@@ -508,7 +508,7 @@ namespace System.Windows.Forms.Calendar
             }
             else
             {
-                Corners crns = Corners.None;
+                var crns = Corners.None;
 
                 if (evtData.IsFirst)
                 {
@@ -539,9 +539,9 @@ namespace System.Windows.Forms.Calendar
                 return;
             }
 
-            using (GraphicsPath r = ItemRectangle(e, bounds))
+            using (var r = ItemRectangle(e, bounds))
             {
-                using (LinearGradientBrush b = new LinearGradientBrush(bounds, north, south, 90))
+                using (var b = new LinearGradientBrush(bounds, north, south, 90))
                 {
                     e.Graphics.FillPath(b, r);
                 }
@@ -555,7 +555,7 @@ namespace System.Windows.Forms.Calendar
                 return;
             }
 
-            using (GraphicsPath r = ItemRectangle(e, bounds))
+            using (var r = ItemRectangle(e, bounds))
             {
                 using (Brush b = new HatchBrush(e.Item.Pattern, patternColor, Color.Transparent))
                 {
@@ -574,9 +574,9 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public void ItemBorder(CalendarRendererItemBoundsEventArgs e, Rectangle bounds, Color color, float width)
         {
-            using (GraphicsPath r = ItemRectangle(e, bounds))
+            using (var r = ItemRectangle(e, bounds))
             {
-                using (Pen p = new Pen(color, width))
+                using (var p = new Pen(color, width))
                 {
                     e.Graphics.DrawPath(p, r);
                 }
@@ -602,12 +602,12 @@ namespace System.Windows.Forms.Calendar
         {
             if (Calendar.Days == null) return;
 
-            int leftStart = 0;
-            int curLeft = 0;
-            int curTop = 0;
-            int dayWidth = 0;
-            int dayHeight = 0;
-            int scrollBarWidth = 20;
+            var leftStart = 0;
+            var curLeft = 0;
+            var curTop = 0;
+            var dayWidth = 0;
+            var dayHeight = 0;
+            var scrollBarWidth = 20;
 
             TimeScaleBounds = Rectangle.Empty;
 
@@ -619,18 +619,18 @@ namespace System.Windows.Forms.Calendar
                 dayHeight = Calendar.ClientSize.Height - 1;
                 dayWidth = (Calendar.ClientSize.Width - TimeScaleBounds.Width - scrollBarWidth) / Calendar.Days.Length;
 
-                for (int i = 0; i < Calendar.Days.Length; i++)
+                for (var i = 0; i < Calendar.Days.Length; i++)
                 {
-                    CalendarDay day = Calendar.Days[i];
+                    var day = Calendar.Days[i];
                     day.SetBounds(new Rectangle(curLeft, curTop, dayWidth, dayHeight));
                     day.DayTop.SetBounds(new Rectangle(curLeft, day.HeaderBounds.Bottom, dayWidth, DayTopHeight));
                     curLeft += dayWidth + 1;
                     //int k = 0;
-                    int utop = day.BodyBounds.Top + Calendar.TimeUnitsOffset * TimeScaleUnitHeight;
+                    var utop = day.BodyBounds.Top + Calendar.TimeUnitsOffset * TimeScaleUnitHeight;
 
-                    for (int j = 0; j < day.TimeUnits.Length; j++)
+                    for (var j = 0; j < day.TimeUnits.Length; j++)
                     {
-                        CalendarTimeScaleUnit unit = day.TimeUnits[j];
+                        var unit = day.TimeUnits[j];
 
                         if (Calendar.TimeUnitsOffset * -1 >= (j + 1))
                         {
@@ -656,9 +656,9 @@ namespace System.Windows.Forms.Calendar
                 dayWidth = (Calendar.ClientSize.Width - leftStart - scrollBarWidth) / 7;
                 dayHeight = (Calendar.ClientSize.Height - curTop) / (Calendar.Days.Length / 7) - 1;
                 _dayNameHeaderColumns = new Rectangle[7];
-                int j = 0;
+                var j = 0;
 
-                for (int i = 0; i < Calendar.Days.Length; i++)
+                for (var i = 0; i < Calendar.Days.Length; i++)
                 {
                     Calendar.Days[i].SetBounds(new Rectangle(curLeft, curTop, dayWidth, dayHeight));
                     curLeft += dayWidth + 1;
@@ -692,11 +692,11 @@ namespace System.Windows.Forms.Calendar
         public void PerformItemsLayout()
         {
             if (Calendar.Days == null || Calendar.Items.Count == 0) return;
-            bool alldaychanged = false;
-            int offset = Math.Abs(Calendar.TimeUnitsOffset);
-            List<CalendarItem> itemsOnScene = new List<CalendarItem>();
+            var alldaychanged = false;
+            var offset = Math.Abs(Calendar.TimeUnitsOffset);
+            var itemsOnScene = new List<CalendarItem>();
 
-            foreach (CalendarDay day in Calendar.Days)
+            foreach (var day in Calendar.Days)
                 day.ContainedItems.Clear();
 
             if (Calendar.DaysMode == CalendarDaysMode.Expanded)
@@ -705,9 +705,9 @@ namespace System.Windows.Forms.Calendar
 
                 #region Assign units and initial coords
 
-                int maxItemsOnDayTop = 0;
+                var maxItemsOnDayTop = 0;
 
-                foreach (CalendarItem item in Calendar.Items)
+                foreach (var item in Calendar.Items)
                 {
                     item.ClearBounds();
                     item.ClearPassings();
@@ -716,13 +716,13 @@ namespace System.Windows.Forms.Calendar
                     {
                         #region Among day tops
 
-                        CalendarDay dayStart = item.DayStart;
-                        CalendarDay dayEnd = item.DayEnd;
+                        var dayStart = item.DayStart;
+                        var dayEnd = item.DayEnd;
                             
                         if (dayStart == null) dayStart = Calendar.Days[0];
                         if (dayEnd == null) dayEnd = Calendar.Days[Calendar.Days.Length - 1];
 
-                        for (int i = dayStart.Index; i <= dayEnd.Index; i++)
+                        for (var i = dayStart.Index; i <= dayEnd.Index; i++)
                         {
                             item.AddTopPassing(Calendar.Days[i].DayTop);
                             Calendar.Days[i].DayTop.AddPassingItem(item);
@@ -736,15 +736,15 @@ namespace System.Windows.Forms.Calendar
                     {
                         #region Among time units
                         
-                        CalendarDay day = item.DayStart; if (day == null) continue;
-                        double unitDurationMinutes = Convert.ToDouble((int)Calendar.TimeScale);
-                        DateTime date1 = item.StartDate;
-                        DateTime date2 = item.EndDate;
+                        var day = item.DayStart; if (day == null) continue;
+                        var unitDurationMinutes = Convert.ToDouble((int)Calendar.TimeScale);
+                        var date1 = item.StartDate;
+                        var date2 = item.EndDate;
 
-                        int indexStart = Convert.ToInt32(Math.Floor(date1.TimeOfDay.TotalMinutes / unitDurationMinutes));
-                        int indexEnd = Convert.ToInt32(Math.Ceiling(date2.TimeOfDay.TotalMinutes / unitDurationMinutes));
+                        var indexStart = Convert.ToInt32(Math.Floor(date1.TimeOfDay.TotalMinutes / unitDurationMinutes));
+                        var indexEnd = Convert.ToInt32(Math.Ceiling(date2.TimeOfDay.TotalMinutes / unitDurationMinutes));
 
-                        for (int i = 0; i < day.TimeUnits.Length; i++)
+                        for (var i = 0; i < day.TimeUnits.Length; i++)
                         {
                             if (i >= indexStart && i < indexEnd)
                             {
@@ -764,28 +764,28 @@ namespace System.Windows.Forms.Calendar
                 #endregion
 
                 #region Items on DayTops
-                foreach (CalendarDay day in Calendar.Days)
+                foreach (var day in Calendar.Days)
                 {
                     maxItemsOnDayTop = Math.Max(maxItemsOnDayTop, day.DayTop.PassingItems.Count);
                 }
 
-                int[,] tmatix = new int[Calendar.Days.Length, maxItemsOnDayTop];
+                var tmatix = new int[Calendar.Days.Length, maxItemsOnDayTop];
 
                 if (tmatix.GetLength(1) > 0)
                 {
-                    foreach (CalendarItem item in Calendar.Items)
+                    foreach (var item in Calendar.Items)
                     {
                         if (!item.IsOnDayTop) continue;
 
                         item.TopsPassing.Sort(CompareTops);
 
-                        int topStart = item.TopsPassing[0].Day.Index;
-                        int topEnd = item.TopsPassing[item.TopsPassing.Count - 1].Day.Index;
+                        var topStart = item.TopsPassing[0].Day.Index;
+                        var topEnd = item.TopsPassing[item.TopsPassing.Count - 1].Day.Index;
 
                         PlaceInMatrix(ref tmatix, Calendar.Items.IndexOf(item) + 1, topStart, topEnd);
                     }
 
-                    int dayTopsHeight = tmatix.GetLength(1) * StandardItemHeight + DayTopMinHeight;
+                    var dayTopsHeight = tmatix.GetLength(1) * StandardItemHeight + DayTopMinHeight;
 
                     if (DayTopHeight != dayTopsHeight)
                     {
@@ -793,18 +793,18 @@ namespace System.Windows.Forms.Calendar
                         alldaychanged = true;
                     }
 
-                    int itemHeight = StandardItemHeight;//Convert.ToInt32(Math.Floor(Convert.ToSingle(DayTopHeight) / Convert.ToSingle(tmatix.GetLength(1))));
+                    var itemHeight = StandardItemHeight;//Convert.ToInt32(Math.Floor(Convert.ToSingle(DayTopHeight) / Convert.ToSingle(tmatix.GetLength(1))));
 
-                    foreach (CalendarItem item in Calendar.Items)
+                    foreach (var item in Calendar.Items)
                     {
                         if (!item.IsOnDayTop) continue;
 
-                        int index = Calendar.Items.IndexOf(item);
+                        var index = Calendar.Items.IndexOf(item);
 
                         int top, left;
                         FindInMatrix(tmatix, index + 1, out left, out top);
 
-                        Rectangle r = item.Bounds;
+                        var r = item.Bounds;
                         r.Y = Calendar.Days[0].DayTop.Bounds.Top + top * itemHeight;
                         r.Height = itemHeight;
                         item.SetBounds(r);
@@ -815,49 +815,49 @@ namespace System.Windows.Forms.Calendar
                     PerformLayout(false);
                 #endregion
 
-                foreach (CalendarDay day in Calendar.Days)
+                foreach (var day in Calendar.Days)
                 {
                     #region Create groups
                     
                     maxItemsOnDayTop = Math.Max(maxItemsOnDayTop, day.DayTop.PassingItems.Count);
 
-                    List<List<CalendarItem>> groups = new List<List<CalendarItem>>();
-                    List<CalendarItem> items = new List<CalendarItem>(day.ContainedItems);
+                    var groups = new List<List<CalendarItem>>();
+                    var items = new List<CalendarItem>(day.ContainedItems);
 
                     while (items.Count > 0)
                     {
-                        List<CalendarItem> group = new List<CalendarItem>();
+                        var group = new List<CalendarItem>();
 
                         CollectIntersectingGroup(items[0], items, group);
 
                         groups.Add(group);
 
-                        foreach (CalendarItem item in group)
+                        foreach (var item in group)
                             items.Remove(item);
                     }
 
                     #endregion
 
-                    foreach (List<CalendarItem> group in groups)
+                    foreach (var group in groups)
                     {
                         #region Create group matrix
 
-                        int maxConcurrent = 0;
+                        var maxConcurrent = 0;
                         int startIndex, endIndex;
                         GetGroupBoundUnits(group, out startIndex, out endIndex);
 
                         //Get the maximum concurrent items
-                        for (int i = startIndex; i <= endIndex; i++) maxConcurrent = Math.Max(day.TimeUnits[i].PassingItems.Count, maxConcurrent);
+                        for (var i = startIndex; i <= endIndex; i++) maxConcurrent = Math.Max(day.TimeUnits[i].PassingItems.Count, maxConcurrent);
 
-                        int[,] matix = new int[maxConcurrent, endIndex - startIndex + 1];
+                        var matix = new int[maxConcurrent, endIndex - startIndex + 1];
 
-                        foreach (CalendarItem item in group)
+                        foreach (var item in group)
                         {
-                            int x = 0;
+                            var x = 0;
                             item.UnitsPassing.Sort(CompareUnits);
-                            int unitStart = item.UnitsPassing[0].Index - startIndex;
-                            int unitEnd = unitStart + item.UnitsPassing.Count - 1;
-                            bool xFound = false;
+                            var unitStart = item.UnitsPassing[0].Index - startIndex;
+                            var unitEnd = unitStart + item.UnitsPassing.Count - 1;
+                            var xFound = false;
 
                             //if (startIndex + unitEnd < offset)
                             //{
@@ -873,7 +873,7 @@ namespace System.Windows.Forms.Calendar
                             {
                                 xFound = true;
 
-                                for (int i = unitStart; i <= unitEnd; i++)
+                                for (var i = unitStart; i <= unitEnd; i++)
                                 {
                                     if (matix[x, i] != 0)
                                     {
@@ -884,7 +884,7 @@ namespace System.Windows.Forms.Calendar
                                 if (!xFound) x++;
                             }
 
-                            for (int i = unitStart; i <= unitEnd; i++)
+                            for (var i = unitStart; i <= unitEnd; i++)
                             {
                                 matix[x, i] = group.IndexOf(item) + 1;
                             }
@@ -892,19 +892,19 @@ namespace System.Windows.Forms.Calendar
                         #endregion
 
                         #region Expand Items
-                        foreach (CalendarItem item in group)
+                        foreach (var item in group)
                         {
-                            int index = group.IndexOf(item);
+                            var index = group.IndexOf(item);
                             int left, top;
-                            int height = item.UnitsPassing.Count;
-                            int width = 1;
+                            var height = item.UnitsPassing.Count;
+                            var width = 1;
                             FindInMatrix(matix, index + 1, out left, out top);
 
 
-                            bool canExpand = left >= 0 && top >= 0;
+                            var canExpand = left >= 0 && top >= 0;
                             while (canExpand)
                             {
-                                for (int i = top; i < top + height; i++)
+                                for (var i = top; i < top + height; i++)
                                 {
                                     if (matix.GetLength(0) <= left + width || matix[left + width, i] != 0)
                                     {
@@ -915,7 +915,7 @@ namespace System.Windows.Forms.Calendar
 
                                 if (canExpand)
                                 {
-                                    for (int i = top; i < top + height; i++)
+                                    for (var i = top; i < top + height; i++)
                                     {
                                         matix[left + width, i] = index + 1;
                                     }
@@ -927,18 +927,18 @@ namespace System.Windows.Forms.Calendar
 
                         #region Matrix to rectangles
 
-                        int itemWidth = Convert.ToInt32(Math.Floor(Convert.ToSingle(day.Bounds.Width - ItemsPadding) / Convert.ToSingle(matix.GetLength(0))));
+                        var itemWidth = Convert.ToInt32(Math.Floor(Convert.ToSingle(day.Bounds.Width - ItemsPadding) / Convert.ToSingle(matix.GetLength(0))));
 
-                        foreach (CalendarItem item in group)
+                        foreach (var item in group)
                         {
-                            int index = group.IndexOf(item);
+                            var index = group.IndexOf(item);
                             int top, left;
-                            int width = 1;
+                            var width = 1;
                             FindInMatrix(matix, index + 1, out left, out top);
 
                             if (left >= 0 && top >= 0)
                             {
-                                for (int i = left + 1; i < matix.GetLength(0); i++)
+                                for (var i = left + 1; i < matix.GetLength(0); i++)
                                 {
                                     if (matix[i, top] == index + 1)
                                     {
@@ -951,10 +951,10 @@ namespace System.Windows.Forms.Calendar
                                 } 
                             }
 
-                            int rtop = day.TimeUnits[item.UnitsPassing[0].Index].Bounds.Top;
-                            int bottom = day.TimeUnits[item.UnitsPassing[item.UnitsPassing.Count - 1].Index].Bounds.Bottom;
-                            int rleft = day.Bounds.Left + left * itemWidth;
-                            int right = rleft + itemWidth * width;
+                            var rtop = day.TimeUnits[item.UnitsPassing[0].Index].Bounds.Top;
+                            var bottom = day.TimeUnits[item.UnitsPassing[item.UnitsPassing.Count - 1].Index].Bounds.Bottom;
+                            var rleft = day.Bounds.Left + left * itemWidth;
+                            var right = rleft + itemWidth * width;
                             item.SetBounds(Rectangle.FromLTRB(rleft, rtop, right, bottom));
                             item.SetMinuteStartTop(GetTimeY(item.StartDate.TimeOfDay));
                             item.SetMinuteEndTop(GetTimeY(item.EndDate.TimeOfDay));
@@ -972,57 +972,57 @@ namespace System.Windows.Forms.Calendar
 
                 Calendar.Items.Reverse();
 
-                for (int i = 0; i < Calendar.Days.Length; i++)
+                for (var i = 0; i < Calendar.Days.Length; i++)
                 {
                     Calendar.Days[i].ContainedItems.Clear();
                     Calendar.Days[i].SetOverflowEnd(false);
                     Calendar.Days[i].SetOverflowStart(false);
                 }
 
-                int maxItems = 0;
+                var maxItems = 0;
 
-                foreach (CalendarItem item in Calendar.Items)
+                foreach (var item in Calendar.Items)
                 {
-                    CalendarDay dayStart = item.DayStart;
-                    CalendarDay dayEnd = item.DayEnd;
+                    var dayStart = item.DayStart;
+                    var dayEnd = item.DayEnd;
                     item.ClearBounds();
 
-                    for (int i = dayStart.Index; i <= dayEnd.Index; i++)
+                    for (var i = dayStart.Index; i <= dayEnd.Index; i++)
                     {
                         Calendar.Days[i].AddContainedItem(item);
                         maxItems = Math.Max(maxItems, Calendar.Days[i].ContainedItems.Count);
                     }
                 }
 
-                int[,] matix = new int[Calendar.Days.Length, maxItems];
-                int curIndex = 0;
-                foreach (CalendarItem item in Calendar.Items)
+                var matix = new int[Calendar.Days.Length, maxItems];
+                var curIndex = 0;
+                foreach (var item in Calendar.Items)
                 {
-                    CalendarDay dayStart = item.DayStart;
-                    CalendarDay dayEnd = item.DayEnd;
+                    var dayStart = item.DayStart;
+                    var dayEnd = item.DayEnd;
 
                     PlaceInMatrix(ref matix, curIndex + 1, dayStart.Index, dayEnd.Index);
                     curIndex++;
                 }
 
 
-                for (int week = 0; week < Calendar.Weeks.Length; week++)
+                for (var week = 0; week < Calendar.Weeks.Length; week++)
                 {
-                    int xStart = week * 7;
-                    int xEnd = xStart + 6;
-                    int index = 0;
-                    int[,] wmatix = new int[7, matix.GetLength(1)];
-                    CalendarDay sunday = Calendar.FindDay(Calendar.Weeks[week].StartDate);
+                    var xStart = week * 7;
+                    var xEnd = xStart + 6;
+                    var index = 0;
+                    var wmatix = new int[7, matix.GetLength(1)];
+                    var sunday = Calendar.FindDay(Calendar.Weeks[week].StartDate);
 
                     #region Fill week matrix
 
-                    for (int i = 0; i < wmatix.GetLength(1); i++)
-                        for (int j = 0; j < wmatix.GetLength(0); j++)
+                    for (var i = 0; i < wmatix.GetLength(1); i++)
+                        for (var j = 0; j < wmatix.GetLength(0); j++)
                             wmatix[j, i] = matix[j + xStart, i];
 
                     #endregion
 
-                    foreach (CalendarItem item in Calendar.Items)
+                    foreach (var item in Calendar.Items)
                     {
                         int left, top, width = 0;
 
@@ -1030,30 +1030,30 @@ namespace System.Windows.Forms.Calendar
 
                         if (left < 0 || top < 0) continue;
 
-                        for (int i = left; i < wmatix.GetLength(0); i++)
+                        for (var i = left; i < wmatix.GetLength(0); i++)
                             if (wmatix[i, top] == index) 
                                 width++; 
                             else 
                                 break;
                         
 
-                        CalendarDay dayStart = Calendar.Days[xStart + left];
-                        CalendarDay dayEnd = Calendar.Days[xStart + left + width - 1];
-                        Rectangle rStart = dayStart.Bounds;
-                        Rectangle rEnd = dayEnd.Bounds;
-                        int rtop = rStart.Top + DayHeaderHeight + top * StandardItemHeight;
-                        Rectangle r = Rectangle.FromLTRB(rStart.Left, rtop, rEnd.Right, rtop + StandardItemHeight);
+                        var dayStart = Calendar.Days[xStart + left];
+                        var dayEnd = Calendar.Days[xStart + left + width - 1];
+                        var rStart = dayStart.Bounds;
+                        var rEnd = dayEnd.Bounds;
+                        var rtop = rStart.Top + DayHeaderHeight + top * StandardItemHeight;
+                        var r = Rectangle.FromLTRB(rStart.Left, rtop, rEnd.Right, rtop + StandardItemHeight);
 
                         if (r.Bottom <= sunday.Bounds.Bottom)
                             item.AddBounds(r);
                         else
-                            for (int i = dayStart.Index; i <= dayEnd.Index; i++)
+                            for (var i = dayStart.Index; i <= dayEnd.Index; i++)
                                 Calendar.Days[i].SetOverflowEnd(true);
                         
                     }
                 }
 
-                foreach (CalendarItem item in Calendar.Items)
+                foreach (var item in Calendar.Items)
                     item.FirstAndLastRectangleGapping();
 
                 Calendar.Items.Reverse();
@@ -1073,14 +1073,14 @@ namespace System.Windows.Forms.Calendar
         /// <param name="endX"></param>
         private void PlaceInMatrix(ref int[,] m, int index, int startX, int endX)
         {
-            int y = 0;
-            bool yFound = false;
+            var y = 0;
+            var yFound = false;
 
             while (!yFound && y < m.GetLength(1)) //HACK: && y < m.GetLength(1) //This is Because of some bug, possible item not showing
             {
                 yFound = true;
 
-                for (int i = startX; i <= endX; i++)
+                for (var i = startX; i <= endX; i++)
                 {
                     if (i >= 0 && i < m.GetLength(0) &&
                         m[i, y] != 0)
@@ -1096,7 +1096,7 @@ namespace System.Windows.Forms.Calendar
 
             if (y < m.GetLength(1)) //HACK: This if is because of same bug
             {
-                for (int i = startX; i <= endX; i++)
+                for (var i = startX; i <= endX; i++)
                 {
                     m[i, y] = index;
                 } 
@@ -1191,9 +1191,9 @@ namespace System.Windows.Forms.Calendar
         /// <param name="top">Result top</param>
         private void FindInMatrix(int[,] m, int number, out int left, out int top)
         {
-            for (int i = 0; i < m.GetLength(1); i++)
+            for (var i = 0; i < m.GetLength(1); i++)
             {
-                for (int j = 0; j < m.GetLength(0); j++)
+                for (var j = 0; j < m.GetLength(0); j++)
                 {
                     if (m[j, i] == number)
                     {
@@ -1218,9 +1218,9 @@ namespace System.Windows.Forms.Calendar
             startIndex = int.MaxValue;
             endIndex = int.MinValue;
 
-            foreach (CalendarItem item in group)
+            foreach (var item in group)
             {
-                foreach (CalendarTimeScaleUnit unit in item.UnitsPassing)
+                foreach (var unit in item.UnitsPassing)
                 {
                     startIndex = Math.Min(startIndex, unit.Index);
                     endIndex = Math.Max(endIndex, unit.Index);
@@ -1239,7 +1239,7 @@ namespace System.Windows.Forms.Calendar
             if (!grouped.Contains(calendarItem))
                 grouped.Add(calendarItem);
 
-            foreach (CalendarItem item in items)
+            foreach (var item in items)
             {
                 if (!grouped.Contains(item) &&
                     calendarItem.IntersectsWith(item.StartDate.TimeOfDay, item.EndDate.TimeOfDay))
@@ -1259,9 +1259,9 @@ namespace System.Windows.Forms.Calendar
         {
             //return;
             Console.WriteLine("--------------------------------");
-            for (int i = 0; i < m.GetLength(1); i++)
+            for (var i = 0; i < m.GetLength(1); i++)
             {
-                for (int j = 0; j < m.GetLength(0); j++)
+                for (var j = 0; j < m.GetLength(0); j++)
                 {
                     Console.Write(string.Format(" {0}", m[j, i]));
                 }
@@ -1304,28 +1304,28 @@ namespace System.Windows.Forms.Calendar
                 || e.Calendar.Days[0].TimeUnits == null
                 ) return;
 
-            Font hourFont = new Font(e.Calendar.Font.FontFamily, e.Calendar.Font.Size * (e.Calendar.TimeScale == CalendarTimeScale.SixtyMinutes ? 1f : 1.5f));
-            Font minuteFont = e.Calendar.Font;
-            int hourLeft = TimeScaleBounds.Left;
-            int hourWidth = TimeScaleBounds.Left + TimeScaleBounds.Width / 2;
-            int minuteLeft = hourLeft + hourWidth;
-            int minuteWidth = hourWidth;
-            int k = 0;
+            var hourFont = new Font(e.Calendar.Font.FontFamily, e.Calendar.Font.Size * (e.Calendar.TimeScale == CalendarTimeScale.SixtyMinutes ? 1f : 1.5f));
+            var minuteFont = e.Calendar.Font;
+            var hourLeft = TimeScaleBounds.Left;
+            var hourWidth = TimeScaleBounds.Left + TimeScaleBounds.Width / 2;
+            var minuteLeft = hourLeft + hourWidth;
+            var minuteWidth = hourWidth;
+            var k = 0;
 
-            for (int i = 0; i < e.Calendar.Days[0].TimeUnits.Length; i++)
+            for (var i = 0; i < e.Calendar.Days[0].TimeUnits.Length; i++)
             {
-                CalendarTimeScaleUnit unit = e.Calendar.Days[0].TimeUnits[i];
+                var unit = e.Calendar.Days[0].TimeUnits[i];
 
                 if (!unit.Visible) continue;
 
-                string hours = unit.Hours.ToString("00");
-                string minutes = unit.Minutes == 0 ? "00" : string.Empty;
+                var hours = unit.Hours.ToString("00");
+                var minutes = unit.Minutes == 0 ? "00" : string.Empty;
 
                 if (!string.IsNullOrEmpty(minutes))
                 {
                     if (hours == "00") hours = "12";
 
-                    CalendarRendererBoxEventArgs hevt = new CalendarRendererBoxEventArgs(e, new Rectangle(hourLeft, unit.Bounds.Top, hourWidth, unit.Bounds.Height), hours, TextFormatFlags.Right);
+                    var hevt = new CalendarRendererBoxEventArgs(e, new Rectangle(hourLeft, unit.Bounds.Top, hourWidth, unit.Bounds.Height), hours, TextFormatFlags.Right);
 
                     hevt.Font = hourFont;
 
@@ -1333,7 +1333,7 @@ namespace System.Windows.Forms.Calendar
 
                     if (k++ == 0 || unit.Hours == 0 || unit.Hours == 12 ) minutes = unit.Date.ToString("tt");
 
-                    CalendarRendererBoxEventArgs mevt = new CalendarRendererBoxEventArgs(e, new Rectangle(minuteLeft, unit.Bounds.Top, minuteWidth, unit.Bounds.Height), minutes, TextFormatFlags.Top | TextFormatFlags.Left);
+                    var mevt = new CalendarRendererBoxEventArgs(e, new Rectangle(minuteLeft, unit.Bounds.Top, minuteWidth, unit.Bounds.Height), minutes, TextFormatFlags.Top | TextFormatFlags.Left);
 
                     mevt.Font = minuteFont;
 
@@ -1366,9 +1366,9 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e">Paint Info</param>
         public virtual void OnDrawDays(CalendarRendererEventArgs e)
         {
-            for (int i = 0; i < e.Calendar.Days.Length; i++)
+            for (var i = 0; i < e.Calendar.Days.Length; i++)
             {
-                CalendarDay day = e.Calendar.Days[i];
+                var day = e.Calendar.Days[i];
 
                 e.Tag = day;
 
@@ -1383,15 +1383,15 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e">Paint info</param>
         public virtual void OnDrawDay(CalendarRendererDayEventArgs e)
         {
-            CalendarDay day = e.Day;
+            var day = e.Day;
 
-            CalendarRendererBoxEventArgs hevt = new CalendarRendererBoxEventArgs(e,
+            var hevt = new CalendarRendererBoxEventArgs(e,
                     day.HeaderBounds,
                     day.Date.Day.ToString(),
                     TextFormatFlags.VerticalCenter);
             hevt.Font = new Font(Calendar.Font, FontStyle.Bold);
 
-            CalendarRendererBoxEventArgs devt = new CalendarRendererBoxEventArgs(e,
+            var devt = new CalendarRendererBoxEventArgs(e,
                     day.HeaderBounds,
                     day.Date.ToString("dddd"),
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
@@ -1460,9 +1460,9 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e"></param>
         public virtual void OnDrawDayTimeUnits(CalendarRendererDayEventArgs e)
         {
-            for (int i = 0; i < e.Day.TimeUnits.Length; i++)
+            for (var i = 0; i < e.Day.TimeUnits.Length; i++)
             {
-                CalendarTimeScaleUnit unit = e.Day.TimeUnits[i];
+                var unit = e.Day.TimeUnits[i];
 
                 if(unit.Visible)
                     OnDrawDayTimeUnit(new CalendarRendererTimeUnitEventArgs(e, unit));
@@ -1484,9 +1484,9 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e">Paint Info</param>
         public virtual void OnDrawDayNameHeaders(CalendarRendererEventArgs e)
         {
-            DateTime startDate = DateTime.Now.AddDays(-((int)DateTime.Now.DayOfWeek % 7) + 1 + (int)Calendar.FirstDayOfWeek);
+            var startDate = DateTime.Now.AddDays(-((int)DateTime.Now.DayOfWeek % 7) + 1 + (int)Calendar.FirstDayOfWeek);
 
-            for (int i = 0; i < DayNameHeaderColumns.Length; i++)
+            for (var i = 0; i < DayNameHeaderColumns.Length; i++)
             {
                 OnDrawDayNameHeader(new CalendarRendererBoxEventArgs(e,
                     DayNameHeaderColumns[i], 
@@ -1511,13 +1511,13 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e">Event info</param>
         public virtual void OnDrawItems(CalendarRendererEventArgs e)
         {
-            Rectangle days = e.Calendar.DaysBodyRectangle; days.Inflate(-1, -1);
-            Region oldclip = e.Graphics.Clip;
-            bool doClip = e.Calendar.DaysMode == CalendarDaysMode.Expanded;
-            bool clipped = false;
+            var days = e.Calendar.DaysBodyRectangle; days.Inflate(-1, -1);
+            var oldclip = e.Graphics.Clip;
+            var doClip = e.Calendar.DaysMode == CalendarDaysMode.Expanded;
+            var clipped = false;
 
             #region Shadows
-            foreach (CalendarItem item in e.Calendar.Items)
+            foreach (var item in e.Calendar.Items)
             {
                 clipped = false;
 
@@ -1527,11 +1527,11 @@ namespace System.Windows.Forms.Calendar
                     clipped = true;
                 }
 
-                List<Rectangle> rects = new List<Rectangle>(item.GetAllBounds());
+                var rects = new List<Rectangle>(item.GetAllBounds());
 
-                for (int i = 0; i < rects.Count; i++)
+                for (var i = 0; i < rects.Count; i++)
                 {
-                    CalendarRendererItemBoundsEventArgs evt = new CalendarRendererItemBoundsEventArgs(
+                    var evt = new CalendarRendererItemBoundsEventArgs(
                         new CalendarRendererItemEventArgs(e, item),
                         rects[i],
                         i == 0 && !item.IsOpenStart,
@@ -1545,7 +1545,7 @@ namespace System.Windows.Forms.Calendar
             #endregion
 
             #region Items
-            foreach (CalendarItem item in e.Calendar.Items)
+            foreach (var item in e.Calendar.Items)
             {
                 clipped = false;
 
@@ -1563,21 +1563,21 @@ namespace System.Windows.Forms.Calendar
             #endregion
 
             #region Borders of selected items
-            foreach (CalendarItem item in e.Calendar.Items)
+            foreach (var item in e.Calendar.Items)
             {
                 if (!item.Selected) continue;
 
-                List<Rectangle> rects = new List<Rectangle>(item.GetAllBounds());
+                var rects = new List<Rectangle>(item.GetAllBounds());
 
-                for (int i = 0; i < rects.Count; i++)
+                for (var i = 0; i < rects.Count; i++)
                 {
-                    CalendarRendererItemBoundsEventArgs evt = new CalendarRendererItemBoundsEventArgs(
+                    var evt = new CalendarRendererItemBoundsEventArgs(
                         new CalendarRendererItemEventArgs(e, item),
                         rects[i],
                         i == 0 && !item.IsOpenStart,
                         (i == rects.Count - 1) && !item.IsOpenEnd);
 
-                    SmoothingMode smbuff = e.Graphics.SmoothingMode;
+                    var smbuff = e.Graphics.SmoothingMode;
                     e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 
                     OnDrawItemBorder(evt);
@@ -1595,11 +1595,11 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e">Event Info</param>
         public virtual void OnDrawItem(CalendarRendererItemEventArgs e)
         {
-            List<Rectangle> rects = new List<Rectangle>(e.Item.GetAllBounds());
+            var rects = new List<Rectangle>(e.Item.GetAllBounds());
 
-            for (int i = 0; i < rects.Count; i++)
+            for (var i = 0; i < rects.Count; i++)
             {
-                CalendarRendererItemBoundsEventArgs evt = new CalendarRendererItemBoundsEventArgs(
+                var evt = new CalendarRendererItemBoundsEventArgs(
                     e, 
                     rects[i], 
                     i == 0 && !e.Item.IsOpenStart, 
@@ -1619,7 +1619,7 @@ namespace System.Windows.Forms.Calendar
                     OnDrawItemContent(evt);
                 }
 
-                SmoothingMode smbuff = e.Graphics.SmoothingMode;
+                var smbuff = e.Graphics.SmoothingMode;
                 e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 
                 OnDrawItemBorder(evt);
@@ -1640,7 +1640,7 @@ namespace System.Windows.Forms.Calendar
 
         public virtual void OnDrawItemPattern(CalendarRendererItemBoundsEventArgs e)
         {
-            foreach (Rectangle bounds in e.Item.GetAllBounds())
+            foreach (var bounds in e.Item.GetAllBounds())
             {
                 ItemPattern(e, bounds, e.Item.PatternColor);
             }
@@ -1654,17 +1654,17 @@ namespace System.Windows.Forms.Calendar
         {
             if (e.Item == e.Calendar.EditModeItem) return;
 
-            List<Rectangle> rectangles = new List<Rectangle>(e.Item.GetAllBounds());
+            var rectangles = new List<Rectangle>(e.Item.GetAllBounds());
 
-            for (int i = 0; i < rectangles.Count; i++)
+            for (var i = 0; i < rectangles.Count; i++)
             {
-                Rectangle bounds = rectangles[i];
-                Rectangle imageBounds = Rectangle.Empty;
-                Rectangle rStartTime = new Rectangle();
-                Rectangle rEndTime = new Rectangle();
-                string endTime = string.Empty;
-                string startTime = string.Empty;
-                Color secondaryForecolor = e.Item.ForeColor;
+                var bounds = rectangles[i];
+                var imageBounds = Rectangle.Empty;
+                var rStartTime = new Rectangle();
+                var rEndTime = new Rectangle();
+                var endTime = string.Empty;
+                var startTime = string.Empty;
+                var secondaryForecolor = e.Item.ForeColor;
 
                 if (e.Item.ShowEndTime && i == rectangles.Count - 1)
                 {
@@ -1687,13 +1687,13 @@ namespace System.Windows.Forms.Calendar
                     OnDrawItemStartTime(new CalendarRendererBoxEventArgs(e, rStartTime, startTime, secondaryForecolor));
                 }
 
-                Rectangle r = Rectangle.FromLTRB(
+                var r = Rectangle.FromLTRB(
                     bounds.Left + ItemTextMargin.Left + rStartTime.Width,
                     bounds.Top + ItemTextMargin.Top,
                     bounds.Right - ItemTextMargin.Right - rEndTime.Width,
                     bounds.Bottom - ItemTextMargin.Bottom);
 
-                CalendarRendererBoxEventArgs evt = new CalendarRendererBoxEventArgs(e, r, e.Item.Text, TextFormatFlags.Left | TextFormatFlags.Top);
+                var evt = new CalendarRendererBoxEventArgs(e, r, e.Item.Text, TextFormatFlags.Left | TextFormatFlags.Top);
 
                 if (e.Item.ShowStartTime || e.Item.ShowEndTime) 
                     evt.Font = new Font(evt.Font, FontStyle.Bold);
@@ -1712,7 +1712,7 @@ namespace System.Windows.Forms.Calendar
 
                 if (e.Item.Image != null)
                 {
-                    Rectangle tBounds = e.Item.Bounds;
+                    var tBounds = e.Item.Bounds;
                     imageBounds.Size = e.Item.Image.Size;
 
                     switch (e.Item.ImageAlign)
@@ -1824,9 +1824,9 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e"></param>
         public virtual void OnDrawOverflows(CalendarRendererEventArgs e)
         {
-            for (int i = 0; i < e.Calendar.Days.Length; i++)
+            for (var i = 0; i < e.Calendar.Days.Length; i++)
             {
-                CalendarDay day = e.Calendar.Days[i];
+                var day = e.Calendar.Days[i];
 
                 if (day.OverflowStart)
                 {
@@ -1866,10 +1866,10 @@ namespace System.Windows.Forms.Calendar
         {
             if (Calendar.Weeks == null) return;
 
-            for (int i = 0; i < Calendar.Weeks.Length; i++)
+            for (var i = 0; i < Calendar.Weeks.Length; i++)
             {
-                string str = Calendar.Weeks[i].ToStringLarge();
-                SizeF sz = e.Graphics.MeasureString(str, e.Calendar.Font);
+                var str = Calendar.Weeks[i].ToStringLarge();
+                var sz = e.Graphics.MeasureString(str, e.Calendar.Font);
 
                 if (sz.Width > Calendar.Weeks[i].HeaderBounds.Height)
                 {
@@ -1887,12 +1887,12 @@ namespace System.Windows.Forms.Calendar
         /// <param name="e">Paint info</param>
         public virtual void OnDrawWeekHeader(CalendarRendererBoxEventArgs e)
         {
-            StringFormat sf = new StringFormat();
+            var sf = new StringFormat();
             sf.FormatFlags = StringFormatFlags.DirectionVertical | StringFormatFlags.DirectionRightToLeft | StringFormatFlags.NoWrap;
             sf.LineAlignment = StringAlignment.Center;
             sf.Alignment = StringAlignment.Center;
 
-            using (SolidBrush b = new SolidBrush(e.TextColor))
+            using (var b = new SolidBrush(e.TextColor))
             {
                 e.Graphics.DrawString(e.Text, e.Font, b, e.Bounds, sf);
             }

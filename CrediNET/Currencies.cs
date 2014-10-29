@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Xml;
+using CrediNET.Properties;
 
 namespace CrediNET
 {
@@ -17,14 +19,14 @@ namespace CrediNET
         /// <returns>The exchange rate from the first currency to the second</returns>
         public static double ExchangeRate(CurrencyObj FromCurrency, CurrencyObj ToCurrency)
         {
-            WebRequest webrequest = WebRequest.Create("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" + FromCurrency.ShortName + "&ToCurrency=" + ToCurrency.ShortName);
-            HttpWebResponse response = (HttpWebResponse)webrequest.GetResponse();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string responseFromServer = reader.ReadToEnd();
-            XmlDocument doc = new XmlDocument();
+            var webrequest = WebRequest.Create("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" + FromCurrency.ShortName + "&ToCurrency=" + ToCurrency.ShortName);
+            var response = (HttpWebResponse)webrequest.GetResponse();
+            var dataStream = response.GetResponseStream();
+            var reader = new StreamReader(dataStream);
+            var responseFromServer = reader.ReadToEnd();
+            var doc = new XmlDocument();
             doc.LoadXml(responseFromServer);
-            double value = double.Parse(doc.InnerText, CultureInfo.InvariantCulture);
+            var value = double.Parse(doc.InnerText, CultureInfo.InvariantCulture);
             reader.Close();
             dataStream.Close();
             response.Close();
@@ -40,7 +42,7 @@ namespace CrediNET
         /// <returns>Amount in the destination currency</returns>
         public static decimal FromCur(this CurrencyObj b, CurrencyObj d, double montant)
         {
-            double rt = ExchangeRate(d, b);
+            var rt = ExchangeRate(d, b);
             return (decimal)(montant * rt);
         }
 
@@ -53,7 +55,7 @@ namespace CrediNET
         /// <returns>Amount in the destination currency</returns>
         public static decimal ToCur(this CurrencyObj b, CurrencyObj d, double montant)
         {
-            double rt = ExchangeRate(b, d);
+            var rt = ExchangeRate(b, d);
             return (decimal)(montant * rt);
         }
     }
@@ -62,7 +64,7 @@ namespace CrediNET
     {
         public static bool operator ==(CurrencyObj a, CurrencyObj b)
         {
-            if (System.Object.ReferenceEquals(a, b))
+            if (ReferenceEquals(a, b))
                 return true;
 
             if (((object)a == null) || ((object)b == null))
@@ -174,7 +176,7 @@ namespace CrediNET
     {
         public static void Init()
         {
-            switch (CrediNET.Properties.Settings.Default.Lang.Name)
+            switch (Settings.Default.Lang.Name)
             {
                 case "en-US":
 

@@ -322,8 +322,8 @@ namespace System.Windows.Forms.Calendar
         {
             get
             {
-                Rectangle first = Days[0].BodyBounds;
-                Rectangle last = Days[Days.Length - 1].BodyBounds;
+                var first = Days[0].BodyBounds;
+                var last = Days[Days.Length - 1].BodyBounds;
 
                 return Rectangle.Union(first, last);
             }
@@ -531,7 +531,7 @@ namespace System.Windows.Forms.Calendar
 
                 if (Days != null)
                 {
-                    for (int i = 0; i < Days.Length; i++)
+                    for (var i = 0; i < Days.Length; i++)
                     {
                         Days[i].UpdateUnits();
                     }
@@ -611,7 +611,7 @@ namespace System.Windows.Forms.Calendar
         /// <param name="item"></param>
         public void ActivateEditMode()
         {
-            foreach (CalendarItem item in Items)
+            foreach (var item in Items)
             {
                 if (item.Selected)
                 {
@@ -627,7 +627,7 @@ namespace System.Windows.Forms.Calendar
         /// <param name="item"></param>
         public void ActivateEditMode(CalendarItem item)
         {
-            CalendarItemCancelEventArgs evt = new CalendarItemCancelEventArgs(item);
+            var evt = new CalendarItemCancelEventArgs(item);
 
             if (!_creatingItem)
             {
@@ -643,7 +643,7 @@ namespace System.Windows.Forms.Calendar
             TextBox = new CalendarTextBox(this);
             TextBox.KeyDown += new KeyEventHandler(TextBox_KeyDown);
             TextBox.LostFocus += new EventHandler(TextBox_LostFocus);
-            Rectangle r = item.Bounds;
+            var r = item.Bounds;
             r.Inflate(-2, -2);
             TextBox.Bounds = r;
             TextBox.BorderStyle = BorderStyle.None;
@@ -668,18 +668,18 @@ namespace System.Windows.Forms.Calendar
         {
             if (SelectedElementEnd == null || SelectedElementStart == null) return;
 
-            CalendarTimeScaleUnit unitEnd = SelectedElementEnd as CalendarTimeScaleUnit;
-            CalendarDayTop dayTop = SelectedElementEnd as CalendarDayTop;
-            CalendarDay day = SelectedElementEnd as CalendarDay;
-            TimeSpan duration = unitEnd != null ? unitEnd.Duration : new TimeSpan(23, 59, 59);
-            CalendarItem item = new CalendarItem(this);
+            var unitEnd = SelectedElementEnd as CalendarTimeScaleUnit;
+            var dayTop = SelectedElementEnd as CalendarDayTop;
+            var day = SelectedElementEnd as CalendarDay;
+            var duration = unitEnd != null ? unitEnd.Duration : new TimeSpan(23, 59, 59);
+            var item = new CalendarItem(this);
 
-            DateTime dstart = SelectedElementStart.Date;
-            DateTime dend = SelectedElementEnd.Date;
+            var dstart = SelectedElementStart.Date;
+            var dend = SelectedElementEnd.Date;
 
             if (dend.CompareTo(dstart) < 0)
             {
-                DateTime dtmp = dend;
+                var dtmp = dend;
                 dend = dstart;
                 dstart = dtmp;
             }
@@ -688,7 +688,7 @@ namespace System.Windows.Forms.Calendar
             item.EndDate = dend.Add(duration);
             item.Text = itemText;
 
-            CalendarItemCancelEventArgs evtA = new CalendarItemCancelEventArgs(item);
+            var evtA = new CalendarItemCancelEventArgs(item);
 
             OnItemCreating(evtA);
 
@@ -714,7 +714,7 @@ namespace System.Windows.Forms.Calendar
         {
             if (Days == null || Days.Length == 0) return;
 
-            Rectangle view = Days[0].BodyBounds;
+            var view = Days[0].BodyBounds;
 
             if (unit.Bounds.Bottom > view.Bottom)
             {
@@ -737,10 +737,10 @@ namespace System.Windows.Forms.Calendar
 
             _finalizingEdition = true;
 
-            string cancelText = _editModeItem.Text;
-            CalendarItem itemBuffer = _editModeItem;
+            var cancelText = _editModeItem.Text;
+            var itemBuffer = _editModeItem;
             _editModeItem = null;
-            CalendarItemCancelEventArgs evt = new CalendarItemCancelEventArgs(itemBuffer);
+            var evt = new CalendarItemCancelEventArgs(itemBuffer);
 
             if(!cancel)
                 itemBuffer.Text = TextBox.Text.Trim();
@@ -790,7 +790,7 @@ namespace System.Windows.Forms.Calendar
         {
             if (Days == null) return null;
 
-            for (int i = 0; i < Days.Length; i++)
+            for (var i = 0; i < Days.Length; i++)
             {
                 if (Days[i].Date.Date.Equals(d.Date.Date))
                 {
@@ -807,9 +807,9 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public IEnumerable<CalendarItem> GetSelectedItems()
         {
-            List<CalendarItem> items = new List<CalendarItem>();
+            var items = new List<CalendarItem>();
 
-            foreach (CalendarItem item in Items)
+            foreach (var item in Items)
             {
                 if (item.Selected)
                 {
@@ -829,12 +829,12 @@ namespace System.Windows.Forms.Calendar
         {
             if (Days != null)
             {
-                foreach (CalendarDay day in Days)
+                foreach (var day in Days)
                 {
                     if (day.Date.Equals(d.Date))
                     {
-                        double duration = Convert.ToDouble((int)TimeScale);
-                        int index = 
+                        var duration = Convert.ToDouble((int)TimeScale);
+                        var index = 
                             Convert.ToInt32(
                                 Math.Floor(
                                     d.TimeOfDay.TotalMinutes / duration
@@ -867,9 +867,9 @@ namespace System.Windows.Forms.Calendar
         public ICalendarSelectableElement HitTest(Point p, bool ignoreItems)
         {
             if(!ignoreItems)
-                foreach (CalendarItem item in Items)
+                foreach (var item in Items)
                 {
-                    foreach (Rectangle r in item.GetAllBounds())
+                    foreach (var r in item.GetAllBounds())
                     {
                         if (r.Contains(p))
                         {
@@ -878,7 +878,7 @@ namespace System.Windows.Forms.Calendar
                     }
                 }
 
-            for (int i = 0; i < Days.Length; i++)
+            for (var i = 0; i < Days.Length; i++)
             {
                 if (Days[i].Bounds.Contains(p))
                 {
@@ -890,7 +890,7 @@ namespace System.Windows.Forms.Calendar
                         }
                         else
                         {
-                            for (int j = 0; j < Days[i].TimeUnits.Length; j++)
+                            for (var j = 0; j < Days[i].TimeUnits.Length; j++)
                             {
                                 if (Days[i].TimeUnits[j].Visible &&
                                     Days[i].TimeUnits[j].Bounds.Contains(p))
@@ -946,9 +946,9 @@ namespace System.Windows.Forms.Calendar
         /// <param name="item"></param>
         public void Invalidate(CalendarItem item)
         {
-            Rectangle r = item.Bounds;
+            var r = item.Bounds;
 
-            foreach (Rectangle bounds in item.GetAllBounds())
+            foreach (var bounds in item.GetAllBounds())
             {
                 r = Rectangle.Union(r, bounds);
             }
@@ -1034,9 +1034,9 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         private void ClearSelectedItems()
         {
-            Rectangle r = Rectangle.Empty;
+            var r = Rectangle.Empty;
 
-            foreach (CalendarItem item in Items)
+            foreach (var item in Items)
             {
                 if (item.Selected)
                 {
@@ -1061,13 +1061,13 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         private void DeleteSelectedItems()
         {
-            Stack<CalendarItem> toDelete = new Stack<CalendarItem>();
+            var toDelete = new Stack<CalendarItem>();
 
-            foreach (CalendarItem item in Items)
+            foreach (var item in Items)
             {
                 if (item.Selected)
                 {
-                    CalendarItemCancelEventArgs evt = new CalendarItemCancelEventArgs(item);
+                    var evt = new CalendarItemCancelEventArgs(item);
 
                     OnItemDeleting(evt);
 
@@ -1082,7 +1082,7 @@ namespace System.Windows.Forms.Calendar
             {
                 while (toDelete.Count > 0)
                 {
-                    CalendarItem item = toDelete.Pop();
+                    var item = toDelete.Pop();
 
                     Items.Remove(item);
 
@@ -1122,7 +1122,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         private void ClearSelectedComponents()
         {
-            foreach (CalendarSelectableElement element in _selectedElements)
+            foreach (var element in _selectedElements)
             {
                 element.SetSelected(false);
             }
@@ -1164,8 +1164,8 @@ namespace System.Windows.Forms.Calendar
         /// <param name="delta"></param>
         private void ScrollTimeUnits(int delta)
         {
-            int possible = TimeUnitsOffset;
-            int visible = Renderer.GetVisibleTimeUnits();
+            var possible = TimeUnitsOffset;
+            var visible = Renderer.GetVisibleTimeUnits();
 
             if (delta < 0)
             {
@@ -1193,7 +1193,7 @@ namespace System.Windows.Forms.Calendar
                && Days.Length > 0
                && Days[0].TimeUnits != null)
             {
-                int max = Days[0].TimeUnits.Length - visible;
+                var max = Days[0].TimeUnits.Length - visible;
                 max *= -1;
                 if (possible < max) possible = max;
             }
@@ -1254,8 +1254,8 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         private void UpdateDaysAndWeeks()
         {
-            TimeSpan span = (new DateTime(ViewEnd.Year, ViewEnd.Month, ViewEnd.Day, 23, 59, 59)).Subtract(ViewStart.Date);
-            int preDays = 0;
+            var span = (new DateTime(ViewEnd.Year, ViewEnd.Month, ViewEnd.Day, 23, 59, 59)).Subtract(ViewStart.Date);
+            var preDays = 0;
             span = span.Add(new TimeSpan(0,0,0,1,0));
 
             if (span.Days < 1 || span.Days > MaximumViewDays )
@@ -1279,16 +1279,16 @@ namespace System.Windows.Forms.Calendar
 
             _days = new CalendarDay[span.Days];
 
-            for (int i = 0; i < Days.Length; i++)
+            for (var i = 0; i < Days.Length; i++)
                 Days[i] = new CalendarDay(this, ViewStart.AddDays(-preDays + i), i);
 
             
             //Weeks
             if (DaysMode == CalendarDaysMode.Short)
             {
-                List<CalendarWeek> weeks = new List<CalendarWeek>();
+                var weeks = new List<CalendarWeek>();
 
-                for (int i = 0; i < Days.Length; i++)
+                for (var i = 0; i < Days.Length; i++)
                 {
                     if (Days[i].Date.DayOfWeek == FirstDayOfWeek)
                     {
@@ -1314,7 +1314,7 @@ namespace System.Windows.Forms.Calendar
         {
             if (Days == null) return;
 
-            for (int i = 0; i < Days.Length; i++)
+            for (var i = 0; i < Days.Length; i++)
             {
                 Days[i].UpdateHighlights();
             }
@@ -1325,12 +1325,12 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         private void UpdateSelectionElements()
         {
-            CalendarTimeScaleUnit unitStart = _selectedElementStart as CalendarTimeScaleUnit;
-            CalendarDayTop topStart = _selectedElementStart as CalendarDayTop;
-            CalendarDay dayStart = _selectedElementStart as CalendarDay;
-            CalendarTimeScaleUnit unitEnd = _selectedElementEnd as CalendarTimeScaleUnit;
-            CalendarDayTop topEnd = _selectedElementEnd as CalendarDayTop;
-            CalendarDay dayEnd = _selectedElementEnd as CalendarDay;
+            var unitStart = _selectedElementStart as CalendarTimeScaleUnit;
+            var topStart = _selectedElementStart as CalendarDayTop;
+            var dayStart = _selectedElementStart as CalendarDay;
+            var unitEnd = _selectedElementEnd as CalendarTimeScaleUnit;
+            var topEnd = _selectedElementEnd as CalendarDayTop;
+            var dayEnd = _selectedElementEnd as CalendarDay;
 
             ClearSelectedComponents();
 
@@ -1349,12 +1349,12 @@ namespace System.Windows.Forms.Calendar
 
             if (unitStart != null && unitEnd != null)
             {
-                bool reached = false;
-                for (int i = unitStart.Day.Index; !reached; i++)
+                var reached = false;
+                for (var i = unitStart.Day.Index; !reached; i++)
                 {
-                    for (int j = (i == unitStart.Day.Index ? unitStart.Index : 0); i < Days.Length && j < Days[i].TimeUnits.Length; j++)
+                    for (var j = (i == unitStart.Day.Index ? unitStart.Index : 0); i < Days.Length && j < Days[i].TimeUnits.Length; j++)
                     {
-                        CalendarTimeScaleUnit unit = Days[i].TimeUnits[j];
+                        var unit = Days[i].TimeUnits[j];
                         unit.SetSelected(true);
                         GrowSquare(unit.Bounds);
                         _selectedElements.Add(unit);
@@ -1369,9 +1369,9 @@ namespace System.Windows.Forms.Calendar
             }
             else if (topStart != null && topEnd != null)
             {
-                for (int i = topStart.Day.Index; i <= topEnd.Day.Index ; i++)
+                for (var i = topStart.Day.Index; i <= topEnd.Day.Index ; i++)
                 {
-                    CalendarDayTop top = Days[i].DayTop;
+                    var top = Days[i].DayTop;
 
                     top.SetSelected(true);
                     GrowSquare(top.Bounds);
@@ -1380,9 +1380,9 @@ namespace System.Windows.Forms.Calendar
             }
             else if (dayStart != null && dayEnd != null)
             {
-                for (int i = dayStart.Index; i <= dayEnd.Index; i++)
+                for (var i = dayStart.Index; i <= dayEnd.Index; i++)
                 {
-                    CalendarDay day = Days[i];
+                    var day = Days[i];
 
                     day.SetSelected(true);
                     GrowSquare(day.Bounds);
@@ -1526,8 +1526,8 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnKeyDown(e);
             
-            bool shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
-            int jump = (int)TimeScale;
+            var shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
+            var jump = (int)TimeScale;
             ICalendarSelectableElement sStart = null;
             ICalendarSelectableElement sEnd = null;
 
@@ -1609,7 +1609,7 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnMouseDoubleClick(e);
 
-            CalendarItem item = ItemAt(e.Location);
+            var item = ItemAt(e.Location);
 
             if (item != null)
             {
@@ -1621,9 +1621,9 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnMouseDown(e);
 
-            ICalendarSelectableElement hitted = HitTest(e.Location);
-            CalendarItem hittedItem = hitted as CalendarItem;
-            bool shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
+            var hitted = HitTest(e.Location);
+            var hittedItem = hitted as CalendarItem;
+            var shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
 
             if (!Focused)
             {
@@ -1701,17 +1701,17 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnMouseMove(e);
 
-            ICalendarSelectableElement hitted = HitTest(e.Location, State != CalendarState.Idle);
-            CalendarItem hittedItem = hitted as CalendarItem;
-            CalendarDayTop hittedTop = hitted as CalendarDayTop;
-            bool shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
+            var hitted = HitTest(e.Location, State != CalendarState.Idle);
+            var hittedItem = hitted as CalendarItem;
+            var hittedTop = hitted as CalendarDayTop;
+            var shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
 
             if (hitted != null)
             {
                 switch (State)
                 {
                     case CalendarState.Idle:
-                        Cursor should = Cursors.Default;
+                        var should = Cursors.Default;
 
                         if (hittedItem != null)
                         {
@@ -1730,7 +1730,7 @@ namespace System.Windows.Forms.Calendar
                             SelectedElementEnd = hitted;
                         break;
                     case CalendarState.DraggingItem:
-                        TimeSpan duration = itemOnState.Duration;
+                        var duration = itemOnState.Duration;
                         itemOnState.SetIsDragging(true);
                         itemOnState.StartDate = hitted.Date;
                         itemOnState.EndDate = itemOnState.StartDate.Add(duration);
@@ -1761,10 +1761,10 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnMouseUp(e);
 
-            ICalendarSelectableElement hitted = HitTest(e.Location, State == CalendarState.DraggingTimeSelection);
-            CalendarItem hittedItem = hitted as CalendarItem;
-            CalendarDay hittedDay = hitted as CalendarDay;
-            bool shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
+            var hitted = HitTest(e.Location, State == CalendarState.DraggingTimeSelection);
+            var hittedItem = hitted as CalendarItem;
+            var hittedDay = hitted as CalendarDay;
+            var shiftPressed = (ModifierKeys & Keys.Shift) == Keys.Shift;
 
             switch (State)
             {
@@ -1826,7 +1826,7 @@ namespace System.Windows.Forms.Calendar
         {
             base.OnPaint(e);
 
-            CalendarRendererEventArgs evt = new CalendarRendererEventArgs(this, e.Graphics, e.ClipRectangle);
+            var evt = new CalendarRendererEventArgs(this, e.Graphics, e.ClipRectangle);
 
             ///Calendar background
             Renderer.OnDrawBackground(evt);

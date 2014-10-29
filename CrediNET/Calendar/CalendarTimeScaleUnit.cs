@@ -157,9 +157,9 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         internal bool CheckHighlighted()
         {
-            for (int i = 0; i < Day.Calendar.HighlightRanges.Length; i++)
+            for (var i = 0; i < Day.Calendar.HighlightRanges.Length; i++)
             {
-                CalendarHighlightRange range = Day.Calendar.HighlightRanges[i];
+                var range = Day.Calendar.HighlightRanges[i];
 
                 if (range.DayOfWeek != Date.DayOfWeek) 
                     continue;
