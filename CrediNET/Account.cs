@@ -117,8 +117,6 @@ namespace CrediNET
             get { return _reminderOps; }
         }
 
-        private List<Operation> _forcastOps = new List<Operation>();
-
         /// <summary>
         /// The forcast operations of the account
         /// </summary>
@@ -332,8 +330,6 @@ namespace CrediNET
         /// <returns>The account from XML code</returns>
         public static Account FromXmlCode(string xml, string filepath)
         {
-            Account cb;
-
             var encodedString = Encoding.UTF8.GetBytes(xml);
 
             var ms = new MemoryStream(encodedString);
@@ -343,40 +339,43 @@ namespace CrediNET
             var d = XDocument.Load(ms);
 
             var c = d.Element("Compte");
-            cb = new Account(DateTime.ParseExact(c.Element("CrDate").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture), filepath);
-            cb.Name = c.Element("Nom").Value;
+            var cb = new Account(DateTime.ParseExact(c.Element("CrDate").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture), filepath)
+            {
+                Name = c.Element("Nom").Value
+            };
             cb.DefPassMd5(c.Element("Passe").Value);
             var dvs = Currencies.All.First(x => x.ShortName == c.Element("Devise").Value);
             cb.ChangeCurrency(dvs, false);
 
             foreach (XElement a in c.Element("Operations").Nodes())
             {
-                var op = new Operation(a.Attribute("ID").Value);
-                op.Date = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                op.Commentary = a.Attribute("Comm").Value;
-                op.Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat);
-                op.Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat);
-                op.Type = a.Attribute("Type").Value;
-                op.Budget = a.Attribute("Budget").Value;
-                if (a.Attribute("ReminderOperationID") != null)
-                    op.RmdOptID = a.Attribute("ReminderOperationID").Value;
-                else
-                    op.RmdOptID = "";
+                var op = new Operation(a.Attribute("ID").Value)
+                {
+                    Date = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                    Commentary = a.Attribute("Comm").Value,
+                    Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat),
+                    Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat),
+                    Type = a.Attribute("Type").Value,
+                    Budget = a.Attribute("Budget").Value
+                };
+                op.RmdOptID = a.Attribute("ReminderOperationID") != null ? a.Attribute("ReminderOperationID").Value : "";
                 cb.Operations.Add(op);
             }
 
             if (c.Element("ReminderOperations") != null)
                 foreach (XElement a in c.Element("ReminderOperations").Nodes())
                 {
-                    var op = new ReminderOperation(a.Attribute("ID").Value);
-                    op.DueDate = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    op.Commentary = a.Attribute("Comm").Value;
-                    op.Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat);
-                    op.Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat);
-                    op.Type = a.Attribute("Type").Value;
-                    op.Budget = a.Attribute("Budget").Value;
-                    op.NbOfRepetition = decimal.Parse(a.Attribute("NbOfRepetition").Value);
-                    op.RepetitionType = (ReminderOperation.ERepititionType)decimal.Parse(a.Attribute("TypeOfRepetition").Value);
+                    var op = new ReminderOperation(a.Attribute("ID").Value)
+                    {
+                        DueDate = DateTime.ParseExact(a.Attribute("Date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                        Commentary = a.Attribute("Comm").Value,
+                        Credit = decimal.Parse(a.Attribute("Cre").Value, culture.NumberFormat),
+                        Debit = decimal.Parse(a.Attribute("Deb").Value, culture.NumberFormat),
+                        Type = a.Attribute("Type").Value,
+                        Budget = a.Attribute("Budget").Value,
+                        NbOfRepetition = decimal.Parse(a.Attribute("NbOfRepetition").Value),
+                        RepetitionType = (ReminderOperation.ERepititionType) decimal.Parse(a.Attribute("TypeOfRepetition").Value)
+                    };
                     if (a.Attribute("AutomaticallyAdded") != null)
                         op.AutomaticallyAdded = bool.Parse(a.Attribute("AutomaticallyAdded").Value);
                     cb.ReminderOperations.Add(op);

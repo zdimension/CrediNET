@@ -22,6 +22,7 @@ namespace CrediNET
             var webrequest = WebRequest.Create("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" + FromCurrency.ShortName + "&ToCurrency=" + ToCurrency.ShortName);
             var response = (HttpWebResponse)webrequest.GetResponse();
             var dataStream = response.GetResponseStream();
+            // ReSharper disable once AssignNullToNotNullAttribute
             var reader = new StreamReader(dataStream);
             var responseFromServer = reader.ReadToEnd();
             var doc = new XmlDocument();
@@ -62,6 +63,23 @@ namespace CrediNET
 
     public class CurrencyObj
     {
+        protected bool Equals(CurrencyObj other)
+        {
+            return this == other;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (_symbol != null ? _symbol.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (_name != null ? _name.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ _rapp.GetHashCode();
+                hashCode = (hashCode * 397) ^ (_sname != null ? _sname.GetHashCode() : 0);
+                return hashCode;
+            }
+        }
+
         public static bool operator ==(CurrencyObj a, CurrencyObj b)
         {
             if (ReferenceEquals(a, b))
@@ -71,25 +89,22 @@ namespace CrediNET
                 return false;
 
             return (a.Name == b.Name) &&
-                (a.RappBase == b.RappBase) &&
+                (Math.Abs(a.RappBase - b.RappBase) < 0) &&
                 (a.Symbol == b.Symbol) &&
                 (a.ShortName == b.ShortName);
         }
 
         public override bool Equals(object obj)
         {
-            if (!(obj is CurrencyObj)) return false;
-            return this == (CurrencyObj)obj;
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != GetType()) return false;
+            return Equals((CurrencyObj) obj);
         }
 
         public static bool operator !=(CurrencyObj a, CurrencyObj b)
         {
             return !(a == b);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
 
         /// <summary>
@@ -121,7 +136,7 @@ namespace CrediNET
         {
             get
             {
-                if (_rapp == -1)
+                if (Math.Abs(_rapp - (-1)) < 0)
                     return CurrencyExtensions.ExchangeRate(Currencies.Euro, this);
                 else
                     return _rapp;
@@ -166,7 +181,7 @@ namespace CrediNET
         {
             _symbol = s;
             _name = n;
-            if (rapp != -1)
+            if (Math.Abs(rapp - (-1)) > 0)
                 _rapp = rapp;
             _sname = abb;
         }
@@ -205,7 +220,7 @@ namespace CrediNET
 
             BaseUnit = new CurrencyObj("Base unit", "BU", "BU", 1);
 
-            All = new List<CurrencyObj>() { Euro, US_Dollar, AU_Dollar, CA_Dollar, CHI_Yuan, JAP_Yen, SWI_Franc };
+            All = new List<CurrencyObj> { Euro, US_Dollar, AU_Dollar, CA_Dollar, CHI_Yuan, JAP_Yen, SWI_Franc };
         }
 
         public static List<CurrencyObj> All;

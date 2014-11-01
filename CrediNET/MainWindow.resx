@@ -121,6 +121,31 @@
     <value>115, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 486</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1057, 22</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="lblAccountName.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 17</value>
   </data>
@@ -150,31 +175,6 @@
   </data>
   <data name="lblTotalDeb.Text" xml:space="preserve">
     <value>0,00 €</value>
-  </data>
-  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 486</value>
-  </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1057, 22</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <metadata name="ofpCompte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>231, 17</value>
@@ -282,6 +282,36 @@
   <data name="&gt;&gt;lblSoldeAt.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="bwkSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>955, 17</value>
+  </metadata>
+  <data name="lvOps.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvOps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 69</value>
+  </data>
+  <data name="lvOps.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lvOps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1057, 417</value>
+  </data>
+  <data name="lvOps.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvOps.Name" xml:space="preserve">
+    <value>lvOps</value>
+  </data>
+  <data name="&gt;&gt;lvOps.Type" xml:space="preserve">
+    <value>CrediNET.DoubleBufferListView, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvOps.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lvOps.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="clmnID.Width" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -317,33 +347,6 @@
   </data>
   <data name="clmnDeb.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
-  </data>
-  <data name="lvOps.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvOps.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 69</value>
-  </data>
-  <data name="lvOps.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="lvOps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1057, 417</value>
-  </data>
-  <data name="lvOps.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lvOps.Name" xml:space="preserve">
-    <value>lvOps</value>
-  </data>
-  <data name="&gt;&gt;lvOps.Type" xml:space="preserve">
-    <value>CrediNET.DoubleBufferListView, CrediNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvOps.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lvOps.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -423,15 +426,6 @@
   <data name="fichierExcelToolStripMenuItem.Text" xml:space="preserve">
     <value>Fichier Excel</value>
   </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 22</value>
-  </data>
-  <data name="ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ce type de fichier n'est pas encore supporté.</value>
-  </data>
-  <data name="classeurOpenOfficeToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="classeurOpenOfficeToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -440,6 +434,15 @@
   </data>
   <data name="classeurOpenOfficeToolStripMenuItem.Text" xml:space="preserve">
     <value>Classeur OpenOffice</value>
+  </data>
+  <data name="pDFToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="pDFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 22</value>
+  </data>
+  <data name="pDFToolStripMenuItem.Text" xml:space="preserve">
+    <value>PDF</value>
   </data>
   <data name="exporterToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -601,24 +604,6 @@
   <data name="btnReminder.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnCamembert.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="btnCamembert.Text" xml:space="preserve">
-    <value>Camembert</value>
-  </data>
-  <data name="btnCourbes.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="btnCourbes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
-  <data name="btnCourbes.Text" xml:space="preserve">
-    <value>Courbes</value>
-  </data>
   <data name="btnGraph.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -661,9 +646,30 @@
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="bwkSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>955, 17</value>
+  <data name="btnCamembert.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCamembert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
+  </data>
+  <data name="btnCamembert.Text" xml:space="preserve">
+    <value>Camembert</value>
+  </data>
+  <data name="btnCourbes.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCourbes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
+  </data>
+  <data name="btnCourbes.Text" xml:space="preserve">
+    <value>Courbes</value>
+  </data>
+  <metadata name="sfdPDF.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1054, 17</value>
   </metadata>
+  <data name="sfdPDF.Filter" xml:space="preserve">
+    <value>Document PDF (Portable Document Format) (*.pdf)|*.pdf</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -5031,6 +5037,9 @@
         gBoCk3KVwLfmn9Xm1+uBJqBNhvDR7f8DXRwj6BGEqUYAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>941, 400</value>
   </data>
@@ -5112,6 +5121,12 @@
   <data name="&gt;&gt;sfdODS.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;bwkSave.Name" xml:space="preserve">
+    <value>bwkSave</value>
+  </data>
+  <data name="&gt;&gt;bwkSave.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;clmnID.Name" xml:space="preserve">
     <value>clmnID</value>
   </data>
@@ -5153,6 +5168,12 @@
   </data>
   <data name="&gt;&gt;clmnDeb.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnNew.Name" xml:space="preserve">
     <value>btnNew</value>
@@ -5220,10 +5241,10 @@
   <data name="&gt;&gt;classeurOpenOfficeToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Name" xml:space="preserve">
-    <value>ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem</value>
+  <data name="&gt;&gt;pDFToolStripMenuItem.Name" xml:space="preserve">
+    <value>pDFToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;pDFToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnEditAcc.Name" xml:space="preserve">
@@ -5231,12 +5252,6 @@
   </data>
   <data name="&gt;&gt;btnEditAcc.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnAddOp.Name" xml:space="preserve">
     <value>btnAddOp</value>
@@ -5298,11 +5313,11 @@
   <data name="&gt;&gt;btnCourbes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;bwkSave.Name" xml:space="preserve">
-    <value>bwkSave</value>
+  <data name="&gt;&gt;sfdPDF.Name" xml:space="preserve">
+    <value>sfdPDF</value>
   </data>
-  <data name="&gt;&gt;bwkSave.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;sfdPDF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -32,16 +26,14 @@ namespace CrediNET
             if (edit)
                 Text = "Éditer l'opération";
 
-            if(op != null)
-            {
-                cbxType.SelectedItem = op.Type;
-                mupCredit.Value = op.Credit;
-                mupDebit.Value = op.Debit;
-                cbxBudget.SelectedItem = cbxBudget.Items.OfType<ColorComboBox.ColorInfo>().First(x => x.Text == op.Budget);
-                mcDate.SelectionStart = op.Date;
-                mcDate.SelectionEnd = op.Date;
-                txtComm.Text = op.Commentary;
-            }
+            if (op == null) return;
+            cbxType.SelectedItem = op.Type;
+            mupCredit.Value = op.Credit;
+            mupDebit.Value = op.Debit;
+            cbxBudget.SelectedItem = cbxBudget.Items.OfType<ColorComboBox.ColorInfo>().First(x => x.Text == op.Budget);
+            mcDate.SelectionStart = op.Date;
+            mcDate.SelectionEnd = op.Date;
+            txtComm.Text = op.Commentary;
         }
 
         private void btnCmptSpc_Click(object sender, EventArgs e)

@@ -2,8 +2,6 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using System.Runtime.InteropServices;
-
 using System.Windows.Forms;
 using CrediNET.Properties;
 
@@ -11,9 +9,6 @@ namespace CrediNET
 {
     public partial class FrmOptions : Form
     {
-        [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
-        private static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
-
         public FrmOptions()
         {
             InitializeComponent();

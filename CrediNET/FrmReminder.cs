@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Calendar;
 
@@ -19,7 +14,7 @@ namespace CrediNET
         {
             InitializeComponent();
         }
-
+        
         public FrmReminder(Account CompteActuel)
         {
             InitializeComponent();
@@ -29,30 +24,30 @@ namespace CrediNET
         private void btnAddReminder_Click(object sender, EventArgs e)
         {
             var frm = new FrmReminderOperation(CompteActuel);
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() != DialogResult.OK) return;
+            var op = new ReminderOperation
             {
-                var op = new ReminderOperation();
-                op.Type = frm.cbxType.SelectedItem.ToString();
-                op.Credit = frm.mupCredit.Value;
-                op.Debit = frm.mupDebit.Value;
-                op.Budget = frm.cbxBudget.SelectedText;
-                op.DueDate = frm.mcDate.SelectionStart;
-                op.Commentary = frm.txtComm.Text;
-                op.NbOfRepetition = frm.nudNbOfRepetitions.Value;
-                op.RepetitionType = (ReminderOperation.ERepititionType)frm.cbxRepetitionType.SelectedIndex;
-                op.AutomaticallyAdded = frm.cbAddOperations.Checked;
+                Type = frm.cbxType.SelectedItem.ToString(),
+                Credit = frm.mupCredit.Value,
+                Debit = frm.mupDebit.Value,
+                Budget = frm.cbxBudget.SelectedText,
+                DueDate = frm.mcDate.SelectionStart,
+                Commentary = frm.txtComm.Text,
+                NbOfRepetition = frm.nudNbOfRepetitions.Value,
+                RepetitionType = (ReminderOperation.ERepititionType) frm.cbxRepetitionType.SelectedIndex,
+                AutomaticallyAdded = frm.cbAddOperations.Checked
+            };
 
-                //Add new reminder operation
-                CompteActuel.ReminderOperations.Add(op);
+            //Add new reminder operation
+            CompteActuel.ReminderOperations.Add(op);
 
-                LoadReminderOps();
+            LoadReminderOps();
 
-                if (frm.cbAddOperations.Checked)
-                    //Add normal operations generated from the reminder operation
-                    op.addNormalOperations(CompteActuel);           
-                else
-                    ReminderOperation.deleteNormalOperations(CompteActuel, op.ID);
-            }
+            if (frm.cbAddOperations.Checked)
+                //Add normal operations generated from the reminder operation
+                op.addNormalOperations(CompteActuel);           
+            else
+                ReminderOperation.deleteNormalOperations(CompteActuel, op.ID);
         }
 
         public void LoadReminderOps()

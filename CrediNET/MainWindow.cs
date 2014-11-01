@@ -8,9 +8,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
+using AODL.Document.Content.Tables;
+using AODL.Document.SpreadsheetDocuments;
 using CrediNET.Properties;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
+
+using Spire.Xls;
 
 namespace CrediNET
 {
@@ -73,61 +77,66 @@ namespace CrediNET
 
         public void InitRenderers()
         {
-            var rend = new Renderer();
-            rend.Colors.gripOffset = 1;
-            rend.Colors.gripSquare = 2;
-            rend.Colors.gripSize = 3;
-            rend.Colors.gripMove = 4;
-            rend.Colors.gripLines = 3;
-            rend.Colors.checkInset = 1;
-            rend.Colors.marginInset = 2;
-            rend.Colors.separatorInset = 31;
-            rend.Colors.cutToolItemMenu = 1f;
-            rend.Colors.cutContextMenu = 0f;
-            rend.Colors.cutMenuItemBack = 1.3f;
-            rend.Colors.contextCheckTickThickness = 1.6f;
-            rend.Colors.imageMargin = Color.Transparent;
-            rend.Colors.insideTop1 = Color.FromArgb(80, 80, 80);
-            rend.Colors.insideTop2 = Color.FromArgb(80, 80, 80);
-            rend.Colors.insideBottom1 = Color.FromArgb(80, 80, 80);
-            rend.Colors.insideBottom2 = Color.FromArgb(80, 80, 80);
-            rend.Colors.fillTop1 = Color.FromArgb(75, 75, 75);
-            rend.Colors.fillTop2 = Color.FromArgb(75, 75, 75);
-            rend.Colors.fillBottom1 = Color.FromArgb(75, 75, 75);
-            rend.Colors.fillBottom2 = Color.FromArgb(75, 75, 75);
-            rend.Colors.borderColor1 = Color.FromArgb(20, 20, 20);
-            rend.Colors.borderColor2 = Color.FromArgb(20, 20, 20);
-            rend.Colors.disabledInsideTop1 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledInsideTop2 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledInsideBottom1 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledInsideBottom2 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledFillTop1 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledFillTop2 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledFillBottom1 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledFillBottom2 = Color.FromArgb(160, 160, 160);
-            rend.Colors.disabledBorderColor1 = Color.FromArgb(130, 130, 130);
-            rend.Colors.disabledBorderColor2 = Color.FromArgb(130, 130, 130);
-            rend.Colors.textDisabled = Color.FromArgb(160, 160, 160);
-            rend.Colors.textMenuStripItem = Color.LightGray;
-            rend.Colors.textStatusStripItem = Color.LightGray;
-            rend.Colors.textContextMenuItem = Color.LightGray;
-            rend.Colors.textSelected = Color.LightGray;
-            rend.Colors.arrowDisabled = Color.WhiteSmoke;
-            rend.Colors.arrowLight = Color.WhiteSmoke;
-            rend.Colors.arrowDark = Color.WhiteSmoke;
-            rend.Colors.arrowSelected = Color.WhiteSmoke;
-            rend.Colors.separatorMenuLight = Color.FromArgb(50, 50, 50);
-            rend.Colors.separatorMenuDark = Color.FromArgb(50, 50, 50);
-            rend.Colors.contextMenuBack = Color.FromArgb(50, 50, 50);
-            rend.Colors.contextCheckBorder = Color.Transparent;
-            rend.Colors.contextCheckBorderSelected = Color.Transparent;
-            rend.Colors.contextCheckTick = Color.WhiteSmoke;
-            rend.Colors.contextCheckTickSelected = Color.WhiteSmoke;
-            rend.Colors.statusStripBorderDark = Color.FromArgb(50, 50, 50);
-            rend.Colors.statusStripBorderLight = Color.FromArgb(50, 50, 50);
-            rend.Colors.gripDark = Color.FromArgb(0, 0, 0);
-            rend.Colors.gripLight = Color.FromArgb(0, 0, 0);
-            rend.Colors.foreColor = Color.LightGray;
+            var rend = new Renderer
+            {
+                Colors =
+                {
+                    gripOffset = 1,
+                    gripSquare = 2,
+                    gripSize = 3,
+                    gripMove = 4,
+                    gripLines = 3,
+                    checkInset = 1,
+                    marginInset = 2,
+                    separatorInset = 31,
+                    cutToolItemMenu = 1f,
+                    cutContextMenu = 0f,
+                    cutMenuItemBack = 1.3f,
+                    contextCheckTickThickness = 1.6f,
+                    imageMargin = Color.Transparent,
+                    insideTop1 = Color.FromArgb(80, 80, 80),
+                    insideTop2 = Color.FromArgb(80, 80, 80),
+                    insideBottom1 = Color.FromArgb(80, 80, 80),
+                    insideBottom2 = Color.FromArgb(80, 80, 80),
+                    fillTop1 = Color.FromArgb(75, 75, 75),
+                    fillTop2 = Color.FromArgb(75, 75, 75),
+                    fillBottom1 = Color.FromArgb(75, 75, 75),
+                    fillBottom2 = Color.FromArgb(75, 75, 75),
+                    borderColor1 = Color.FromArgb(20, 20, 20),
+                    borderColor2 = Color.FromArgb(20, 20, 20),
+                    disabledInsideTop1 = Color.FromArgb(160, 160, 160),
+                    disabledInsideTop2 = Color.FromArgb(160, 160, 160),
+                    disabledInsideBottom1 = Color.FromArgb(160, 160, 160),
+                    disabledInsideBottom2 = Color.FromArgb(160, 160, 160),
+                    disabledFillTop1 = Color.FromArgb(160, 160, 160),
+                    disabledFillTop2 = Color.FromArgb(160, 160, 160),
+                    disabledFillBottom1 = Color.FromArgb(160, 160, 160),
+                    disabledFillBottom2 = Color.FromArgb(160, 160, 160),
+                    disabledBorderColor1 = Color.FromArgb(130, 130, 130),
+                    disabledBorderColor2 = Color.FromArgb(130, 130, 130),
+                    textDisabled = Color.FromArgb(160, 160, 160),
+                    textMenuStripItem = Color.LightGray,
+                    textStatusStripItem = Color.LightGray,
+                    textContextMenuItem = Color.LightGray,
+                    textSelected = Color.LightGray,
+                    arrowDisabled = Color.WhiteSmoke,
+                    arrowLight = Color.WhiteSmoke,
+                    arrowDark = Color.WhiteSmoke,
+                    arrowSelected = Color.WhiteSmoke,
+                    separatorMenuLight = Color.FromArgb(50, 50, 50),
+                    separatorMenuDark = Color.FromArgb(50, 50, 50),
+                    contextMenuBack = Color.FromArgb(50, 50, 50),
+                    contextCheckBorder = Color.Transparent,
+                    contextCheckBorderSelected = Color.Transparent,
+                    contextCheckTick = Color.WhiteSmoke,
+                    contextCheckTickSelected = Color.WhiteSmoke,
+                    statusStripBorderDark = Color.FromArgb(50, 50, 50),
+                    statusStripBorderLight = Color.FromArgb(50, 50, 50),
+                    gripDark = Color.FromArgb(0, 0, 0),
+                    gripLight = Color.FromArgb(0, 0, 0),
+                    foreColor = Color.LightGray
+                }
+            };
 
             toolStrip.Renderer = rend.GetRenderer();
         }
@@ -156,20 +165,17 @@ namespace CrediNET
                 ClearStuff();
 
             var ae = new FrmCreateAccount();
-            if (ae.ShowDialog() == DialogResult.OK)
-            {
-                CompteActuel = new Account();
-                CompteActuel.Name = ae.txtNom.Text;
-                CompteActuel.DefPass(ae.txtPasse.Text);
-                CompteActuel.Budgets.Clear();
-                ae.lbxBudgets.Items.OfType<ListViewItem>().All(x => { CompteActuel.Budgets.Add(x.Text, x.BackColor); return true; });
+            if (ae.ShowDialog() != DialogResult.OK) return;
+            CompteActuel = new Account {Name = ae.txtNom.Text};
+            CompteActuel.DefPass(ae.txtPasse.Text);
+            CompteActuel.Budgets.Clear();
+            ae.lbxBudgets.Items.OfType<ListViewItem>().All(x => { CompteActuel.Budgets.Add(x.Text, x.BackColor); return true; });
 
-                CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == (string)(ae.cbxDevise.SelectedItem)));
+            CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == (string)(ae.cbxDevise.SelectedItem)));
 
-                //CompteActuel.Crypte = ae.cbxCrypt.Checked;
+            //CompteActuel.Crypte = ae.cbxCrypt.Checked;
 
-                LoadAccountStuff();
-            }
+            LoadAccountStuff();
         }
 
         public void ChargerSoldeAu()
@@ -517,10 +523,6 @@ namespace CrediNET
             ChargerSoldeAu();
         }
 
-        private void btnOpt_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnDelOp_Click(object sender, EventArgs e)
         {
             CompteActuel.Operations.RemoveAll(x => x.ID == lvOps.SelectedItems[0].Text);
@@ -672,59 +674,96 @@ namespace CrediNET
                 if (File.Exists(sfdXLS.FileName))
                     File.Delete(sfdXLS.FileName);
 
-                /*Excel.Application app = new Excel.Application();
-                app.Visible = true;
-                Excel.Workbook workbook = app.Workbooks.Add(1);
-                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
-                Excel.Range workSheet_range = null;*/
-
-                var d = new CreateExcelDoc();
-
-                //Same for English and French lang
-                d.createHeaders(1, 1, "Date", "A1", "A1", 0, Color.Gainsboro, true, 10, Color.Black);
-                d.createHeaders(1, 2, "Type", "B1", "B1", 0, Color.Gainsboro, true, 10, Color.Black);
-                d.createHeaders(1, 3, "Budget", "C1", "D1", 1, Color.Gainsboro, true, 10, Color.Black);
-
+                var workbook = new Workbook();
+                var sheet = workbook.Worksheets[0];
+                sheet.Range["A1"].Text = "Date";
+                sheet.Range["A1"].Style.Font.IsBold = true;
+                sheet.Range["A1"].Style.Color = Color.Gainsboro;
+                sheet.Range["A1"].Style.Font.Size = 10;
+                sheet.Range["B1"].Text = "Type";
+                sheet.Range["B1"].Style.Font.IsBold = true;
+                sheet.Range["B1"].Style.Color = Color.Gainsboro;
+                sheet.Range["B1"].Style.Font.Size = 10;
+                sheet.Range["C1"].Text = "Budget";
+                sheet.Range["C1"].Style.Font.IsBold = true;
+                sheet.Range["C1"].Style.Color = Color.Gainsboro;
+                sheet.Range["C1"].Style.Font.Size = 10;
                 switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
-                        d.createHeaders(1, 5, "Comment", "E1", "G1", 0, Color.Gainsboro, true, 10, Color.Black);
-                        d.createHeaders(1, 8, "Credit", "H1", "H1", 0, Color.Gainsboro, true, 10, Color.Black);
-                        d.createHeaders(1, 9, "Debit", "I1", "I1", 0, Color.Gainsboro, true, 10, Color.Black);
+                        sheet.Range["D1"].Text = "Comment";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Credit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Debit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
                         break;
 
                     case "de-DE":
-                        d.createHeaders(1, 5, "Kommentar", "E1", "G1", 0, Color.Gainsboro, true, 10, Color.Black);
-                        d.createHeaders(1, 8, "Kredit", "H1", "H1", 0, Color.Gainsboro, true, 10, Color.Black);
-                        d.createHeaders(1, 9, "Debit", "I1", "I1", 0, Color.Gainsboro, true, 10, Color.Black);
+                        sheet.Range["D1"].Text = "Kommentar";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Kredit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Debit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
                         break;
 
-                    default:        //case "fr-FR":
-                        d.createHeaders(1, 5, "Commentaire", "E1", "G1", 0, Color.Gainsboro, true, 10, Color.Black);
-                        d.createHeaders(1, 8, "Crédit", "H1", "H1", 0, Color.Gainsboro, true, 10, Color.Black);
-                        d.createHeaders(1, 9, "Débit", "I1", "I1", 0, Color.Gainsboro, true, 10, Color.Black);
+                    default:
+                        sheet.Range["D1"].Text = "Commentaire";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Crédit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Débit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
                         break;
                 }
 
                 foreach (var op in CompteActuel.Operations)
                 {
                     var id = CompteActuel.Operations.IndexOf(op) + 2;
-                    d.addData(id, 1, op.Date.ToString("dd/MM/yyyy"), "A" + id, "A" + id, "dd/mm/yyyy");
 
-                    d.addData(id, 2, op.Type, "B" + id, "B" + id, "");
-                    d.addData(id, 3, op.Budget, "C" + id, "D" + id, "", 1);
-                    d.addData(id, 5, op.Commentary, "E" + id, "G" + id, "", 2);
-
-                    d.addData(id, 8, op.Credit, "H" + id, "H" + id, "# ###,00 " + CompteActuel.Currency.Symbol);
-                    d.addData(id, 9, op.Debit, "I" + id, "I" + id, "# ###,00 " + CompteActuel.Currency.Symbol);
+                    sheet.Range[id, 1].Text = op.Date.ToString("dd/MM/yyyy");
+                    sheet.Range[id, 1].DataValidation.AllowType = CellDataType.Date;
+                    sheet.Range[id, 2].Text = op.Type;
+                    sheet.Range[id, 3].Text = op.Budget;
+                    sheet.Range[id, 4].Text = op.Commentary;
+                    sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 5].NumberValue = (double)op.Credit;
+                    sheet.Range[id, 5].Style.Font.Color = Color.White;
+                    sheet.Range[id, 5].Style.Color = Color.Green;
+                    sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 6].NumberValue = (double)op.Debit;
+                    sheet.Range[id, 6].Style.Font.Color = Color.White;
+                    sheet.Range[id, 6].Style.Color = Color.Red;
                 }
 
-                d.worksheet.Columns[1].AutoFit();
-                d.worksheet.Columns[2].AutoFit();
+                sheet.AutoFitColumn(1);
+                sheet.AutoFitColumn(2);
+                sheet.AutoFitColumn(3);
+                sheet.AutoFitColumn(4);
+                sheet.AutoFitColumn(5);
+                sheet.AutoFitColumn(6);
+                workbook.SaveToFile(sfdXLS.FileName, ExcelVersion.Version97to2003);
+                Process.Start(sfdXLS.FileName);
 
-                //d.app.SaveWorkspace(sfdXLS.FileName);
-
-                //Process.Start(sfdXLS.FileName);
             }
         }
 
@@ -735,84 +774,153 @@ namespace CrediNET
                 if (File.Exists(sfdXLSX.FileName))
                     File.Delete(sfdXLSX.FileName);
 
-                using (var pkg = new ExcelPackage())
+                var workbook = new Workbook();
+                var sheet = workbook.Worksheets[0];
+                sheet.Range["A1"].Text = "Date";
+                sheet.Range["A1"].Style.Font.IsBold = true;
+                sheet.Range["A1"].Style.Color = Color.Gainsboro;
+                sheet.Range["A1"].Style.Font.Size = 10;
+                sheet.Range["B1"].Text = "Type";
+                sheet.Range["B1"].Style.Font.IsBold = true;
+                sheet.Range["B1"].Style.Color = Color.Gainsboro;
+                sheet.Range["B1"].Style.Font.Size = 10;
+                sheet.Range["C1"].Text = "Budget";
+                sheet.Range["C1"].Style.Font.IsBold = true;
+                sheet.Range["C1"].Style.Color = Color.Gainsboro;
+                sheet.Range["C1"].Style.Font.Size = 10;
+                switch (Settings.Default.Lang.Name)
                 {
-                    var w = pkg.Workbook.Worksheets.Add(CompteActuel.Name);
+                    case "en-US":
+                        sheet.Range["D1"].Text = "Comment";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Credit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Debit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
+                        break;
 
-                    // en-tête
-                    w.Cells[1, 1].Value = "Date";
-                    w.Cells[1, 2].Value = "Type";
-                    w.Cells[1, 3].Value = "Budget";
+                    case "de-DE":
+                        sheet.Range["D1"].Text = "Kommentar";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Kredit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Debit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
+                        break;
 
-                    switch (Settings.Default.Lang.Name)
-                    {
-                        case "en-US":
-                            w.Cells[1, 4, 1, 6].Value = "Comment";
-                            w.Cells[1, 4, 1, 6].Merge = true;
-                            w.Cells[1, 7].Value = "Credit";
-                            w.Cells[1, 8].Value = "Debit";
-                            break;
-
-                        case "de-DE":
-                            w.Cells[1, 4, 1, 6].Value = "Kommentar";
-                            w.Cells[1, 4, 1, 6].Merge = true;
-                            w.Cells[1, 7].Value = "Kredit";
-                            w.Cells[1, 8].Value = "Debit";
-                            break;
-
-                        default:        //case "fr-FR":
-                            w.Cells[1, 4, 1, 6].Value = "Commentaire";
-                            w.Cells[1, 4, 1, 6].Merge = true;
-                            w.Cells[1, 7].Value = "Crédit";
-                            w.Cells[1, 8].Value = "Débit";
-                            break;
-                    }
-
-                    w.Cells[1, 1, 1, 8].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                    w.Cells[1, 1, 1, 8].Style.Fill.BackgroundColor.SetColor(Color.Gainsboro);
-                    w.Cells[1, 1, 1, 8].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-
-                    foreach (var op in CompteActuel.Operations)
-                    {
-                        var id = CompteActuel.Operations.IndexOf(op) + 2;
-                        w.Cells[id, 1].Value = op.Date.ToString("dd/MM/yyyy");
-                        w.Cells[id, 2].Value = op.Type;
-                        w.Cells[id, 3].Value = op.Budget;
-                        w.Cells[id, 4].Value = op.Commentary;
-
-                        w.Cells[id, 4, id, 6].Merge = true;
-
-                        w.Cells[id, 7, id, 8].Style.Numberformat.Format = "#,##0.00 " + CompteActuel.Currency.Symbol;
-
-                        w.Cells[id, 7].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                        w.Cells[id, 7].Style.Fill.BackgroundColor.SetColor(Color.LightGreen);
-                        w.Cells[id, 8].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                        w.Cells[id, 8].Style.Fill.BackgroundColor.SetColor(Color.Tomato);
-
-                        w.Cells[id, 7].Value = op.Credit;
-                        w.Cells[id, 8].Value = op.Debit;
-                    }
-
-                    w.Cells.AutoFitColumns(1);
-                    w.Cells.AutoFitColumns(2);
-                    w.Cells.AutoFitColumns(3);
-                    w.Cells.AutoFitColumns(7);
-                    w.Cells.AutoFitColumns(8);
-
-                    pkg.SaveAs(new FileInfo(sfdXLSX.FileName));
-
-                    Process.Start(sfdXLSX.FileName);
+                    default:
+                        sheet.Range["D1"].Text = "Commentaire";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Crédit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Débit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
+                        break;
                 }
+
+                foreach (var op in CompteActuel.Operations)
+                {
+                    var id = CompteActuel.Operations.IndexOf(op) + 2;
+
+                    sheet.Range[id, 1].Text = op.Date.ToString("dd/MM/yyyy");
+                    sheet.Range[id, 1].DataValidation.AllowType = CellDataType.Date;
+                    sheet.Range[id, 2].Text = op.Type;
+                    sheet.Range[id, 3].Text = op.Budget;
+                    sheet.Range[id, 4].Text = op.Commentary;
+                    sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 5].NumberValue = (double)op.Credit;
+                    sheet.Range[id, 5].Style.Font.Color = Color.White;
+                    sheet.Range[id, 5].Style.Color = Color.Green; 
+                    sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 6].NumberValue = (double)op.Debit;
+                    sheet.Range[id, 6].Style.Font.Color = Color.White;
+                    sheet.Range[id, 6].Style.Color = Color.Red;
+                }
+
+                
+                sheet.Columns[0].ColumnWidth = 10.5;
+                sheet.Columns[1].ColumnWidth = 5.5;
+                sheet.Columns[2].ColumnWidth = 20;
+                sheet.Columns[3].ColumnWidth = 50;
+                sheet.Columns[4].ColumnWidth = 15;
+                sheet.Columns[5].ColumnWidth = 15;
+
+                //borders
+                sheet.Range["A1:F1"].Borders[BordersLineType.EdgeBottom].LineStyle = LineStyleType.Thin;
+                sheet.Range[2, 1, CompteActuel.Operations.Count + 1, 6].Borders[BordersLineType.EdgeRight].LineStyle = LineStyleType.Thin;
+
+                workbook.SaveToFile(sfdXLSX.FileName, ExcelVersion.Version2007);
+                Process.Start(sfdXLSX.FileName);
             }
         }
 
         private void classeurOpenOfficeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*if (sfdODS.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfdODS.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 if (File.Exists(sfdODS.FileName))
                     File.Delete(sfdODS.FileName);
-            }*/
+
+                SpreadsheetDocument doc = new SpreadsheetDocument();
+                doc.New();
+                Table tbl = new Table(doc, CompteActuel.Name, "account");
+
+                //headers
+                tbl.AddCell(1, 1, "Date", Color.Gainsboro, true, Color.Black);
+                tbl.AddCell(1, 2, "Type", Color.Gainsboro, true, Color.Black);
+                tbl.AddCell(1, 3, "Budget", Color.Gainsboro, true, Color.Black);
+                switch (Settings.Default.Lang.Name)
+                {
+                    case "en-US":
+                        tbl.AddCell(1, 4, "Commentary", Color.Gainsboro, true, Color.Black);
+                        tbl.AddCell(1, 5, "Credit", Color.Gainsboro, true, Color.Black);
+                        tbl.AddCell(1, 6, "Debit", Color.Gainsboro, true, Color.Black);
+                        break;
+                    case "de-DE":
+                        tbl.AddCell(1, 4, "Kommentar", Color.Gainsboro, true, Color.Black);
+                        tbl.AddCell(1, 5, "Kredit", Color.Gainsboro, true, Color.Black);
+                        tbl.AddCell(1, 6, "Debit", Color.Gainsboro, true, Color.Black);
+                        break;
+                    default:
+                        tbl.AddCell(1, 4, "Commentaire", Color.Gainsboro, true, Color.Black);
+                        tbl.AddCell(1, 5, "Crédit", Color.Gainsboro, true, Color.Black);
+                        tbl.AddCell(1, 6, "Débit", Color.Gainsboro, true, Color.Black);
+                        break;
+                }
+                foreach (var op in CompteActuel.Operations)
+                {
+                    var id = CompteActuel.Operations.IndexOf(op) + 2;
+
+                    tbl.AddCell(id, 1, op.Date.ToString("dd/MM/yyyy"), Color.White, false, Color.Black);
+                    tbl.AddCell(id, 2, op.Type, Color.White, false, Color.Black);
+                    tbl.AddCell(id, 3, op.Budget, Color.White, false, Color.Black);
+                    tbl.AddCell(id, 4, op.Commentary, Color.White, false, Color.Black);
+                    tbl.AddCell(id, 5, op.Credit + " " + CompteActuel.Currency.Symbol, Color.White, false, Color.Black);
+                    tbl.AddCell(id, 6, op.Debit + " " + CompteActuel.Currency.Symbol, Color.White, false, Color.Black);
+                }
+
+                doc.TableCollection.Add(tbl);
+                doc.SaveTo(sfdODS.FileName);
+                Process.Start(sfdODS.FileName);
+            }
         }
 
         private void btnOpt_Click_1(object sender, EventArgs e)
@@ -824,7 +932,7 @@ namespace CrediNET
 
         private void btnCamembert_Click(object sender, EventArgs e)
         {
-            new FrmGraph(1, filteredAccount == null ? CompteActuel : filteredAccount).ShowDialog(this);
+            new FrmGraph(1, filteredAccount ?? CompteActuel).ShowDialog(this);
         }
 
         private void btnCourbes_Click(object sender, EventArgs e)
@@ -877,41 +985,39 @@ namespace CrediNET
 
             if (btnFilterOp.Checked)
             {
-                LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
+                LoadOps(null, null, null, null, null, null, null, null);
                 filteredAccount = null;
                 btnFilterOp.Checked = false;
             }
             else
             {
-                if (of.ShowDialog() == DialogResult.OK)
+                if (of.ShowDialog() != DialogResult.OK) return;
+                if (of.chbDate.Checked)
                 {
-                    if (of.chbDate.Checked)
-                    {
-                        dtFrom = of.dtpFrom.Value;
-                        dtTo = of.dtpTo.Value;
-                    }
-                    if (of.chbCredit.Checked)
-                    {
-                        creditFrom = of.mudCreditFrom.Value;
-                        creditTo = of.mudCreditTo.Value;
-                    }
-                    if (of.chbDebit.Checked)
-                    {
-                        debitFrom = of.mudDebitFrom.Value;
-                        debitTo = of.mudDebitTo.Value;
-                    }
-                    if (of.chbType.Checked)
-                    {
-                        type = of.cbxType.SelectedItem.ToString();
-                    }
-                    if (of.chbBudget.Checked)
-                    {
-                        budget = of.cbxBudget.SelectedItem.Text;
-                    }
-
-                    LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
-                    btnFilterOp.Checked = true;
+                    dtFrom = of.dtpFrom.Value;
+                    dtTo = of.dtpTo.Value;
                 }
+                if (of.chbCredit.Checked)
+                {
+                    creditFrom = of.mudCreditFrom.Value;
+                    creditTo = of.mudCreditTo.Value;
+                }
+                if (of.chbDebit.Checked)
+                {
+                    debitFrom = of.mudDebitFrom.Value;
+                    debitTo = of.mudDebitTo.Value;
+                }
+                if (of.chbType.Checked)
+                {
+                    type = of.cbxType.SelectedItem.ToString();
+                }
+                if (of.chbBudget.Checked)
+                {
+                    budget = of.cbxBudget.SelectedItem.Text;
+                }
+
+                LoadOps(dtFrom, dtTo, creditFrom, creditTo, debitFrom, debitTo, type, budget);
+                btnFilterOp.Checked = true;
             }
         }
 
@@ -925,11 +1031,11 @@ namespace CrediNET
             lvOps.Items.Clear();
 
             var queryOps =
-                from op in CompteActuel.Operations.AsQueryable<Operation>()
+                from op in CompteActuel.Operations.AsQueryable()
                 select op;
 
             if (dtFrom != null && dtTo != null)
-                queryOps = queryOps.Where(op => DateTime.Compare(op.Date, dtFrom ?? DateTime.Now) >= 0 && DateTime.Compare(op.Date, dtTo ?? DateTime.Now) <= 0);
+                queryOps = queryOps.Where(op => DateTime.Compare(op.Date, (DateTime) dtFrom) >= 0 && DateTime.Compare(op.Date, (DateTime) dtTo) <= 0);
 
             if (creditFrom.HasValue && creditTo.HasValue)
                 queryOps = queryOps.Where(op => op.Credit >= creditFrom && op.Credit <= creditTo);
@@ -1042,5 +1148,110 @@ namespace CrediNET
             Cursor = Cursors.Default;
             tmpf = "";
         }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sfdPDF.ShowDialog() == DialogResult.OK)
+            {
+                if(File.Exists(sfdPDF.FileName))
+                    File.Delete(sfdPDF.FileName);
+
+                var workbook = new Workbook();
+                var sheet = workbook.Worksheets[0];
+                sheet.Range["A1"].Text = "Date";
+                sheet.Range["A1"].Style.Font.IsBold = true;
+                sheet.Range["A1"].Style.Color = Color.Gainsboro;
+                sheet.Range["A1"].Style.Font.Size = 10;
+                sheet.Range["B1"].Text = "Type";
+                sheet.Range["B1"].Style.Font.IsBold = true;
+                sheet.Range["B1"].Style.Color = Color.Gainsboro;
+                sheet.Range["B1"].Style.Font.Size = 10;
+                sheet.Range["C1"].Text = "Budget";
+                sheet.Range["C1"].Style.Font.IsBold = true;
+                sheet.Range["C1"].Style.Color = Color.Gainsboro;
+                sheet.Range["C1"].Style.Font.Size = 10;
+                switch (Settings.Default.Lang.Name)
+                {
+                    case "en-US":
+                        sheet.Range["D1"].Text = "Comment";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Credit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Debit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
+                        break;
+
+                    case "de-DE":
+                        sheet.Range["D1"].Text = "Kommentar";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Kredit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Debit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
+                        break;
+
+                    default:
+                        sheet.Range["D1"].Text = "Commentaire";
+                        sheet.Range["D1"].Style.Font.IsBold = true;
+                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["D1"].Style.Font.Size = 10;
+                        sheet.Range["E1"].Text = "Crédit";
+                        sheet.Range["E1"].Style.Font.IsBold = true;
+                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["E1"].Style.Font.Size = 10;
+                        sheet.Range["F1"].Text = "Débit";
+                        sheet.Range["F1"].Style.Font.IsBold = true;
+                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
+                        sheet.Range["F1"].Style.Font.Size = 10;
+                        break;
+                }
+
+                foreach (var op in CompteActuel.Operations)
+                {
+                    var id = CompteActuel.Operations.IndexOf(op) + 2;
+
+                    sheet.Range[id, 1].Text = op.Date.ToString("dd/MM/yyyy");
+                    sheet.Range[id, 1].DataValidation.AllowType = CellDataType.Date;
+                    sheet.Range[id, 2].Text = op.Type;
+                    sheet.Range[id, 3].Text = op.Budget;
+                    sheet.Range[id, 4].Text = op.Commentary;
+                    sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 5].NumberValue = (double)op.Credit;
+                    sheet.Range[id, 5].Style.Font.Color = Color.White;
+                    sheet.Range[id, 5].Style.Color = Color.Green;
+                    sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 6].NumberValue = (double)op.Debit;
+                    sheet.Range[id, 6].Style.Font.Color = Color.White;
+                    sheet.Range[id, 6].Style.Color = Color.Red;
+                }
+
+
+                sheet.Columns[0].ColumnWidth = 10.5;
+                sheet.Columns[1].ColumnWidth = 5.5;
+                sheet.Columns[2].ColumnWidth = 15;
+                sheet.Columns[3].ColumnWidth = 27.5;
+                sheet.Columns[4].ColumnWidth = 15;
+                sheet.Columns[5].ColumnWidth = 15;
+
+                //borders
+                sheet.Range["A1:F1"].Borders[BordersLineType.EdgeBottom].LineStyle = LineStyleType.Thin;
+                sheet.Range[2, 1, CompteActuel.Operations.Count + 1, 6].Borders[BordersLineType.EdgeRight].LineStyle = LineStyleType.Thin;
+
+                workbook.SaveToFile(sfdPDF.FileName, FileFormat.PDF);
+                Process.Start(sfdPDF.FileName);
+            }   
+        }   
     }
 }

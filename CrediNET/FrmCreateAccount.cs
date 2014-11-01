@@ -13,7 +13,7 @@ namespace CrediNET
         [DllImport("uxtheme.dll")]
         public static extern int SetWindowTheme([In] IntPtr hwnd, [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubAppName, [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubIdList);
 
-        private bool edit = false;
+        private bool edit;
 
         public FrmCreateAccount(Account editCompt = null)
         {
@@ -27,11 +27,8 @@ namespace CrediNET
 
                 lbxBudgets.Items.Clear();
 
-                editCompt.Budgets.All(x => { lbxBudgets.Items.Add(new ListViewItem() { Text = x.Key, BackColor = x.Value }); return true; });
-                if (editCompt.Currency == null)
-                    cbxDevise.SelectedItem = "";
-                else
-                    cbxDevise.SelectedItem = editCompt.Currency.Name;
+                editCompt.Budgets.All(x => { lbxBudgets.Items.Add(new ListViewItem { Text = x.Key, BackColor = x.Value }); return true; });
+                cbxDevise.SelectedItem = editCompt.Currency == null ? "" : editCompt.Currency.Name;
 
                 txtPasse_Leave(this, EventArgs.Empty);
             }
@@ -122,8 +119,8 @@ namespace CrediNET
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!lbxBudgets.Items.OfType<ListViewItem>().Any(x => x.Text == txtItemName.Text))
-                lbxBudgets.Items.Add(new ListViewItem() { Text = txtItemName.Text, BackColor = cbxClr.SelectedValue });
+            if (lbxBudgets.Items.OfType<ListViewItem>().All(x => x.Text != txtItemName.Text))
+                lbxBudgets.Items.Add(new ListViewItem { Text = txtItemName.Text, BackColor = cbxClr.SelectedValue });
 
             txtItemName.Text = "";
         }
@@ -136,8 +133,6 @@ namespace CrediNET
 
             if (txtItemName.Text != lbxBudgets.SelectedItems[0].Text)
             {
-                var index = lbxBudgets.SelectedIndices[0];
-
                 lbxBudgets.SelectedItems[0].Text = txtItemName.Text;
             }
         }
@@ -165,8 +160,6 @@ namespace CrediNET
 
             if (cbxClr.SelectedValue != lbxBudgets.SelectedItems[0].BackColor)
             {
-                var index = lbxBudgets.SelectedIndices[0];
-
                 lbxBudgets.SelectedItems[0].BackColor = cbxClr.SelectedValue;
             }
         }

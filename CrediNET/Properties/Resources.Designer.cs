@@ -343,6 +343,16 @@ namespace CrediNET.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file_extension_pdf {
+            get {
+                object obj = ResourceManager.GetObject("file_extension_pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_xls {
             get {
                 object obj = ResourceManager.GetObject("icon_xls", resourceCulture);

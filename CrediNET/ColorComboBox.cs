@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CrediNET
 {
-    public partial class ColorComboBox : ComboBox
+    public class ColorComboBox : ComboBox
     {
         // Data for each color in the list
         public class ColorInfo

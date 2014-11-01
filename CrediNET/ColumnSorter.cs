@@ -94,14 +94,15 @@ namespace CrediNET
         /// </summary>
         /// <param name="x">First item</param>
         /// <param name="y">Second item</param>
-        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y.</returns>
+#pragma warning disable 1570
+        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y</returns>
+#pragma warning restore 1570
         public int Compare(object x, object y)
         {
             var compareResult = 0;
-            ListViewItem listviewX, listviewY;
 
-            listviewX = (ListViewItem)x;
-            listviewY = (ListViewItem)y;
+            var listviewX = (ListViewItem)x;
+            var listviewY = (ListViewItem)y;
 
             var listViewMain = listviewX.ListView;
 
@@ -134,7 +135,7 @@ namespace CrediNET
             }
             else if (mySortModifier.Equals(SortModifiers.SortByDate))
             {
-                var returnVal = -1;
+                int returnVal;
                 // Parse the two objects passed as a parameter as a DateTime.
                 var firstDate =
                         DateTime.ParseExact(((ListViewItem)x).SubItems[ColumnToSort].Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -149,7 +150,7 @@ namespace CrediNET
             }
             else if (mySortModifier.Equals(SortModifiers.SortByDecimal))
             {
-                var returnVal = -1;
+                int returnVal;
                 // Parse the two objects passed as a parameter as a decimal.
                 Console.WriteLine(((ListViewItem)x).SubItems[ColumnToSort].Text);
                 var firstNum =
@@ -240,7 +241,9 @@ namespace CrediNET
         /// </summary>
         /// <param name="x">First item</param>
         /// <param name="y">Second item</param>
-        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y.</returns>
+#pragma warning disable 1570
+        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y</returns>
+#pragma warning restore 1570
         public int Compare(object x, object y)
         {
             int image1, image2;
@@ -280,7 +283,9 @@ namespace CrediNET
         /// </summary>
         /// <param name="x">First item</param>
         /// <param name="y">Second item</param>
-        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y.</returns>
+#pragma warning disable 1570
+        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y</returns>
+#pragma warning restore 1570
         public int Compare(object x, object y)
         {
             var listviewX = (ListViewItem)x;
@@ -314,27 +319,25 @@ namespace CrediNET
 
     public class NumberCaseInsensitiveComparer : CaseInsensitiveComparer
     {
-        public NumberCaseInsensitiveComparer()
-        {
-        }
-
         /// <summary>
         /// This method comes right from IEnumerable. It compares two items.
         /// </summary>
         /// <param name="x">First item</param>
         /// <param name="y">Second item</param>
-        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y.</returns>
+#pragma warning disable 1570
+        /// <returns>Result of the comparison. 0 if equal, 1 if x > y, -1 if x < y</returns>
+#pragma warning restore 1570
         public new int Compare(object x, object y)
         {
             if (x == null && y == null)
             {
                 return 0;
             }
-            else if (x == null && y != null)
+            else if (x == null)
             {
                 return -1;
             }
-            else if (x != null && y == null)
+            else if (y == null)
             {
                 return 1;
             }

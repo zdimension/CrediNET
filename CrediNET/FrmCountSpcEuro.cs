@@ -6,12 +6,7 @@ namespace CrediNET
 {
     public partial class FrmCountSpcEuro : Form
     {
-        private decimal _total = 0.00M;
-
-        public decimal Total
-        {
-            get { return _total; }
-        }
+        public decimal Total { get; private set; }
 
         public FrmCountSpcEuro()
         {
@@ -20,23 +15,23 @@ namespace CrediNET
 
         private void RefreshTotal()
         {
-            _total = 0.00M;
-            _total += nud1ct.Value * 0.01M;
-            _total += nud2ct.Value * 0.02M;
-            _total += nud5ct.Value * 0.05M;
-            _total += nud10ct.Value * 0.10M;
-            _total += nud20ct.Value * 0.20M;
-            _total += nud50ct.Value * 0.50M;
-            _total += nud1eur.Value * 1;
-            _total += nud2eur.Value * 2;
-            _total += nud5eur.Value * 5;
-            _total += nud10eur.Value * 10;
-            _total += nud20eur.Value * 20;
-            _total += nud50eur.Value * 50;
-            _total += nud100eur.Value * 100;
-            _total += nud200eur.Value * 200;
-            _total += nud500eur.Value * 500;
-            lblTotal.Text = "Total : " + _total.ToString("0.00") + " €";
+            Total = 0.00M;
+            Total += nud1ct.Value * 0.01M;
+            Total += nud2ct.Value * 0.02M;
+            Total += nud5ct.Value * 0.05M;
+            Total += nud10ct.Value * 0.10M;
+            Total += nud20ct.Value * 0.20M;
+            Total += nud50ct.Value * 0.50M;
+            Total += nud1eur.Value * 1;
+            Total += nud2eur.Value * 2;
+            Total += nud5eur.Value * 5;
+            Total += nud10eur.Value * 10;
+            Total += nud20eur.Value * 20;
+            Total += nud50eur.Value * 50;
+            Total += nud100eur.Value * 100;
+            Total += nud200eur.Value * 200;
+            Total += nud500eur.Value * 500;
+            lblTotal.Text = "Total : " + Total.ToString("0.00") + " €";
         }
 
         private void nud1ct_ValueChanged(object sender, EventArgs e)

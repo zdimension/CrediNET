@@ -46,6 +46,7 @@
             this.sfdODS = new System.Windows.Forms.SaveFileDialog();
             this.lblSolde = new System.Windows.Forms.Label();
             this.lblSoldeAt = new System.Windows.Forms.Label();
+            this.bwkSave = new System.ComponentModel.BackgroundWorker();
             this.lvOps = new CrediNET.DoubleBufferListView();
             this.clmnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,6 +56,7 @@
             this.clmnCred = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnDeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip = new CrediNET.NoBorderToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripSplitButton();
@@ -66,9 +68,8 @@
             this.fichierExcel972003ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fichierExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classeurOpenOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditAcc = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddOp = new System.Windows.Forms.ToolStripButton();
             this.btnEditOp = new System.Windows.Forms.ToolStripButton();
             this.btnDuplOp = new System.Windows.Forms.ToolStripButton();
@@ -79,7 +80,7 @@
             this.btnGraph = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnCamembert = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCourbes = new System.Windows.Forms.ToolStripMenuItem();
-            this.bwkSave = new System.ComponentModel.BackgroundWorker();
+            this.sfdPDF = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +180,11 @@
             this.lblSoldeAt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lblSoldeAt.Name = "lblSoldeAt";
             // 
+            // bwkSave
+            // 
+            this.bwkSave.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkSave_DoWork);
+            this.bwkSave.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkSave_RunWorkerCompleted);
+            // 
             // lvOps
             // 
             this.lvOps.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -252,6 +258,11 @@
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip_Paint);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
             // btnNew
             // 
             this.btnNew.ForeColor = System.Drawing.Color.White;
@@ -307,7 +318,8 @@
             this.fichierCSVToolStripMenuItem,
             this.fichierExcel972003ToolStripMenuItem,
             this.fichierExcelToolStripMenuItem,
-            this.classeurOpenOfficeToolStripMenuItem});
+            this.classeurOpenOfficeToolStripMenuItem,
+            this.pDFToolStripMenuItem});
             resources.ApplyResources(this.exporterToolStripMenuItem, "exporterToolStripMenuItem");
             this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
             // 
@@ -334,17 +346,17 @@
             // 
             // classeurOpenOfficeToolStripMenuItem
             // 
-            this.classeurOpenOfficeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem});
-            resources.ApplyResources(this.classeurOpenOfficeToolStripMenuItem, "classeurOpenOfficeToolStripMenuItem");
             this.classeurOpenOfficeToolStripMenuItem.Image = global::CrediNET.Properties.Resources.pngU1X58JfMGF;
+            resources.ApplyResources(this.classeurOpenOfficeToolStripMenuItem, "classeurOpenOfficeToolStripMenuItem");
             this.classeurOpenOfficeToolStripMenuItem.Name = "classeurOpenOfficeToolStripMenuItem";
             this.classeurOpenOfficeToolStripMenuItem.Click += new System.EventHandler(this.classeurOpenOfficeToolStripMenuItem_Click);
             // 
-            // ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem
+            // pDFToolStripMenuItem
             // 
-            this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem.Name = "ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem";
-            resources.ApplyResources(this.ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem, "ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem");
+            this.pDFToolStripMenuItem.Image = global::CrediNET.Properties.Resources.file_extension_pdf;
+            resources.ApplyResources(this.pDFToolStripMenuItem, "pDFToolStripMenuItem");
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Click += new System.EventHandler(this.pDFToolStripMenuItem_Click);
             // 
             // btnEditAcc
             // 
@@ -352,11 +364,6 @@
             resources.ApplyResources(this.btnEditAcc, "btnEditAcc");
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // btnAddOp
             // 
@@ -431,10 +438,10 @@
             this.btnCourbes.Name = "btnCourbes";
             this.btnCourbes.Click += new System.EventHandler(this.btnCourbes_Click);
             // 
-            // bwkSave
+            // sfdPDF
             // 
-            this.bwkSave.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkSave_DoWork);
-            this.bwkSave.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkSave_RunWorkerCompleted);
+            this.sfdPDF.DefaultExt = "pdf";
+            resources.ApplyResources(this.sfdPDF, "sfdPDF");
             // 
             // MainWindow
             // 
@@ -484,7 +491,6 @@
         private System.Windows.Forms.ToolStripMenuItem fichierExcel972003ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fichierExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem classeurOpenOfficeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ceTypeDeFichierNnestPasEncoreSupportéToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnEditAcc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnAddOp;
@@ -511,6 +517,8 @@
         private System.ComponentModel.BackgroundWorker bwkSave;
         private System.Windows.Forms.ToolStripStatusLabel lblCrDate;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog sfdPDF;
     }
 }
 

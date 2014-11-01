@@ -58,9 +58,6 @@ namespace CrediNET
             a.Legend.FontSpec.Size = 9f;
             a.Legend.IsHStack = false;
 
-            var nb_seg = cmpt.Operations.Count;
-            var segs = new PieItem[nb_seg];
-
             var rnd = new Random();
 
             var totalC = new Dictionary<string, decimal>();
@@ -186,27 +183,26 @@ namespace CrediNET
             //Operations need to be sorted before being displayed in the curve graph
             cmpt.Operations.Sort((op1, op2) => op1.Date.CompareTo(op2.Date));
 
-            for (var l = 0; l < cmpt.Operations.Count; l++)
+            foreach (Operation t in cmpt.Operations)
             {
-                if (cmpt.Operations[l].Credit > 0) Xp += cmpt.Operations[l].Credit;
-                if (cmpt.Operations[l].Debit > 0) Xp -= cmpt.Operations[l].Debit;
+                if (t.Credit > 0) Xp += t.Credit;
+                if (t.Debit > 0) Xp -= t.Debit;
 
-                crP.Add(cmpt.Operations[l].Date.ToOADate(), (double)Xp);
+                crP.Add(t.Date.ToOADate(), (double)Xp);
             }
 
-            LineItem cr; // = a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
             switch (Settings.Default.Lang.Name)
             {
                 case "de-DE":
-                    cr = a.AddCurve("kontostand", crP, Color.Red, SymbolType.XCross);
+                    a.AddCurve("kontostand", crP, Color.Red, SymbolType.XCross);
                     break;
 
                 case "fr-FR":
-                    cr = a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
+                    a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
                     break;
 
                 default:
-                    cr = a.AddCurve("balance", crP, Color.Red, SymbolType.XCross);
+                    a.AddCurve("balance", crP, Color.Red, SymbolType.XCross);
                     break;
             }
 
