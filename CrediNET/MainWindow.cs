@@ -312,8 +312,8 @@ namespace CrediNET
                 it.SubItems.Add(op.Type);
                 it.SubItems.Add(op.Budget);
                 it.SubItems.Add(op.Commentary);
-                it.SubItems.Add(op.Credit + " " + CompteActuel.Currency.Symbol);
-                it.SubItems.Add(op.Debit + " " + CompteActuel.Currency.Symbol);
+                it.SubItems.Add(op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol);
+                it.SubItems.Add(op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol);
                 it.BackColor = CompteActuel.Budgets[op.Budget];
 
                 //if(!lvOps.Items.Contains(it))
@@ -745,12 +745,14 @@ namespace CrediNET
                     sheet.Range[id, 2].Text = op.Type;
                     sheet.Range[id, 3].Text = op.Budget;
                     sheet.Range[id, 4].Text = op.Commentary;
-                    sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 5].NumberValue = (double)op.Credit;
+                    sheet.Range[id, 5].Text = op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
+                    /*sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 5].NumberValue = (double)op.Credit;*/
                     sheet.Range[id, 5].Style.Font.Color = Color.White;
                     sheet.Range[id, 5].Style.Color = Color.Green;
-                    sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 6].NumberValue = (double)op.Debit;
+                    sheet.Range[id, 6].Text = op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
+                    /*sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 6].NumberValue = (double)op.Debit;*/
                     sheet.Range[id, 6].Style.Font.Color = Color.White;
                     sheet.Range[id, 6].Style.Color = Color.Red;
                 }
@@ -845,12 +847,14 @@ namespace CrediNET
                     sheet.Range[id, 2].Text = op.Type;
                     sheet.Range[id, 3].Text = op.Budget;
                     sheet.Range[id, 4].Text = op.Commentary;
-                    sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 5].NumberValue = (double)op.Credit;
+                    sheet.Range[id, 5].Text = op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
+                    /*sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 5].NumberValue = (double)op.Credit;*/
                     sheet.Range[id, 5].Style.Font.Color = Color.White;
-                    sheet.Range[id, 5].Style.Color = Color.Green; 
-                    sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 6].NumberValue = (double)op.Debit;
+                    sheet.Range[id, 5].Style.Color = Color.Green;
+                    sheet.Range[id, 6].Text = op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
+                    /*sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 6].NumberValue = (double)op.Debit;*/
                     sheet.Range[id, 6].Style.Font.Color = Color.White;
                     sheet.Range[id, 6].Style.Color = Color.Red;
                 }
@@ -1063,8 +1067,8 @@ namespace CrediNET
                 it.SubItems.Add(op.Type);
                 it.SubItems.Add(op.Budget);
                 it.SubItems.Add(op.Commentary);
-                it.SubItems.Add(op.Credit + " " + CompteActuel.Currency.Symbol);
-                it.SubItems.Add(op.Debit + " " + CompteActuel.Currency.Symbol);
+                it.SubItems.Add(op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol);
+                it.SubItems.Add(op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol);
                 it.BackColor = CompteActuel.Budgets[op.Budget];
 
                 //if(!lvOps.Items.Contains(it))
@@ -1227,12 +1231,14 @@ namespace CrediNET
                     sheet.Range[id, 2].Text = op.Type;
                     sheet.Range[id, 3].Text = op.Budget;
                     sheet.Range[id, 4].Text = op.Commentary;
-                    sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 5].NumberValue = (double)op.Credit;
+                    sheet.Range[id, 5].Text = op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
+                    /*sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 5].NumberValue = (double)op.Credit;*/
                     sheet.Range[id, 5].Style.Font.Color = Color.White;
                     sheet.Range[id, 5].Style.Color = Color.Green;
-                    sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 6].NumberValue = (double)op.Debit;
+                    sheet.Range[id, 6].Text = op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
+                    /*sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
+                    sheet.Range[id, 6].NumberValue = (double)op.Debit;*/
                     sheet.Range[id, 6].Style.Font.Color = Color.White;
                     sheet.Range[id, 6].Style.Color = Color.Red;
                 }

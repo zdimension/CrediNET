@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.cbxUseDashes = new System.Windows.Forms.CheckBox();
             this.cbxSplash = new System.Windows.Forms.CheckBox();
             this.vsbMain = new System.Windows.Forms.VScrollBar();
             this.panel1.SuspendLayout();
@@ -46,9 +47,9 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnCancel);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnOK
@@ -68,9 +69,9 @@
             // 
             // cbxDftCrc
             // 
-            resources.ApplyResources(this.cbxDftCrc, "cbxDftCrc");
             this.cbxDftCrc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDftCrc.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxDftCrc, "cbxDftCrc");
             this.cbxDftCrc.Name = "cbxDftCrc";
             // 
             // label3
@@ -80,13 +81,13 @@
             // 
             // cbxLng
             // 
-            resources.ApplyResources(this.cbxLng, "cbxLng");
             this.cbxLng.FormattingEnabled = true;
             this.cbxLng.Items.AddRange(new object[] {
             resources.GetString("cbxLng.Items"),
             resources.GetString("cbxLng.Items1"),
             resources.GetString("cbxLng.Items2"),
             resources.GetString("cbxLng.Items3")});
+            resources.ApplyResources(this.cbxLng, "cbxLng");
             this.cbxLng.Name = "cbxLng";
             // 
             // label2
@@ -102,14 +103,23 @@
             // 
             // pnlMain
             // 
-            resources.ApplyResources(this.pnlMain, "pnlMain");
+            this.pnlMain.Controls.Add(this.cbxUseDashes);
             this.pnlMain.Controls.Add(this.cbxSplash);
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.cbxDftCrc);
             this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Controls.Add(this.cbxLng);
+            resources.ApplyResources(this.pnlMain, "pnlMain");
             this.pnlMain.Name = "pnlMain";
+            // 
+            // cbxUseDashes
+            // 
+            resources.ApplyResources(this.cbxUseDashes, "cbxUseDashes");
+            this.cbxUseDashes.Checked = global::CrediNET.Properties.Settings.Default.UseDashes;
+            this.cbxUseDashes.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::CrediNET.Properties.Settings.Default, "UseDashes", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbxUseDashes.Name = "cbxUseDashes";
+            this.cbxUseDashes.UseVisualStyleBackColor = true;
             // 
             // cbxSplash
             // 
@@ -156,6 +166,7 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.VScrollBar vsbMain;
         private System.Windows.Forms.CheckBox cbxSplash;
+        private System.Windows.Forms.CheckBox cbxUseDashes;
 
     }
 }

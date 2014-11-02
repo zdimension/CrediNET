@@ -58,5 +58,17 @@ namespace CrediNET.Properties {
                 this["ShowSplash"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseDashes {
+            get {
+                return ((bool)(this["UseDashes"]));
+            }
+            set {
+                this["UseDashes"] = value;
+            }
+        }
     }
 }

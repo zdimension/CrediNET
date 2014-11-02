@@ -78,6 +78,9 @@ namespace CrediNET
             tbl.InsertCellAt(row, col, c);
         }
 
-       
+        public static string ZeroAsDash(this decimal d)
+        {
+            return (d == 0 && Properties.Settings.Default.UseDashes) ? "-" : d.ToString("0.00");
+        }
     }
 }
