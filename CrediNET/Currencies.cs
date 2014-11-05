@@ -205,6 +205,18 @@ namespace CrediNET
 
                     break;
 
+                case "vi-VN":
+
+                    Euro = new CurrencyObj("Euro", "€", "EUR");
+                    US_Dollar = new CurrencyObj("Đô la Mỹ", "$", "USD");
+                    AU_Dollar = new CurrencyObj("Đô la Úc", "$", "AUD");
+                    CA_Dollar = new CurrencyObj("Đô la Canada", "$", "CAD");
+                    CHI_Yuan = new CurrencyObj("Nhân dân tệ", "¥", "CNY");
+                    JAP_Yen = new CurrencyObj("Yên Nhật", "¥", "JPY");
+                    SWI_Franc = new CurrencyObj("Franc Thụy Sỹ", "Fr", "CHF");
+
+                    break;
+
                 default:        //case "fr-FR"
 
                     Euro = new CurrencyObj("Euro", "€", "EUR");

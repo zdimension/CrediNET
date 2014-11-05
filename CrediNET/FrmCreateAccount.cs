@@ -107,6 +107,10 @@ namespace CrediNET
                         txtPasse.Text = "Feld leer lassen um altes Passwort zu behalten";
                         break;
 
+                    case "vi-VN":
+                        txtPasse.Text = "Để trống ô này để giữ lại mật khẩu hiện tại";
+                        break;
+
                     default:        //case "fr-FR":
                         txtPasse.Text = "Laissez ce champ vide pour ne pas modifier le code";
                         break;

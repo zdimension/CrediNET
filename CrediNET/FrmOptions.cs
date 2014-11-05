@@ -22,6 +22,7 @@ namespace CrediNET
             if (Settings.Default.Lang.Name == "fr-FR") cbxLng.SelectedIndex = 0;
             if (Settings.Default.Lang.Name == "en-US") cbxLng.SelectedIndex = 1;
             if (Settings.Default.Lang.Name == "de-DE") cbxLng.SelectedIndex = 2;
+            if (Settings.Default.Lang.Name == "vi-VN") cbxLng.SelectedIndex = 2;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
