@@ -241,6 +241,10 @@ namespace CrediNET
                             ax.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
                             break;
 
+                        case "vi-VN":
+                            ax.MainInstruction = "Làm ơn nhập vào mật khẩu cho tài khoản.";
+                            break;
+
                         default: //case "en-US":
                             ax.MainInstruction = "Please type the account's password below.";
                             break;

@@ -192,6 +192,10 @@ namespace CrediNET
                         lblSoldeAt.Text = "Kontostand am ";
                         break;
 
+                    case "vi-VN":
+                        lblSoldeAt.Text = "Số dư của ngày ";
+                        break;
+
                     default:        //case "fr-FR":
                         lblSoldeAt.Text = "Solde au ";
                         break;
@@ -215,6 +219,10 @@ namespace CrediNET
 
                     case "de-DE":
                         lblSoldeAt.Text = "Kontostand am ";
+                        break;
+
+                    case "vi-VN":
+                        lblSoldeAt.Text = "Số dư của ngày ";
                         break;
 
                     default:        //case "fr-FR":
@@ -276,6 +284,14 @@ namespace CrediNET
                     lblAccountName.Text = "<Pas de compte chargé>";
                     lblSolde.Text = "Solde : 0,00 " + dfd;
                     lblSoldeAt.Text = "Solde au   /  /     : 0,00 " + dfd;
+                    lblTotalCredit.Text = "0,00 " + dfd;
+                    lblTotalDeb.Text = "0,00 " + dfd;
+                    break;
+
+                case "vi-VN":
+                    lblAccountName.Text = "<Chưa đăng nhập tài khoản>";
+                    lblSolde.Text = "Số dư : 0,00 " + dfd;
+                    lblSoldeAt.Text = "Số dư ngày   /  /     : 0,00 " + dfd;
                     lblTotalCredit.Text = "0,00 " + dfd;
                     lblTotalDeb.Text = "0,00 " + dfd;
                     break;
@@ -345,6 +361,10 @@ namespace CrediNET
                     lblSolde.Text = "Kontostand : ";
                     break;
 
+                case "vi-VN":
+                    lblSolde.Text = "Số dư : ";
+                    break;
+
                 default:        //case "fr-FR":
                     lblSolde.Text = "Solde : ";
                     break;
@@ -402,6 +422,10 @@ namespace CrediNET
 
                 case "de-DE":
                     sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna";
+                    break;
+
+                case "vi-VN":
+                    sfdCompte.Filter = "Tài khoản CrediNET (*.cna)|*.cna";
                     break;
 
                 default:        //case "fr-FR":
@@ -468,6 +492,10 @@ namespace CrediNET
                         sfdCompte.Filter = "CrediNET versclüsseltes Konto (*.cne)|*.cne";
                         break;
 
+                    case "vi-VN":
+                        sfdCompte.Filter = "Tài khoản CrediNET mã hóa (*.cne)|*.cne";
+                        break;
+
                     default:        //case "fr-FR":
                         sfdCompte.Filter = "Compte CrediNET crypté (*.cne)|*.cne";
                         break;
@@ -483,6 +511,10 @@ namespace CrediNET
 
                     case "de-DE":
                         sfdCompte.Filter = "CrediNET Konto (*.cna)|*.cna|SQLite CrediNET Konto (*.cnsql)|*.cnsql";
+                        break;
+
+                    case "vi-VN":
+                        sfdCompte.Filter = "Tài khoản CrediNET (*.cna)|*.cna|Tài khoản CrediNET SQLite (*.cnsql)|*.cnsql";
                         break;
 
                     default:        //case "fr-FR":
@@ -584,6 +616,10 @@ namespace CrediNET
 
                         case "de-DE":
                             wr.WriteLine("Date;Type;Budget;Kommentar;Kredit;Debit");
+                            break;
+
+                        case "vi-VN":
+                            wr.WriteLine("Ngày;Mục;Loại;Ghi chú;Dư;Nợ");
                             break;
 
                         default:        //case "fr-FR":
@@ -1073,6 +1109,10 @@ namespace CrediNET
 
                 case "de-DE":
                     lblSoldeAt.Text = "Kontostand : ";
+                    break;
+
+                case "vi-VN":
+                    lblSoldeAt.Text = "Số dư : ";
                     break;
 
                 default:        //case "fr-FR":

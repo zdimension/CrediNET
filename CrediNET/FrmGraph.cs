@@ -40,6 +40,10 @@ namespace CrediNET
                     a.Title.Text = "Compte : " + cmpt.Name;
                     break;
 
+                case "vi-VN":
+                    a.Title.Text = "Tài khoản : " + cmpt.Name;
+                    break;
+
                 default:
                     a.Title.Text = "Account : " + cmpt.Name;
                     break;
@@ -116,6 +120,10 @@ namespace CrediNET
                     a.Title.Text = "Compte : " + cmpt.Name;
                     break;
 
+                case "vi-VN":
+                    a.Title.Text = "Tài khoản : " + cmpt.Name;
+                    break;
+
                 default:
                     a.Title.Text = "Account : " + cmpt.Name;
                     break;
@@ -160,6 +168,10 @@ namespace CrediNET
                     a.YAxis.Title.Text = "Solde (" + cmpt.Currency.Symbol + ")";
                     break;
 
+                case "vi-VN":
+                    a.YAxis.Title.Text = "Số dư (" + cmpt.Currency.Symbol + ")";
+                    break;
+
                 default:
                     a.YAxis.Title.Text = "Balance (" + cmpt.Currency.Symbol + ")";
                     break;
@@ -199,6 +211,10 @@ namespace CrediNET
 
                 case "fr-FR":
                     a.AddCurve("solde", crP, Color.Red, SymbolType.XCross);
+                    break;
+
+                case "vi-VN":
+                    a.AddCurve("số dư", crP, Color.Red, SymbolType.XCross);
                     break;
 
                 default:
