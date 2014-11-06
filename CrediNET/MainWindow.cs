@@ -6,15 +6,15 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using AODL.Document.Content.Tables;
 using AODL.Document.SpreadsheetDocuments;
 using CrediNET.Properties;
-
-using Spire.Xls;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using Spire.Pdf;
 
 namespace CrediNET
 {
@@ -674,7 +674,7 @@ namespace CrediNET
                 if (File.Exists(sfdXLS.FileName))
                     File.Delete(sfdXLS.FileName);
 
-                var workbook = new Workbook();
+                /*var workbook = new Workbook();
                 var sheet = workbook.Worksheets[0];
                 sheet.Range["A1"].Text = "Date";
                 sheet.Range["A1"].Style.Font.IsBold = true;
@@ -746,13 +746,9 @@ namespace CrediNET
                     sheet.Range[id, 3].Text = op.Budget;
                     sheet.Range[id, 4].Text = op.Commentary;
                     sheet.Range[id, 5].Text = op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
-                    /*sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 5].NumberValue = (double)op.Credit;*/
                     sheet.Range[id, 5].Style.Font.Color = Color.White;
                     sheet.Range[id, 5].Style.Color = Color.Green;
                     sheet.Range[id, 6].Text = op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
-                    /*sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 6].NumberValue = (double)op.Debit;*/
                     sheet.Range[id, 6].Style.Font.Color = Color.White;
                     sheet.Range[id, 6].Style.Color = Color.Red;
                 }
@@ -764,7 +760,7 @@ namespace CrediNET
                 sheet.AutoFitColumn(5);
                 sheet.AutoFitColumn(6);
                 workbook.SaveToFile(sfdXLS.FileName, ExcelVersion.Version97to2003);
-                Process.Start(sfdXLS.FileName);
+                Process.Start(sfdXLS.FileName);*/
 
             }
         }
@@ -776,102 +772,79 @@ namespace CrediNET
                 if (File.Exists(sfdXLSX.FileName))
                     File.Delete(sfdXLSX.FileName);
 
-                var workbook = new Workbook();
-                var sheet = workbook.Worksheets[0];
-                sheet.Range["A1"].Text = "Date";
-                sheet.Range["A1"].Style.Font.IsBold = true;
-                sheet.Range["A1"].Style.Color = Color.Gainsboro;
-                sheet.Range["A1"].Style.Font.Size = 10;
-                sheet.Range["B1"].Text = "Type";
-                sheet.Range["B1"].Style.Font.IsBold = true;
-                sheet.Range["B1"].Style.Color = Color.Gainsboro;
-                sheet.Range["B1"].Style.Font.Size = 10;
-                sheet.Range["C1"].Text = "Budget";
-                sheet.Range["C1"].Style.Font.IsBold = true;
-                sheet.Range["C1"].Style.Color = Color.Gainsboro;
-                sheet.Range["C1"].Style.Font.Size = 10;
-                switch (Settings.Default.Lang.Name)
+                using (var pkg = new ExcelPackage())
                 {
-                    case "en-US":
-                        sheet.Range["D1"].Text = "Comment";
-                        sheet.Range["D1"].Style.Font.IsBold = true;
-                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["D1"].Style.Font.Size = 10;
-                        sheet.Range["E1"].Text = "Credit";
-                        sheet.Range["E1"].Style.Font.IsBold = true;
-                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["E1"].Style.Font.Size = 10;
-                        sheet.Range["F1"].Text = "Debit";
-                        sheet.Range["F1"].Style.Font.IsBold = true;
-                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["F1"].Style.Font.Size = 10;
-                        break;
+                    var w = pkg.Workbook.Worksheets.Add(CompteActuel.Name);
 
-                    case "de-DE":
-                        sheet.Range["D1"].Text = "Kommentar";
-                        sheet.Range["D1"].Style.Font.IsBold = true;
-                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["D1"].Style.Font.Size = 10;
-                        sheet.Range["E1"].Text = "Kredit";
-                        sheet.Range["E1"].Style.Font.IsBold = true;
-                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["E1"].Style.Font.Size = 10;
-                        sheet.Range["F1"].Text = "Debit";
-                        sheet.Range["F1"].Style.Font.IsBold = true;
-                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["F1"].Style.Font.Size = 10;
-                        break;
+                    //headers
+                    switch (Settings.Default.Lang.Name)
+                    {
+                        case "en-US":
+                            w.Cells["A1"].Value = "Date";
+                            w.Cells["B1"].Value = "Type";
+                            w.Cells["C1"].Value = "Budget";
+                            w.Cells["D1"].Value = "Comment";
+                            w.Cells["E1"].Value = "Credit";
+                            w.Cells["F1"].Value = "Debit";
+                            break;
 
-                    default:
-                        sheet.Range["D1"].Text = "Commentaire";
-                        sheet.Range["D1"].Style.Font.IsBold = true;
-                        sheet.Range["D1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["D1"].Style.Font.Size = 10;
-                        sheet.Range["E1"].Text = "Crédit";
-                        sheet.Range["E1"].Style.Font.IsBold = true;
-                        sheet.Range["E1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["E1"].Style.Font.Size = 10;
-                        sheet.Range["F1"].Text = "Débit";
-                        sheet.Range["F1"].Style.Font.IsBold = true;
-                        sheet.Range["F1"].Style.Color = Color.Gainsboro;
-                        sheet.Range["F1"].Style.Font.Size = 10;
-                        break;
+                        case "de-DE":
+                            w.Cells["A1"].Value = "Datum";
+                            w.Cells["B1"].Value = "Typ";
+                            w.Cells["C1"].Value = "Budget";
+                            w.Cells["D1"].Value = "Kommentar";
+                            w.Cells["E1"].Value = "Verdienst";
+                            w.Cells["F1"].Value = "Soll";
+                            break;
+                        default:        //case "fr-FR":
+                            w.Cells["A1"].Value = "Date";
+                            w.Cells["B1"].Value = "Type";
+                            w.Cells["C1"].Value = "Budget";
+                            w.Cells["D1"].Value = "Commentaire";
+                            w.Cells["E1"].Value = "Crédit";
+                            w.Cells["F1"].Value = "Débit";
+                            break;
+                    }
+                    w.Cells["A1:F1"].Style.Font.Bold = true;
+                    w.Cells["A1:F1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    w.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(Color.Gainsboro);
+                    w.Cells["A1:F1"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+                    foreach(var op in CompteActuel.Operations)
+                    {
+                        var id = CompteActuel.Operations.IndexOf(op) + 2;
+                        w.Cells[id, 1].Value = op.Date.ToString("dd/MM/yyyy");
+                        w.Cells[id, 2].Value = op.Type;
+                        w.Cells[id, 3].Value = op.Budget;
+                        w.Cells[id, 4].Value = op.Commentary;
+                        w.Cells[id, 5, id, 6].Style.Numberformat.Format = @"#,##0.00\ [$€-1]";
+                        w.Cells[id, 5].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                        w.Cells[id, 5].Style.Fill.BackgroundColor.SetColor(Color.LightGreen);
+                        w.Cells[id, 5].Value = op.Credit;
+                        w.Cells[id, 6].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                        w.Cells[id, 6].Style.Fill.BackgroundColor.SetColor(Color.Red);
+                        w.Cells[id, 6].Value = op.Debit;
+
+                        //budget background
+                        w.Cells[id, 1, id, 4].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                        w.Cells[id, 1, id, 4].Style.Fill.BackgroundColor.SetColor(CompteActuel.Budgets[op.Budget]);
+                    }
+
+
+                    //balance
+                    w.Cells[CompteActuel.Operations.Count + 4, 4].Value = lblSolde.Text;
+
+                    w.Cells.AutoFitColumns(1);
+                    w.Cells.AutoFitColumns(2);
+                    w.Cells.AutoFitColumns(3);
+                    w.Cells.AutoFitColumns(4);
+                    w.Cells.AutoFitColumns(5);
+                    w.Cells.AutoFitColumns(6);
+                    if (w.Column(4).Width <= 50) w.Column(4).Width = 50;
+
+                    pkg.SaveAs(new FileInfo(sfdXLSX.FileName));
                 }
 
-                foreach (var op in CompteActuel.Operations)
-                {
-                    var id = CompteActuel.Operations.IndexOf(op) + 2;
-
-                    sheet.Range[id, 1].Text = op.Date.ToString("dd/MM/yyyy");
-                    sheet.Range[id, 1].DataValidation.AllowType = CellDataType.Date;
-                    sheet.Range[id, 2].Text = op.Type;
-                    sheet.Range[id, 3].Text = op.Budget;
-                    sheet.Range[id, 4].Text = op.Commentary;
-                    sheet.Range[id, 5].Text = op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
-                    /*sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 5].NumberValue = (double)op.Credit;*/
-                    sheet.Range[id, 5].Style.Font.Color = Color.White;
-                    sheet.Range[id, 5].Style.Color = Color.Green;
-                    sheet.Range[id, 6].Text = op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
-                    /*sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 6].NumberValue = (double)op.Debit;*/
-                    sheet.Range[id, 6].Style.Font.Color = Color.White;
-                    sheet.Range[id, 6].Style.Color = Color.Red;
-                }
-
-                
-                sheet.Columns[0].ColumnWidth = 10.5;
-                sheet.Columns[1].ColumnWidth = 5.5;
-                sheet.Columns[2].ColumnWidth = 20;
-                sheet.Columns[3].ColumnWidth = 50;
-                sheet.Columns[4].ColumnWidth = 15;
-                sheet.Columns[5].ColumnWidth = 15;
-
-                //borders
-                sheet.Range["A1:F1"].Borders[BordersLineType.EdgeBottom].LineStyle = LineStyleType.Thin;
-                sheet.Range[2, 1, CompteActuel.Operations.Count + 1, 6].Borders[BordersLineType.EdgeRight].LineStyle = LineStyleType.Thin;
-
-                workbook.SaveToFile(sfdXLSX.FileName, ExcelVersion.Version2007);
                 Process.Start(sfdXLSX.FileName);
             }
         }
@@ -1160,7 +1133,7 @@ namespace CrediNET
                 if(File.Exists(sfdPDF.FileName))
                     File.Delete(sfdPDF.FileName);
 
-                var workbook = new Workbook();
+                /*var workbook = new Workbook();
                 var sheet = workbook.Worksheets[0];
                 sheet.Range["A1"].Text = "Date";
                 sheet.Range["A1"].Style.Font.IsBold = true;
@@ -1232,13 +1205,10 @@ namespace CrediNET
                     sheet.Range[id, 3].Text = op.Budget;
                     sheet.Range[id, 4].Text = op.Commentary;
                     sheet.Range[id, 5].Text = op.Credit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
-                    /*sheet.Range[id, 5].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 5].NumberValue = (double)op.Credit;*/
                     sheet.Range[id, 5].Style.Font.Color = Color.White;
                     sheet.Range[id, 5].Style.Color = Color.Green;
                     sheet.Range[id, 6].Text = op.Debit.ZeroAsDash() + " " + CompteActuel.Currency.Symbol;
-                    /*sheet.Range[id, 6].NumberFormat = "0.00 " + CompteActuel.Currency.Symbol;
-                    sheet.Range[id, 6].NumberValue = (double)op.Debit;*/
+
                     sheet.Range[id, 6].Style.Font.Color = Color.White;
                     sheet.Range[id, 6].Style.Color = Color.Red;
                 }
@@ -1256,7 +1226,7 @@ namespace CrediNET
                 sheet.Range[2, 1, CompteActuel.Operations.Count + 1, 6].Borders[BordersLineType.EdgeRight].LineStyle = LineStyleType.Thin;
 
                 workbook.SaveToFile(sfdPDF.FileName, FileFormat.PDF);
-                Process.Start(sfdPDF.FileName);
+                Process.Start(sfdPDF.FileName);*/
             }   
         }   
     }
