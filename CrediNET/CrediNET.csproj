@@ -183,6 +183,26 @@
     <Compile Include="FrmReminder.designer.cs">
       <DependentUpon>FrmReminder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Languages\de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>de-DE.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fr-FR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\vi-VN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vi-VN.resx</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +313,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReminderOperation.vi.resx">
       <DependentUpon>FrmReminderOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\de-DE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>de-DE.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\vi-VN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>vi-VN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.de-DE.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

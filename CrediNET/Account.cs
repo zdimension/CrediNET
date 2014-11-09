@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using CrediNET.Languages;
 using CrediNET.Properties;
 using Ookii.Dialogs;
 
@@ -234,19 +235,19 @@ namespace CrediNET
                     switch (Settings.Default.Lang.Name)
                     {
                         case "de-DE":
-                            ax.MainInstruction = "Bitte geben Sie das Passwort des Kontos.";
+                            ax.MainInstruction = de_DE.Account_Crypted_TypePassword;
                             break;
 
                         case "fr-FR":
-                            ax.MainInstruction = "Veuillez saisir le mot de passe associé au compte.";
+                            ax.MainInstruction = fr_FR.Account_Crypted_TypePassword;
                             break;
 
                         case "vi-VN":
-                            ax.MainInstruction = "Làm ơn nhập vào mật khẩu cho tài khoản.";
+                            ax.MainInstruction = vi_VN.Account_Crypted_TypePassword;
                             break;
 
                         default: //case "en-US":
-                            ax.MainInstruction = "Please type the account's password below.";
+                            ax.MainInstruction = en_US.Account_Crypted_TypePassword;
                             break;
                     }
 

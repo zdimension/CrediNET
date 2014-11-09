@@ -221,6 +221,15 @@ namespace CrediNET.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 0,00 .
+        /// </summary>
+        internal static string Account_TotalZero {
+            get {
+                return ResourceManager.GetString("Account_TotalZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap add {

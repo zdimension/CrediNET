@@ -244,4 +244,7 @@
   <data name="file_extension_pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file_extension_pdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Account_TotalZero" xml:space="preserve">
+    <value>0,00 </value>
+  </data>
 </root>
