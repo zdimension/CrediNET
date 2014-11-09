@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -12,10 +9,12 @@ namespace System.Windows.Forms.Calendar
         : ICalendarSelectableElement
     {
         #region Fields
+
         private Calendar _calendar;
         private Rectangle _bounds;
         private DateTime _date;
         private bool _selected;
+
         #endregion
 
         #region Ctor
@@ -35,7 +34,6 @@ namespace System.Windows.Forms.Calendar
 
         #region ICalendarSelectableElement Members
 
-        
         public virtual DateTime Date
         {
             get { return _date; }
@@ -63,10 +61,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public virtual bool Selected
         {
-            get
-            {
-                return _selected;
-            }
+            get { return _selected; }
         }
 
         /// <summary>

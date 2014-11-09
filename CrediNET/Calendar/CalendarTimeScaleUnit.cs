@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
 {
@@ -16,6 +13,7 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private DateTime _date;
         private CalendarDay _day;
         private bool _highlighted;
@@ -24,6 +22,7 @@ namespace System.Windows.Forms.Calendar
         private int _minutes;
         private List<CalendarItem> _passingItems;
         private bool _visible;
+
         #endregion
 
         #region Ctor
@@ -49,8 +48,6 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Properties
-
- 
 
         /// <summary>
         /// Gets the exact date when the unit starts
@@ -81,10 +78,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public TimeSpan Duration
         {
-            get
-            {
-                return new TimeSpan(0, (int)Calendar.TimeScale, 0);
-            }
+            get { return new TimeSpan(0, (int) Calendar.TimeScale, 0); }
         }
 
         /// <summary>
@@ -137,7 +131,6 @@ namespace System.Windows.Forms.Calendar
             get { return _visible; }
         }
 
-
         #endregion
 
         #region Public Methods
@@ -161,15 +154,14 @@ namespace System.Windows.Forms.Calendar
             {
                 var range = Day.Calendar.HighlightRanges[i];
 
-                if (range.DayOfWeek != Date.DayOfWeek) 
+                if (range.DayOfWeek != Date.DayOfWeek)
                     continue;
 
                 if (Date.TimeOfDay.CompareTo(range.StartTime) >= 0
-                    && Date.TimeOfDay.CompareTo(range.EndTime) < 0 )
+                    && Date.TimeOfDay.CompareTo(range.EndTime) < 0)
                 {
                     return true;
                 }
-
             }
             return false;
         }
@@ -193,7 +185,6 @@ namespace System.Windows.Forms.Calendar
         }
 
         #endregion
-
 
         internal void AddPassingItem(CalendarItem item)
         {

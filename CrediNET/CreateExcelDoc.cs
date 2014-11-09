@@ -1,6 +1,3 @@
-using System;
-using System.Drawing;
-
 namespace CrediNET
 {
     /*internal class CreateExcelDoc

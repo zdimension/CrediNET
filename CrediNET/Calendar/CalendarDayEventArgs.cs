@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace System.Windows.Forms.Calendar
 {
     /// <summary>
     /// Event data with a <see cref="CalendarDay"/> element
     /// </summary>
     public class CalendarDayEventArgs
-        :EventArgs
+        : EventArgs
     {
         #region Ctor
 
@@ -24,6 +20,7 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Props
+
         private CalendarDay _calendarDay;
 
         /// <summary>

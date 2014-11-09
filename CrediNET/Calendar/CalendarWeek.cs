@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -15,9 +12,11 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private Rectangle _bounds;
         private Calendar _calendar;
         private DateTime _firstDay;
+
         #endregion
 
         #region Ctor
@@ -58,12 +57,12 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public Rectangle HeaderBounds
         {
-            get 
+            get
             {
                 return new Rectangle(
-                    Bounds.Left, 
-                    Bounds.Top + Calendar.Renderer.DayHeaderHeight, 
-                    Calendar.Renderer.WeekHeaderWidth, 
+                    Bounds.Left,
+                    Bounds.Top + Calendar.Renderer.DayHeaderHeight,
+                    Calendar.Renderer.WeekHeaderWidth,
                     Bounds.Height - Calendar.Renderer.DayHeaderHeight);
             }
         }
@@ -75,7 +74,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _firstDay; }
         }
-
 
         #endregion
 

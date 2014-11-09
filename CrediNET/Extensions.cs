@@ -53,11 +53,10 @@ namespace CrediNET
 
         public static void AddCell(this Table tbl, int row, int col, string text, Color back, bool bold, Color fore)
         {
-            Cell c = tbl.CreateCell();
-            c.CellStyle = new CellStyle(tbl.Document);
-            c.CellStyle.CellProperties.BackgroundColor = back.ToHex();
-            Paragraph p = ParagraphBuilder.CreateSpreadsheetParagraph(tbl.Document);
-            FormatedText t = new FormatedText(tbl.Document, "t" + row + col, text);
+            var c = tbl.CreateCell();
+            c.CellStyle = new CellStyle(tbl.Document) {CellProperties = {BackgroundColor = back.ToHex()}};
+            var p = ParagraphBuilder.CreateSpreadsheetParagraph(tbl.Document);
+            var t = new FormatedText(tbl.Document, "t" + row + col, text);
             t.TextStyle.TextProperties.Bold = bold.ToString();
             t.TextStyle.TextProperties.FontColor = fore.ToHex();
             p.TextContent.Add(t);
@@ -68,11 +67,10 @@ namespace CrediNET
 
         public static void AddCell(this Table tbl, int row, int col, string text, Color back)
         {
-            Cell c = tbl.CreateCell();
-            c.CellStyle = new CellStyle(tbl.Document);
-            c.CellStyle.CellProperties.BackgroundColor = back.ToHex();
-            Paragraph p = ParagraphBuilder.CreateSpreadsheetParagraph(tbl.Document);
-            FormatedText t = new FormatedText(tbl.Document, "t" + row + col, text);
+            var c = tbl.CreateCell();
+            c.CellStyle = new CellStyle(tbl.Document) {CellProperties = {BackgroundColor = back.ToHex()}};
+            var p = ParagraphBuilder.CreateSpreadsheetParagraph(tbl.Document);
+            var t = new FormatedText(tbl.Document, "t" + row + col, text);
             p.TextContent.Add(t);
             c.Content.Add(p);
             tbl.InsertCellAt(row, col, c);

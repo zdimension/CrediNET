@@ -125,4 +125,10 @@
   <data name="Account_FileFilterSave" xml:space="preserve">
     <value>Tài khoản CrediNET (*.cna)|*.cna|Tài khoản CrediNET SQLite (*.cnsql)|*.cnsql</value>
   </data>
+  <data name="Account_Creation_LeaveEmpty" xml:space="preserve">
+    <value>Để trống ô này để giữ lại mật khẩu hiện tại</value>
+  </data>
+  <data name="Operation_Edit" xml:space="preserve">
+    <value>Chỉnh sửa hoạt động</value>
+  </data>
 </root>

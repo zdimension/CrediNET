@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -49,6 +46,7 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private int _forwardMonthIndex;
         private MonthViewDay _lastHitted;
         private bool _mouseDown;
@@ -84,6 +82,7 @@ namespace System.Windows.Forms.Calendar
         private bool _forwardButtonSelected;
         private Rectangle _backwardButtonBounds;
         private bool _backwardButtonSelected;
+
         #endregion
 
         #region Events
@@ -169,7 +168,11 @@ namespace System.Windows.Forms.Calendar
         public int DayNamesLength
         {
             get { return _dayNamesLength; }
-            set { _dayNamesLength = value; UpdateMonths(); }
+            set
+            {
+                _dayNamesLength = value;
+                UpdateMonths();
+            }
         }
 
         /// <summary>
@@ -224,10 +227,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public override Font Font
         {
-            get
-            {
-                return base.Font;
-            }
+            get { return base.Font; }
             set
             {
                 base.Font = value;
@@ -281,17 +281,21 @@ namespace System.Windows.Forms.Calendar
         public string MonthTitleFormat
         {
             get { return _monthTitleFormat; }
-            set { _monthTitleFormat = value; UpdateMonths(); }
+            set
+            {
+                _monthTitleFormat = value;
+                UpdateMonths();
+            }
         }
 
         /// <summary>
         /// Gets or sets the start of selection
         /// </summary>
-        [DesignerSerializationVisibility( DesignerSerializationVisibility.Hidden)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DateTime SelectionStart
         {
             get { return _selectionStart; }
-            set 
+            set
             {
                 if (MaxSelectionCount > 0)
                 {
@@ -301,9 +305,9 @@ namespace System.Windows.Forms.Calendar
                     }
                 }
 
-                _selectionStart = value; 
-                Invalidate(); 
-                OnSelectionChanged(EventArgs.Empty); 
+                _selectionStart = value;
+                Invalidate();
+                OnSelectionChanged(EventArgs.Empty);
             }
         }
 
@@ -314,7 +318,7 @@ namespace System.Windows.Forms.Calendar
         public DateTime SelectionEnd
         {
             get { return _selectionEnd; }
-            set 
+            set
             {
                 if (MaxSelectionCount > 0)
                 {
@@ -324,9 +328,9 @@ namespace System.Windows.Forms.Calendar
                     }
                 }
 
-                _selectionEnd = value.Date.Add(new TimeSpan(23,59,59)); 
-                Invalidate(); 
-                OnSelectionChanged(EventArgs.Empty); 
+                _selectionEnd = value.Date.Add(new TimeSpan(23, 59, 59));
+                Invalidate();
+                OnSelectionChanged(EventArgs.Empty);
             }
         }
 
@@ -343,11 +347,16 @@ namespace System.Windows.Forms.Calendar
         /// <summary>
         /// Gets or sets the date of the first displayed month
         /// </summary>
-        [DesignerSerializationVisibility( DesignerSerializationVisibility.Hidden)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DateTime ViewStart
         {
             get { return _viewStart; }
-            set { _viewStart = value; UpdateMonths(); Invalidate(); }
+            set
+            {
+                _viewStart = value;
+                UpdateMonths();
+                Invalidate();
+            }
         }
 
         /// <summary>
@@ -355,10 +364,10 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public DateTime ViewEnd
         {
-            get 
+            get
             {
                 var month = Months[Months.Length - 1].Date;
-                return month.Date.AddDays(DateTime.DaysInMonth(month.Year, month.Month)); 
+                return month.Date.AddDays(DateTime.DaysInMonth(month.Year, month.Month));
             }
         }
 
@@ -385,7 +394,7 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Color Properties
-        
+
         public Color ArrowsSelectedColor
         {
             get { return _arrowsSelectedColor; }
@@ -467,7 +476,6 @@ namespace System.Windows.Forms.Calendar
             set { _todayBorderColor = value; }
         }
 
-
         #endregion
 
         #region Public Methods
@@ -485,7 +493,7 @@ namespace System.Windows.Forms.Calendar
                 {
                     for (var j = 0; j < Months[i].Days.Length; j++)
                     {
-                        if (/*Months[i].Days[j].Visible && */Months[i].Days[j].Bounds.Contains(p))
+                        if ( /*Months[i].Days[j].Visible && */Months[i].Days[j].Bounds.Contains(p))
                         {
                             return Months[i].Days[j];
                         }
@@ -560,7 +568,7 @@ namespace System.Windows.Forms.Calendar
         /// <param name="hit"></param>
         private void SelectWeek(DateTime hit)
         {
-            var preDays = (new int[] { 0, 1, 2, 3, 4, 5, 6 })[(int)hit.DayOfWeek] - (int)FirstDayOfWeek;
+            var preDays = (new[] {0, 1, 2, 3, 4, 5, 6})[(int) hit.DayOfWeek] - (int) FirstDayOfWeek;
 
             _selectionStart = hit.AddDays(-preDays);
             SelectionEnd = SelectionStart.AddDays(6);
@@ -572,7 +580,7 @@ namespace System.Windows.Forms.Calendar
         /// <param name="hit"></param>
         private void SelectWorkWeek(DateTime hit)
         {
-            var preDays = (new int[] { 0, 1, 2, 3, 4, 5, 6 })[(int)hit.DayOfWeek] - (int)WorkWeekStart;
+            var preDays = (new[] {0, 1, 2, 3, 4, 5, 6})[(int) hit.DayOfWeek] - (int) WorkWeekStart;
 
             _selectionStart = hit.AddDays(-preDays);
             SelectionEnd = SelectionStart.AddDays(Math.Abs(WorkWeekStart - WorkWeekEnd));
@@ -604,7 +612,8 @@ namespace System.Windows.Forms.Calendar
 
             if (!e.TextColor.IsEmpty && !string.IsNullOrEmpty(e.Text))
             {
-                TextRenderer.DrawText(e.Graphics, e.Text, e.Font != null ? e.Font : Font, e.Bounds, e.TextColor, e.TextFlags);
+                TextRenderer.DrawText(e.Graphics, e.Text, e.Font != null ? e.Font : Font, e.Bounds, e.TextColor,
+                    e.TextFlags);
             }
 
             if (!e.BorderColor.IsEmpty)
@@ -612,7 +621,8 @@ namespace System.Windows.Forms.Calendar
                 using (var p = new Pen(e.BorderColor))
                 {
                     var r = e.Bounds;
-                    r.Width--; r.Height--;
+                    r.Width--;
+                    r.Height--;
                     e.Graphics.DrawRectangle(p, r);
                 }
             }
@@ -654,8 +664,12 @@ namespace System.Windows.Forms.Calendar
         private void UpdateMonths()
         {
             var gapping = 2;
-            var calendarsX = Convert.ToInt32(Math.Max(Math.Floor((double)ClientSize.Width / (double)(MonthSize.Width + gapping)), 1.0));
-            var calendarsY = Convert.ToInt32(Math.Max(Math.Floor((double)ClientSize.Height / (double)(MonthSize.Height + gapping)), 1.0));
+            var calendarsX =
+                Convert.ToInt32(Math.Max(Math.Floor((double) ClientSize.Width / (double) (MonthSize.Width + gapping)),
+                    1.0));
+            var calendarsY =
+                Convert.ToInt32(Math.Max(
+                    Math.Floor((double) ClientSize.Height / (double) (MonthSize.Height + gapping)), 1.0));
             var calendars = calendarsX * calendarsY;
             var monthsWidth = (calendarsX * MonthSize.Width) + (calendarsX - 1) * gapping;
             var monthsHeight = (calendarsY * MonthSize.Height) + (calendarsY - 1) * gapping;
@@ -684,8 +698,11 @@ namespace System.Windows.Forms.Calendar
             var first = Months[0];
             var last = Months[_forwardMonthIndex];
 
-            SetBackwardButtonBounds(new Rectangle(first.Bounds.Left + ItemPadding.Left, first.Bounds.Top + ItemPadding.Top, DaySize.Height - ItemPadding.Horizontal, DaySize.Height - ItemPadding.Vertical));
-            SetForwardButtonBounds(new Rectangle(first.Bounds.Right - ItemPadding.Right - BackwardButtonBounds.Width, first.Bounds.Top + ItemPadding.Top, BackwardButtonBounds.Width, BackwardButtonBounds.Height ));
+            SetBackwardButtonBounds(new Rectangle(first.Bounds.Left + ItemPadding.Left,
+                first.Bounds.Top + ItemPadding.Top, DaySize.Height - ItemPadding.Horizontal,
+                DaySize.Height - ItemPadding.Vertical));
+            SetForwardButtonBounds(new Rectangle(first.Bounds.Right - ItemPadding.Right - BackwardButtonBounds.Width,
+                first.Bounds.Top + ItemPadding.Top, BackwardButtonBounds.Width, BackwardButtonBounds.Height));
         }
 
         #endregion
@@ -852,7 +869,8 @@ namespace System.Windows.Forms.Calendar
 
                     for (var j = 0; j < Months[i].DayNamesBounds.Length; j++)
                     {
-                        var evtDay = new MonthViewBoxEventArgs(e.Graphics, Months[i].DayNamesBounds[j], Months[i].DayHeaders[j],
+                        var evtDay = new MonthViewBoxEventArgs(e.Graphics, Months[i].DayNamesBounds[j],
+                            Months[i].DayHeaders[j],
                             StringAlignment.Far, ForeColor, DayBackgroundColor);
 
                         DrawBox(evtDay);
@@ -863,12 +881,15 @@ namespace System.Windows.Forms.Calendar
                         using (var p = new Pen(MonthTitleColor))
                         {
                             var y = Months[i].DayNamesBounds[0].Bottom;
-                            e.Graphics.DrawLine(p, new Point(Months[i].Bounds.X, y), new Point(Months[i].Bounds.Right, y));
+                            e.Graphics.DrawLine(p, new Point(Months[i].Bounds.X, y),
+                                new Point(Months[i].Bounds.Right, y));
                         }
                     }
+
                     #endregion
 
                     #region Days
+
                     foreach (var day in Months[i].Days)
                     {
                         if (!day.Visible) continue;
@@ -885,7 +906,8 @@ namespace System.Windows.Forms.Calendar
 
                         DrawBox(evtDay);
                     }
-                    #endregion 
+
+                    #endregion
 
                     #region Arrows
 
@@ -894,7 +916,8 @@ namespace System.Windows.Forms.Calendar
                         var r = BackwardButtonBounds;
                         using (Brush b = new SolidBrush(BackwardButtonSelected ? ArrowsSelectedColor : ArrowsColor))
                         {
-                            e.Graphics.FillPolygon(b, new Point[] { 
+                            e.Graphics.FillPolygon(b, new[]
+                            {
                                 new Point(r.Right, r.Top),
                                 new Point(r.Right, r.Bottom - 1),
                                 new Point(r.Left + r.Width / 2, r.Top + r.Height / 2),
@@ -907,7 +930,8 @@ namespace System.Windows.Forms.Calendar
                         var r = ForwardButtonBounds;
                         using (Brush b = new SolidBrush(ForwardButtonSelected ? ArrowsSelectedColor : ArrowsColor))
                         {
-                            e.Graphics.FillPolygon(b, new Point[] { 
+                            e.Graphics.FillPolygon(b, new[]
+                            {
                                 new Point(r.X, r.Top),
                                 new Point(r.X, r.Bottom - 1),
                                 new Point(r.Left + r.Width / 2, r.Top + r.Height / 2),
@@ -937,4 +961,3 @@ namespace System.Windows.Forms.Calendar
         #endregion
     }
 }
-

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -13,8 +10,10 @@ namespace System.Windows.Forms.Calendar
         : CalendarRenderer
     {
         #region Fields
+
         private CalendarColorTable _colorTable;
         private float _selectedItemBorder;
+
         #endregion
 
         #region Ctor
@@ -48,7 +47,6 @@ namespace System.Windows.Forms.Calendar
             set { _selectedItemBorder = value; }
         }
 
-
         #endregion
 
         #region Overrides
@@ -66,7 +64,7 @@ namespace System.Windows.Forms.Calendar
             {
                 using (Brush b = new SolidBrush(ColorTable.DayBackgroundSelected))
                 {
-                    e.Graphics.FillRectangle(b, r); 
+                    e.Graphics.FillRectangle(b, r);
                 }
             }
             else if (e.Day.Date.Month % 2 == 0)
@@ -117,7 +115,7 @@ namespace System.Windows.Forms.Calendar
         {
             var s = e.Day.DayTop.Selected;
 
-            using (Brush b = new SolidBrush( s ? ColorTable.DayTopSelectedBackground : ColorTable.DayTopBackground))
+            using (Brush b = new SolidBrush(s ? ColorTable.DayTopSelectedBackground : ColorTable.DayTopBackground))
             {
                 e.Graphics.FillRectangle(b, e.Day.DayTop.Bounds);
             }
@@ -177,9 +175,10 @@ namespace System.Windows.Forms.Calendar
                 e.Graphics.FillRectangle(b, e.Unit.Bounds);
             }
 
-            using (var p = new Pen(e.Unit.Minutes == 0 ? ColorTable.TimeUnitBorderDark : ColorTable.TimeUnitBorderLight))
+            using (var p = new Pen(e.Unit.Minutes == 0 ? ColorTable.TimeUnitBorderDark : ColorTable.TimeUnitBorderLight)
+                )
             {
-                e.Graphics.DrawLine(p, e.Unit.Bounds.Location, new Point(e.Unit.Bounds.Right, e.Unit.Bounds.Top)); 
+                e.Graphics.DrawLine(p, e.Unit.Bounds.Location, new Point(e.Unit.Bounds.Right, e.Unit.Bounds.Top));
             }
 
             //TextRenderer.DrawText(e.Graphics, e.Unit.PassingItems.Count.ToString(), e.Calendar.Font, e.Unit.Bounds, Color.Black);
@@ -221,7 +220,7 @@ namespace System.Windows.Forms.Calendar
                 )
             {
                 top = e.Calendar.Days[0].BodyBounds.Top;
-                
+
                 //Timescale top line is full
                 e.Graphics.DrawLine(p, TimeScaleBounds.Left, top, TimeScaleBounds.Right, top);
             }
@@ -272,7 +271,6 @@ namespace System.Windows.Forms.Calendar
             }
 
             ItemFill(e, e.Bounds, Color.FromArgb(alpha, color1), Color.FromArgb(alpha, color2));
-
         }
 
         public override void OnDrawItemShadow(CalendarRendererItemBoundsEventArgs e)
@@ -302,7 +300,6 @@ namespace System.Windows.Forms.Calendar
             var c = Color.FromArgb(e.Item.IsDragging ? 120 : 255, b);
 
             ItemBorder(e, e.Bounds, c, e.Item.Selected && !e.Item.IsDragging ? SelectedItemBorder : 1f);
-            
         }
 
         public override void OnDrawItemStartTime(CalendarRendererBoxEventArgs e)
@@ -328,7 +325,7 @@ namespace System.Windows.Forms.Calendar
         public override void OnDrawItemText(CalendarRendererBoxEventArgs e)
         {
             var item = e.Tag as CalendarItem;
-            
+
             if (item != null)
             {
                 if (item.IsDragging)
@@ -362,13 +359,19 @@ namespace System.Windows.Forms.Calendar
             using (var path = new GraphicsPath())
             {
                 var top = e.Day.OverflowEndBounds.Top + e.Day.OverflowEndBounds.Height / 2;
-                path.AddPolygon(new Point[] { 
+                path.AddPolygon(new[]
+                {
                     new Point(e.Day.OverflowEndBounds.Left, top),
                     new Point(e.Day.OverflowEndBounds.Right, top),
-                    new Point(e.Day.OverflowEndBounds.Left + e.Day.OverflowEndBounds.Width / 2, e.Day.OverflowEndBounds.Bottom),
+                    new Point(e.Day.OverflowEndBounds.Left + e.Day.OverflowEndBounds.Width / 2,
+                        e.Day.OverflowEndBounds.Bottom),
                 });
 
-                using (Brush b = new SolidBrush(e.Day.OverflowEndSelected ? ColorTable.DayOverflowSelectedBackground : ColorTable.DayOverflowBackground))
+                using (
+                    Brush b =
+                        new SolidBrush(e.Day.OverflowEndSelected
+                            ? ColorTable.DayOverflowSelectedBackground
+                            : ColorTable.DayOverflowBackground))
                 {
                     e.Graphics.FillPath(b, path);
                 }

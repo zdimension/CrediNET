@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -28,7 +25,6 @@ namespace System.Windows.Forms.Calendar
         public CalendarProfessionalRenderer(Calendar c)
             : base(c)
         {
-            
             ColorTable.Background = FromHex("#E3EFFF");
             ColorTable.DayBackgroundEven = FromHex("#A5BFE1");
             ColorTable.DayBackgroundOdd = FromHex("#FFFFFF");
@@ -86,7 +82,6 @@ namespace System.Windows.Forms.Calendar
 
             GradientRect(g, top, a, b);
             GradientRect(g, bot, c, d);
-
         }
 
         /// <summary>
@@ -129,7 +124,7 @@ namespace System.Windows.Forms.Calendar
                 {
                     e.Graphics.DrawLine(p, r.Left, r.Top, r.Right, r.Top);
                     e.Graphics.DrawLine(p, r.Left, r.Bottom, r.Right, r.Bottom);
-                } 
+                }
             }
         }
 
@@ -139,7 +134,8 @@ namespace System.Windows.Forms.Calendar
 
             using (var p = new Pen(Color.FromArgb(150, Color.White)))
             {
-                e.Graphics.DrawLine(p, e.Bounds.Left + ItemRoundness, e.Bounds.Top + 1, e.Bounds.Right - ItemRoundness, e.Bounds.Top + 1); 
+                e.Graphics.DrawLine(p, e.Bounds.Left + ItemRoundness, e.Bounds.Top + 1, e.Bounds.Right - ItemRoundness,
+                    e.Bounds.Top + 1);
             }
 
             if (e.Item.Selected && !e.Item.IsDragging)
@@ -181,7 +177,7 @@ namespace System.Windows.Forms.Calendar
                         e.Graphics.FillRectangle(Brushes.White, r2);
                         e.Graphics.DrawRectangle(Pens.Black, r2);
                     }
-                } 
+                }
             }
         }
 

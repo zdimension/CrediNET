@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -9,9 +6,11 @@ namespace System.Windows.Forms.Calendar
         : CalendarRendererItemEventArgs
     {
         #region Fields
+
         private Rectangle _bounds;
         private bool _isFirst;
         private bool _isLast;
+
         #endregion
 
         #region Ctor
@@ -23,7 +22,8 @@ namespace System.Windows.Forms.Calendar
         /// <param name="bounds"></param>
         /// <param name="isFirst"></param>
         /// <param name="isLast"></param>
-        internal CalendarRendererItemBoundsEventArgs(CalendarRendererItemEventArgs original, Rectangle bounds, bool isFirst, bool isLast)
+        internal CalendarRendererItemBoundsEventArgs(CalendarRendererItemEventArgs original, Rectangle bounds,
+            bool isFirst, bool isLast)
             : base(original, original.Item)
         {
             _isFirst = isFirst;
@@ -68,7 +68,6 @@ namespace System.Windows.Forms.Calendar
             get { return _isLast; }
             set { _isLast = value; }
         }
-
 
         #endregion
     }

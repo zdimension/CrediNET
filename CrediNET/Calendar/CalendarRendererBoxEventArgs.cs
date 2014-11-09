@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -12,6 +9,7 @@ namespace System.Windows.Forms.Calendar
         : CalendarRendererEventArgs
     {
         #region Fields
+
         private Color _backgroundColor;
         private Rectangle _bounds;
         private Font _font;
@@ -19,6 +17,7 @@ namespace System.Windows.Forms.Calendar
         private string _text;
         private Color _textColor;
         private Size _textSize;
+
         #endregion
 
         #region Ctor
@@ -28,14 +27,14 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         private CalendarRendererBoxEventArgs()
         {
-            
         }
 
         public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original)
             : base(original)
         {
             Font = original.Calendar.Font;
-            Format |= TextFormatFlags.Default | TextFormatFlags.WordBreak | TextFormatFlags.PreserveGraphicsClipping;// | TextFormatFlags.WordEllipsis;
+            Format |= TextFormatFlags.Default | TextFormatFlags.WordBreak | TextFormatFlags.PreserveGraphicsClipping;
+                // | TextFormatFlags.WordEllipsis;
             TextColor = SystemColors.ControlText;
         }
 
@@ -52,7 +51,8 @@ namespace System.Windows.Forms.Calendar
             Text = text;
         }
 
-        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text, TextFormatFlags flags)
+        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text,
+            TextFormatFlags flags)
             : this(original)
         {
             Bounds = bounds;
@@ -60,7 +60,8 @@ namespace System.Windows.Forms.Calendar
             Format |= flags;
         }
 
-        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text, Color textColor)
+        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text,
+            Color textColor)
             : this(original)
         {
             Bounds = bounds;
@@ -68,7 +69,8 @@ namespace System.Windows.Forms.Calendar
             TextColor = textColor;
         }
 
-        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text, Color textColor, TextFormatFlags flags)
+        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text,
+            Color textColor, TextFormatFlags flags)
             : this(original)
         {
             Bounds = bounds;
@@ -77,7 +79,8 @@ namespace System.Windows.Forms.Calendar
             Format |= flags;
         }
 
-        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text, Color textColor, Color backgroundColor)
+        public CalendarRendererBoxEventArgs(CalendarRendererEventArgs original, Rectangle bounds, string text,
+            Color textColor, Color backgroundColor)
             : this(original)
         {
             Bounds = bounds;
@@ -85,7 +88,6 @@ namespace System.Windows.Forms.Calendar
             TextColor = TextColor;
             BackgroundColor = backgroundColor;
         }
-
 
         #endregion
 
@@ -115,7 +117,11 @@ namespace System.Windows.Forms.Calendar
         public Font Font
         {
             get { return _font; }
-            set { _font = value; _textSize = Size.Empty; }
+            set
+            {
+                _font = value;
+                _textSize = Size.Empty;
+            }
         }
 
         /// <summary>
@@ -124,7 +130,11 @@ namespace System.Windows.Forms.Calendar
         public TextFormatFlags Format
         {
             get { return _format; }
-            set { _format = value; _textSize = Size.Empty; }
+            set
+            {
+                _format = value;
+                _textSize = Size.Empty;
+            }
         }
 
         /// <summary>
@@ -133,7 +143,11 @@ namespace System.Windows.Forms.Calendar
         public string Text
         {
             get { return _text; }
-            set { _text = value; _textSize = Size.Empty; }
+            set
+            {
+                _text = value;
+                _textSize = Size.Empty;
+            }
         }
 
         /// <summary>
@@ -141,13 +155,13 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public Size TextSize
         {
-            get 
+            get
             {
                 if (_textSize.IsEmpty)
                 {
                     _textSize = TextRenderer.MeasureText(Text, Font);
                 }
-                return _textSize; 
+                return _textSize;
             }
         }
 
@@ -160,8 +174,6 @@ namespace System.Windows.Forms.Calendar
             get { return _textColor; }
             set { _textColor = value; }
         }
-
-        
 
         #endregion
 

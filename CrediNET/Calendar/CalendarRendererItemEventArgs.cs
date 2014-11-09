@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace System.Windows.Forms.Calendar
 {
     /// <summary>
@@ -11,12 +7,13 @@ namespace System.Windows.Forms.Calendar
         : CalendarRendererEventArgs
     {
         #region Fields
+
         private CalendarItem _item;
+
         #endregion
 
         #region Ctor
 
-       
         public CalendarRendererItemEventArgs(CalendarRendererEventArgs original, CalendarItem item)
             : base(original)
         {
@@ -34,7 +31,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _item; }
         }
-
 
         #endregion
     }

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -29,6 +27,7 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private Rectangle[] _additionalBounds;
         private Color _backgroundColor;
         private Color _backgroundColorLighter;
@@ -53,6 +52,7 @@ namespace System.Windows.Forms.Calendar
         private List<CalendarDayTop> _topsPassing;
         private object _tag;
         private string _text;
+
         #endregion
 
         #region Ctor
@@ -97,12 +97,13 @@ namespace System.Windows.Forms.Calendar
         /// <param name="text">Text of the item</param>
         public CalendarItem(Calendar calendar, DateTime startDate, TimeSpan duration, string text)
             : this(calendar, startDate, startDate.Add(duration), text)
-        { }
+        {
+        }
 
         #endregion
 
         #region Properties
-         
+
         /// <summary>
         /// Gets or sets an array of rectangles containing bounds additional to <see cref="Bounds"/> property.
         /// </summary>
@@ -149,10 +150,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public override DateTime Date
         {
-            get
-            {
-                return StartDate;
-            }
+            get { return StartDate; }
         }
 
         /// <summary>
@@ -202,7 +200,7 @@ namespace System.Windows.Forms.Calendar
                 {
                     return Calendar.Days[0];
                 }
-                else 
+                else
                 {
                     return Calendar.FindDay(StartDate);
                 }
@@ -231,7 +229,7 @@ namespace System.Windows.Forms.Calendar
 
         {
             get { return _endDate; }
-            set 
+            set
             {
                 _endDate = value;
                 _duration = new TimeSpan(0, 0, 0);
@@ -269,8 +267,7 @@ namespace System.Windows.Forms.Calendar
         public Color ForeColor
         {
             get { return _oreColor; }
-            set { _oreColor = value;
-        }
+            set { _oreColor = value; }
         }
 
         /// <summary>
@@ -312,10 +309,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public bool IsOnDayTop
         {
-            get
-            {
-                return StartDate.Day != EndDate.AddSeconds(1).Day;
-            }
+            get { return StartDate.Day != EndDate.AddSeconds(1).Day; }
         }
 
         /// <summary>
@@ -338,7 +332,7 @@ namespace System.Windows.Forms.Calendar
             {
                 //Checks for an intersection of item's dates against calendar dates
                 var fd = Calendar.Days[0].Date;
-                var ld = Calendar.Days[Calendar.Days.Length - 1].Date.Add(new TimeSpan(23,59,59));
+                var ld = Calendar.Days[Calendar.Days.Length - 1].Date.Add(new TimeSpan(23, 59, 59));
                 var sd = StartDate;
                 var ed = EndDate;
                 return sd < ld && fd < ed;
@@ -350,10 +344,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public bool IsOpenStart
         {
-            get
-            {
-                return StartDate.CompareTo(Calendar.Days[0].Date) < 0;
-            }
+            get { return StartDate.CompareTo(Calendar.Days[0].Date) < 0; }
         }
 
         /// <summary>
@@ -457,7 +448,9 @@ namespace System.Windows.Forms.Calendar
         {
             get
             {
-                return IsOpenStart || ((IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) && !StartDate.TimeOfDay.Equals(new TimeSpan(0, 0, 0)));
+                return IsOpenStart ||
+                       ((IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) &&
+                        !StartDate.TimeOfDay.Equals(new TimeSpan(0, 0, 0)));
             }
         }
 
@@ -468,9 +461,10 @@ namespace System.Windows.Forms.Calendar
         {
             get
             {
-                return (IsOpenEnd || 
-                    ((IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) && !EndDate.TimeOfDay.Equals(new TimeSpan(23, 59, 59)))) &&
-                    !(Calendar.DaysMode == CalendarDaysMode.Short && StartDate.Date == EndDate.Date);
+                return (IsOpenEnd ||
+                        ((IsOnDayTop || Calendar.DaysMode == CalendarDaysMode.Short) &&
+                         !EndDate.TimeOfDay.Equals(new TimeSpan(23, 59, 59)))) &&
+                       !(Calendar.DaysMode == CalendarDaysMode.Short && StartDate.Date == EndDate.Date);
             }
         }
 
@@ -504,8 +498,8 @@ namespace System.Windows.Forms.Calendar
         public virtual DateTime StartDate
         {
             get { return _startDate; }
-            set 
-            { 
+            set
+            {
                 _startDate = value;
                 _duration = new TimeSpan(0, 0, 0);
                 ClearPassings();
@@ -546,11 +540,11 @@ namespace System.Windows.Forms.Calendar
                 color.B + (255 - color.B) / 2 + (255 - color.B) / 3);
 
             BorderColor = Color.FromArgb(
-                Convert.ToInt32(Convert.ToSingle(color.R) * .8f), 
-                Convert.ToInt32(Convert.ToSingle(color.G) * .8f), 
+                Convert.ToInt32(Convert.ToSingle(color.R) * .8f),
+                Convert.ToInt32(Convert.ToSingle(color.G) * .8f),
                 Convert.ToInt32(Convert.ToSingle(color.B) * .8f));
 
-            var avg = (color.R + color.G + color.B )/3;
+            var avg = (color.R + color.G + color.B) / 3;
 
             if (avg > 255 / 2)
             {
@@ -571,7 +565,7 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public IEnumerable<Rectangle> GetAllBounds()
         {
-            var r = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] { } : AditionalBounds);
+            var r = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] {} : AditionalBounds);
             r.Add(Bounds);
 
             r.Sort(CompareBounds);
@@ -651,8 +645,10 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public bool IntersectsWith(TimeSpan timeStart, TimeSpan timeEnd)
         {
-            var r1 = Rectangle.FromLTRB(0, Convert.ToInt32(StartDate.TimeOfDay.TotalMinutes), 5, Convert.ToInt32(EndDate.TimeOfDay.TotalMinutes));
-            var r2 = Rectangle.FromLTRB(0, Convert.ToInt32(timeStart.TotalMinutes), 5, Convert.ToInt32(timeEnd.TotalMinutes - 1));
+            var r1 = Rectangle.FromLTRB(0, Convert.ToInt32(StartDate.TimeOfDay.TotalMinutes), 5,
+                Convert.ToInt32(EndDate.TimeOfDay.TotalMinutes));
+            var r2 = Rectangle.FromLTRB(0, Convert.ToInt32(timeStart.TotalMinutes), 5,
+                Convert.ToInt32(timeEnd.TotalMinutes - 1));
             return r1.IntersectsWith(r2);
         }
 
@@ -679,7 +675,7 @@ namespace System.Windows.Forms.Calendar
             }
             else
             {
-                var rs = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] { } : AditionalBounds);
+                var rs = new List<Rectangle>(AditionalBounds == null ? new Rectangle[] {} : AditionalBounds);
                 rs.Add(r);
                 AditionalBounds = rs.ToArray();
             }
@@ -729,7 +725,7 @@ namespace System.Windows.Forms.Calendar
         internal void ClearBounds()
         {
             SetBounds(Rectangle.Empty);
-            AditionalBounds = new Rectangle[] { };
+            AditionalBounds = new Rectangle[] {};
             SetMinuteStartTop(0);
             SetMinuteEndTop(0);
         }
@@ -740,7 +736,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         internal void FirstAndLastRectangleGapping()
         {
-            if(!IsOpenStart)
+            if (!IsOpenStart)
                 SetBounds(Rectangle.FromLTRB(Bounds.Left + Calendar.Renderer.ItemsPadding,
                     Bounds.Top, Bounds.Right, Bounds.Bottom));
 
@@ -757,7 +753,7 @@ namespace System.Windows.Forms.Calendar
                     var r = Bounds;
                     SetBounds(Rectangle.FromLTRB(
                         r.Left, r.Top, r.Right - Calendar.Renderer.ItemsPadding, r.Bottom));
-                } 
+                }
             }
         }
 
@@ -825,6 +821,5 @@ namespace System.Windows.Forms.Calendar
         }
 
         #endregion
-
     }
 }

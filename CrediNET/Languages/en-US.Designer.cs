@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace CrediNET.Languages {
-    using System;
-    
-    
     /// <summary>
     ///   Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
     /// </summary>
@@ -97,6 +94,15 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Leave this field empty to keep current password.
+        /// </summary>
+        internal static string Account_Creation_LeaveEmpty {
+            get {
+                return ResourceManager.GetString("Account_Creation_LeaveEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Please type the account&apos;s password below..
         /// </summary>
         internal static string Account_Crypted_TypePassword {
@@ -147,6 +153,15 @@ namespace CrediNET.Languages {
         internal static string Account_TotalZero {
             get {
                 return ResourceManager.GetString("Account_TotalZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Edit operation.
+        /// </summary>
+        internal static string Operation_Edit {
+            get {
+                return ResourceManager.GetString("Operation_Edit", resourceCulture);
             }
         }
     }

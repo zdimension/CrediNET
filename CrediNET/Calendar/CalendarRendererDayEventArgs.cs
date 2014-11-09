@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace System.Windows.Forms.Calendar
 {
     /// <summary>
@@ -11,7 +7,9 @@ namespace System.Windows.Forms.Calendar
         : CalendarRendererEventArgs
     {
         #region Fields
+
         private CalendarDay _day;
+
         #endregion
 
         #region Ctor
@@ -38,7 +36,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _day; }
         }
-
 
         #endregion
     }

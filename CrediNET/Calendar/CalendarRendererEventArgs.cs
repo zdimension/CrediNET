@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -16,10 +13,12 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private Calendar _calendar;
         private Rectangle _clip;
         private Graphics _graphics;
         private object _tag;
+
         #endregion
 
         #region Ctor
@@ -29,7 +28,6 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         protected CalendarRendererEventArgs()
         {
-
         }
 
         /// <summary>
@@ -107,7 +105,6 @@ namespace System.Windows.Forms.Calendar
             get { return _tag; }
             set { _tag = value; }
         }
-
 
         #endregion
 

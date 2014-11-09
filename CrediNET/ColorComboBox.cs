@@ -44,10 +44,16 @@ namespace CrediNET
         {
             Items.Clear();
 
-            Enum.GetNames(typeof(KnownColor)).OrderBy(y => y).All(x =>
+            Enum.GetNames(typeof (KnownColor)).OrderBy(y => y).All(x =>
             {
-                try { Items.Add(new ColorInfo(x, (Color)(typeof(Color).GetProperty(x).GetValue(null, null)))); }
-                catch { Items.Add(new ColorInfo(x, (Color)(typeof(SystemColors).GetProperty(x).GetValue(null, null)))); }
+                try
+                {
+                    Items.Add(new ColorInfo(x, (Color) (typeof (Color).GetProperty(x).GetValue(null, null))));
+                }
+                catch
+                {
+                    Items.Add(new ColorInfo(x, (Color) (typeof (SystemColors).GetProperty(x).GetValue(null, null))));
+                }
                 return true;
             });
         }
@@ -58,26 +64,26 @@ namespace CrediNET
             if (e.Index >= 0)
             {
                 // Get this color
-                var color = (ColorInfo)Items[e.Index];
+                var color = (ColorInfo) Items[e.Index];
 
                 // Fill background
                 e.DrawBackground();
 
                 // Draw color box
-                var rect = new Rectangle();
-                rect.X = e.Bounds.X + 2;
-                rect.Y = e.Bounds.Y + 2;
-                rect.Width = 18;
-                rect.Height = e.Bounds.Height - 5;
+                var rect = new Rectangle
+                {
+                    X = e.Bounds.X + 2,
+                    Y = e.Bounds.Y + 2,
+                    Width = 18,
+                    Height = e.Bounds.Height - 5
+                };
                 e.Graphics.FillRectangle(new SolidBrush(color.Color), rect);
                 e.Graphics.DrawRectangle(SystemPens.WindowText, rect);
 
                 // Write color name
-                Brush brush;
-                if ((e.State & DrawItemState.Selected) != DrawItemState.None)
-                    brush = SystemBrushes.HighlightText;
-                else
-                    brush = SystemBrushes.WindowText;
+                var brush = (e.State & DrawItemState.Selected) != DrawItemState.None
+                    ? SystemBrushes.HighlightText
+                    : SystemBrushes.WindowText;
                 e.Graphics.DrawString(color.Text, Font, brush,
                     e.Bounds.X + rect.X + rect.Width + 2,
                     e.Bounds.Y + ((e.Bounds.Height - Font.Height) / 2));
@@ -93,14 +99,8 @@ namespace CrediNET
         /// </summary>
         public new ColorInfo SelectedItem
         {
-            get
-            {
-                return (ColorInfo)base.SelectedItem;
-            }
-            set
-            {
-                base.SelectedItem = value;
-            }
+            get { return (ColorInfo) base.SelectedItem; }
+            set { base.SelectedItem = value; }
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace CrediNET
             {
                 for (var i = 0; i < Items.Count; i++)
                 {
-                    if (((ColorInfo)Items[i]).Text == value)
+                    if (((ColorInfo) Items[i]).Text == value)
                     {
                         SelectedIndex = i;
                         break;
@@ -144,7 +144,7 @@ namespace CrediNET
             {
                 for (var i = 0; i < Items.Count; i++)
                 {
-                    if (((ColorInfo)Items[i]).Color == value)
+                    if (((ColorInfo) Items[i]).Color == value)
                     {
                         SelectedIndex = i;
                         break;

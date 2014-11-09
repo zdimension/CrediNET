@@ -13,9 +13,9 @@ namespace CrediNET
             var hashBytes = md5.ComputeHash(inputBytes);
 
             var sb = new StringBuilder();
-            for (var i = 0; i < hashBytes.Length; i++)
+            foreach (var t in hashBytes)
             {
-                sb.Append(hashBytes[i].ToString("X2"));
+                sb.Append(t.ToString("X2"));
             }
             return sb.ToString();
         }

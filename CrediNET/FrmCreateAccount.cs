@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-
 using System.Windows.Forms;
+using CrediNET.Languages;
 using CrediNET.Properties;
 
 namespace CrediNET
@@ -11,7 +11,9 @@ namespace CrediNET
     public partial class FrmCreateAccount : Form
     {
         [DllImport("uxtheme.dll")]
-        public static extern int SetWindowTheme([In] IntPtr hwnd, [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubAppName, [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubIdList);
+        public static extern int SetWindowTheme([In] IntPtr hwnd,
+            [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubAppName,
+            [In, MarshalAs(UnmanagedType.LPWStr)] string pszSubIdList);
 
         private bool edit;
 
@@ -27,7 +29,11 @@ namespace CrediNET
 
                 lbxBudgets.Items.Clear();
 
-                editCompt.Budgets.All(x => { lbxBudgets.Items.Add(new ListViewItem { Text = x.Key, BackColor = x.Value }); return true; });
+                editCompt.Budgets.All(x =>
+                {
+                    lbxBudgets.Items.Add(new ListViewItem {Text = x.Key, BackColor = x.Value});
+                    return true;
+                });
                 cbxDevise.SelectedItem = editCompt.Currency == null ? "" : editCompt.Currency.Name;
 
                 txtPasse_Leave(this, EventArgs.Empty);
@@ -62,7 +68,9 @@ namespace CrediNET
                 {
                     txtItemName.Text = lbxBudgets.SelectedItems[0].Text;
                     //cbxClr.SelectedValue = lbxBudgets.SelectedItems[0].BackColor;
-                    cbxClr.SelectedItem = cbxClr.Items.OfType<ColorComboBox.ColorInfo>().First(x => x.Color.ToArgb() == lbxBudgets.SelectedItems[0].BackColor.ToArgb());
+                    cbxClr.SelectedItem =
+                        cbxClr.Items.OfType<ColorComboBox.ColorInfo>()
+                            .First(x => x.Color.ToArgb() == lbxBudgets.SelectedItems[0].BackColor.ToArgb());
                 }
             }
         }
@@ -100,19 +108,19 @@ namespace CrediNET
                 switch (Settings.Default.Lang.Name)
                 {
                     case "en-US":
-                        txtPasse.Text = "Leave this field empty to keep current password";
+                        txtPasse.Text = en_US.Account_Creation_LeaveEmpty;
                         break;
 
                     case "de-DE":
-                        txtPasse.Text = "Feld leer lassen um altes Passwort zu behalten";
+                        txtPasse.Text = de_DE.Account_Creation_LeaveEmpty;
                         break;
 
                     case "vi-VN":
-                        txtPasse.Text = "Để trống ô này để giữ lại mật khẩu hiện tại";
+                        txtPasse.Text = vi_VN.Account_Creation_LeaveEmpty;
                         break;
 
-                    default:        //case "fr-FR":
-                        txtPasse.Text = "Laissez ce champ vide pour ne pas modifier le code";
+                    default: //case "fr-FR":
+                        txtPasse.Text = fr_FR.Account_Creation_LeaveEmpty;
                         break;
                 }
 
@@ -124,7 +132,7 @@ namespace CrediNET
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (lbxBudgets.Items.OfType<ListViewItem>().All(x => x.Text != txtItemName.Text))
-                lbxBudgets.Items.Add(new ListViewItem { Text = txtItemName.Text, BackColor = cbxClr.SelectedValue });
+                lbxBudgets.Items.Add(new ListViewItem {Text = txtItemName.Text, BackColor = cbxClr.SelectedValue});
 
             txtItemName.Text = "";
         }

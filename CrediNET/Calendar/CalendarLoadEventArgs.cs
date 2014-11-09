@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace System.Windows.Forms.Calendar
 {
     /// <summary>
@@ -11,6 +7,7 @@ namespace System.Windows.Forms.Calendar
         : EventArgs
     {
         #region Fields
+
         private Calendar _calendar;
         private DateTime _dateStart;
         private DateTime _dateEnd;
@@ -54,7 +51,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _dateEnd; }
         }
-
 
         #endregion
     }

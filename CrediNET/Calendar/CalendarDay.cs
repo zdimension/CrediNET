@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -23,6 +21,7 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private List<CalendarItem> _containedItems;
         private Calendar _calendar;
         private DateTime _date;
@@ -33,6 +32,7 @@ namespace System.Windows.Forms.Calendar
         private bool _overflowStartSelected;
         private bool _overlowEndSelected;
         private CalendarTimeScaleUnit[] _timeUnits;
+
         #endregion
 
         #region Ctor
@@ -80,10 +80,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public Rectangle BodyBounds
         {
-            get 
-            {
-                return Rectangle.FromLTRB(Bounds.Left, DayTop.Bounds.Bottom, Bounds.Right, Bounds.Bottom);
-            }
+            get { return Rectangle.FromLTRB(Bounds.Left, DayTop.Bounds.Bottom, Bounds.Right, Bounds.Bottom); }
         }
 
         /// <summary>
@@ -99,10 +96,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public Rectangle HeaderBounds
         {
-            get 
-            {
-                return new Rectangle(Bounds.Left, Bounds.Top, Bounds.Width, Calendar.Renderer.DayHeaderHeight);
-            }
+            get { return new Rectangle(Bounds.Left, Bounds.Top, Bounds.Width, Calendar.Renderer.DayHeaderHeight); }
         }
 
         /// <summary>
@@ -122,10 +116,7 @@ namespace System.Windows.Forms.Calendar
         /// </remarks>
         public bool SpecifiedOnView
         {
-            get 
-            {
-                return Date.CompareTo(Calendar.ViewStart) >= 0 && Date.CompareTo(Calendar.ViewEnd) <= 0;
-            }
+            get { return Date.CompareTo(Calendar.ViewStart) >= 0 && Date.CompareTo(Calendar.ViewEnd) <= 0; }
         }
 
         /// <summary>
@@ -151,7 +142,13 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public virtual Rectangle OverflowStartBounds
         {
-            get { return new Rectangle(new Point(Bounds.Right - overflowPadding.Right - overflowSize.Width, Bounds.Top + overflowPadding.Top), overflowSize); }
+            get
+            {
+                return
+                    new Rectangle(
+                        new Point(Bounds.Right - overflowPadding.Right - overflowSize.Width,
+                            Bounds.Top + overflowPadding.Top), overflowSize);
+            }
         }
 
         /// <summary>
@@ -179,7 +176,13 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public virtual Rectangle OverflowEndBounds
         {
-            get { return new Rectangle(new Point(Bounds.Right - overflowPadding.Right - overflowSize.Width, Bounds.Bottom - overflowPadding.Bottom - overflowSize.Height), overflowSize); }
+            get
+            {
+                return
+                    new Rectangle(
+                        new Point(Bounds.Right - overflowPadding.Right - overflowSize.Width,
+                            Bounds.Bottom - overflowPadding.Bottom - overflowSize.Height), overflowSize);
+            }
         }
 
         /// <summary>
@@ -192,7 +195,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _overlowEndSelected; }
         }
-
 
         #endregion
 
@@ -234,7 +236,7 @@ namespace System.Windows.Forms.Calendar
         /// <param name="selected">Value to pass to the property</param>
         internal void SetOverflowEndSelected(bool selected)
         {
-            _overlowEndSelected= selected;
+            _overlowEndSelected = selected;
         }
 
         /// <summary>
@@ -264,17 +266,30 @@ namespace System.Windows.Forms.Calendar
 
             switch (Calendar.TimeScale)
             {
-                case CalendarTimeScale.SixtyMinutes:    factor = 1;     break;
-                case CalendarTimeScale.ThirtyMinutes:   factor = 2;     break;
-                case CalendarTimeScale.FifteenMinutes:  factor = 4;     break;
-                case CalendarTimeScale.TenMinutes:      factor = 6;     break;
-                case CalendarTimeScale.SixMinutes:      factor = 10;    break;
-                case CalendarTimeScale.FiveMinutes:     factor = 12;    break;
-                default: throw new NotImplementedException("TimeScale not supported");
+                case CalendarTimeScale.SixtyMinutes:
+                    factor = 1;
+                    break;
+                case CalendarTimeScale.ThirtyMinutes:
+                    factor = 2;
+                    break;
+                case CalendarTimeScale.FifteenMinutes:
+                    factor = 4;
+                    break;
+                case CalendarTimeScale.TenMinutes:
+                    factor = 6;
+                    break;
+                case CalendarTimeScale.SixMinutes:
+                    factor = 10;
+                    break;
+                case CalendarTimeScale.FiveMinutes:
+                    factor = 12;
+                    break;
+                default:
+                    throw new NotImplementedException("TimeScale not supported");
             }
 
             _timeUnits = new CalendarTimeScaleUnit[24 * factor];
-            
+
             var hourSum = 0;
             var minSum = 0;
 
@@ -299,7 +314,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         internal void UpdateHighlights()
         {
-            if (TimeUnits == null) 
+            if (TimeUnits == null)
                 return;
 
             for (var i = 0; i < TimeUnits.Length; i++)

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace System.Windows.Forms.Calendar
 {
     /// <summary>
@@ -15,7 +11,9 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private CalendarTimeScaleUnit _unit;
+
         #endregion
 
         #region Ctor
@@ -37,7 +35,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _unit; }
         }
-
 
         #endregion
 

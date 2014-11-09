@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace System.Windows.Forms.Calendar
 {
@@ -12,7 +10,9 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private Calendar _calendar;
+
         #endregion
 
         #region Ctor
@@ -38,7 +38,6 @@ namespace System.Windows.Forms.Calendar
             get { return _calendar; }
         }
 
-
         #endregion
 
         #region Public Methods
@@ -49,7 +48,8 @@ namespace System.Windows.Forms.Calendar
         /// <param name="item">The object to be added to the end of the collection. The value can be null for reference types.</param>
         public new void Add(CalendarItem item)
         {
-            base.Add(item); CollectionChanged();
+            base.Add(item);
+            CollectionChanged();
         }
 
         /// <summary>
@@ -58,7 +58,8 @@ namespace System.Windows.Forms.Calendar
         /// <param name="items">The items whose elements should be added to the end of the collection. The collection itself cannont be null, but it can contain elements that are null.</param>
         public new void AddRange(IEnumerable<CalendarItem> items)
         {
-            base.AddRange(items); CollectionChanged();
+            base.AddRange(items);
+            CollectionChanged();
         }
 
         /// <summary>
@@ -66,7 +67,8 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public new void Clear()
         {
-            base.Clear(); CollectionChanged();
+            base.Clear();
+            CollectionChanged();
         }
 
         /// <summary>
@@ -74,9 +76,10 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         /// <param name="index">The zero-based index at which item should be inserted.</param>
         /// <param name="item">The object to insert. The value can be null for reference types.</param>
-        public new void Insert(int index, CalendarItem item) 
+        public new void Insert(int index, CalendarItem item)
         {
-            base.Insert(index, item); CollectionChanged();
+            base.Insert(index, item);
+            CollectionChanged();
         }
 
         /// <summary>
@@ -84,9 +87,10 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         /// <param name="index">The zero-based index at which the new elements should be inserted.</param>
         /// <param name="items"></param>
-        public new void InsertRange(int index, IEnumerable<CalendarItem> items) 
+        public new void InsertRange(int index, IEnumerable<CalendarItem> items)
         {
-            base.InsertRange(index, items); CollectionChanged();
+            base.InsertRange(index, items);
+            CollectionChanged();
         }
 
         /// <summary>
@@ -94,10 +98,10 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         /// <param name="item">The item to remove from the collection. The value can be null for reference types.</param>
         /// <returns><c>true</c> if item is successfully removed; otherwise, <c>false</c>. This method also returns false if item was not found in the collection.</returns>
-        public new bool Remove(CalendarItem item) 
+        public new bool Remove(CalendarItem item)
         {
-            var result = base.Remove(item); 
-            
+            var result = base.Remove(item);
+
             CollectionChanged();
 
             return result;
@@ -110,7 +114,8 @@ namespace System.Windows.Forms.Calendar
         /// <returns></returns>
         public new void RemoveAt(int index)
         {
-            base.RemoveAt(index); CollectionChanged();
+            base.RemoveAt(index);
+            CollectionChanged();
         }
 
         /// <summary>
@@ -118,10 +123,10 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         /// <param name="match">The Predicate delegate that defines the conditions of the items to remove.</param>
         /// <returns>The number of items removed from the collection.</returns>
-        public new int RemoveAll(Predicate<CalendarItem> match) 
+        public new int RemoveAll(Predicate<CalendarItem> match)
         {
-            var result = base.RemoveAll(match); 
-            
+            var result = base.RemoveAll(match);
+
             CollectionChanged();
 
             return result;
@@ -132,9 +137,10 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         /// <param name="index">The zero-based starting index of the range of items to remove.</param>
         /// <param name="count">The number of items to remove</param>
-        public new void RemoveRange(int index, int count) 
+        public new void RemoveRange(int index, int count)
         {
-            base.RemoveRange(index, count); CollectionChanged();
+            base.RemoveRange(index, count);
+            CollectionChanged();
         }
 
         #endregion

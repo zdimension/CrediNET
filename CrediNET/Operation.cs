@@ -18,65 +18,37 @@ namespace CrediNET
         /// <summary>
         /// Date of operation
         /// </summary>
-        public DateTime Date
-        {
-            get;
-            set;
-        }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// Commentary
         /// </summary>
-        public string Commentary
-        {
-            get;
-            set;
-        }
+        public string Commentary { get; set; }
 
         /// <summary>
         /// Credit
         /// </summary>
-        public decimal Credit
-        {
-            get;
-            set;
-        }
+        public decimal Credit { get; set; }
 
         /// <summary>
         /// Debit
         /// </summary>
-        public decimal Debit
-        {
-            get;
-            set;
-        }
+        public decimal Debit { get; set; }
 
         /// <summary>
         /// Type
         /// </summary>
-        public string Type
-        {
-            get;
-            set;
-        }
+        public string Type { get; set; }
 
         /// <summary>
         /// Category
         /// </summary>
-        public string Budget
-        {
-            get;
-            set;
-        }
+        public string Budget { get; set; }
 
         /// <summary>
         /// The reminder operation from which this operation is generated
         /// </summary>
-        public string RmdOptID
-        {
-            get;
-            set;
-        }
+        public string RmdOptID { get; set; }
 
         /// <summary>
         /// Simple constructor
@@ -106,7 +78,8 @@ namespace CrediNET
             Budget = budget;
         }
 
-        public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget, string rmdOptID)
+        public Operation(DateTime date, string commentary, decimal credit, decimal debit, string type, string budget,
+            string rmdOptID)
         {
             _id = Guid.NewGuid().ToString();
             Date = date;

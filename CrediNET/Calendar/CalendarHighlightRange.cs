@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace System.Windows.Forms.Calendar
 {
     /// <summary>
@@ -14,10 +10,12 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private Calendar _calendar;
         private DayOfWeek _dayOfWeek;
         private TimeSpan _startTime;
         private TimeSpan _endTime;
+
         #endregion
 
         #region Ctor
@@ -27,7 +25,6 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public CalendarHighlightRange()
         {
-
         }
 
         /// <summary>
@@ -62,7 +59,11 @@ namespace System.Windows.Forms.Calendar
         public DayOfWeek DayOfWeek
         {
             get { return _dayOfWeek; }
-            set { _dayOfWeek = value; Update(); }
+            set
+            {
+                _dayOfWeek = value;
+                Update();
+            }
         }
 
         /// <summary>
@@ -71,7 +72,11 @@ namespace System.Windows.Forms.Calendar
         public TimeSpan StartTime
         {
             get { return _startTime; }
-            set { _startTime = value; Update(); }
+            set
+            {
+                _startTime = value;
+                Update();
+            }
         }
 
         /// <summary>
@@ -80,7 +85,11 @@ namespace System.Windows.Forms.Calendar
         public TimeSpan EndTime
         {
             get { return _endTime; }
-            set { _endTime = value; Update(); }
+            set
+            {
+                _endTime = value;
+                Update();
+            }
         }
 
         #endregion

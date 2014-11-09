@@ -169,9 +169,13 @@ namespace CrediNET
             CompteActuel = new Account {Name = ae.txtNom.Text};
             CompteActuel.DefPass(ae.txtPasse.Text);
             CompteActuel.Budgets.Clear();
-            ae.lbxBudgets.Items.OfType<ListViewItem>().All(x => { CompteActuel.Budgets.Add(x.Text, x.BackColor); return true; });
+            ae.lbxBudgets.Items.OfType<ListViewItem>().All(x =>
+            {
+                CompteActuel.Budgets.Add(x.Text, x.BackColor);
+                return true;
+            });
 
-            CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == (string)(ae.cbxDevise.SelectedItem)));
+            CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == (string) (ae.cbxDevise.SelectedItem)));
 
             //CompteActuel.Crypte = ae.cbxCrypt.Checked;
 
@@ -196,20 +200,31 @@ namespace CrediNET
                         lblSoldeAt.Text = vi_VN.Account_BalanceOf;
                         break;
 
-                    default:        //case "fr-FR":
+                    default: //case "fr-FR":
                         lblSoldeAt.Text = fr_FR.Account_BalanceOf;
                         break;
                 }
 
-                lblSoldeAt.Text += DateTime.Now.ToString("dd/MM/yyyy") + @" : " + SoldeActuel.ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+                lblSoldeAt.Text += DateTime.Now.ToString("dd/MM/yyyy") + @" : " + SoldeActuel.ToString("0.00") + @" " +
+                                   CompteActuel.Currency.Symbol;
             }
             else
             {
                 var d = CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text).Date;
                 decimal totalc = 0;
-                CompteActuel.Operations.FindAll(x => CompteActuel.Operations.IndexOf(x) <= CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text))).ForEach(x1 => totalc += x1.Credit);
+                CompteActuel.Operations.FindAll(
+                    x =>
+                        CompteActuel.Operations.IndexOf(x) <=
+                        CompteActuel.Operations.IndexOf(
+                            CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text)))
+                    .ForEach(x1 => totalc += x1.Credit);
                 decimal totald = 0;
-                CompteActuel.Operations.FindAll(x => CompteActuel.Operations.IndexOf(x) <= CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text))).ForEach(x1 => totald += x1.Debit);
+                CompteActuel.Operations.FindAll(
+                    x =>
+                        CompteActuel.Operations.IndexOf(x) <=
+                        CompteActuel.Operations.IndexOf(
+                            CompteActuel.Operations.First(x2 => x2.ID == lvOps.SelectedItems[0].Text)))
+                    .ForEach(x1 => totald += x1.Debit);
 
                 switch (Settings.Default.Lang.Name)
                 {
@@ -225,21 +240,19 @@ namespace CrediNET
                         lblSoldeAt.Text = vi_VN.Account_BalanceOf;
                         break;
 
-                    default:        //case "fr-FR":
+                    default: //case "fr-FR":
                         lblSoldeAt.Text = fr_FR.Account_BalanceOf;
                         break;
                 }
 
-                lblSoldeAt.Text += d.ToString("dd/MM/yyyy") + @" : " + (totalc - totald).ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+                lblSoldeAt.Text += d.ToString("dd/MM/yyyy") + @" : " + (totalc - totald).ToString("0.00") + @" " +
+                                   CompteActuel.Currency.Symbol;
             }
         }
 
         private string dfd
         {
-            get
-            {
-                return Currencies.All.First(x => x.ShortName == Settings.Default.DefaultCurrency).Symbol;
-            }
+            get { return Currencies.All.First(x => x.ShortName == Settings.Default.DefaultCurrency).Symbol; }
         }
 
         public void ClearStuff()
@@ -360,7 +373,7 @@ namespace CrediNET
                     lblSolde.Text = vi_VN.Account_Balance;
                     break;
 
-                default:        //case "fr-FR":
+                default: //case "fr-FR":
                     lblSolde.Text = fr_FR.Account_Balance;
                     break;
             }
@@ -423,7 +436,7 @@ namespace CrediNET
                     sfdCompte.Filter = vi_VN.Account_FileFilter;
                     break;
 
-                default:        //case "fr-FR":
+                default: //case "fr-FR":
                     sfdCompte.Filter = fr_FR.Account_FileFilter;
                     break;
             }
@@ -470,7 +483,6 @@ namespace CrediNET
 
             Cursor = Cursors.WaitCursor;
             bwkSave.RunWorkerAsync();
-            
         }
 
         private void enregistrerSousToolStripMenuItem_Click(object sender, EventArgs e)
@@ -491,7 +503,7 @@ namespace CrediNET
                         sfdCompte.Filter = vi_VN.Account_FileFilterCrypted;
                         break;
 
-                    default:        //case "fr-FR":
+                    default: //case "fr-FR":
                         sfdCompte.Filter = fr_FR.Account_FileFilterCrypted;
                         break;
                 }
@@ -512,7 +524,7 @@ namespace CrediNET
                         sfdCompte.Filter = vi_VN.Account_FileFilterSave;
                         break;
 
-                    default:        //case "fr-FR":
+                    default: //case "fr-FR":
                         sfdCompte.Filter = fr_FR.Account_FileFilterSave;
                         break;
                 }
@@ -522,12 +534,12 @@ namespace CrediNET
                 tmpf = sfdCompte.FileName;
                 Cursor = Cursors.WaitCursor;
                 bwkSave.RunWorkerAsync();
-                
             }
         }
 
 
-        string tmpf = "";
+        private string tmpf = "";
+
         private void cryptéToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*CompteActuel.Crypte = !CompteActuel.Crypte;
@@ -558,7 +570,8 @@ namespace CrediNET
 
         private void btnEditOp_Click(object sender, EventArgs e)
         {
-            var ae = new FrmOperation(CompteActuel, false, true, CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
+            var ae = new FrmOperation(CompteActuel, false, true,
+                CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
             if (ae.ShowDialog() == DialogResult.OK)
             {
                 var op = new Operation
@@ -571,7 +584,9 @@ namespace CrediNET
                     Commentary = ae.txtComm.Text
                 };
 
-                var a = CompteActuel.Operations.IndexOf(CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
+                var a =
+                    CompteActuel.Operations.IndexOf(
+                        CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
                 CompteActuel.Operations.RemoveAll(x => x.ID == lvOps.SelectedItems[0].Text);
                 CompteActuel.Operations.Insert(a, op);
                 LoadOps();
@@ -580,7 +595,8 @@ namespace CrediNET
 
         private void btnDuplOp_Click(object sender, EventArgs e)
         {
-            var ae = new FrmOperation(CompteActuel, false, true, CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
+            var ae = new FrmOperation(CompteActuel, false, true,
+                CompteActuel.Operations.First(x => x.ID == lvOps.SelectedItems[0].Text));
             if (ae.ShowDialog() == DialogResult.OK)
             {
                 var op = new Operation
@@ -621,7 +637,7 @@ namespace CrediNET
                             wr.WriteLine("Ngày;Mục;Loại;Ghi chú;Dư;Nợ");
                             break;
 
-                        default:        //case "fr-FR":
+                        default: //case "fr-FR":
                             wr.WriteLine("Date;Type;Budget;Commentaire;Crédit;Débit");
                             break;
                     }
@@ -663,7 +679,7 @@ namespace CrediNET
             get
             {
                 var cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.ExStyle |= 0x02000000; // Turn on WS_EX_COMPOSITED
                 return cp;
             }
         }
@@ -796,7 +812,6 @@ namespace CrediNET
                 sheet.AutoFitColumn(6);
                 workbook.SaveToFile(sfdXLS.FileName, ExcelVersion.Version97to2003);
                 Process.Start(sfdXLS.FileName);*/
-
             }
         }
 
@@ -831,7 +846,7 @@ namespace CrediNET
                             w.Cells["E1"].Value = "Verdienst";
                             w.Cells["F1"].Value = "Soll";
                             break;
-                        default:        //case "fr-FR":
+                        default: //case "fr-FR":
                             w.Cells["A1"].Value = "Date";
                             w.Cells["B1"].Value = "Type";
                             w.Cells["C1"].Value = "Budget";
@@ -845,7 +860,7 @@ namespace CrediNET
                     w.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(Color.Gainsboro);
                     w.Cells["A1:F1"].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 
-                    foreach(var op in CompteActuel.Operations)
+                    foreach (var op in CompteActuel.Operations)
                     {
                         var id = CompteActuel.Operations.IndexOf(op) + 2;
                         w.Cells[id, 1].Value = op.Date.ToString("dd/MM/yyyy");
@@ -960,9 +975,14 @@ namespace CrediNET
                 CompteActuel.Name = ae.txtNom.Text;
                 if (ae.txtPasse.Font.Style != FontStyle.Italic) CompteActuel.DefPass(ae.txtPasse.Text);
                 CompteActuel.Budgets.Clear();
-                ae.lbxBudgets.Items.OfType<ListViewItem>().All(x => { CompteActuel.Budgets.Add(x.Text, x.BackColor); return true; });
+                ae.lbxBudgets.Items.OfType<ListViewItem>().All(x =>
+                {
+                    CompteActuel.Budgets.Add(x.Text, x.BackColor);
+                    return true;
+                });
 
-                CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()), CompteActuel.Currency != Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()));
+                CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()),
+                    CompteActuel.Currency != Currencies.All.First(x => x.Name == ae.cbxDevise.SelectedItem.ToString()));
 
                 CompteActuel.Encrypted = ae.cbxCrypt.Checked;
 
@@ -1033,7 +1053,8 @@ namespace CrediNET
             }
         }
 
-        public void LoadOps(DateTime? dtFrom, DateTime? dtTo, decimal? creditFrom, decimal? creditTo, decimal? debitFrom, decimal? debitTo, string type, string budget)
+        public void LoadOps(DateTime? dtFrom, DateTime? dtTo, decimal? creditFrom, decimal? creditTo, decimal? debitFrom,
+            decimal? debitTo, string type, string budget)
         {
             if (CompteActuel == null)
                 return;
@@ -1047,7 +1068,11 @@ namespace CrediNET
                 select op;
 
             if (dtFrom != null && dtTo != null)
-                queryOps = queryOps.Where(op => DateTime.Compare(op.Date, (DateTime) dtFrom) >= 0 && DateTime.Compare(op.Date, (DateTime) dtTo) <= 0);
+                queryOps =
+                    queryOps.Where(
+                        op =>
+                            DateTime.Compare(op.Date, (DateTime) dtFrom) >= 0 &&
+                            DateTime.Compare(op.Date, (DateTime) dtTo) <= 0);
 
             if (creditFrom.HasValue && creditTo.HasValue)
                 queryOps = queryOps.Where(op => op.Credit >= creditFrom && op.Credit <= creditTo);
@@ -1107,7 +1132,7 @@ namespace CrediNET
                     lblSoldeAt.Text = vi_VN.Account_Balance;
                     break;
 
-                default:        //case "fr-FR":
+                default: //case "fr-FR":
                     lblSolde.Text = fr_FR.Account_Balance;
                     break;
             }
@@ -1128,11 +1153,11 @@ namespace CrediNET
 
         private void lvOps_DoubleClick(object sender, EventArgs e)
         {
-            if(lvOps.SelectedItems.Count == 0 && CompteActuel != null)
+            if (lvOps.SelectedItems.Count == 0 && CompteActuel != null)
             {
                 btnEditAcc_Click(sender, e);
             }
-            else if(lvOps.SelectedItems.Count != 0)
+            else if (lvOps.SelectedItems.Count != 0)
             {
                 btnEditOp_Click(sender, e);
             }
@@ -1162,7 +1187,7 @@ namespace CrediNET
         {
             if (sfdPDF.ShowDialog() == DialogResult.OK)
             {
-                if(File.Exists(sfdPDF.FileName))
+                if (File.Exists(sfdPDF.FileName))
                     File.Delete(sfdPDF.FileName);
 
                 /*var workbook = new Workbook();
@@ -1259,7 +1284,7 @@ namespace CrediNET
 
                 workbook.SaveToFile(sfdPDF.FileName, FileFormat.PDF);
                 Process.Start(sfdPDF.FileName);*/
-            }   
-        }   
+            }
+        }
     }
 }

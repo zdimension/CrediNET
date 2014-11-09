@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -27,7 +26,11 @@ namespace CrediNET
             cbxBudget.Enabled = false;
 
             //Load operation budgets to cbxType
-            compte.Budgets.All(x => { cbxBudget.Items.Add((ColorComboBox.ColorInfo)x); return true; });
+            compte.Budgets.All(x =>
+            {
+                cbxBudget.Items.Add((ColorComboBox.ColorInfo) x);
+                return true;
+            });
             cbxBudget.SelectedIndex = 0;
 
             //Load operation types to cbxType
@@ -40,7 +43,7 @@ namespace CrediNET
 
         private void chbDate_CheckedChanged(object sender, EventArgs e)
         {
-            if (((CheckBox)sender).Checked == false)
+            if (((CheckBox) sender).Checked == false)
             {
                 dtpFrom.Enabled = false;
                 dtpTo.Enabled = false;
@@ -54,7 +57,7 @@ namespace CrediNET
 
         private void chbAll_CheckedChanged(object sender, EventArgs e)
         {
-            if (((CheckBox)sender).Checked == false)
+            if (((CheckBox) sender).Checked == false)
             {
                 dtpFrom.Enabled = false;
                 dtpTo.Enabled = false;
@@ -90,7 +93,7 @@ namespace CrediNET
 
         private void chbCredit_CheckedChanged(object sender, EventArgs e)
         {
-            if (((CheckBox)sender).Checked == false)
+            if (((CheckBox) sender).Checked == false)
             {
                 mudCreditFrom.Enabled = false;
                 mudCreditTo.Enabled = false;
@@ -104,7 +107,7 @@ namespace CrediNET
 
         private void chbDebit_CheckedChanged(object sender, EventArgs e)
         {
-            if (((CheckBox)sender).Checked == false)
+            if (((CheckBox) sender).Checked == false)
             {
                 mudDebitFrom.Enabled = false;
                 mudDebitTo.Enabled = false;
@@ -118,26 +121,12 @@ namespace CrediNET
 
         private void chbType_CheckedChanged(object sender, EventArgs e)
         {
-            if (((CheckBox)sender).Checked == false)
-            {
-                cbxType.Enabled = false;
-            }
-            else
-            {
-                cbxType.Enabled = true;
-            }
+            cbxType.Enabled = ((CheckBox) sender).Checked;
         }
 
         private void chbBudget_CheckedChanged(object sender, EventArgs e)
         {
-            if (((CheckBox)sender).Checked == false)
-            {
-                cbxBudget.Enabled = false;
-            }
-            else
-            {
-                cbxBudget.Enabled = true;
-            }
+            cbxBudget.Enabled = ((CheckBox) sender).Checked;
         }
     }
 }

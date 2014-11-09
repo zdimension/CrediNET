@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -121,298 +119,187 @@ namespace CrediNET
 
 		public override Color ButtonPressedGradientBegin
 		{
-			get
-			{
-				return _buttonPressedBegin;
-			}
+			get { return _buttonPressedBegin; }
 		}
 
 		public override Color ButtonPressedGradientEnd
 		{
-			get
-			{
-				return _buttonPressedEnd;
-			}
+			get { return _buttonPressedEnd; }
 		}
 
 		public override Color ButtonPressedGradientMiddle
 		{
-			get
-			{
-				return _buttonPressedMiddle;
-			}
+			get { return _buttonPressedMiddle; }
 		}
 
 		public override Color ButtonSelectedGradientBegin
 		{
-			get
-			{
-				return _buttonSelectedBegin;
-			}
+			get { return _buttonSelectedBegin; }
 		}
 
 		public override Color ButtonSelectedGradientEnd
 		{
-			get
-			{
-				return _buttonSelectedEnd;
-			}
+			get { return _buttonSelectedEnd; }
 		}
 
 		public override Color ButtonSelectedGradientMiddle
 		{
-			get
-			{
-				return _buttonSelectedMiddle;
-			}
+			get { return _buttonSelectedMiddle; }
 		}
 
 		public override Color ButtonSelectedHighlightBorder
 		{
-			get
-			{
-				return _buttonBorder;
-			}
+			get { return _buttonBorder; }
 		}
 
 		public override Color CheckBackground
 		{
-			get
-			{
-				return _checkBack;
-			}
+			get { return _checkBack; }
 		}
 
 		public override Color GripDark
 		{
-			get
-			{
-				return _gripDark;
-			}
+			get { return _gripDark; }
 		}
 
 		public override Color GripLight
 		{
-			get
-			{
-				return _gripLight;
-			}
+			get { return _gripLight; }
 		}
 
 		public override Color ImageMarginGradientBegin
 		{
-			get
-			{
-				return _imageMargin;
-			}
+			get { return _imageMargin; }
 		}
 
 		public override Color MenuBorder
 		{
-			get
-			{
-				return _menuBorder;
-			}
+			get { return _menuBorder; }
 		}
 
 		public override Color MenuItemPressedGradientBegin
 		{
-			get
-			{
-				return _toolStripBegin;
-			}
+			get { return _toolStripBegin; }
 		}
 
 		public override Color MenuItemPressedGradientEnd
 		{
-			get
-			{
-				return _toolStripEnd;
-			}
+			get { return _toolStripEnd; }
 		}
 
 		public override Color MenuItemPressedGradientMiddle
 		{
-			get
-			{
-				return _toolStripMiddle;
-			}
+			get { return _toolStripMiddle; }
 		}
 
 		public override Color MenuItemSelectedGradientBegin
 		{
-			get
-			{
-				return _menuItemSelectedBegin;
-			}
+			get { return _menuItemSelectedBegin; }
 		}
 
 		public override Color MenuItemSelectedGradientEnd
 		{
-			get
-			{
-				return _menuItemSelectedEnd;
-			}
+			get { return _menuItemSelectedEnd; }
 		}
 
 		public override Color MenuStripGradientBegin
 		{
-			get
-			{
-				return _menuToolBack;
-			}
+			get { return _menuToolBack; }
 		}
 
 		public override Color MenuStripGradientEnd
 		{
-			get
-			{
-				return _menuToolBack;
-			}
+			get { return _menuToolBack; }
 		}
 
 		public override Color OverflowButtonGradientBegin
 		{
-			get
-			{
-				return _overflowBegin;
-			}
+			get { return _overflowBegin; }
 		}
 
 		public override Color OverflowButtonGradientEnd
 		{
-			get
-			{
-				return _overflowEnd;
-			}
+			get { return _overflowEnd; }
 		}
 
 		public override Color OverflowButtonGradientMiddle
 		{
-			get
-			{
-				return _overflowMiddle;
-			}
+			get { return _overflowMiddle; }
 		}
 
 		public override Color RaftingContainerGradientBegin
 		{
-			get
-			{
-				return _menuToolBack;
-			}
+			get { return _menuToolBack; }
 		}
 
 		public override Color RaftingContainerGradientEnd
 		{
-			get
-			{
-				return _menuToolBack;
-			}
+			get { return _menuToolBack; }
 		}
 
 		public override Color SeparatorDark
 		{
-			get
-			{
-				return _separatorDark;
-			}
+			get { return _separatorDark; }
 		}
 
 		public override Color SeparatorLight
 		{
-			get
-			{
-				return _separatorLight;
-			}
+			get { return _separatorLight; }
 		}
 
 		public override Color StatusStripGradientBegin
 		{
-			get
-			{
-				return _statusStripLight;
-			}
+			get { return _statusStripLight; }
 		}
 
 		public override Color StatusStripGradientEnd
 		{
-			get
-			{
-				return _statusStripDark;
-			}
+			get { return _statusStripDark; }
 		}
 
 		public override Color ToolStripBorder
 		{
-			get
-			{
-				return _toolStripBorder;
-			}
+			get { return _toolStripBorder; }
 		}
 
 		public override Color ToolStripContentPanelGradientBegin
 		{
-			get
-			{
-				return _toolStripContentEnd;
-			}
+			get { return _toolStripContentEnd; }
 		}
 
 		public override Color ToolStripContentPanelGradientEnd
 		{
-			get
-			{
-				return _menuToolBack;
-			}
+			get { return _menuToolBack; }
 		}
 
 		public override Color ToolStripDropDownBackground
 		{
-			get
-			{
-				return _contextMenuBack;
-			}
+			get { return _contextMenuBack; }
 		}
 
 		public override Color ToolStripGradientBegin
 		{
-			get
-			{
-				return _toolStripBegin;
-			}
+			get { return _toolStripBegin; }
 		}
 
 		public override Color ToolStripGradientEnd
 		{
-			get
-			{
-				return _toolStripEnd;
-			}
+			get { return _toolStripEnd; }
 		}
 
 		public override Color ToolStripGradientMiddle
 		{
-			get
-			{
-				return _toolStripMiddle;
-			}
+			get { return _toolStripMiddle; }
 		}
 
 		public override Color ToolStripPanelGradientBegin
 		{
-			get
-			{
-				return _menuToolBack;
-			}
+			get { return _menuToolBack; }
 		}
 
 		public override Color ToolStripPanelGradientEnd
 		{
-			get
-			{
-				return _menuToolBack;
-			}
+			get { return _menuToolBack; }
 		}
 
 		[DebuggerNonUserCode]
@@ -436,7 +323,8 @@ namespace CrediNET
 			public Color cBorder1;
 			public Color cBorder2;
 
-			public GradientItemColors(Color insideTop1, Color insideTop2, Color insideBottom1, Color insideBottom2, Color fillTop1, Color fillTop2, Color fillBottom1, Color fillBottom2, Color border1, Color border2)
+			public GradientItemColors(Color insideTop1, Color insideTop2, Color insideBottom1, Color insideBottom2,
+				Color fillTop1, Color fillTop2, Color fillBottom1, Color fillBottom2, Color border1, Color border2)
 			{
 				cInsideTop1 = insideTop1;
 				cInsideTop2 = insideTop2;
@@ -452,21 +340,18 @@ namespace CrediNET
 		}
 
 		private Color forecolor;
-		private bool m_IsGlassDesired;
-		private static int _gripOffset;
+	    private static int _gripOffset;
 		private static int _gripSquare;
 		private static int _gripSize;
 		private static int _gripMove;
 		private static int _gripLines;
 		private static int _checkInset;
 		private static int _marginInset;
-		private static int _separatorInset;
-		private static float _cutToolItemMenu;
+	    private static float _cutToolItemMenu;
 		private static float _cutContextMenu;
 		private static float _cutMenuItemBack;
 		private static float _contextCheckTickThickness;
-		private static Blend _statusStripBlend;
-		internal new static TemplateColorTable ColorTable;
+	    internal new static TemplateColorTable ColorTable;
 		internal static Color insideTop1;
 		internal static Color insideTop2;
 		internal static Color insideBottom1;
@@ -514,19 +399,9 @@ namespace CrediNET
 		private static GradientItemColors _itemToolItemCheckedColors;
 		private static GradientItemColors _itemToolItemCheckPressColors;
 
-		public bool IsGlassDesired
-		{
-			get
-			{
-				return m_IsGlassDesired;
-			}
-			set
-			{
-				m_IsGlassDesired = value;
-			}
-		}
+	    public bool IsGlassDesired { get; set; }
 
-		public TemplateRenderer(RenderParams @params)
+	    public TemplateRenderer(RenderParams @params)
 		{
 			RoundedEdges = false;
 			forecolor = @params.foreColor;
@@ -537,12 +412,11 @@ namespace CrediNET
 			_gripLines = @params.gripLines;
 			_checkInset = @params.checkInset;
 			_marginInset = @params.marginInset;
-			_separatorInset = @params.separatorInset;
-			_cutToolItemMenu = @params.cutToolItemMenu;
+		    _cutToolItemMenu = @params.cutToolItemMenu;
 			_cutContextMenu = @params.cutContextMenu;
 			_cutMenuItemBack = @params.cutMenuItemBack;
 			_contextCheckTickThickness = @params.contextCheckTickThickness;
-			ColorTable = (TemplateColorTable)@params.ColorTable;
+			ColorTable = (TemplateColorTable) @params.ColorTable;
 			TemplateColorTable._imageMargin = @params.imageMargin;
 			insideTop1 = @params.insideTop1;
 			insideTop2 = @params.insideTop2;
@@ -584,31 +458,26 @@ namespace CrediNET
 			_statusStripBorderLight = @params.statusStripBorderLight;
 			_gripDark = @params.gripDark;
 			_gripLight = @params.gripLight;
-			_itemContextItemEnabledColors = new GradientItemColors(@params.insideTop1, @params.insideTop2, @params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1, @params.fillBottom2, @params.borderColor1, @params.borderColor2);
-			_itemDisabledColors = new GradientItemColors(@params.disabledInsideTop1, @params.disabledInsideTop2, @params.disabledInsideBottom1, @params.disabledInsideBottom2, @params.disabledFillTop1, @params.disabledFillTop2, @params.disabledFillBottom1, @params.disabledFillBottom2, @params.disabledBorderColor1, @params.disabledBorderColor2);
-			_itemToolItemSelectedColors = new GradientItemColors(@params.insideTop1, @params.insideTop2, @params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1, @params.fillBottom2, @params.borderColor1, @params.borderColor2);
-			_itemToolItemPressedColors = new GradientItemColors(@params.insideTop1, @params.insideTop2, @params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1, @params.fillBottom2, @params.borderColor1, @params.borderColor2);
-			_itemToolItemCheckedColors = new GradientItemColors(@params.insideTop1, @params.insideTop2, @params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1, @params.fillBottom2, @params.borderColor1, @params.borderColor2);
-			_itemToolItemCheckPressColors = new GradientItemColors(@params.insideTop1, @params.insideTop2, @params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1, @params.fillBottom2, @params.borderColor1, @params.borderColor2);
-			_statusStripBlend = new Blend();
-			_statusStripBlend.Positions = new float[]
-			{
-				0f,
-				0.25f,
-				0.25f,
-				0.57f,
-				0.86f,
-				1f
-			};
-			_statusStripBlend.Factors = new float[]
-			{
-				0.1f,
-				0.6f,
-				1f,
-				0.4f,
-				0f,
-				0.95f
-			};
+			_itemContextItemEnabledColors = new GradientItemColors(@params.insideTop1, @params.insideTop2,
+				@params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1,
+				@params.fillBottom2, @params.borderColor1, @params.borderColor2);
+			_itemDisabledColors = new GradientItemColors(@params.disabledInsideTop1, @params.disabledInsideTop2,
+				@params.disabledInsideBottom1, @params.disabledInsideBottom2, @params.disabledFillTop1,
+				@params.disabledFillTop2, @params.disabledFillBottom1, @params.disabledFillBottom2,
+				@params.disabledBorderColor1, @params.disabledBorderColor2);
+			_itemToolItemSelectedColors = new GradientItemColors(@params.insideTop1, @params.insideTop2,
+				@params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1,
+				@params.fillBottom2, @params.borderColor1, @params.borderColor2);
+			_itemToolItemPressedColors = new GradientItemColors(@params.insideTop1, @params.insideTop2,
+				@params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1,
+				@params.fillBottom2, @params.borderColor1, @params.borderColor2);
+			_itemToolItemCheckedColors = new GradientItemColors(@params.insideTop1, @params.insideTop2,
+				@params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1,
+				@params.fillBottom2, @params.borderColor1, @params.borderColor2);
+			_itemToolItemCheckPressColors = new GradientItemColors(@params.insideTop1, @params.insideTop2,
+				@params.insideBottom1, @params.insideBottom2, @params.fillTop1, @params.fillTop2, @params.fillBottom1,
+				@params.fillBottom2, @params.borderColor1, @params.borderColor2);
+			
 		}
 
 		public TemplateRenderer()
@@ -662,12 +531,9 @@ namespace CrediNET
 					}
 					finally
 					{
-						flag = (linearGradientBrush != null);
-						flag2 = flag;
-						if (flag2)
-						{
-							((IDisposable)linearGradientBrush).Dispose();
-						}
+						flag = true;
+						flag2 = true;
+					    ((IDisposable) linearGradientBrush).Dispose();
 					}
 				}
 				finally
@@ -676,7 +542,7 @@ namespace CrediNET
 					flag2 = flag;
 					if (flag2)
 					{
-						((IDisposable)graphicsPath).Dispose();
+						graphicsPath.Dispose();
 					}
 				}
 			}
@@ -690,7 +556,7 @@ namespace CrediNET
 
 		protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
 		{
-			var toolStripButton = (ToolStripButton)e.Item;
+			var toolStripButton = (ToolStripButton) e.Item;
 			var flag = !toolStripButton.Selected && !toolStripButton.Pressed;
 			bool flag2;
 			bool flag3;
@@ -704,7 +570,7 @@ namespace CrediNET
 				}
 			}
 			flag3 = true;
-		IL_3D:
+			IL_3D:
 			var flag4 = flag3;
 			flag2 = flag4;
 			if (flag2)
@@ -757,26 +623,20 @@ namespace CrediNET
 						}
 						finally
 						{
-							flag = (solidBrush != null);
-							flag2 = flag;
-							if (flag2)
-							{
-								((IDisposable)solidBrush).Dispose();
-							}
+							flag = true;
+							flag2 = true;
+						    ((IDisposable) solidBrush).Dispose();
 						}
-						var pen = new Pen((Color)(e.Item.Selected ? _contextCheckBorderSelected : _contextCheckBorder));
+						var pen = new Pen(e.Item.Selected ? _contextCheckBorderSelected : _contextCheckBorder);
 						try
 						{
 							e.Graphics.DrawPath(pen, graphicsPath);
 						}
 						finally
 						{
-							flag = (pen != null);
-							flag2 = flag;
-							if (flag2)
-							{
-								((IDisposable)pen).Dispose();
-							}
+							flag = true;
+							flag2 = true;
+						    pen.Dispose();
 						}
 						flag = (e.Image != null);
 						flag2 = flag;
@@ -787,44 +647,43 @@ namespace CrediNET
 							flag2 = flag;
 							if (flag2)
 							{
-								var toolStripMenuItem = (ToolStripMenuItem)e.Item;
+								var toolStripMenuItem = (ToolStripMenuItem) e.Item;
 								checkState = toolStripMenuItem.CheckState;
 							}
 							switch (checkState)
 							{
 								case CheckState.Checked:
 									flag2 = true;
-									if (flag2)
-									{
-										var graphicsPath2 = CreateTickPath(imageRectangle);
-										try
-										{
-											var pen2 = new Pen((Color)(e.Item.Selected ? _contextCheckTickSelected : _contextCheckTick), _contextCheckTickThickness);
-											try
-											{
-												e.Graphics.DrawPath(pen2, graphicsPath2);
-											}
-											finally
-											{
-												flag = (pen2 != null);
-												flag2 = flag;
-												if (flag2)
-												{
-													((IDisposable)pen2).Dispose();
-												}
-											}
-										}
-										finally
-										{
-											flag = (graphicsPath2 != null);
-											flag2 = flag;
-											if (flag2)
-											{
-												((IDisposable)graphicsPath2).Dispose();
-											}
-										}
-									}
-									break;
+							    {
+							        var graphicsPath2 = CreateTickPath(imageRectangle);
+							        try
+							        {
+							            var pen2 =
+							                new Pen(
+							                    e.Item.Selected ? _contextCheckTickSelected : _contextCheckTick,
+							                    _contextCheckTickThickness);
+							            try
+							            {
+							                e.Graphics.DrawPath(pen2, graphicsPath2);
+							            }
+							            finally
+							            {
+							                flag = true;
+							                flag2 = true;
+							                pen2.Dispose();
+							            }
+							        }
+							        finally
+							        {
+							            flag = graphicsPath2 != null;
+							            flag2 = flag;
+							            if (flag2)
+							            {
+							                graphicsPath2.Dispose();
+							            }
+							        }
+							    }
+							        break;
 
 								case CheckState.Indeterminate:
 									flag2 = true;
@@ -833,7 +692,9 @@ namespace CrediNET
 										var graphicsPath3 = CreateIndeterminatePath(imageRectangle);
 										try
 										{
-											var solidBrush2 = new SolidBrush((Color)(e.Item.Selected ? _contextCheckTickSelected : _contextCheckTick));
+											var solidBrush2 =
+												new SolidBrush(
+													e.Item.Selected ? _contextCheckTickSelected : _contextCheckTick);
 											try
 											{
 												e.Graphics.FillPath(solidBrush2, graphicsPath3);
@@ -844,7 +705,7 @@ namespace CrediNET
 												flag2 = flag;
 												if (flag2)
 												{
-													((IDisposable)solidBrush2).Dispose();
+													((IDisposable) solidBrush2).Dispose();
 												}
 											}
 										}
@@ -854,7 +715,7 @@ namespace CrediNET
 											flag2 = flag;
 											if (flag2)
 											{
-												((IDisposable)graphicsPath3).Dispose();
+												graphicsPath3.Dispose();
 											}
 										}
 									}
@@ -868,7 +729,7 @@ namespace CrediNET
 						flag2 = flag;
 						if (flag2)
 						{
-							((IDisposable)graphicsPath).Dispose();
+							graphicsPath.Dispose();
 						}
 					}
 				}
@@ -878,7 +739,7 @@ namespace CrediNET
 					flag2 = flag;
 					if (flag2)
 					{
-						((IDisposable)useAntiAlias).Dispose();
+						((IDisposable) useAntiAlias).Dispose();
 					}
 				}
 			}
@@ -902,7 +763,8 @@ namespace CrediNET
 					}
 					else
 					{
-						ControlPaint.DrawImageDisabled(e.Graphics, e.Image, e.ImageRectangle.X, e.ImageRectangle.Y, Color.Transparent);
+						ControlPaint.DrawImageDisabled(e.Graphics, e.Image, e.ImageRectangle.X, e.ImageRectangle.Y,
+							Color.Transparent);
 					}
 				}
 			}
@@ -927,7 +789,7 @@ namespace CrediNET
 				}
 			}
 			flag3 = true;
-		IL_45:
+			IL_45:
 			var flag4 = flag3;
 			flag2 = flag4;
 			if (flag2)
@@ -993,10 +855,11 @@ namespace CrediNET
 			var flag2 = flag;
 			if (flag2)
 			{
-				var toolStripSplitButton = (ToolStripSplitButton)e.Item;
+				var toolStripSplitButton = (ToolStripSplitButton) e.Item;
 				RenderToolSplitButtonBackground(e.Graphics, toolStripSplitButton, e.ToolStrip);
 				var dropDownButtonBounds = toolStripSplitButton.DropDownButtonBounds;
-				OnRenderArrow(new ToolStripArrowRenderEventArgs(e.Graphics, toolStripSplitButton, dropDownButtonBounds, SystemColors.ControlText, ArrowDirection.Down));
+				OnRenderArrow(new ToolStripArrowRenderEventArgs(e.Graphics, toolStripSplitButton, dropDownButtonBounds,
+					SystemColors.ControlText, ArrowDirection.Down));
 			}
 			else
 			{
@@ -1053,7 +916,7 @@ namespace CrediNET
 						var flag2 = flag3;
 						if (flag2)
 						{
-							((IDisposable)solidBrush2).Dispose();
+							((IDisposable) solidBrush2).Dispose();
 						}
 					}
 				}
@@ -1063,7 +926,7 @@ namespace CrediNET
 					var flag2 = flag4;
 					if (flag2)
 					{
-						((IDisposable)solidBrush).Dispose();
+						((IDisposable) solidBrush).Dispose();
 					}
 				}
 			}
@@ -1076,7 +939,8 @@ namespace CrediNET
 			var flag2 = flag;
 			if (flag2)
 			{
-				var linearGradientBrush = new LinearGradientBrush(e.ToolStripContentPanel.ClientRectangle, ColorTable.ToolStripContentPanelGradientEnd, ColorTable.ToolStripContentPanelGradientBegin, 90f);
+				var linearGradientBrush = new LinearGradientBrush(e.ToolStripContentPanel.ClientRectangle,
+					ColorTable.ToolStripContentPanelGradientEnd, ColorTable.ToolStripContentPanelGradientBegin, 90f);
 				try
 				{
 					e.Graphics.FillRectangle(linearGradientBrush, e.ToolStripContentPanel.ClientRectangle);
@@ -1087,7 +951,7 @@ namespace CrediNET
 					flag2 = flag;
 					if (flag2)
 					{
-						((IDisposable)linearGradientBrush).Dispose();
+						((IDisposable) linearGradientBrush).Dispose();
 					}
 				}
 			}
@@ -1125,7 +989,7 @@ namespace CrediNET
 									flag = flag2;
 									if (flag)
 									{
-										((IDisposable)solidBrush).Dispose();
+										((IDisposable) solidBrush).Dispose();
 									}
 								}
 							}
@@ -1135,7 +999,7 @@ namespace CrediNET
 								flag = flag2;
 								if (flag)
 								{
-									((IDisposable)useClipping).Dispose();
+									((IDisposable) useClipping).Dispose();
 								}
 							}
 						}
@@ -1145,7 +1009,7 @@ namespace CrediNET
 							flag = flag2;
 							if (flag)
 							{
-								((IDisposable)graphicsPath2).Dispose();
+								graphicsPath2.Dispose();
 							}
 						}
 					}
@@ -1155,42 +1019,15 @@ namespace CrediNET
 						flag = flag2;
 						if (flag)
 						{
-							((IDisposable)graphicsPath).Dispose();
+							graphicsPath.Dispose();
 						}
 					}
 				}
 				else
 				{
-					flag2 = (e.ToolStrip is StatusStrip);
-					flag = flag2;
-					if (flag)
-					{
-						var rect = new RectangleF(0f, 1.5f, (float)e.ToolStrip.Width, (float)checked(e.ToolStrip.Height - 2));
-						flag2 = (rect.Width > 0f && rect.Height > 0f);
-						flag = flag2;
-						if (flag)
-						{
-							var linearGradientBrush = new LinearGradientBrush(rect, ColorTable.StatusStripGradientBegin, ColorTable.StatusStripGradientEnd, 90f);
-							try
-							{
-								linearGradientBrush.Blend = _statusStripBlend;
-								e.Graphics.FillRectangle(linearGradientBrush, rect);
-							}
-							finally
-							{
-								flag2 = (linearGradientBrush != null);
-								flag = flag2;
-								if (flag)
-								{
-									((IDisposable)linearGradientBrush).Dispose();
-								}
-							}
-						}
-					}
-					else
-					{
-						base.OnRenderToolStripBackground(e);
-					}
+				    flag2 = (e.ToolStrip is StatusStrip);
+				    flag = flag2;
+				    base.OnRenderToolStripBackground(e);
 				}
 			}
 		}
@@ -1215,7 +1052,9 @@ namespace CrediNET
 					}
 					else
 					{
-						affectedBounds.X = (int)Math.Round(Math.Round(unchecked((double)affectedBounds.X + (double)_marginInset / 2.0)));
+						affectedBounds.X =
+							(int)
+								Math.Round(Math.Round(unchecked(affectedBounds.X + _marginInset / 2.0)));
 					}
 					var solidBrush = new SolidBrush(ColorTable.ImageMarginGradientBegin);
 					try
@@ -1228,7 +1067,7 @@ namespace CrediNET
 						flag2 = flag;
 						if (flag2)
 						{
-							((IDisposable)solidBrush).Dispose();
+							((IDisposable) solidBrush).Dispose();
 						}
 					}
 					var pen = new Pen(_separatorMenuLight);
@@ -1241,13 +1080,17 @@ namespace CrediNET
 							flag2 = flag;
 							if (flag2)
 							{
-								e.Graphics.DrawLine(pen, affectedBounds.Right, affectedBounds.Top, affectedBounds.Right, affectedBounds.Bottom);
-								e.Graphics.DrawLine(pen2, affectedBounds.Right - 1, affectedBounds.Top, affectedBounds.Right - 1, affectedBounds.Bottom);
+								e.Graphics.DrawLine(pen, affectedBounds.Right, affectedBounds.Top, affectedBounds.Right,
+									affectedBounds.Bottom);
+								e.Graphics.DrawLine(pen2, affectedBounds.Right - 1, affectedBounds.Top,
+									affectedBounds.Right - 1, affectedBounds.Bottom);
 							}
 							else
 							{
-								e.Graphics.DrawLine(pen, affectedBounds.Left - 1, affectedBounds.Top, affectedBounds.Left - 1, affectedBounds.Bottom);
-								e.Graphics.DrawLine(pen2, affectedBounds.Left, affectedBounds.Top, affectedBounds.Left, affectedBounds.Bottom);
+								e.Graphics.DrawLine(pen, affectedBounds.Left - 1, affectedBounds.Top,
+									affectedBounds.Left - 1, affectedBounds.Bottom);
+								e.Graphics.DrawLine(pen2, affectedBounds.Left, affectedBounds.Top, affectedBounds.Left,
+									affectedBounds.Bottom);
 							}
 						}
 						finally
@@ -1256,7 +1099,7 @@ namespace CrediNET
 							flag2 = flag;
 							if (flag2)
 							{
-								((IDisposable)pen2).Dispose();
+								pen2.Dispose();
 							}
 						}
 					}
@@ -1266,7 +1109,7 @@ namespace CrediNET
 						flag2 = flag;
 						if (flag2)
 						{
-							((IDisposable)pen).Dispose();
+							pen.Dispose();
 						}
 					}
 				}
@@ -1279,169 +1122,7 @@ namespace CrediNET
 
 		protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
 		{
-			return;
-
-			/*bool flag = e.ToolStrip is ContextMenuStrip || e.ToolStrip is ToolStripDropDownMenu;
-			bool flag2 = flag;
-			checked
-			{
-				if (flag2)
-				{
-					bool flag3 = !e.ConnectedArea.IsEmpty;
-					flag2 = flag3;
-					if (flag2)
-					{
-						SolidBrush solidBrush = new SolidBrush(TemplateRenderer._contextMenuBack);
-						try
-						{
-							e.Graphics.FillRectangle(solidBrush, e.ConnectedArea);
-						}
-						finally
-						{
-							flag3 = (solidBrush != null);
-							flag2 = flag3;
-							if (flag2)
-							{
-								((IDisposable)solidBrush).Dispose();
-							}
-						}
-					}
-					GraphicsPath graphicsPath = this.CreateBorderPath(e.AffectedBounds, e.ConnectedArea, TemplateRenderer._cutContextMenu);
-					try
-					{
-						GraphicsPath graphicsPath2 = this.CreateInsideBorderPath(e.AffectedBounds, e.ConnectedArea, TemplateRenderer._cutContextMenu);
-						try
-						{
-							GraphicsPath graphicsPath3 = this.CreateClipBorderPath(e.AffectedBounds, e.ConnectedArea, TemplateRenderer._cutContextMenu);
-							try
-							{
-								Pen pen = new Pen(TemplateRenderer.ColorTable.MenuBorder);
-								try
-								{
-									Pen pen2 = new Pen(TemplateRenderer._separatorMenuLight);
-									try
-									{
-										UseClipping useClipping = new UseClipping(e.Graphics, graphicsPath3);
-										try
-										{
-											UseAntiAlias useAntiAlias = new UseAntiAlias(e.Graphics);
-											try
-											{
-												e.Graphics.DrawPath(pen2, graphicsPath2);
-												e.Graphics.DrawPath(pen, graphicsPath);
-											}
-											finally
-											{
-												flag3 = (useAntiAlias != null);
-												flag2 = flag3;
-												if (flag2)
-												{
-													((IDisposable)useAntiAlias).Dispose();
-												}
-											}
-											e.Graphics.DrawLine(pen, e.AffectedBounds.Right, e.AffectedBounds.Bottom, e.AffectedBounds.Right - 1, e.AffectedBounds.Bottom - 1);
-										}
-										finally
-										{
-											flag3 = (useClipping != null);
-											flag2 = flag3;
-											if (flag2)
-											{
-												((IDisposable)useClipping).Dispose();
-											}
-										}
-									}
-									finally
-									{
-										flag3 = (pen2 != null);
-										flag2 = flag3;
-										if (flag2)
-										{
-											((IDisposable)pen2).Dispose();
-										}
-									}
-								}
-								finally
-								{
-									flag3 = (pen != null);
-									flag2 = flag3;
-									if (flag2)
-									{
-										((IDisposable)pen).Dispose();
-									}
-								}
-							}
-							finally
-							{
-								flag3 = (graphicsPath3 != null);
-								flag2 = flag3;
-								if (flag2)
-								{
-									((IDisposable)graphicsPath3).Dispose();
-								}
-							}
-						}
-						finally
-						{
-							flag3 = (graphicsPath2 != null);
-							flag2 = flag3;
-							if (flag2)
-							{
-								((IDisposable)graphicsPath2).Dispose();
-							}
-						}
-					}
-					finally
-					{
-						flag3 = (graphicsPath != null);
-						flag2 = flag3;
-						if (flag2)
-						{
-							((IDisposable)graphicsPath).Dispose();
-						}
-					}
-				}
-				else
-				{
-					bool flag4 = e.ToolStrip is StatusStrip;
-					flag2 = flag4;
-					if (flag2)
-					{
-						Pen pen3 = new Pen(TemplateRenderer._statusStripBorderDark);
-						try
-						{
-							Pen pen4 = new Pen(TemplateRenderer._statusStripBorderLight);
-							try
-							{
-								e.Graphics.DrawLine(pen3, 0, 0, e.ToolStrip.Width, 0);
-								e.Graphics.DrawLine(pen4, 0, 1, e.ToolStrip.Width, 1);
-							}
-							finally
-							{
-								flag4 = (pen4 != null);
-								flag2 = flag4;
-								if (flag2)
-								{
-									((IDisposable)pen4).Dispose();
-								}
-							}
-						}
-						finally
-						{
-							flag4 = (pen3 != null);
-							flag2 = flag4;
-							if (flag2)
-							{
-								((IDisposable)pen3).Dispose();
-							}
-						}
-					}
-					else
-					{
-						base.OnRenderToolStripBorder(e);
-					}
-				}
-			}*/
+		    
 		}
 
 		private void RenderToolButtonBackground(Graphics g, ToolStripButton button, ToolStrip toolstrip)
@@ -1464,14 +1145,7 @@ namespace CrediNET
 					{
 						flag2 = button.Selected;
 						flag = flag2;
-						if (flag)
-						{
-							DrawGradientToolItem(g, button, _itemToolItemCheckPressColors);
-						}
-						else
-						{
-							DrawGradientToolItem(g, button, _itemToolItemCheckedColors);
-						}
+					    DrawGradientToolItem(g, button, flag ? _itemToolItemCheckPressColors : _itemToolItemCheckedColors);
 					}
 				}
 				else
@@ -1558,7 +1232,8 @@ namespace CrediNET
 					flag2 = flag3;
 					if (flag2)
 					{
-						DrawGradientToolSplitItem(g, splitButton, _itemToolItemPressedColors, _itemToolItemSelectedColors, _itemContextItemEnabledColors);
+						DrawGradientToolSplitItem(g, splitButton, _itemToolItemPressedColors,
+							_itemToolItemSelectedColors, _itemContextItemEnabledColors);
 					}
 					else
 					{
@@ -1570,7 +1245,8 @@ namespace CrediNET
 						}
 						else
 						{
-							DrawGradientToolSplitItem(g, splitButton, _itemToolItemSelectedColors, _itemToolItemSelectedColors, _itemContextItemEnabledColors);
+							DrawGradientToolSplitItem(g, splitButton, _itemToolItemSelectedColors,
+								_itemToolItemSelectedColors, _itemContextItemEnabledColors);
 						}
 					}
 				}
@@ -1607,13 +1283,15 @@ namespace CrediNET
 			DrawGradientItem(g, backRect, colors);
 		}
 
-		private void DrawGradientToolSplitItem(Graphics g, ToolStripSplitButton splitButton, GradientItemColors colorsButton, GradientItemColors colorsDrop, GradientItemColors colorsSplit)
+		private void DrawGradientToolSplitItem(Graphics g, ToolStripSplitButton splitButton,
+			GradientItemColors colorsButton, GradientItemColors colorsDrop, GradientItemColors colorsSplit)
 		{
 			var empty = Point.Empty;
 			var bounds = splitButton.Bounds;
 			var rectangle = new Rectangle(empty, bounds.Size);
 			var dropDownButtonBounds = splitButton.DropDownButtonBounds;
-			var flag = rectangle.Width > 0 && dropDownButtonBounds.Width > 0 && rectangle.Height > 0 && dropDownButtonBounds.Height > 0;
+			var flag = rectangle.Width > 0 && dropDownButtonBounds.Width > 0 && rectangle.Height > 0 &&
+					   dropDownButtonBounds.Height > 0;
 			var flag2 = flag;
 			checked
 			{
@@ -1643,14 +1321,16 @@ namespace CrediNET
 						DrawGradientBack(g, backRect, colorsButton);
 						DrawGradientBack(g, dropDownButtonBounds, colorsDrop);
 						bounds = new Rectangle(rectangle.X + num, rectangle.Top, 1, rectangle.Height + 1);
-						var linearGradientBrush = new LinearGradientBrush(bounds, colorsSplit.cBorder1, colorsSplit.cBorder2, 90f);
+						var linearGradientBrush = new LinearGradientBrush(bounds, colorsSplit.cBorder1,
+							colorsSplit.cBorder2, 90f);
 						try
 						{
 							linearGradientBrush.SetSigmaBellShape(0.5f);
 							var pen = new Pen(linearGradientBrush);
 							try
 							{
-								g.DrawLine(pen, rectangle.X + num, rectangle.Top + 1, rectangle.X + num, rectangle.Bottom - 1);
+								g.DrawLine(pen, rectangle.X + num, rectangle.Top + 1, rectangle.X + num,
+									rectangle.Bottom - 1);
 							}
 							finally
 							{
@@ -1658,7 +1338,7 @@ namespace CrediNET
 								flag2 = flag;
 								if (flag2)
 								{
-									((IDisposable)pen).Dispose();
+									pen.Dispose();
 								}
 							}
 						}
@@ -1668,7 +1348,7 @@ namespace CrediNET
 							flag2 = flag;
 							if (flag2)
 							{
-								((IDisposable)linearGradientBrush).Dispose();
+								((IDisposable) linearGradientBrush).Dispose();
 							}
 						}
 						DrawGradientBorder(g, rectangle, colorsButton);
@@ -1679,7 +1359,7 @@ namespace CrediNET
 						flag2 = flag;
 						if (flag2)
 						{
-							((IDisposable)graphicsPath).Dispose();
+							graphicsPath.Dispose();
 						}
 					}
 				}
@@ -1712,7 +1392,7 @@ namespace CrediNET
 								var flag2 = flag;
 								if (flag2)
 								{
-									((IDisposable)solidBrush).Dispose();
+									((IDisposable) solidBrush).Dispose();
 								}
 							}
 							var pen = new Pen(ColorTable.MenuBorder);
@@ -1726,7 +1406,7 @@ namespace CrediNET
 								var flag2 = flag3;
 								if (flag2)
 								{
-									((IDisposable)pen).Dispose();
+									pen.Dispose();
 								}
 							}
 						}
@@ -1736,7 +1416,7 @@ namespace CrediNET
 							var flag2 = flag4;
 							if (flag2)
 							{
-								((IDisposable)useClipping).Dispose();
+								((IDisposable) useClipping).Dispose();
 							}
 						}
 					}
@@ -1746,7 +1426,7 @@ namespace CrediNET
 						var flag2 = flag5;
 						if (flag2)
 						{
-							((IDisposable)graphicsPath3).Dispose();
+							graphicsPath3.Dispose();
 						}
 					}
 				}
@@ -1756,7 +1436,7 @@ namespace CrediNET
 					var flag2 = flag6;
 					if (flag2)
 					{
-						((IDisposable)graphicsPath2).Dispose();
+						graphicsPath2.Dispose();
 					}
 				}
 			}
@@ -1766,7 +1446,7 @@ namespace CrediNET
 				var flag2 = flag7;
 				if (flag2)
 				{
-					((IDisposable)graphicsPath).Dispose();
+					graphicsPath.Dispose();
 				}
 			}
 		}
@@ -1793,7 +1473,7 @@ namespace CrediNET
 			backRect.Inflate(-1, -1);
 			checked
 			{
-				var num = (int)Math.Round(Math.Round((double)backRect.Height / 2.0));
+				var num = (int) Math.Round(Math.Round(backRect.Height / 2.0));
 				var rectangle = new Rectangle(backRect.X, backRect.Y, backRect.Width, num);
 				var rectangle2 = new Rectangle(backRect.X, backRect.Y + num, backRect.Width, backRect.Height - num);
 				var rect = rectangle;
@@ -1803,7 +1483,8 @@ namespace CrediNET
 				var linearGradientBrush = new LinearGradientBrush(rect, colors.cInsideTop1, colors.cInsideTop2, 90f);
 				try
 				{
-					var linearGradientBrush2 = new LinearGradientBrush(rect2, colors.cInsideBottom1, colors.cInsideBottom2, 90f);
+					var linearGradientBrush2 = new LinearGradientBrush(rect2, colors.cInsideBottom1,
+						colors.cInsideBottom2, 90f);
 					try
 					{
 						g.FillRectangle(linearGradientBrush, rectangle);
@@ -1815,7 +1496,7 @@ namespace CrediNET
 						var flag2 = flag;
 						if (flag2)
 						{
-							((IDisposable)linearGradientBrush2).Dispose();
+							((IDisposable) linearGradientBrush2).Dispose();
 						}
 					}
 				}
@@ -1825,10 +1506,10 @@ namespace CrediNET
 					var flag2 = flag3;
 					if (flag2)
 					{
-						((IDisposable)linearGradientBrush).Dispose();
+						((IDisposable) linearGradientBrush).Dispose();
 					}
 				}
-				num = (int)Math.Round(Math.Round((double)backRect.Height / 2.0));
+				num = (int) Math.Round(Math.Round(backRect.Height / 2.0));
 				rectangle = new Rectangle(backRect.X, backRect.Y, backRect.Width, num);
 				rectangle2 = new Rectangle(backRect.X, backRect.Y + num, backRect.Width, backRect.Height - num);
 				rect = rectangle;
@@ -1838,11 +1519,12 @@ namespace CrediNET
 				var linearGradientBrush3 = new LinearGradientBrush(rect, colors.cFillTop1, colors.cFillTop2, 90f);
 				try
 				{
-					var linearGradientBrush4 = new LinearGradientBrush(rect2, colors.cFillBottom1, colors.cFillBottom2, 90f);
+					var linearGradientBrush4 = new LinearGradientBrush(rect2, colors.cFillBottom1, colors.cFillBottom2,
+						90f);
 					try
 					{
 						backRect.Inflate(-1, -1);
-						num = (int)Math.Round(Math.Round((double)backRect.Height / 2.0));
+						num = (int) Math.Round(Math.Round(backRect.Height / 2.0));
 						rectangle = new Rectangle(backRect.X, backRect.Y, backRect.Width, num);
 						rectangle2 = new Rectangle(backRect.X, backRect.Y + num, backRect.Width, backRect.Height - num);
 						g.FillRectangle(linearGradientBrush3, rectangle);
@@ -1854,7 +1536,7 @@ namespace CrediNET
 						var flag2 = flag4;
 						if (flag2)
 						{
-							((IDisposable)linearGradientBrush4).Dispose();
+							((IDisposable) linearGradientBrush4).Dispose();
 						}
 					}
 				}
@@ -1864,7 +1546,7 @@ namespace CrediNET
 					var flag2 = flag5;
 					if (flag2)
 					{
-						((IDisposable)linearGradientBrush3).Dispose();
+						((IDisposable) linearGradientBrush3).Dispose();
 					}
 				}
 			}
@@ -1895,7 +1577,7 @@ namespace CrediNET
 							var flag2 = flag;
 							if (flag2)
 							{
-								((IDisposable)graphicsPath).Dispose();
+								graphicsPath.Dispose();
 							}
 						}
 					}
@@ -1905,7 +1587,7 @@ namespace CrediNET
 						var flag2 = flag3;
 						if (flag2)
 						{
-							((IDisposable)pen).Dispose();
+							pen.Dispose();
 						}
 					}
 				}
@@ -1915,7 +1597,7 @@ namespace CrediNET
 					var flag2 = flag4;
 					if (flag2)
 					{
-						((IDisposable)linearGradientBrush).Dispose();
+						((IDisposable) linearGradientBrush).Dispose();
 					}
 				}
 			}
@@ -1925,7 +1607,7 @@ namespace CrediNET
 				var flag2 = flag5;
 				if (flag2)
 				{
-					((IDisposable)useAntiAlias).Dispose();
+					((IDisposable) useAntiAlias).Dispose();
 				}
 			}
 		}
@@ -1939,143 +1621,7 @@ namespace CrediNET
 			}
 		}
 
-		private GraphicsPath CreateBorderPath(Rectangle rect, Rectangle exclude, float cut)
-		{
-			var flag = exclude.IsEmpty;
-			var flag2 = flag;
-			checked
-			{
-				GraphicsPath result;
-				if (flag2)
-				{
-					result = CreateBorderPath(rect, cut);
-				}
-				else
-				{
-					rect.Width--;
-					rect.Height--;
-					var list = new List<PointF>();
-					var x = (float)rect.X;
-					var num = (float)rect.Y;
-					var x2 = (float)rect.Right;
-					var y = (float)rect.Bottom;
-					GraphicsPath graphicsPath;
-					int num7;
-					unchecked
-					{
-						var num2 = (float)rect.X + cut;
-						var num3 = (float)rect.Right - cut;
-						var y2 = (float)rect.Y + cut;
-						var y3 = (float)rect.Bottom - cut;
-						var num4 = (cut == 0f) ? 1f : cut;
-						flag = (rect.Y >= exclude.Top && rect.Y <= exclude.Bottom);
-						flag2 = flag;
-						PointF item;
-						if (flag2)
-						{
-							var num5 = (float)checked(exclude.X - 1) - cut;
-							var num6 = (float)exclude.Right + cut;
-							flag = (num2 <= num5);
-							flag2 = flag;
-							if (flag2)
-							{
-								var list2 = list;
-								item = new PointF(num2, num);
-								list2.Add(item);
-								var list3 = list;
-								item = new PointF(num5, num);
-								list3.Add(item);
-								var list4 = list;
-								item = new PointF(num5 + cut, num - num4);
-								list4.Add(item);
-							}
-							else
-							{
-								num5 = (float)checked(exclude.X - 1);
-								var list5 = list;
-								item = new PointF(num5, num);
-								list5.Add(item);
-								var list6 = list;
-								item = new PointF(num5, num - num4);
-								list6.Add(item);
-							}
-							flag = (num3 > num6);
-							flag2 = flag;
-							if (flag2)
-							{
-								var list7 = list;
-								item = new PointF(num6 - cut, num - num4);
-								list7.Add(item);
-								var list8 = list;
-								item = new PointF(num6, num);
-								list8.Add(item);
-								var list9 = list;
-								item = new PointF(num3, num);
-								list9.Add(item);
-							}
-							else
-							{
-								num6 = (float)exclude.Right;
-								var list10 = list;
-								item = new PointF(num6, num - num4);
-								list10.Add(item);
-								var list11 = list;
-								item = new PointF(num6, num);
-								list11.Add(item);
-							}
-						}
-						else
-						{
-							var list12 = list;
-							item = new PointF(num2, num);
-							list12.Add(item);
-							var list13 = list;
-							item = new PointF(num3, num);
-							list13.Add(item);
-						}
-						var list14 = list;
-						item = new PointF(x2, y2);
-						list14.Add(item);
-						var list15 = list;
-						item = new PointF(x2, y3);
-						list15.Add(item);
-						var list16 = list;
-						item = new PointF(num3, y);
-						list16.Add(item);
-						var list17 = list;
-						item = new PointF(num2, y);
-						list17.Add(item);
-						var list18 = list;
-						item = new PointF(x, y3);
-						list18.Add(item);
-						var list19 = list;
-						item = new PointF(x, y2);
-						list19.Add(item);
-						graphicsPath = new GraphicsPath();
-						num7 = 1;
-					}
-					var num8 = list.Count - 1;
-					var num9 = num7;
-					while (true)
-					{
-						var num10 = num9;
-						var num11 = num8;
-						flag2 = (num10 > num11);
-						if (flag2)
-						{
-							break;
-						}
-						graphicsPath.AddLine(list[num9 - 1], list[num9]);
-						num9++;
-					}
-					graphicsPath.AddLine(list[list.Count - 1], list[0]);
-					result = graphicsPath;
-				}
-				return result;
-			}
-		}
-
-		private GraphicsPath CreateBorderPath(Rectangle rect, float cut)
+	    private GraphicsPath CreateBorderPath(Rectangle rect, float cut)
 		{
 			GraphicsPath graphicsPath;
 			checked
@@ -2084,14 +1630,18 @@ namespace CrediNET
 				rect.Height--;
 				graphicsPath = new GraphicsPath();
 			}
-			graphicsPath.AddLine((float)rect.Left + cut, (float)rect.Top, (float)rect.Right - cut, (float)rect.Top);
-			graphicsPath.AddLine((float)rect.Right - cut, (float)rect.Top, (float)rect.Right, (float)rect.Top + cut);
-			graphicsPath.AddLine((float)rect.Right, (float)rect.Top + cut, (float)rect.Right, (float)rect.Bottom - cut);
-			graphicsPath.AddLine((float)rect.Right, (float)rect.Bottom - cut, (float)rect.Right - cut, (float)rect.Bottom);
-			graphicsPath.AddLine((float)rect.Right - cut, (float)rect.Bottom, (float)rect.Left + cut, (float)rect.Bottom);
-			graphicsPath.AddLine((float)rect.Left + cut, (float)rect.Bottom, (float)rect.Left, (float)rect.Bottom - cut);
-			graphicsPath.AddLine((float)rect.Left, (float)rect.Bottom - cut, (float)rect.Left, (float)rect.Top + cut);
-			graphicsPath.AddLine((float)rect.Left, (float)rect.Top + cut, (float)rect.Left + cut, (float)rect.Top);
+			graphicsPath.AddLine(rect.Left + cut, rect.Top, rect.Right - cut, rect.Top);
+			graphicsPath.AddLine(rect.Right - cut, rect.Top, rect.Right, rect.Top + cut);
+			graphicsPath.AddLine(rect.Right, rect.Top + cut, rect.Right,
+				rect.Bottom - cut);
+			graphicsPath.AddLine(rect.Right, rect.Bottom - cut, rect.Right - cut,
+				rect.Bottom);
+			graphicsPath.AddLine(rect.Right - cut, rect.Bottom, rect.Left + cut,
+				rect.Bottom);
+			graphicsPath.AddLine(rect.Left + cut, rect.Bottom, rect.Left,
+				rect.Bottom - cut);
+			graphicsPath.AddLine(rect.Left, rect.Bottom - cut, rect.Left, rect.Top + cut);
+			graphicsPath.AddLine(rect.Left, rect.Top + cut, rect.Left + cut, rect.Top);
 			return graphicsPath;
 		}
 
@@ -2101,13 +1651,7 @@ namespace CrediNET
 			return CreateBorderPath(rect, cut);
 		}
 
-		private GraphicsPath CreateInsideBorderPath(Rectangle rect, Rectangle exclude, float cut)
-		{
-			rect.Inflate(-1, -1);
-			return CreateBorderPath(rect, exclude, cut);
-		}
-
-		private GraphicsPath CreateClipBorderPath(Rectangle rect, float cut)
+	    private GraphicsPath CreateClipBorderPath(Rectangle rect, float cut)
 		{
 			checked
 			{
@@ -2117,17 +1661,7 @@ namespace CrediNET
 			}
 		}
 
-		private GraphicsPath CreateClipBorderPath(Rectangle rect, Rectangle exclude, float cut)
-		{
-			checked
-			{
-				rect.Width++;
-				rect.Height++;
-				return CreateBorderPath(rect, exclude, cut);
-			}
-		}
-
-		private GraphicsPath CreateArrowPath(ToolStripItem item, Rectangle rect, ArrowDirection direction)
+	    private GraphicsPath CreateArrowPath(ToolStripItem item, Rectangle rect, ArrowDirection direction)
 		{
 			var flag = direction == ArrowDirection.Left || direction == ArrowDirection.Right;
 			var flag2 = flag;
@@ -2137,13 +1671,19 @@ namespace CrediNET
 				int num2;
 				if (flag2)
 				{
-					num = (int)Math.Round(Math.Round(unchecked((double)rect.Right - (double)checked(rect.Width - 4) / 2.0)));
-					num2 = (int)Math.Round(Math.Round(unchecked((double)rect.Y + (double)rect.Height / 2.0)));
+					num =
+						(int)
+							Math.Round(
+								Math.Round(unchecked(rect.Right - checked(rect.Width - 4) / 2.0)));
+					num2 = (int) Math.Round(Math.Round(unchecked(rect.Y + rect.Height / 2.0)));
 				}
 				else
 				{
-					num = (int)Math.Round(Math.Round(unchecked((double)rect.X + (double)rect.Width / 2.0)));
-					num2 = (int)Math.Round(Math.Round(unchecked((double)rect.Bottom - (double)checked(rect.Height - 3) / 2.0)));
+					num = (int) Math.Round(Math.Round(unchecked(rect.X + rect.Width / 2.0)));
+					num2 =
+						(int)
+							Math.Round(
+								Math.Round(unchecked(rect.Bottom - checked(rect.Height - 3) / 2.0)));
 					flag = (item is ToolStripDropDownButton && item.RightToLeft == RightToLeft.Yes);
 					flag2 = flag;
 					if (flag2)
@@ -2163,9 +1703,9 @@ namespace CrediNET
 					case ArrowDirection.Up:
 						unchecked
 						{
-							graphicsPath.AddLine((float)num + 3f, (float)num2, (float)num - 3f, (float)num2);
-							graphicsPath.AddLine((float)num - 3f, (float)num2, (float)num, (float)num2 - 4f);
-							graphicsPath.AddLine((float)num, (float)num2 - 4f, (float)num + 3f, (float)num2);
+							graphicsPath.AddLine(num + 3f, num2, num - 3f, num2);
+							graphicsPath.AddLine(num - 3f, num2, num, num2 - 4f);
+							graphicsPath.AddLine(num, num2 - 4f, num + 3f, num2);
 							break;
 						}
 					case ArrowDirection.Right:
@@ -2177,9 +1717,10 @@ namespace CrediNET
 					case ArrowDirection.Down:
 						unchecked
 						{
-							graphicsPath.AddLine((float)num + 3f, (float)num2 - 3f, (float)num - 2f, (float)num2 - 3f);
-							graphicsPath.AddLine((float)num - 2f, (float)num2 - 3f, (float)num, (float)num2);
-							graphicsPath.AddLine((float)num, (float)num2, (float)num + 3f, (float)num2 - 3f);
+							graphicsPath.AddLine(num + 3f, num2 - 3f, num - 2f,
+								num2 - 3f);
+							graphicsPath.AddLine(num - 2f, num2 - 3f, num, num2);
+							graphicsPath.AddLine(num, num2, num + 3f, num2 - 3f);
 							break;
 						}
 				}
@@ -2191,8 +1732,8 @@ namespace CrediNET
 		{
 			checked
 			{
-				var num = (int)Math.Round(Math.Round(unchecked((double)rect.X + (double)rect.Width / 2.0)));
-				var num2 = (int)Math.Round(Math.Round(unchecked((double)rect.Y + (double)rect.Height / 2.0)));
+				var num = (int) Math.Round(Math.Round(unchecked(rect.X + rect.Width / 2.0)));
+				var num2 = (int) Math.Round(Math.Round(unchecked(rect.Y + rect.Height / 2.0)));
 				var graphicsPath = new GraphicsPath();
 				graphicsPath.AddLine(num - 4, num2, num - 2, num2 + 4);
 				graphicsPath.AddLine(num - 2, num2 + 4, num + 3, num2 - 5);
@@ -2204,8 +1745,8 @@ namespace CrediNET
 		{
 			checked
 			{
-				var num = (int)Math.Round(Math.Round(unchecked((double)rect.X + (double)rect.Width / 2.0)));
-				var num2 = (int)Math.Round(Math.Round(unchecked((double)rect.Y + (double)rect.Height / 2.0)));
+				var num = (int) Math.Round(Math.Round(unchecked(rect.X + rect.Width / 2.0)));
+				var num2 = (int) Math.Round(Math.Round(unchecked(rect.Y + rect.Height / 2.0)));
 				var graphicsPath = new GraphicsPath();
 				graphicsPath.AddLine(num - 3, num2, num, num2 - 3);
 				graphicsPath.AddLine(num, num2 - 3, num + 3, num2);

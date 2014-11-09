@@ -19,8 +19,10 @@ namespace CrediNET
         /// <returns>The exchange rate from the first currency to the second</returns>
         public static double ExchangeRate(CurrencyObj FromCurrency, CurrencyObj ToCurrency)
         {
-            var webrequest = WebRequest.Create("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" + FromCurrency.ShortName + "&ToCurrency=" + ToCurrency.ShortName);
-            var response = (HttpWebResponse)webrequest.GetResponse();
+            var webrequest =
+                WebRequest.Create("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" +
+                                  FromCurrency.ShortName + "&ToCurrency=" + ToCurrency.ShortName);
+            var response = (HttpWebResponse) webrequest.GetResponse();
             var dataStream = response.GetResponseStream();
             // ReSharper disable once AssignNullToNotNullAttribute
             var reader = new StreamReader(dataStream);
@@ -44,7 +46,7 @@ namespace CrediNET
         public static decimal FromCur(this CurrencyObj b, CurrencyObj d, double montant)
         {
             var rt = ExchangeRate(d, b);
-            return (decimal)(montant * rt);
+            return (decimal) (montant * rt);
         }
 
         /// <summary>
@@ -57,7 +59,7 @@ namespace CrediNET
         public static decimal ToCur(this CurrencyObj b, CurrencyObj d, double montant)
         {
             var rt = ExchangeRate(b, d);
-            return (decimal)(montant * rt);
+            return (decimal) (montant * rt);
         }
     }
 
@@ -85,13 +87,13 @@ namespace CrediNET
             if (ReferenceEquals(a, b))
                 return true;
 
-            if (((object)a == null) || ((object)b == null))
+            if (((object) a == null) || ((object) b == null))
                 return false;
 
             return (a.Name == b.Name) &&
-                (Math.Abs(a.RappBase - b.RappBase) < 0) &&
-                (a.Symbol == b.Symbol) &&
-                (a.ShortName == b.ShortName);
+                   (Math.Abs(a.RappBase - b.RappBase) < 0) &&
+                   (a.Symbol == b.Symbol) &&
+                   (a.ShortName == b.ShortName);
         }
 
         public override bool Equals(object obj)
@@ -217,7 +219,7 @@ namespace CrediNET
 
                     break;
 
-                default:        //case "fr-FR"
+                default: //case "fr-FR"
 
                     Euro = new CurrencyObj("Euro", "€", "EUR");
                     US_Dollar = new CurrencyObj("Dollar américain", "$", "USD");
@@ -232,7 +234,7 @@ namespace CrediNET
 
             BaseUnit = new CurrencyObj("Base unit", "BU", "BU", 1);
 
-            All = new List<CurrencyObj> { Euro, US_Dollar, AU_Dollar, CA_Dollar, CHI_Yuan, JAP_Yen, SWI_Franc };
+            All = new List<CurrencyObj> {Euro, US_Dollar, AU_Dollar, CA_Dollar, CHI_Yuan, JAP_Yen, SWI_Franc};
         }
 
         public static List<CurrencyObj> All;

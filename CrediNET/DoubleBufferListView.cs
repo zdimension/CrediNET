@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -14,7 +13,9 @@ namespace CrediNET
         {
             SetWindowTheme(Handle, "Explorer", null);
             DoubleBuffered = true;
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw, true);
+            SetStyle(
+                ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw,
+                true);
 
             SetStyle(ControlStyles.EnableNotifyMessage, true);
         }
@@ -32,7 +33,7 @@ namespace CrediNET
             get
             {
                 var cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.ExStyle |= 0x02000000; // Turn on WS_EX_COMPOSITED
                 return cp;
             }
         }

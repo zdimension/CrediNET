@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -11,6 +8,7 @@ namespace System.Windows.Forms.Calendar
     public class MonthViewBoxEventArgs
     {
         #region Fields
+
         private Graphics _graphics;
         private Color _textColor;
         private Color _backgroundColor;
@@ -19,11 +17,13 @@ namespace System.Windows.Forms.Calendar
         private Rectangle _bounds;
         private Font _font;
         private TextFormatFlags _TextFlags;
+
         #endregion
 
         #region Ctor
 
-        internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, StringAlignment textAlign, Color textColor, Color backColor, Color borderColor)
+        internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, StringAlignment textAlign,
+            Color textColor, Color backColor, Color borderColor)
         {
             _graphics = g;
             _bounds = bounds;
@@ -52,19 +52,25 @@ namespace System.Windows.Forms.Calendar
 
         internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, Color textColor)
             : this(g, bounds, text, StringAlignment.Center, textColor, Color.Empty, Color.Empty)
-        {}
+        {
+        }
 
         internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, Color textColor, Color backColor)
             : this(g, bounds, text, StringAlignment.Center, textColor, backColor, Color.Empty)
-        {}
+        {
+        }
 
-        internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, StringAlignment textAlign, Color textColor, Color backColor)
+        internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, StringAlignment textAlign,
+            Color textColor, Color backColor)
             : this(g, bounds, text, textAlign, textColor, backColor, Color.Empty)
-        { }
+        {
+        }
 
-        internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, StringAlignment textAlign, Color textColor)
+        internal MonthViewBoxEventArgs(Graphics g, Rectangle bounds, string text, StringAlignment textAlign,
+            Color textColor)
             : this(g, bounds, text, textAlign, textColor, Color.Empty, Color.Empty)
-        { }
+        {
+        }
 
         #endregion
 
@@ -139,7 +145,6 @@ namespace System.Windows.Forms.Calendar
             get { return _TextFlags; }
             set { _TextFlags = value; }
         }
-
 
         #endregion
     }

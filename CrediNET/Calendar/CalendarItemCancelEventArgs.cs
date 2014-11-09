@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
 
 namespace System.Windows.Forms.Calendar
@@ -8,7 +5,7 @@ namespace System.Windows.Forms.Calendar
     public class CalendarItemCancelEventArgs
         : CancelEventArgs
     {
-         #region Ctor
+        #region Ctor
 
         /// <summary>
         /// Creates a new <see cref="CalendarItemEventArgs"/>
@@ -32,7 +29,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _item; }
         }
-
 
         #endregion
     }

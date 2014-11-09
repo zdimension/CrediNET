@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel;
-
 namespace System.Windows.Forms.Calendar
 {
     public class CalendarItemEventArgs
@@ -32,7 +27,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _item; }
         }
-
 
         #endregion
     }

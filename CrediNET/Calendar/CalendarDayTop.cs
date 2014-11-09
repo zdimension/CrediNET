@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
 {
@@ -16,8 +13,10 @@ namespace System.Windows.Forms.Calendar
         #endregion
 
         #region Fields
+
         private CalendarDay _day;
         private List<CalendarItem> _passingItems;
+
         #endregion
 
         #region Ctor
@@ -39,10 +38,7 @@ namespace System.Windows.Forms.Calendar
 
         public override DateTime Date
         {
-            get
-            {
-                return new DateTime(Day.Date.Year, Day.Date.Month, Day.Date.Day);
-            }
+            get { return new DateTime(Day.Date.Year, Day.Date.Month, Day.Date.Day); }
         }
 
         /// <summary>
@@ -61,7 +57,6 @@ namespace System.Windows.Forms.Calendar
         {
             get { return _passingItems; }
         }
-
 
         #endregion
 

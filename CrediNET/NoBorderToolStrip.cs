@@ -12,10 +12,5 @@ namespace CrediNET
         private void Renderer_RenderToolStripBorder(object sender, ToolStripRenderEventArgs e)
         {
         }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-        }
     }
 }

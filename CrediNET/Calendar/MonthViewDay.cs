@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
@@ -9,7 +6,7 @@ namespace System.Windows.Forms.Calendar
     {
         #region Fields
 
-        Rectangle _bounds;
+        private Rectangle _bounds;
         private DateTime _date;
         private MonthViewMonth _month;
         private MonthView _monthView;
@@ -23,8 +20,6 @@ namespace System.Windows.Forms.Calendar
             _month = month;
             _monthView = month.MonthView;
             _date = date;
-
-            
         }
 
         #endregion
@@ -85,10 +80,7 @@ namespace System.Windows.Forms.Calendar
         /// </summary>
         public bool Visible
         {
-            get 
-            { 
-                return !(Grayed && (Date > MonthView.ViewStart && Date < MonthView.ViewEnd));
-            }
+            get { return !(Grayed && (Date > MonthView.ViewStart && Date < MonthView.ViewEnd)); }
         }
 
         #endregion

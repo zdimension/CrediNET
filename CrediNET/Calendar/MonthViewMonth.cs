@@ -1,24 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace System.Windows.Forms.Calendar
 {
     /// <summary>
+// ReSharper disable once CSharpWarnings::CS1584
     /// Represents a month displayed on <see cref="CalendarMonth"/>
     /// </summary>
     public class MonthViewMonth
     {
         #region Fields
+
         private DateTime _date;
         private Rectangle monthNameBounds;
         private Rectangle[] dayNamesBounds;
         private MonthViewDay[] days;
-        private string[] _dayHeaders;
-        private Size _size;
         private Point _location;
         private MonthView _monthview;
+
         #endregion
 
         #region Ctor
@@ -34,7 +32,7 @@ namespace System.Windows.Forms.Calendar
             _monthview = monthView;
             _date = date;
 
-            var preDays = (new int[] { 0, 1, 2, 3, 4, 5, 6 })[(int)date.DayOfWeek] - (int)MonthView.FirstDayOfWeek;
+            var preDays = (new[] {0, 1, 2, 3, 4, 5, 6})[(int) date.DayOfWeek] - (int) MonthView.FirstDayOfWeek;
             days = new MonthViewDay[6 * 7];
             var curDate = date.AddDays(-preDays);
             DayHeaders = new string[7];
@@ -88,11 +86,7 @@ namespace System.Windows.Forms.Calendar
             set { dayNamesBounds = value; }
         }
 
-        public string[] DayHeaders
-        {
-            get { return _dayHeaders; }
-            set { _dayHeaders = value; }
-        }
+        public string[] DayHeaders { get; set; }
 
         public Rectangle MonthNameBounds
         {
@@ -122,7 +116,6 @@ namespace System.Windows.Forms.Calendar
         /// <param name="location"></param>
         internal void SetLocation(Point location)
         {
-
             var startX = location.X;
             var startY = location.Y;
             var curX = startX;
@@ -130,7 +123,7 @@ namespace System.Windows.Forms.Calendar
 
             _location = location;
 
-            monthNameBounds = new Rectangle(location, new Size(Size.Width,MonthView.DaySize.Height));
+            monthNameBounds = new Rectangle(location, new Size(Size.Width, MonthView.DaySize.Height));
 
             if (MonthView.DayNamesVisible)
             {
@@ -142,11 +135,10 @@ namespace System.Windows.Forms.Calendar
 
                     curX += MonthView.DaySize.Width;
                 }
-
             }
             else
             {
-                dayNamesBounds = new Rectangle[] { };
+                dayNamesBounds = new Rectangle[] {};
             }
 
             curX = startX;
@@ -164,7 +156,6 @@ namespace System.Windows.Forms.Calendar
                     curY += MonthView.DaySize.Height;
                 }
             }
-
         }
 
         #endregion

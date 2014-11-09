@@ -128,4 +128,10 @@
   <data name="Account_FileFilterSave" xml:space="preserve">
     <value>CrediNET Account (*.cna)|*.cna|SQLite CrediNET Account (*.cnsql)|*.cnsql</value>
   </data>
+  <data name="Account_Creation_LeaveEmpty" xml:space="preserve">
+    <value>Leave this field empty to keep current password</value>
+  </data>
+  <data name="Operation_Edit" xml:space="preserve">
+    <value>Edit operation</value>
+  </data>
 </root>

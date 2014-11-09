@@ -19,69 +19,44 @@ namespace CrediNET
         /// <summary>
         /// Due date of reminder
         /// </summary>
-        public DateTime DueDate
-        {
-            get;
-            set;
-        }
+        public DateTime DueDate { get; set; }
 
         /// <summary>
         /// Commentary
         /// </summary>
-        public string Commentary
-        {
-            get;
-            set;
-        }
+        public string Commentary { get; set; }
 
         /// <summary>
         /// Credit
         /// </summary>
-        public decimal Credit
-        {
-            get;
-            set;
-        }
+        public decimal Credit { get; set; }
 
         /// <summary>
         /// Debit
         /// </summary>
-        public decimal Debit
-        {
-            get;
-            set;
-        }
+        public decimal Debit { get; set; }
 
         /// <summary>
         /// Type
         /// </summary>
-        public string Type
-        {
-            get;
-            set;
-        }
+        public string Type { get; set; }
 
         /// <summary>
         /// Category
         /// </summary>
-        public string Budget
-        {
-            get;
-            set;
-        }
+        public string Budget { get; set; }
 
         /// <summary>
         /// Number of repetition
         /// </summary>
-        public decimal NbOfRepetition
-        {
-            get;
-            set;
-        }
+        public decimal NbOfRepetition { get; set; }
 
         public enum ERepititionType
         {
-            Day = 0, Week = 1, Month = 2, Year = 3,
+            Day = 0,
+            Week = 1,
+            Month = 2,
+            Year = 3,
             Monday = 4,
             Tuesday = 5,
             Wednesday = 6,
@@ -94,17 +69,10 @@ namespace CrediNET
         /// <summary>
         /// Repetition type
         /// </summary>
-        public ERepititionType RepetitionType
-        {
-            get;
-            set;
-        }
+        public ERepititionType RepetitionType { get; set; }
 
-        public bool AutomaticallyAdded
-        {
-            get;
-            set;
-        }
+        public bool AutomaticallyAdded { get; set; }
+
         /// <summary>
         /// Simple constructor
         /// </summary>
@@ -127,11 +95,7 @@ namespace CrediNET
         /// <summary>
         /// Forcast Operations
         /// </summary>
-        public List<Operation> ForcastOperations
-        {
-            get;
-            set;
-        }
+        public List<Operation> ForcastOperations { get; set; }
 
         /// <summary>
         /// Generate daily forcast operations
@@ -156,7 +120,6 @@ namespace CrediNET
         /// <returns>A list of weekly forcast operations</returns>
         private List<Operation> populateWeeklyOperations()
         {
-            var beginningDay = DueDate;
             var lstOps = new List<Operation>();
 
             for (var i = 0; i < NbOfRepetition; i++)
@@ -174,7 +137,6 @@ namespace CrediNET
         /// <returns>A list of monthly forcast operations</returns>
         private List<Operation> populateMonthlyOperations()
         {
-            var beginningDay = DueDate;
             var lstOps = new List<Operation>();
 
             for (var i = 0; i < NbOfRepetition; i++)
@@ -192,7 +154,6 @@ namespace CrediNET
         /// <returns>A list of yearly forcast operations</returns>
         private List<Operation> populateYearlyOperations()
         {
-            var beginningDay = DueDate;
             var lstOps = new List<Operation>();
 
             for (var i = 0; i < NbOfRepetition; i++)
@@ -223,8 +184,6 @@ namespace CrediNET
                 case ERepititionType.Year:
                     ForcastOperations = populateYearlyOperations();
                     break;
-                default:
-                    break;
             }
         }
 
@@ -237,7 +196,9 @@ namespace CrediNET
         /// <returns>List of filtered operations</returns>
         public static List<Operation> filterOperation(List<Operation> lstOps, DateTime start, DateTime end)
         {
-            return lstOps.FindAll(x => {return DateTime.Compare(x.Date, start) >= 0 && DateTime.Compare(x.Date, end) <= 0; });
+            return
+                lstOps.FindAll(
+                    x => DateTime.Compare(x.Date, start) >= 0 && DateTime.Compare(x.Date, end) <= 0);
         }
 
         public void addNormalOperations(Account acc)

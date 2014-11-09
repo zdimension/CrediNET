@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-
 using System.Windows.Forms;
 using CrediNET.Properties;
 using ZedGraph;
@@ -15,10 +14,15 @@ namespace CrediNET
         {
             InitializeComponent();
 
-            if (graphType == 1)
-                Camembert(cmpt);
-            else if (graphType == 2)
-                Courbes(cmpt);
+            switch (graphType)
+            {
+                case 1:
+                    Camembert(cmpt);
+                    break;
+                case 2:
+                    Courbes(cmpt);
+                    break;
+            }
         }
 
         public void Camembert(Account cmpt)
@@ -82,16 +86,34 @@ namespace CrediNET
 
             var ls = new List<string>();
 
-            totalC.Where(x => x.Value == 0).All(x => { ls.Add(x.Key); return true; });
+            totalC.Where(x => x.Value == 0).All(x =>
+            {
+                ls.Add(x.Key);
+                return true;
+            });
             ls.ForEach(x => totalC.Remove(x));
             ls.Clear();
 
-            totalD.Where(x => x.Value == 0).All(x => { ls.Add(x.Key); return true; });
+            totalD.Where(x => x.Value == 0).All(x =>
+            {
+                ls.Add(x.Key);
+                return true;
+            });
             ls.ForEach(x => totalD.Remove(x));
             ls.Clear();
 
-            totalC.All(x => { a.AddPieSlice(Convert.ToDouble(x.Value), Color.FromArgb(255, rnd.Next(0, 150), 255, rnd.Next(0, 150)), Color.White, 45.0f, 0, x.Key); return true; });
-            totalD.All(x => { a.AddPieSlice(Convert.ToDouble(x.Value), Color.FromArgb(255, 255, rnd.Next(0, 150), rnd.Next(0, 150)), Color.White, 45.0f, 0, x.Key); return true; });
+            totalC.All(x =>
+            {
+                a.AddPieSlice(Convert.ToDouble(x.Value), Color.FromArgb(255, rnd.Next(0, 150), 255, rnd.Next(0, 150)),
+                    Color.White, 45.0f, 0, x.Key);
+                return true;
+            });
+            totalD.All(x =>
+            {
+                a.AddPieSlice(Convert.ToDouble(x.Value), Color.FromArgb(255, 255, rnd.Next(0, 150), rnd.Next(0, 150)),
+                    Color.White, 45.0f, 0, x.Key);
+                return true;
+            });
 
             zg1.IsShowPointValues = true;
             zg1.AxisChange();
@@ -195,12 +217,12 @@ namespace CrediNET
             //Operations need to be sorted before being displayed in the curve graph
             cmpt.Operations.Sort((op1, op2) => op1.Date.CompareTo(op2.Date));
 
-            foreach (Operation t in cmpt.Operations)
+            foreach (var t in cmpt.Operations)
             {
                 if (t.Credit > 0) Xp += t.Credit;
                 if (t.Debit > 0) Xp -= t.Debit;
 
-                crP.Add(t.Date.ToOADate(), (double)Xp);
+                crP.Add(t.Date.ToOADate(), (double) Xp);
             }
 
             switch (Settings.Default.Lang.Name)

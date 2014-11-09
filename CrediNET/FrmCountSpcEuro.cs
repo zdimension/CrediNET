@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -31,7 +30,7 @@ namespace CrediNET
             Total += nud100eur.Value * 100;
             Total += nud200eur.Value * 200;
             Total += nud500eur.Value * 500;
-            lblTotal.Text = "Total : " + Total.ToString("0.00") + " €";
+            lblTotal.Text = @"Total : " + Total.ToString("0.00") + @" €";
         }
 
         private void nud1ct_ValueChanged(object sender, EventArgs e)

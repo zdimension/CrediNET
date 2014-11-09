@@ -125,9 +125,6 @@
     </Compile>
     <Compile Include="ColumnSorter.cs" />
     <Compile Include="Account.cs" />
-    <Compile Include="CoolTabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CreateExcelDoc.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Currencies.cs" />

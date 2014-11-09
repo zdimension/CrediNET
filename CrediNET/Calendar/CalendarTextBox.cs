@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Drawing;
-
 namespace System.Windows.Forms.Calendar
 {
     public class CalendarTextBox
         : TextBox
     {
         #region Fields
+
         private Calendar _calendar;
+
         #endregion
 
         #region Ctor
@@ -35,12 +32,9 @@ namespace System.Windows.Forms.Calendar
             get { return _calendar; }
         }
 
-
         #endregion
 
         #region Methods
-
-        
 
         #endregion
     }

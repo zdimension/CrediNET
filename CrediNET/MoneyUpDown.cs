@@ -7,7 +7,7 @@ namespace CrediNET
     {
         private void InitializeComponent()
         {
-            TextChanged += new EventHandler(textChanged);
+            TextChanged += textChanged;
         }
 
         private void textChanged(object sender, EventArgs e)
@@ -34,12 +34,16 @@ namespace CrediNET
         public string Devise
         {
             get { return _dev; }
-            set { _dev = value; UpdateEditText(); }
+            set
+            {
+                _dev = value;
+                UpdateEditText();
+            }
         }
 
         protected override void UpdateEditText()
         {
-            Text = Value.ToString() + " " + Devise;
+            Text = Value + @" " + Devise;
         }
     }
 }

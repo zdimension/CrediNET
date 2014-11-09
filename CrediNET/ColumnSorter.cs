@@ -30,8 +30,8 @@ namespace CrediNET
         /// <summary>
         /// Case insensitive comparers
         /// </summary>
-
         private NumberCaseInsensitiveComparer ObjectCompare;
+
         private ImageTextComparer FirstObjectCompare;
         private CheckboxTextComparer FirstObjectCompare2;
 
@@ -39,14 +39,8 @@ namespace CrediNET
 
         public SortModifiers _SortModifier
         {
-            set
-            {
-                mySortModifier = value;
-            }
-            get
-            {
-                return mySortModifier;
-            }
+            set { mySortModifier = value; }
+            get { return mySortModifier; }
         }
 
         /// <summary>
@@ -101,8 +95,8 @@ namespace CrediNET
         {
             var compareResult = 0;
 
-            var listviewX = (ListViewItem)x;
-            var listviewY = (ListViewItem)y;
+            var listviewX = (ListViewItem) x;
+            var listviewY = (ListViewItem) y;
 
             var listViewMain = listviewX.ListView;
 
@@ -130,19 +124,21 @@ namespace CrediNET
                 }
                 else
                 {
-                    compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text.Trim(), listviewY.SubItems[ColumnToSort].Text.Trim());
+                    compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text.Trim(),
+                        listviewY.SubItems[ColumnToSort].Text.Trim());
                 }
             }
             else if (mySortModifier.Equals(SortModifiers.SortByDate))
             {
-                int returnVal;
                 // Parse the two objects passed as a parameter as a DateTime.
                 var firstDate =
-                        DateTime.ParseExact(((ListViewItem)x).SubItems[ColumnToSort].Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime.ParseExact(((ListViewItem) x).SubItems[ColumnToSort].Text, "dd/MM/yyyy",
+                        CultureInfo.InvariantCulture);
                 var secondDate =
-                        DateTime.ParseExact(((ListViewItem)y).SubItems[ColumnToSort].Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime.ParseExact(((ListViewItem) y).SubItems[ColumnToSort].Text, "dd/MM/yyyy",
+                        CultureInfo.InvariantCulture);
                 // Compare the two dates.
-                returnVal = DateTime.Compare(firstDate, secondDate);
+                var returnVal = DateTime.Compare(firstDate, secondDate);
 
                 if (OrderOfSort == SortOrder.Descending)
                     returnVal *= -1;
@@ -150,15 +146,14 @@ namespace CrediNET
             }
             else if (mySortModifier.Equals(SortModifiers.SortByDecimal))
             {
-                int returnVal;
                 // Parse the two objects passed as a parameter as a decimal.
-                Console.WriteLine(((ListViewItem)x).SubItems[ColumnToSort].Text);
+                Console.WriteLine(((ListViewItem) x).SubItems[ColumnToSort].Text);
                 var firstNum =
-                        decimal.Parse(Regex.Match(((ListViewItem)x).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
+                    decimal.Parse(Regex.Match(((ListViewItem) x).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
                 var secondNum =
-                        decimal.Parse(Regex.Match(((ListViewItem)y).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
+                    decimal.Parse(Regex.Match(((ListViewItem) y).SubItems[ColumnToSort].Text, @"^-?\d+(?:\.\d+)?").Value);
                 // Compare the two dates.
-                returnVal = firstNum > secondNum ? 1 : -1;
+                var returnVal = firstNum > secondNum ? 1 : -1;
 
                 if (OrderOfSort == SortOrder.Descending)
                     returnVal *= -1;
@@ -201,14 +196,8 @@ namespace CrediNET
         /// </summary>
         public int SortColumn
         {
-            set
-            {
-                ColumnToSort = value;
-            }
-            get
-            {
-                return ColumnToSort;
-            }
+            set { ColumnToSort = value; }
+            get { return ColumnToSort; }
         }
 
         /// <summary>
@@ -216,14 +205,8 @@ namespace CrediNET
         /// </summary>
         public SortOrder Order
         {
-            set
-            {
-                OrderOfSort = value;
-            }
-            get
-            {
-                return OrderOfSort;
-            }
+            set { OrderOfSort = value; }
+            get { return OrderOfSort; }
         }
     }
 
@@ -246,13 +229,10 @@ namespace CrediNET
 #pragma warning restore 1570
         public int Compare(object x, object y)
         {
-            int image1, image2;
-            ListViewItem listviewX, listviewY;
-
-            listviewX = (ListViewItem)x;
-            image1 = listviewX.ImageIndex;
-            listviewY = (ListViewItem)y;
-            image2 = listviewY.ImageIndex;
+            var listviewX = (ListViewItem) x;
+            var image1 = listviewX.ImageIndex;
+            var listviewY = (ListViewItem) y;
+            var image2 = listviewY.ImageIndex;
 
             if (image1 < image2)
             {
@@ -288,8 +268,8 @@ namespace CrediNET
 #pragma warning restore 1570
         public int Compare(object x, object y)
         {
-            var listviewX = (ListViewItem)x;
-            var listviewY = (ListViewItem)y;
+            var listviewX = (ListViewItem) x;
+            var listviewY = (ListViewItem) y;
 
             if (listviewX.Checked && !listviewY.Checked)
             {
@@ -341,11 +321,11 @@ namespace CrediNET
             {
                 return 1;
             }
-            if ((x is String) && IsWholeNumber((string)x) && (y is String) && IsWholeNumber((string)y))
+            if ((x is String) && IsWholeNumber((string) x) && (y is String) && IsWholeNumber((string) y))
             {
                 try
                 {
-                    return base.Compare(Convert.ToUInt64(((string)x).Trim()), Convert.ToUInt64(((string)y).Trim()));
+                    return base.Compare(Convert.ToUInt64(((string) x).Trim()), Convert.ToUInt64(((string) y).Trim()));
                 }
                 catch
                 {
