@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Xml;
 using CrediNET.Properties;
 
@@ -233,11 +234,20 @@ namespace CrediNET
             }
 
             BaseUnit = new CurrencyObj("Base unit", "BU", "BU", 1);
-
-            All = new List<CurrencyObj> {Euro, US_Dollar, AU_Dollar, CA_Dollar, CHI_Yuan, JAP_Yen, SWI_Franc};
         }
 
-        public static List<CurrencyObj> All;
+        public static List<CurrencyObj> All
+        {
+            get
+            {
+                var res = typeof (Currencies)
+                    .GetFields(BindingFlags.Public | BindingFlags.Static)
+                    .Where(f => f.FieldType == typeof (CurrencyObj))
+                    .Select(x => (CurrencyObj) (x.GetValue(null))).ToList();
+                res.Remove(Currencies.BaseUnit);
+                return res;
+            }
+        }
 
         public static CurrencyObj BaseUnit;
         public static CurrencyObj Euro;
@@ -247,5 +257,7 @@ namespace CrediNET
         public static CurrencyObj CHI_Yuan;
         public static CurrencyObj JAP_Yen;
         public static CurrencyObj SWI_Franc;
+
+
     }
 }
