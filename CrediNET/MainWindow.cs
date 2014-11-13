@@ -175,7 +175,7 @@ namespace CrediNET
                 return true;
             });
 
-            CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == (string) (ae.cbxDevise.SelectedItem)));
+            CompteActuel.ChangeCurrency(Currencies.All.First(x => x.Name == (string) (ae.cbxDevise.SelectedItem.Text)));
 
             //CompteActuel.Crypte = ae.cbxCrypt.Checked;
 

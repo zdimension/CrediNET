@@ -128,6 +128,11 @@
     <Compile Include="CreateExcelDoc.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Currencies.cs" />
+    <Compile Include="CurrencyFlags.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrencyFlags.resx</DependentUpon>
+    </Compile>
     <Compile Include="DoubleBufferListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -180,6 +185,9 @@
     <Compile Include="FrmReminder.designer.cs">
       <DependentUpon>FrmReminder.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Languages\de-DE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,6 +231,10 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CurrencyFlags.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CurrencyFlags.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCountSpcEuro.de-DE.resx">
       <DependentUpon>FrmCountSpcEuro.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,6 +504,144 @@
     <None Include="Resources\chart_line.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Myanmar-icon.png" />
+    <None Include="Resources\flag_zimbabwe.png" />
+    <None Include="Resources\flag_zambia.png" />
+    <None Include="Resources\flag_yemen.png" />
+    <None Include="Resources\flag_vietnam.png" />
+    <None Include="Resources\flag_venezuela.png" />
+    <None Include="Resources\flag_vanuatu.png" />
+    <None Include="Resources\flag_uruquay.png" />
+    <None Include="Resources\flag_united_arab_emirates.png" />
+    <None Include="Resources\flag_ukraine.png" />
+    <None Include="Resources\flag_uganda.png" />
+    <None Include="Resources\flag_usa.png" />
+    <None Include="Resources\flag_turkey.png" />
+    <None Include="Resources\flag_tunisia.png" />
+    <None Include="Resources\flag_trinidad_and_tobago.png" />
+    <None Include="Resources\flag_tonga.png" />
+    <None Include="Resources\flag_thailand.png" />
+    <None Include="Resources\flag_tanzania.png" />
+    <None Include="Resources\flag_taiwan.png" />
+    <None Include="Resources\flag_syria.png" />
+    <None Include="Resources\flag_switzerland.png" />
+    <None Include="Resources\flag_sweden.png" />
+    <None Include="Resources\flag_swaziland.png" />
+    <None Include="Resources\flag_suriname.png" />
+    <None Include="Resources\flag_sudan.png" />
+    <None Include="Resources\flag_sri_lanka.png" />
+    <None Include="Resources\flag_south_korea.png" />
+    <None Include="Resources\flag_south_africa.png" />
+    <None Include="Resources\flag_somalia.png" />
+    <None Include="Resources\flag_solomon_islands.png" />
+    <None Include="Resources\flag_slovakia.png" />
+    <None Include="Resources\flag_singapore.png" />
+    <None Include="Resources\flag_sierra_leone.png" />
+    <None Include="Resources\flag_seychelles.png" />
+    <None Include="Resources\flag_saudi_arabia.png" />
+    <None Include="Resources\flag_sao_tome_and_principe.png" />
+    <None Include="Resources\flag_samoa.png" />
+    <None Include="Resources\flag_saint_helena.png" />
+    <None Include="Resources\flag_russia.png" />
+    <None Include="Resources\flag_romania.png" />
+    <None Include="Resources\flag_qatar.png" />
+    <None Include="Resources\flag_poland.png" />
+    <None Include="Resources\flag_philippines.png" />
+    <None Include="Resources\flag_peru.png" />
+    <None Include="Resources\flag_paraquay.png" />
+    <None Include="Resources\flag_papua_new_guinea.png" />
+    <None Include="Resources\flag_panama.png" />
+    <None Include="Resources\flag_pakistan.png" />
+    <None Include="Resources\flag_oman.png" />
+    <None Include="Resources\flag_norway.png" />
+    <None Include="Resources\flag_north_korea.png" />
+    <None Include="Resources\flag_nigeria.png" />
+    <None Include="Resources\flag_nicaragua.png" />
+    <None Include="Resources\flag_new_zealand.png" />
+    <None Include="Resources\flag_netherlands_antilles.png" />
+    <None Include="Resources\flag_nepal.png" />
+    <None Include="Resources\flag_namibia.png" />
+    <None Include="Resources\flag_mozambique.png" />
+    <None Include="Resources\flag_morocco.png" />
+    <None Include="Resources\flag_mongolia.png" />
+    <None Include="Resources\flag_moldova.png" />
+    <None Include="Resources\flag_mexico.png" />
+    <None Include="Resources\flag_mauritius.png" />
+    <None Include="Resources\flag_mauretania.png" />
+    <None Include="Resources\flag_malta.png" />
+    <None Include="Resources\flag_maledives.png" />
+    <None Include="Resources\flag_malaysia.png" />
+    <None Include="Resources\flag_malawi.png" />
+    <None Include="Resources\flag_macedonia.png" />
+    <None Include="Resources\flag_macau.png" />
+    <None Include="Resources\flag_lithuania.png" />
+    <None Include="Resources\flag_libya.png" />
+    <None Include="Resources\flag_liberia.png" />
+    <None Include="Resources\flag_lesotho.png" />
+    <None Include="Resources\flag_lebanon.png" />
+    <None Include="Resources\flag_laos.png" />
+    <None Include="Resources\flag_kuwait.png" />
+    <None Include="Resources\flag_kenya.png" />
+    <None Include="Resources\flag_kazakhstan.png" />
+    <None Include="Resources\flag_jordan.png" />
+    <None Include="Resources\flag_japan.png" />
+    <None Include="Resources\flag_jamaica.png" />
+    <None Include="Resources\flag_israel.png" />
+    <None Include="Resources\flag_iraq.png" />
+    <None Include="Resources\flag_indonesia.png" />
+    <None Include="Resources\flag_india.png" />
+    <None Include="Resources\flag_iceland.png" />
+    <None Include="Resources\flag_hungary.png" />
+    <None Include="Resources\flag_hong_kong.png" />
+    <None Include="Resources\flag_honduras.png" />
+    <None Include="Resources\flag_haiti.png" />
+    <None Include="Resources\flag_guyana.png" />
+    <None Include="Resources\flag_guinea.png" />
+    <None Include="Resources\flag_guatemala.png" />
+    <None Include="Resources\flag_gibraltar.png" />
+    <None Include="Resources\flag_ghana.png" />
+    <None Include="Resources\flag_gambia.png" />
+    <None Include="Resources\flag_falkland_islands.png" />
+    <None Include="Resources\flag_ethiopia.png" />
+    <None Include="Resources\flag_el_salvador.png" />
+    <None Include="Resources\flag_egypt.png" />
+    <None Include="Resources\flag_dominica.png" />
+    <None Include="Resources\flag_djibouti.png" />
+    <None Include="Resources\flag_denmark.png" />
+    <None Include="Resources\flag_czech_republic.png" />
+    <None Include="Resources\flag_cyprus.png" />
+    <None Include="Resources\flag_cuba.png" />
+    <None Include="Resources\flag_croatia.png" />
+    <None Include="Resources\flag_costa_rica.png" />
+    <None Include="Resources\flag_cope_verde.png" />
+    <None Include="Resources\flag_comoros.png" />
+    <None Include="Resources\flag_colombia.png" />
+    <None Include="Resources\flag_china.png" />
+    <None Include="Resources\flag_chile.png" />
+    <None Include="Resources\flag_cayman_islands.png" />
+    <None Include="Resources\page_white_horizontal.png" />
+    <None Include="Resources\flag_cambodia.png" />
+    <None Include="Resources\flag_burundi.png" />
+    <None Include="Resources\flag_brunei.png" />
+    <None Include="Resources\flag_brazil.png" />
+    <None Include="Resources\flag_botswana.png" />
+    <None Include="Resources\flag_bolivia.png" />
+    <None Include="Resources\flag_bhutan.png" />
+    <None Include="Resources\flag_bermuda.png" />
+    <None Include="Resources\flag_belize.png" />
+    <None Include="Resources\flag_barbados.png" />
+    <None Include="Resources\flag_afghanistan.png" />
+    <None Include="Resources\flag_bahamas.png" />
+    <None Include="Resources\flag_aruba.png" />
+    <None Include="Resources\flag_albania.png" />
+    <None Include="Resources\flag_argentina.png" />
+    <None Include="Resources\flag_algeria.png" />
+    <None Include="Resources\flag_bangladesh.png" />
+    <None Include="Resources\flag_australia.png" />
+    <None Include="Resources\flag_bahrain.png" />
+    <None Include="Resources\flag_great_britain.png" />
+    <None Include="Resources\flag_canada.png" />
+    <None Include="Resources\flag_european_union.png" />
     <None Include="Resources\file_extension_pdf.png" />
     <None Include="Resources\splash.png" />
     <Content Include="bin\Release\ILMerge.exe" />

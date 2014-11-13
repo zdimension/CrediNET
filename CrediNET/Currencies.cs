@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Xml;
+using CrediNET.Languages;
 using CrediNET.Properties;
 
 namespace CrediNET
@@ -202,6 +203,7 @@ namespace CrediNET
                     .Where(f => f.FieldType == typeof (CurrencyObj))
                     .Select(x => (CurrencyObj) (x.GetValue(null))).ToList();
                 res.Remove(Currencies.BaseUnit);
+                res.OrderBy(x => x.Name);
                 return res;
             }
         }
@@ -215,33 +217,33 @@ namespace CrediNET
             switch (Settings.Default.Lang.Name)
             {
                 case "en-US":
-                    AFA = new CurrencyObj("Afghan afghani", "؋", "AFA");
-                    ALL = new CurrencyObj("Albanian lek", "Lek", "ALL");
-                    DZD = new CurrencyObj("Algerian dinar", "دج", "DZD");
-                    ARS = new CurrencyObj("Argentine peso", "$", "ARS");
-                    AWG = new CurrencyObj("Aruban florin", "ƒ", "AWG");
-                    AUD = new CurrencyObj("Australian dollar", "$", "AUD");
-                    BSD = new CurrencyObj("Bahamian dollar", "$", "BSD");
-                    BHD = new CurrencyObj("Bahraini dinar", ".د.ب", "BHD");
-                    BDT = new CurrencyObj("Bangladesh Taka", "৳", "BDT");
-                    BBD = new CurrencyObj("Barbadian Dollar", "Bds$", "BBD");
-                    BZD = new CurrencyObj("Belize Dollar", "BZ$", "BZD");
-                    BMD = new CurrencyObj("Bermuda Dollar", "$", "BMD");
-                    BTN = new CurrencyObj("Bhutanese Ngultrum", "Nu", "BTN");
-                    BOB = new CurrencyObj("Bolivian Boliviano", "Bs", "BOB");
-                    BWP = new CurrencyObj("Botswana Pula", "P", "BWP");
-                    BRL = new CurrencyObj("Brazilian Real", "R$", "BRL");
-                    GBP = new CurrencyObj("British Pound", "£", "GBP");
-                    BND = new CurrencyObj("Brunei Dollar", "$", "BND");
-                    BIF = new CurrencyObj("Burundi Franc", "Fbu", "BIF");
-                    XOF = new CurrencyObj("CFA Franc (BCEAO)", "CFA", "XOF");
-                    XAF = new CurrencyObj("CFA Franc (BEAC)", "FCFA", "XAF");
-                    KHR = new CurrencyObj("Cambodia Riel", "៛", "KHR");
-                    CAD = new CurrencyObj("Canadian Dollar", "$", "CAD");
-                    CVE = new CurrencyObj("Cape Verde Escudo", "$", "CVE");
-                    KYD = new CurrencyObj("Cayman Islands Dollar", "$", "KYD");
-                    CLP = new CurrencyObj("Chilean Peso", "$", "CLP");
-                    CNY = new CurrencyObj("Chinese Yuan", "¥", "CNY");
+                    AFA = new CurrencyObj(en_US.Currency_AFA, "؋", "AFA");
+                    ALL = new CurrencyObj(en_US.Currency_ALL, "Lek", "ALL");
+                    DZD = new CurrencyObj(en_US.Currency_DZD, "دج", "DZD");
+                    ARS = new CurrencyObj(en_US.Currency_ARS, "$", "ARS");
+                    AWG = new CurrencyObj(en_US.Currency_AWG, "ƒ", "AWG");
+                    AUD = new CurrencyObj(en_US.Currency_AUD, "$", "AUD");
+                    BSD = new CurrencyObj(en_US.Currency_BSD, "$", "BSD");
+                    BHD = new CurrencyObj(en_US.Currency_BHD, ".د.ب", "BHD");
+                    BDT = new CurrencyObj(en_US.Currency_BDT, "৳", "BDT");
+                    BBD = new CurrencyObj(en_US.Currency_BBD, "Bds$", "BBD");
+                    BZD = new CurrencyObj(en_US.Currency_BZD, "BZ$", "BZD");
+                    BMD = new CurrencyObj(en_US.Currency_BMD, "$", "BMD");
+                    BTN = new CurrencyObj(en_US.Currency_BTN, "Nu", "BTN");
+                    BOB = new CurrencyObj(en_US.Currency_BOB, "Bs", "BOB");
+                    BWP = new CurrencyObj(en_US.Currency_BWP, "P", "BWP");
+                    BRL = new CurrencyObj(en_US.Currency_BRL, "R$", "BRL");
+                    GBP = new CurrencyObj(en_US.Currency_GBP, "£", "GBP");
+                    BND = new CurrencyObj(en_US.Currency_BND, "$", "BND");
+                    BIF = new CurrencyObj(en_US.Currency_BIF, "Fbu", "BIF");
+                    XOF = new CurrencyObj(en_US.Currency_XOF, "CFA", "XOF");
+                    XAF = new CurrencyObj(en_US.Currency_XAF, "FCFA", "XAF");
+                    KHR = new CurrencyObj(en_US.Currency_KHR, "៛", "KHR");
+                    CAD = new CurrencyObj(en_US.Currency_CAD, "$", "CAD");
+                    CVE = new CurrencyObj(en_US.Currency_CVE, "$", "CVE");
+                    KYD = new CurrencyObj(en_US.Currency_KYD, "$", "KYD");
+                    CLP = new CurrencyObj(en_US.Currency_CLP, "$", "CLP");
+                    CNY = new CurrencyObj(en_US.Currency_CNY, "¥", "CNY");
                     COP = new CurrencyObj("Colombian Peso", "$", "COP");
                     KMF = new CurrencyObj("Comoros Franc", "CF", "KMF");
                     CRC = new CurrencyObj("Costa Rica Colòn", "₡", "CRC");

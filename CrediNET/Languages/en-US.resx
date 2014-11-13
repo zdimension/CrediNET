@@ -134,4 +134,124 @@
   <data name="Operation_Edit" xml:space="preserve">
     <value>Edit operation</value>
   </data>
+  <data name="Currencies_AFA" xml:space="preserve">
+    <value>Afghan afghani</value>
+  </data>
+  <data name="Currencies_ALL" xml:space="preserve">
+    <value>Albanian lek</value>
+  </data>
+  <data name="Currencies_DZD" xml:space="preserve">
+    <value>Algerian dinar</value>
+  </data>
+  <data name="Currencies_ARS" xml:space="preserve">
+    <value>Argentine peso</value>
+  </data>
+  <data name="Currencies_AWG" xml:space="preserve">
+    <value>Aruban florin</value>
+  </data>
+  <data name="Currencies_AUD" xml:space="preserve">
+    <value>Australian dollar</value>
+  </data>
+  <data name="Currencies_BSD" xml:space="preserve">
+    <value>Bahamian dollar</value>
+  </data>
+  <data name="Currencies_BHD" xml:space="preserve">
+    <value>Bahraini dinar</value>
+  </data>
+  <data name="Currencies_BDT" xml:space="preserve">
+    <value>Bangladesh Taka</value>
+  </data>
+  <data name="Currencies_BBD" xml:space="preserve">
+    <value>Barbadian Dollar</value>
+  </data>
+  <data name="Currencies_BZD" xml:space="preserve">
+    <value>Belize Dollar</value>
+  </data>
+  <data name="Currencies_BMD" xml:space="preserve">
+    <value>Bermuda Dollar</value>
+  </data>
+  <data name="Currency_AFA" xml:space="preserve">
+    <value>Afghan afghani</value>
+  </data>
+  <data name="Currency_" xml:space="preserve">
+    <value>Albanian lek</value>
+  </data>
+  <data name="Currency_ALL" xml:space="preserve">
+    <value>Albanian lek</value>
+  </data>
+  <data name="Currency_DZD" xml:space="preserve">
+    <value>Algerian dinar</value>
+  </data>
+  <data name="Currency_ARS" xml:space="preserve">
+    <value>Argentine peso</value>
+  </data>
+  <data name="Currency_AWG" xml:space="preserve">
+    <value>Aruban florin</value>
+  </data>
+  <data name="Currency_AUD" xml:space="preserve">
+    <value>Australian dollar</value>
+  </data>
+  <data name="Currency_BSD" xml:space="preserve">
+    <value>Bahamian dollar</value>
+  </data>
+  <data name="Currency_BHD" xml:space="preserve">
+    <value>Bahraini dinar</value>
+  </data>
+  <data name="Currency_BDT" xml:space="preserve">
+    <value>Bangladesh Taka</value>
+  </data>
+  <data name="Currency_BBD" xml:space="preserve">
+    <value>Barbadian Dollar</value>
+  </data>
+  <data name="Currency_BZD" xml:space="preserve">
+    <value>Belize Dollar</value>
+  </data>
+  <data name="Currency_BMD" xml:space="preserve">
+    <value>Bermuda Dollar</value>
+  </data>
+  <data name="Currency_BTN" xml:space="preserve">
+    <value>Bhutanese Ngultrum</value>
+  </data>
+  <data name="Currency_BOB" xml:space="preserve">
+    <value>Bolivian Boliviano</value>
+  </data>
+  <data name="Currency_BWP" xml:space="preserve">
+    <value>Botswana Pula</value>
+  </data>
+  <data name="Currency_BRL" xml:space="preserve">
+    <value>Brazilian Real</value>
+  </data>
+  <data name="Currency_GBP" xml:space="preserve">
+    <value>British Pound</value>
+  </data>
+  <data name="Currency_BND" xml:space="preserve">
+    <value>Brunei Dollar</value>
+  </data>
+  <data name="Currency_BIF" xml:space="preserve">
+    <value>Burundi Franc</value>
+  </data>
+  <data name="Currency_XOF" xml:space="preserve">
+    <value>CFA Franc (BCEAO)</value>
+  </data>
+  <data name="Currency_XAF" xml:space="preserve">
+    <value>CFA Franc (BEAC)</value>
+  </data>
+  <data name="Currency_KHR" xml:space="preserve">
+    <value>Cambodia Riel</value>
+  </data>
+  <data name="Currency_CAD" xml:space="preserve">
+    <value>Canadian Dollar</value>
+  </data>
+  <data name="Currency_CVE" xml:space="preserve">
+    <value>Cape Verde Escudo</value>
+  </data>
+  <data name="Currency_KYD" xml:space="preserve">
+    <value>Cayman Islands Dollar</value>
+  </data>
+  <data name="Currency_CLP" xml:space="preserve">
+    <value>Chilean Peso</value>
+  </data>
+  <data name="Currency_CNY" xml:space="preserve">
+    <value>Chinese Yuan</value>
+  </data>
 </root>

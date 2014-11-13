@@ -20,7 +20,13 @@ namespace CrediNET
         public FrmCreateAccount(Account editCompt = null)
         {
             InitializeComponent();
-            Currencies.All.ForEach(x => cbxDevise.Items.Add(x.Name));
+            foreach(var ccr in Currencies.All)
+            {
+                var bt = (Bitmap) CrediNET.CurrencyFlags.ResourceManager.GetObject(ccr.ShortName) ??
+                         CurrencyFlags.UNKNOWN;
+                cbxDevise.Items.Add(new ImageComboBox.ImageItem(ccr.Name, bt));
+            }
+            
             cbxClr.AddStandardColors();
             if (editCompt != null)
             {
@@ -34,7 +40,7 @@ namespace CrediNET
                     lbxBudgets.Items.Add(new ListViewItem {Text = x.Key, BackColor = x.Value});
                     return true;
                 });
-                cbxDevise.SelectedItem = editCompt.Currency == null ? "" : editCompt.Currency.Name;
+                cbxDevise.SelectedItem = new ImageComboBox.ImageItem(editCompt.Currency == null ? "" : editCompt.Currency.Name, CrediNET.Properties.Resources.ResourceManager.GetObject(editCompt.Currency.ShortName) as Image);
 
                 txtPasse_Leave(this, EventArgs.Empty);
             }
