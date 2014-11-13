@@ -30,20 +30,20 @@
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.moneyUpDown1 = new CrediNET.MoneyUpDown();
+            this.mupFrom = new CrediNET.MoneyUpDown();
             this.cbxDev1 = new CrediNET.ImageComboBox();
             this.btnIntervertir = new System.Windows.Forms.Button();
-            this.moneyUpDown2 = new CrediNET.MoneyUpDown();
-            this.imageComboBox1 = new CrediNET.ImageComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.moneyUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moneyUpDown2)).BeginInit();
+            this.mupTarget = new CrediNET.MoneyUpDown();
+            this.cbxDev2 = new CrediNET.ImageComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.mupFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mupTarget)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnClose.Location = new System.Drawing.Point(391, 245);
+            this.btnClose.Location = new System.Drawing.Point(392, 100);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 0;
@@ -60,19 +60,19 @@
             this.label1.Text = "Saisissez une valeur, puis sélectionnez la monnaie de départ et la monnaie d\'arri" +
     "vée.";
             // 
-            // moneyUpDown1
+            // mupFrom
             // 
-            this.moneyUpDown1.DecimalPlaces = 2;
-            this.moneyUpDown1.Devise = "€";
-            this.moneyUpDown1.Location = new System.Drawing.Point(12, 42);
-            this.moneyUpDown1.Maximum = new decimal(new int[] {
+            this.mupFrom.DecimalPlaces = 2;
+            this.mupFrom.Devise = "€";
+            this.mupFrom.Location = new System.Drawing.Point(12, 42);
+            this.mupFrom.Maximum = new decimal(new int[] {
             -727379969,
             232,
             0,
             0});
-            this.moneyUpDown1.Name = "moneyUpDown1";
-            this.moneyUpDown1.Size = new System.Drawing.Size(120, 23);
-            this.moneyUpDown1.TabIndex = 2;
+            this.mupFrom.Name = "mupFrom";
+            this.mupFrom.Size = new System.Drawing.Size(120, 23);
+            this.mupFrom.TabIndex = 2;
             // 
             // cbxDev1
             // 
@@ -93,43 +93,45 @@
             this.btnIntervertir.TabIndex = 4;
             this.btnIntervertir.Text = "<->";
             this.btnIntervertir.UseVisualStyleBackColor = true;
+            this.btnIntervertir.Click += new System.EventHandler(this.btnIntervertir_Click);
             // 
-            // moneyUpDown2
+            // mupTarget
             // 
-            this.moneyUpDown2.DecimalPlaces = 2;
-            this.moneyUpDown2.Devise = "€";
-            this.moneyUpDown2.Location = new System.Drawing.Point(346, 42);
-            this.moneyUpDown2.Maximum = new decimal(new int[] {
+            this.mupTarget.DecimalPlaces = 2;
+            this.mupTarget.Devise = "$";
+            this.mupTarget.Location = new System.Drawing.Point(346, 42);
+            this.mupTarget.Maximum = new decimal(new int[] {
             -727379969,
             232,
             0,
             0});
-            this.moneyUpDown2.Name = "moneyUpDown2";
-            this.moneyUpDown2.Size = new System.Drawing.Size(120, 23);
-            this.moneyUpDown2.TabIndex = 2;
+            this.mupTarget.Name = "mupTarget";
+            this.mupTarget.ReadOnly = true;
+            this.mupTarget.Size = new System.Drawing.Size(120, 23);
+            this.mupTarget.TabIndex = 2;
             // 
-            // imageComboBox1
+            // cbxDev2
             // 
-            this.imageComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.imageComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.imageComboBox1.FormattingEnabled = true;
-            this.imageComboBox1.Location = new System.Drawing.Point(346, 71);
-            this.imageComboBox1.Name = "imageComboBox1";
-            this.imageComboBox1.SelectedItem = null;
-            this.imageComboBox1.Size = new System.Drawing.Size(120, 24);
-            this.imageComboBox1.TabIndex = 3;
+            this.cbxDev2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxDev2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDev2.FormattingEnabled = true;
+            this.cbxDev2.Location = new System.Drawing.Point(346, 71);
+            this.cbxDev2.Name = "cbxDev2";
+            this.cbxDev2.SelectedItem = null;
+            this.cbxDev2.Size = new System.Drawing.Size(120, 24);
+            this.cbxDev2.TabIndex = 3;
             // 
             // FrmExchangeRate
             // 
             this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 280);
+            this.ClientSize = new System.Drawing.Size(478, 134);
             this.Controls.Add(this.btnIntervertir);
-            this.Controls.Add(this.imageComboBox1);
+            this.Controls.Add(this.cbxDev2);
             this.Controls.Add(this.cbxDev1);
-            this.Controls.Add(this.moneyUpDown2);
-            this.Controls.Add(this.moneyUpDown1);
+            this.Controls.Add(this.mupTarget);
+            this.Controls.Add(this.mupFrom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,8 +143,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Convertisseur de monnaies";
-            ((System.ComponentModel.ISupportInitialize)(this.moneyUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moneyUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mupFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mupTarget)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,10 +154,10 @@
 
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
-        private MoneyUpDown moneyUpDown1;
+        private MoneyUpDown mupFrom;
         private ImageComboBox cbxDev1;
         private System.Windows.Forms.Button btnIntervertir;
-        private MoneyUpDown moneyUpDown2;
-        private ImageComboBox imageComboBox1;
+        private MoneyUpDown mupTarget;
+        private ImageComboBox cbxDev2;
     }
 }

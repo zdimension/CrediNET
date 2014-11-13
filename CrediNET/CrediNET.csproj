@@ -513,6 +513,8 @@
     <None Include="Resources\chart_line.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\money1.png" />
+    <None Include="Resources\money.png" />
     <None Include="Resources\Myanmar-icon.png" />
     <None Include="Resources\flag_zimbabwe.png" />
     <None Include="Resources\flag_zambia.png" />

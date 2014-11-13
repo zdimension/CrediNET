@@ -56,7 +56,6 @@
             this.clmnCred = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnDeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolStrip = new CrediNET.NoBorderToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripSplitButton();
@@ -70,6 +69,7 @@
             this.classeurOpenOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditAcc = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddOp = new System.Windows.Forms.ToolStripButton();
             this.btnEditOp = new System.Windows.Forms.ToolStripButton();
             this.btnDuplOp = new System.Windows.Forms.ToolStripButton();
@@ -80,6 +80,7 @@
             this.btnGraph = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnCamembert = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCourbes = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMnyConvert = new System.Windows.Forms.ToolStripButton();
             this.sfdPDF = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -252,16 +253,12 @@
             this.btnFilterOp,
             this.btnOpt,
             this.btnReminder,
-            this.btnGraph});
+            this.btnGraph,
+            this.btnMnyConvert});
             resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip_Paint);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // btnNew
             // 
@@ -365,6 +362,11 @@
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
             // btnAddOp
             // 
             this.btnAddOp.Image = global::CrediNET.Properties.Resources.page_add;
@@ -437,6 +439,13 @@
             resources.ApplyResources(this.btnCourbes, "btnCourbes");
             this.btnCourbes.Name = "btnCourbes";
             this.btnCourbes.Click += new System.EventHandler(this.btnCourbes_Click);
+            // 
+            // btnMnyConvert
+            // 
+            this.btnMnyConvert.Image = global::CrediNET.Properties.Resources.money1;
+            resources.ApplyResources(this.btnMnyConvert, "btnMnyConvert");
+            this.btnMnyConvert.Name = "btnMnyConvert";
+            this.btnMnyConvert.Click += new System.EventHandler(this.btnMnyConvert_Click);
             // 
             // sfdPDF
             // 
@@ -519,6 +528,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfdPDF;
+        private System.Windows.Forms.ToolStripButton btnMnyConvert;
     }
 }
 

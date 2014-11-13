@@ -1286,5 +1286,10 @@ namespace CrediNET
                 Process.Start(sfdPDF.FileName);*/
             }
         }
+
+        private void btnMnyConvert_Click(object sender, EventArgs e)
+        {
+            new FrmExchangeRate().ShowDialog();
+        }
     }
 }
