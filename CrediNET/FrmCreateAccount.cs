@@ -40,13 +40,18 @@ namespace CrediNET
                     lbxBudgets.Items.Add(new ListViewItem {Text = x.Key, BackColor = x.Value});
                     return true;
                 });
-                cbxDevise.SelectedItem = new ImageComboBox.ImageItem(editCompt.Currency == null ? "" : editCompt.Currency.Name, CrediNET.Properties.Resources.ResourceManager.GetObject(editCompt.Currency.ShortName) as Image);
+                //cbxDevise.SelectedItem = new ImageComboBox.ImageItem(editCompt.Currency == null ? "" : editCompt.Currency.Name, CrediNET.Properties.Resources.ResourceManager.GetObject(editCompt.Currency.ShortName) as Image);
+
+                cbxDevise.SelectedItem =
+                    cbxDevise.Items.Cast<ImageComboBox.ImageItem>().First(x => x.Text.Contains(editCompt.Currency == null ? "EUR" : editCompt.Currency.ShortName));
 
                 txtPasse_Leave(this, EventArgs.Empty);
             }
             else
             {
                 edit = false;
+                cbxDevise.SelectedItem =
+                    cbxDevise.Items.Cast<ImageComboBox.ImageItem>().First(x => x.Text.Contains("EUR"));
             }
             SetWindowTheme(lbxBudgets.Handle, "Explorer", null);
         }
