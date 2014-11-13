@@ -149,6 +149,12 @@
     <Compile Include="FrmCreateAccount.Designer.cs">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmExchangeRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExchangeRate.Designer.cs">
+      <DependentUpon>FrmExchangeRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGraph.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateAccount.vi.resx">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExchangeRate.resx">
+      <DependentUpon>FrmExchangeRate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGraph.en-US.resx">
       <DependentUpon>FrmGraph.cs</DependentUpon>
