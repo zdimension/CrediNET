@@ -244,10 +244,10 @@ namespace CrediNET
                     KYD = new CurrencyObj(en_US.Currency_KYD, "$", "KYD");
                     CLP = new CurrencyObj(en_US.Currency_CLP, "$", "CLP");
                     CNY = new CurrencyObj(en_US.Currency_CNY, "¥", "CNY");
-                    COP = new CurrencyObj("Colombian Peso", "$", "COP");
-                    KMF = new CurrencyObj("Comoros Franc", "CF", "KMF");
-                    CRC = new CurrencyObj("Costa Rica Colòn", "₡", "CRC");
-                    HRK = new CurrencyObj("Croatian Kuna", "kn", "HRK");
+                    COP = new CurrencyObj(en_US.Currency_COP, "$", "COP");
+                    KMF = new CurrencyObj(en_US.Currency_KMF, "CF", "KMF");
+                    CRC = new CurrencyObj(en_US.Currency_CRC, "₡", "CRC");
+                    HRK = new CurrencyObj(en_US.Currency_HRK, "kn", "HRK");
                     CUP = new CurrencyObj("Cuban Peso", "$", "CUP");
                     CYP = new CurrencyObj("Cyprus Pound", "£", "CYP");
                     CZK = new CurrencyObj("Czech Koruna", "Kč", "CZK");

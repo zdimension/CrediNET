@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,12 +14,17 @@ namespace CrediNET
         {
             InitializeComponent();
 
-            Currencies.All.ForEach(x => cbxDftCrc.Items.Add(x.Name));
+            foreach (var ccr in Currencies.All)
+            {
+                var bt = (Bitmap)CrediNET.CurrencyFlags.ResourceManager.GetObject(ccr.ShortName) ??
+                         CurrencyFlags.UNKNOWN;
+                cbxDftCrc.Items.Add(new ImageComboBox.ImageItem(ccr.Name, bt));
+            }
         }
 
         private void FrmOptions_Load(object sender, EventArgs e)
         {
-            cbxDftCrc.SelectedItem = ((CurrencyObj) (Settings.Default.DefaultCurrency)).Name;
+            cbxDftCrc.SelectedItem = cbxDftCrc.Items.Cast<ImageComboBox.ImageItem>().First(x => x.Text == Currencies.All.First(y => y.ShortName == Settings.Default.DefaultCurrency).Name);
             if (Settings.Default.Lang.Name == "fr-FR") cbxLng.SelectedIndex = 0;
             if (Settings.Default.Lang.Name == "en-US") cbxLng.SelectedIndex = 1;
             if (Settings.Default.Lang.Name == "de-DE") cbxLng.SelectedIndex = 2;
@@ -30,8 +36,13 @@ namespace CrediNET
             var cultureName = cbxLng.SelectedItem.ToString().Split('(')[1].Replace(")", "");
 
             Settings.Default.DefaultCurrency =
-                Currencies.All.First(x => x.Name == cbxDftCrc.SelectedItem.ToString()).ShortName;
+                Currencies.All.First(x => x.Name == cbxDftCrc.SelectedItem.Text).ShortName;
             Settings.Default.Lang = (CultureInfo) new CultureInfoConverter().ConvertFromString(cultureName);
+            Settings.Default.Save();
+        }
+
+        private void cbxSplash_CheckedChanged(object sender, EventArgs e)
+        {
             Settings.Default.Save();
         }
     }

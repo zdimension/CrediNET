@@ -28,78 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExchangeRate));
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.mupFrom = new CrediNET.MoneyUpDown();
-            this.cbxDev1 = new CrediNET.ImageComboBox();
             this.btnIntervertir = new System.Windows.Forms.Button();
-            this.mupTarget = new CrediNET.MoneyUpDown();
             this.cbxDev2 = new CrediNET.ImageComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.mupFrom)).BeginInit();
+            this.cbxDev1 = new CrediNET.ImageComboBox();
+            this.mupTarget = new CrediNET.MoneyUpDown();
+            this.mupFrom = new CrediNET.MoneyUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.mupTarget)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mupFrom)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnClose.Location = new System.Drawing.Point(392, 100);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Fermer";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(446, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Saisissez une valeur, puis sélectionnez la monnaie de départ et la monnaie d\'arri" +
-    "vée.";
-            // 
-            // mupFrom
-            // 
-            this.mupFrom.DecimalPlaces = 2;
-            this.mupFrom.Devise = "€";
-            this.mupFrom.Location = new System.Drawing.Point(12, 42);
-            this.mupFrom.Maximum = new decimal(new int[] {
-            -727379969,
-            232,
-            0,
-            0});
-            this.mupFrom.Name = "mupFrom";
-            this.mupFrom.Size = new System.Drawing.Size(120, 23);
-            this.mupFrom.TabIndex = 2;
-            // 
-            // cbxDev1
-            // 
-            this.cbxDev1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxDev1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxDev1.FormattingEnabled = true;
-            this.cbxDev1.Location = new System.Drawing.Point(12, 71);
-            this.cbxDev1.Name = "cbxDev1";
-            this.cbxDev1.SelectedItem = null;
-            this.cbxDev1.Size = new System.Drawing.Size(120, 24);
-            this.cbxDev1.TabIndex = 3;
             // 
             // btnIntervertir
             // 
-            this.btnIntervertir.Location = new System.Drawing.Point(138, 41);
+            resources.ApplyResources(this.btnIntervertir, "btnIntervertir");
             this.btnIntervertir.Name = "btnIntervertir";
-            this.btnIntervertir.Size = new System.Drawing.Size(202, 25);
-            this.btnIntervertir.TabIndex = 4;
-            this.btnIntervertir.Text = "<->";
             this.btnIntervertir.UseVisualStyleBackColor = true;
             this.btnIntervertir.Click += new System.EventHandler(this.btnIntervertir_Click);
             // 
+            // cbxDev2
+            // 
+            resources.ApplyResources(this.cbxDev2, "cbxDev2");
+            this.cbxDev2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxDev2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDev2.FormattingEnabled = true;
+            this.cbxDev2.Name = "cbxDev2";
+            this.cbxDev2.SelectedItem = null;
+            this.cbxDev2.SelectedIndexChanged += new System.EventHandler(this.cbxDev2_SelectedIndexChanged);
+            // 
+            // cbxDev1
+            // 
+            resources.ApplyResources(this.cbxDev1, "cbxDev1");
+            this.cbxDev1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxDev1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDev1.FormattingEnabled = true;
+            this.cbxDev1.Name = "cbxDev1";
+            this.cbxDev1.SelectedItem = null;
+            this.cbxDev1.SelectedIndexChanged += new System.EventHandler(this.cbxDev1_SelectedIndexChanged);
+            // 
             // mupTarget
             // 
+            resources.ApplyResources(this.mupTarget, "mupTarget");
             this.mupTarget.DecimalPlaces = 2;
             this.mupTarget.Devise = "$";
-            this.mupTarget.Location = new System.Drawing.Point(346, 42);
             this.mupTarget.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -107,26 +91,26 @@
             0});
             this.mupTarget.Name = "mupTarget";
             this.mupTarget.ReadOnly = true;
-            this.mupTarget.Size = new System.Drawing.Size(120, 23);
-            this.mupTarget.TabIndex = 2;
+            this.mupTarget.ValueChanged += new System.EventHandler(this.mupTarget_ValueChanged);
             // 
-            // cbxDev2
+            // mupFrom
             // 
-            this.cbxDev2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxDev2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxDev2.FormattingEnabled = true;
-            this.cbxDev2.Location = new System.Drawing.Point(346, 71);
-            this.cbxDev2.Name = "cbxDev2";
-            this.cbxDev2.SelectedItem = null;
-            this.cbxDev2.Size = new System.Drawing.Size(120, 24);
-            this.cbxDev2.TabIndex = 3;
+            resources.ApplyResources(this.mupFrom, "mupFrom");
+            this.mupFrom.DecimalPlaces = 2;
+            this.mupFrom.Devise = "€";
+            this.mupFrom.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.mupFrom.Name = "mupFrom";
+            this.mupFrom.ValueChanged += new System.EventHandler(this.mupFrom_ValueChanged);
             // 
             // FrmExchangeRate
             // 
             this.AcceptButton = this.btnClose;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 134);
             this.Controls.Add(this.btnIntervertir);
             this.Controls.Add(this.cbxDev2);
             this.Controls.Add(this.cbxDev1);
@@ -134,17 +118,14 @@
             this.Controls.Add(this.mupFrom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmExchangeRate";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Convertisseur de monnaies";
-            ((System.ComponentModel.ISupportInitialize)(this.mupFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mupTarget)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mupFrom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

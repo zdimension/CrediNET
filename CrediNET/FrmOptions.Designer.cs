@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cbxDftCrc = new System.Windows.Forms.ComboBox();
+            this.cbxDftCrc = new ImageComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxLng = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -129,6 +129,7 @@
             this.cbxSplash.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::CrediNET.Properties.Settings.Default, "ShowSplash", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cbxSplash.Name = "cbxSplash";
             this.cbxSplash.UseVisualStyleBackColor = true;
+            this.cbxSplash.CheckedChanged += new System.EventHandler(this.cbxSplash_CheckedChanged);
             // 
             // vsbMain
             // 
@@ -158,7 +159,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ComboBox cbxDftCrc;
+        private ImageComboBox cbxDftCrc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxLng;
         private System.Windows.Forms.Label label2;

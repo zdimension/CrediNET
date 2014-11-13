@@ -457,6 +457,24 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Colombian Peso.
+        /// </summary>
+        internal static string Currency_COP {
+            get {
+                return ResourceManager.GetString("Currency_COP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Costa Rica Colòn.
+        /// </summary>
+        internal static string Currency_CRC {
+            get {
+                return ResourceManager.GetString("Currency_CRC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cape Verde Escudo.
         /// </summary>
         internal static string Currency_CVE {
@@ -484,11 +502,29 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Croatian Kuna.
+        /// </summary>
+        internal static string Currency_HRK {
+            get {
+                return ResourceManager.GetString("Currency_HRK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cambodia Riel.
         /// </summary>
         internal static string Currency_KHR {
             get {
                 return ResourceManager.GetString("Currency_KHR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Comoros Franc.
+        /// </summary>
+        internal static string Currency_KMF {
+            get {
+                return ResourceManager.GetString("Currency_KMF", resourceCulture);
             }
         }
         

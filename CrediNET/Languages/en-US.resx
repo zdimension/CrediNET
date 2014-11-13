@@ -254,4 +254,16 @@
   <data name="Currency_CNY" xml:space="preserve">
     <value>Chinese Yuan</value>
   </data>
+  <data name="Currency_COP" xml:space="preserve">
+    <value>Colombian Peso</value>
+  </data>
+  <data name="Currency_KMF" xml:space="preserve">
+    <value>Comoros Franc</value>
+  </data>
+  <data name="Currency_CRC" xml:space="preserve">
+    <value>Costa Rica Colòn</value>
+  </data>
+  <data name="Currency_HRK" xml:space="preserve">
+    <value>Croatian Kuna</value>
+  </data>
 </root>

@@ -266,6 +266,9 @@
     <EmbeddedResource Include="FrmCreateAccount.vi.resx">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmExchangeRate.en-US.resx">
+      <DependentUpon>FrmExchangeRate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmExchangeRate.resx">
       <DependentUpon>FrmExchangeRate.cs</DependentUpon>
     </EmbeddedResource>
