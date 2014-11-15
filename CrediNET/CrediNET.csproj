@@ -707,7 +707,8 @@
   <PropertyGroup>
     <PostBuildEvent>"$(TargetDir)ILMerge.exe" /ndebug /copyattrs /targetplatform:4.0,"C:\Windows\Microsoft.NET\Framework64\v4.0.30319" /out:"$(TargetDir)final\CrediNET.exe" "$(TargetPath)" "$(TargetDir)EPPlus.dll" "$(TargetDir)Ookii.Dialogs.dll" "$(TargetDir)ZedGraph.dll" "$(TargetDir)ZedGraph.resources.dll"
 xcopy "$(TargetDir)en-US" "$(TargetDir)final\en-US\*" /y
-xcopy "$(TargetDir)de-DE" "$(TargetDir)final\de-DE\*" /y</PostBuildEvent>
+xcopy "$(TargetDir)de-DE" "$(TargetDir)final\de-DE\*" /y
+xcopy "$(TargetDir)vi" "$(TargetDir)final\vi\*" /y</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

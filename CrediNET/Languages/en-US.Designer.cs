@@ -1051,7 +1051,7 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Polish Zloty.
+        ///   Recherche une chaîne localisée semblable à Polish Złoty.
         /// </summary>
         internal static string Currency_PLN {
             get {
