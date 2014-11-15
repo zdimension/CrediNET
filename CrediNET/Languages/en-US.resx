@@ -1,103 +1,122 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
   <data name="Account_Crypted_TypePassword" xml:space="preserve">
     <value>Please type the account's password below.</value>
   </data>
@@ -134,47 +153,8 @@
   <data name="Operation_Edit" xml:space="preserve">
     <value>Edit operation</value>
   </data>
-  <data name="Currencies_AFA" xml:space="preserve">
-    <value>Afghan afghani</value>
-  </data>
-  <data name="Currencies_ALL" xml:space="preserve">
-    <value>Albanian lek</value>
-  </data>
-  <data name="Currencies_DZD" xml:space="preserve">
-    <value>Algerian dinar</value>
-  </data>
-  <data name="Currencies_ARS" xml:space="preserve">
-    <value>Argentine peso</value>
-  </data>
-  <data name="Currencies_AWG" xml:space="preserve">
-    <value>Aruban florin</value>
-  </data>
-  <data name="Currencies_AUD" xml:space="preserve">
-    <value>Australian dollar</value>
-  </data>
-  <data name="Currencies_BSD" xml:space="preserve">
-    <value>Bahamian dollar</value>
-  </data>
-  <data name="Currencies_BHD" xml:space="preserve">
-    <value>Bahraini dinar</value>
-  </data>
-  <data name="Currencies_BDT" xml:space="preserve">
-    <value>Bangladesh Taka</value>
-  </data>
-  <data name="Currencies_BBD" xml:space="preserve">
-    <value>Barbadian Dollar</value>
-  </data>
-  <data name="Currencies_BZD" xml:space="preserve">
-    <value>Belize Dollar</value>
-  </data>
-  <data name="Currencies_BMD" xml:space="preserve">
-    <value>Bermuda Dollar</value>
-  </data>
   <data name="Currency_AFA" xml:space="preserve">
     <value>Afghan afghani</value>
-  </data>
-  <data name="Currency_" xml:space="preserve">
-    <value>Albanian lek</value>
   </data>
   <data name="Currency_ALL" xml:space="preserve">
     <value>Albanian lek</value>
@@ -376,5 +356,224 @@
   </data>
   <data name="Currency_LSL" xml:space="preserve">
     <value>Lesotho Loti</value>
+  </data>
+  <data name="Currency_LRD" xml:space="preserve">
+    <value>Liberian Dollar</value>
+  </data>
+  <data name="Currency_LYD" xml:space="preserve">
+    <value>Libyan Dinar</value>
+  </data>
+  <data name="Currency_LTL" xml:space="preserve">
+    <value>Lithuanian Lita</value>
+  </data>
+  <data name="Currency_MOP" xml:space="preserve">
+    <value>Macanese Pataca</value>
+  </data>
+  <data name="Currency_MKD" xml:space="preserve">
+    <value>Macedonian Denar</value>
+  </data>
+  <data name="Currency_MWK" xml:space="preserve">
+    <value>Malawian Kwacha</value>
+  </data>
+  <data name="Currency_MYR" xml:space="preserve">
+    <value>Malaysian Ringgit</value>
+  </data>
+  <data name="Currency_MVR" xml:space="preserve">
+    <value>Maldives Rufiyaa</value>
+  </data>
+  <data name="Currency_MTL" xml:space="preserve">
+    <value>Maltese Lira</value>
+  </data>
+  <data name="Currency_MRO" xml:space="preserve">
+    <value>Mauritania Ouguiya</value>
+  </data>
+  <data name="Currency_MUR" xml:space="preserve">
+    <value>Mauritian Rupee</value>
+  </data>
+  <data name="Currency_MXN" xml:space="preserve">
+    <value>Mexican Peso</value>
+  </data>
+  <data name="Currency_MDL" xml:space="preserve">
+    <value>Moldovan Leu</value>
+  </data>
+  <data name="Currency_MNT" xml:space="preserve">
+    <value>Mongolian Tugrik</value>
+  </data>
+  <data name="Currency_MAD" xml:space="preserve">
+    <value>Moroccan Dirham</value>
+  </data>
+  <data name="Currency_MZM" xml:space="preserve">
+    <value>Mozambique Metical</value>
+  </data>
+  <data name="Currency_MMK" xml:space="preserve">
+    <value>Myanmar Kyat</value>
+  </data>
+  <data name="Currency_NAD" xml:space="preserve">
+    <value>Namibian Dollar</value>
+  </data>
+  <data name="Currency_NPR" xml:space="preserve">
+    <value>Nepalese Rupee</value>
+  </data>
+  <data name="Currency_ANG" xml:space="preserve">
+    <value>Netherlands Antillean Guilder</value>
+  </data>
+  <data name="Currency_NZD" xml:space="preserve">
+    <value>New Zealand Dollar</value>
+  </data>
+  <data name="Currency_NIO" xml:space="preserve">
+    <value>Nicaragua Cordoba</value>
+  </data>
+  <data name="Currency_NGN" xml:space="preserve">
+    <value>Nigerian Naira</value>
+  </data>
+  <data name="Currency_KPW" xml:space="preserve">
+    <value>North Korean Won</value>
+  </data>
+  <data name="Currency_NOK" xml:space="preserve">
+    <value>Norwegian Krone</value>
+  </data>
+  <data name="Currency_OMR" xml:space="preserve">
+    <value>Omani Rial</value>
+  </data>
+  <data name="Currency_XPF" xml:space="preserve">
+    <value>Pacific Franc</value>
+  </data>
+  <data name="Currency_PKR" xml:space="preserve">
+    <value>Pakistani Rupee</value>
+  </data>
+  <data name="Currency_PAB" xml:space="preserve">
+    <value>Panamanian Balboa</value>
+  </data>
+  <data name="Currency_PGK" xml:space="preserve">
+    <value>Papua New Guinean Kina</value>
+  </data>
+  <data name="Currency_PYG" xml:space="preserve">
+    <value>Paraguayan Guaraní</value>
+  </data>
+  <data name="Currency_PEN" xml:space="preserve">
+    <value>Peruvian Nuevo Sol</value>
+  </data>
+  <data name="Currency_PHP" xml:space="preserve">
+    <value>Philippine Peso</value>
+  </data>
+  <data name="Currency_PLN" xml:space="preserve">
+    <value>Polish Zloty</value>
+  </data>
+  <data name="Currency_QAR" xml:space="preserve">
+    <value>Qatari Riyal</value>
+  </data>
+  <data name="Currency_ROL" xml:space="preserve">
+    <value>Romanian Leu</value>
+  </data>
+  <data name="Currency_RUB" xml:space="preserve">
+    <value>Russian Rouble</value>
+  </data>
+  <data name="Currency_WST" xml:space="preserve">
+    <value>Samoan tālā</value>
+  </data>
+  <data name="Currency_STD" xml:space="preserve">
+    <value>São Tomé and Príncipe dobra</value>
+  </data>
+  <data name="Currency_SAR" xml:space="preserve">
+    <value>Saudi riyal</value>
+  </data>
+  <data name="Currency_SCR" xml:space="preserve">
+    <value>Seychellois rupee</value>
+  </data>
+  <data name="Currency_SLL" xml:space="preserve">
+    <value>Sierra Leonean leone</value>
+  </data>
+  <data name="Currency_SGD" xml:space="preserve">
+    <value>Singapore Dollar</value>
+  </data>
+  <data name="Currency_SKK" xml:space="preserve">
+    <value>Slovak Koruna</value>
+  </data>
+  <data name="Currency_SBD" xml:space="preserve">
+    <value>Solomon Islands Dollar</value>
+  </data>
+  <data name="Currency_SOS" xml:space="preserve">
+    <value>Somali Shilling</value>
+  </data>
+  <data name="Currency_ZAR" xml:space="preserve">
+    <value>South African Rand</value>
+  </data>
+  <data name="Currency_LKR" xml:space="preserve">
+    <value>Sri Lankan Rupee</value>
+  </data>
+  <data name="Currency_SHP" xml:space="preserve">
+    <value>Saint Helena Pound</value>
+  </data>
+  <data name="Currency_SDD" xml:space="preserve">
+    <value>Sudanese Dinar</value>
+  </data>
+  <data name="Currency_SRG" xml:space="preserve">
+    <value>Surinam Guilder</value>
+  </data>
+  <data name="Currency_SZL" xml:space="preserve">
+    <value>Swaziland Lilangeni</value>
+  </data>
+  <data name="Currency_SEK" xml:space="preserve">
+    <value>Swedish Krona</value>
+  </data>
+  <data name="Currency_TRY" xml:space="preserve">
+    <value>Turkish lira</value>
+  </data>
+  <data name="Currency_CHF" xml:space="preserve">
+    <value>Swiss Franc</value>
+  </data>
+  <data name="Currency_SYP" xml:space="preserve">
+    <value>Syrian Pound</value>
+  </data>
+  <data name="Currency_TWD" xml:space="preserve">
+    <value>Taiwan Dollar</value>
+  </data>
+  <data name="Currency_TZS" xml:space="preserve">
+    <value>Tanzanian Shilling</value>
+  </data>
+  <data name="Currency_THB" xml:space="preserve">
+    <value>Thai Baht</value>
+  </data>
+  <data name="Currency_TOP" xml:space="preserve">
+    <value>Tongan paʻanga</value>
+  </data>
+  <data name="Currency_TTD" xml:space="preserve">
+    <value>Trinidad &amp; Tobago Dollar</value>
+  </data>
+  <data name="Currency_TND" xml:space="preserve">
+    <value>Tunisian Dinar</value>
+  </data>
+  <data name="Currency_USD" xml:space="preserve">
+    <value>U.S. Dollar</value>
+  </data>
+  <data name="Currency_AED" xml:space="preserve">
+    <value>United Arab Emirates dirham</value>
+  </data>
+  <data name="Currency_UGX" xml:space="preserve">
+    <value>Ugandan Shilling</value>
+  </data>
+  <data name="Currency_UAH" xml:space="preserve">
+    <value>Ukraine Hryvnia</value>
+  </data>
+  <data name="Currency_UYU" xml:space="preserve">
+    <value>Uruguayan New Peso</value>
+  </data>
+  <data name="Currency_VUV" xml:space="preserve">
+    <value>Vanuatu Vatu</value>
+  </data>
+  <data name="Currency_VEB" xml:space="preserve">
+    <value>Venezuelan Bolivar</value>
+  </data>
+  <data name="Currency_VND" xml:space="preserve">
+    <value>Vietnamese dong</value>
+  </data>
+  <data name="Currency_YER" xml:space="preserve">
+    <value>Yemeni Riyal</value>
+  </data>
+  <data name="Currency_ZMK" xml:space="preserve">
+    <value>Zambian Kwacha</value>
+  </data>
+  <data name="Currency_ZWD" xml:space="preserve">
+    <value>Zimbabwe Dollar</value>
   </data>
 </root>
