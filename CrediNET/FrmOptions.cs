@@ -20,6 +20,8 @@ namespace CrediNET
                          CurrencyFlags.UNKNOWN;
                 cbxDftCrc.Items.Add(new ImageComboBox.ImageItem(ccr.Name, bt));
             }
+
+            
         }
 
         private void FrmOptions_Load(object sender, EventArgs e)
@@ -29,6 +31,8 @@ namespace CrediNET
             if (Settings.Default.Lang.Name == "en-US") cbxLng.SelectedIndex = 1;
             if (Settings.Default.Lang.Name == "de-DE") cbxLng.SelectedIndex = 2;
             if (Settings.Default.Lang.Name == "vi-VN") cbxLng.SelectedIndex = 3;
+
+            nupDecimals_ValueChanged(this, null);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -44,6 +48,12 @@ namespace CrediNET
         private void cbxSplash_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.Save();
+        }
+
+        private void nupDecimals_ValueChanged(object sender, EventArgs e)
+        {
+            lblSample.Text = Math.Round(123.456789123, Convert.ToInt32(nupDecimals.Value)).ToString() + @" " +
+                             Currencies.All.First(x => x.Name == cbxDftCrc.SelectedItem.Text).Symbol;
         }
     }
 }

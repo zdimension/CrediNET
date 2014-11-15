@@ -239,7 +239,6 @@
             // mudDebitTo
             // 
             resources.ApplyResources(this.mudDebitTo, "mudDebitTo");
-            this.mudDebitTo.DecimalPlaces = 2;
             this.mudDebitTo.Devise = "€";
             this.mudDebitTo.Maximum = new decimal(new int[] {
             -727379969,
@@ -256,7 +255,6 @@
             // mudDebitFrom
             // 
             resources.ApplyResources(this.mudDebitFrom, "mudDebitFrom");
-            this.mudDebitFrom.DecimalPlaces = 2;
             this.mudDebitFrom.Devise = "€";
             this.mudDebitFrom.Maximum = new decimal(new int[] {
             -727379969,
@@ -290,7 +288,6 @@
             // mudCreditTo
             // 
             resources.ApplyResources(this.mudCreditTo, "mudCreditTo");
-            this.mudCreditTo.DecimalPlaces = 2;
             this.mudCreditTo.Devise = "€";
             this.mudCreditTo.Maximum = new decimal(new int[] {
             -727379969,
@@ -302,7 +299,6 @@
             // mudCreditFrom
             // 
             resources.ApplyResources(this.mudCreditFrom, "mudCreditFrom");
-            this.mudCreditFrom.DecimalPlaces = 2;
             this.mudCreditFrom.Devise = "€";
             this.mudCreditFrom.Maximum = new decimal(new int[] {
             -727379969,

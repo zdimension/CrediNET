@@ -32,17 +32,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cbxDftCrc = new ImageComboBox();
+            this.cbxDftCrc = new CrediNET.ImageComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxLng = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblSample = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nupDecimals = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbxUseDashes = new System.Windows.Forms.CheckBox();
             this.cbxSplash = new System.Windows.Forms.CheckBox();
             this.vsbMain = new System.Windows.Forms.VScrollBar();
             this.panel1.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupDecimals)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,10 +74,12 @@
             // 
             // cbxDftCrc
             // 
+            this.cbxDftCrc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxDftCrc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDftCrc.FormattingEnabled = true;
             resources.ApplyResources(this.cbxDftCrc, "cbxDftCrc");
             this.cbxDftCrc.Name = "cbxDftCrc";
+            this.cbxDftCrc.SelectedItem = null;
             // 
             // label3
             // 
@@ -103,6 +110,10 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.lblSample);
+            this.pnlMain.Controls.Add(this.label5);
+            this.pnlMain.Controls.Add(this.nupDecimals);
+            this.pnlMain.Controls.Add(this.label4);
             this.pnlMain.Controls.Add(this.cbxUseDashes);
             this.pnlMain.Controls.Add(this.cbxSplash);
             this.pnlMain.Controls.Add(this.label2);
@@ -112,6 +123,34 @@
             this.pnlMain.Controls.Add(this.cbxLng);
             resources.ApplyResources(this.pnlMain, "pnlMain");
             this.pnlMain.Name = "pnlMain";
+            // 
+            // lblSample
+            // 
+            resources.ApplyResources(this.lblSample, "lblSample");
+            this.lblSample.Name = "lblSample";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // nupDecimals
+            // 
+            this.nupDecimals.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::CrediNET.Properties.Settings.Default, "DecimalPlaces", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            resources.ApplyResources(this.nupDecimals, "nupDecimals");
+            this.nupDecimals.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.nupDecimals.Name = "nupDecimals";
+            this.nupDecimals.Value = global::CrediNET.Properties.Settings.Default.DecimalPlaces;
+            this.nupDecimals.ValueChanged += new System.EventHandler(this.nupDecimals_ValueChanged);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // cbxUseDashes
             // 
@@ -150,6 +189,7 @@
             this.panel1.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupDecimals)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +208,10 @@
         private System.Windows.Forms.VScrollBar vsbMain;
         private System.Windows.Forms.CheckBox cbxSplash;
         private System.Windows.Forms.CheckBox cbxUseDashes;
+        private System.Windows.Forms.NumericUpDown nupDecimals;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSample;
+        private System.Windows.Forms.Label label5;
 
     }
 }

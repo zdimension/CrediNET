@@ -139,10 +139,22 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Language :</value>
   </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 15</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Sample :</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 15</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Decimal places :</value>
+  </data>
+  <data name="cbxUseDashes.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 19</value>
   </data>
-  <data name="checkBox1.Text" xml:space="preserve">
+  <data name="cbxUseDashes.Text" xml:space="preserve">
     <value>Use dashes instead of zeros :</value>
   </data>
   <data name="cbxSplash.Size" type="System.Drawing.Size, System.Drawing">
@@ -150,6 +162,10 @@
   </data>
   <data name="cbxSplash.Text" xml:space="preserve">
     <value>Show splash screen :</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>

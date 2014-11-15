@@ -183,7 +183,6 @@
             // mupCredit
             // 
             resources.ApplyResources(this.mupCredit, "mupCredit");
-            this.mupCredit.DecimalPlaces = 2;
             this.mupCredit.Devise = "€";
             this.mupCredit.Maximum = new decimal(new int[] {
             -727379969,
@@ -195,7 +194,6 @@
             // mupDebit
             // 
             resources.ApplyResources(this.mupDebit, "mupDebit");
-            this.mupDebit.DecimalPlaces = 2;
             this.mupDebit.Devise = "€";
             this.mupDebit.Maximum = new decimal(new int[] {
             -727379969,

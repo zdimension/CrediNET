@@ -21,6 +21,23 @@ namespace CrediNET
         /// <returns>The exchange rate from the first currency to the second</returns>
         public static double ExchangeRate(CurrencyObj FromCurrency, CurrencyObj ToCurrency)
         {
+            if(FromCurrency == ToCurrency)
+            {
+                return 1;
+            }
+
+            if(FromCurrency == Currencies.FRF)
+            {
+                double exeur = ExchangeRate(Currencies.EUR, ToCurrency);
+                return exeur / 6.55957;
+            }
+
+            if(ToCurrency == Currencies.FRF)
+            {
+                double exeur = ExchangeRate(FromCurrency, Currencies.EUR);
+                return exeur * 6.55957;
+            }
+
             var webrequest =
                 WebRequest.Create("http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?FromCurrency=" +
                                   FromCurrency.ShortName + "&ToCurrency=" + ToCurrency.ShortName);
@@ -140,7 +157,7 @@ namespace CrediNET
         {
             get
             {
-                if (Math.Abs(_rapp - (-1)) < 0)
+                if (_rapp == -1)
                     return CurrencyExtensions.ExchangeRate(Currencies.EUR, this);
                 else
                     return _rapp;
@@ -260,6 +277,7 @@ namespace CrediNET
                     ETB = new CurrencyObj(en_US.Currency_ETB, "ብር", "ETB");
                     EUR = new CurrencyObj(en_US.Currency_EUR, "€", "EUR");
                     FKP = new CurrencyObj(en_US.Currency_FKP, "£", "FKP");
+                    FRF = new CurrencyObj(en_US.Currency_FRF, "F", "FRF", 6.55957);
                     GMD = new CurrencyObj(en_US.Currency_GMD, "D", "GMD");
                     GHC = new CurrencyObj(en_US.Currency_GHC, "GH₵", "GHC");
                     GIP = new CurrencyObj(en_US.Currency_GIP, "£", "GIP");
@@ -403,6 +421,7 @@ namespace CrediNET
                     ETB = new CurrencyObj("Ethiopian Birr", "ብር", "ETB");
                     EUR = new CurrencyObj("Euro", "€", "EUR");
                     FKP = new CurrencyObj("Falkland Islands Pound", "£", "FKP");
+                    FRF = new CurrencyObj("Franzosich Franc", "F", "FRF", 6.55957);
                     GMD = new CurrencyObj("Gambian Dalasi", "D", "GMD");
                     GHC = new CurrencyObj("Ghanian Cedi", "GH₵", "GHC");
                     GIP = new CurrencyObj("Gibraltar Pound", "£", "GIP");
@@ -546,6 +565,7 @@ namespace CrediNET
                     ETB = new CurrencyObj("Ethiopian Birr", "ብር", "ETB");
                     EUR = new CurrencyObj("Euro", "€", "EUR");
                     FKP = new CurrencyObj("Falkland Islands Pound", "£", "FKP");
+                    FRF = new CurrencyObj("French Franc", "F", "FRF", 6.55957);
                     GMD = new CurrencyObj("Gambian Dalasi", "D", "GMD");
                     GHC = new CurrencyObj("Ghanian Cedi", "GH₵", "GHC");
                     GIP = new CurrencyObj("Gibraltar Pound", "£", "GIP");
@@ -689,6 +709,7 @@ namespace CrediNET
                     ETB = new CurrencyObj("Ethiopian Birr", "ብር", "ETB");
                     EUR = new CurrencyObj("Euro", "€", "EUR");
                     FKP = new CurrencyObj("Falkland Islands Pound", "£", "FKP");
+                    FRF = new CurrencyObj("Franc français", "F", "FRF", 6.55957);
                     GMD = new CurrencyObj("Gambian Dalasi", "D", "GMD");
                     GHC = new CurrencyObj("Ghanian Cedi", "GH₵", "GHC");
                     GIP = new CurrencyObj("Gibraltar Pound", "£", "GIP");
@@ -849,6 +870,7 @@ namespace CrediNET
         public static CurrencyObj HUF;
         public static CurrencyObj ISK;
         public static CurrencyObj INR;
+        public static CurrencyObj FRF;
         public static CurrencyObj IDR;
         public static CurrencyObj IQD;
         public static CurrencyObj ILS;

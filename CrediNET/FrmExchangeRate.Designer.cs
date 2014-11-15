@@ -82,7 +82,6 @@
             // mupTarget
             // 
             resources.ApplyResources(this.mupTarget, "mupTarget");
-            this.mupTarget.DecimalPlaces = 2;
             this.mupTarget.Devise = "$";
             this.mupTarget.Maximum = new decimal(new int[] {
             -727379969,
@@ -96,7 +95,6 @@
             // mupFrom
             // 
             resources.ApplyResources(this.mupFrom, "mupFrom");
-            this.mupFrom.DecimalPlaces = 2;
             this.mupFrom.Devise = "€";
             this.mupFrom.Maximum = new decimal(new int[] {
             -727379969,

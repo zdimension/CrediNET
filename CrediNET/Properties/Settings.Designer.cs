@@ -70,5 +70,17 @@ namespace CrediNET.Properties {
                 this["UseDashes"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public decimal DecimalPlaces {
+            get {
+                return ((decimal)(this["DecimalPlaces"]));
+            }
+            set {
+                this["DecimalPlaces"] = value;
+            }
+        }
     }
 }

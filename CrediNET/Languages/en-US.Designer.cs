@@ -493,6 +493,15 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à French franc.
+        /// </summary>
+        internal static string Currency_FRF {
+            get {
+                return ResourceManager.GetString("Currency_FRF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à British Pound.
         /// </summary>
         internal static string Currency_GBP {

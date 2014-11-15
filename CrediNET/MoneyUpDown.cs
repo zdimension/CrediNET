@@ -7,14 +7,29 @@ namespace CrediNET
     {
         private void InitializeComponent()
         {
-            TextChanged += textChanged;
+            //TextChanged += textChanged;
+            KeyUp += MoneyUpDown_KeyUp;
+            LostFocus += MoneyUpDown_LostFocus;
         }
 
-        private void textChanged(object sender, EventArgs e)
+        void MoneyUpDown_LostFocus(object sender, EventArgs e)
+        {
+            loadmny();
+        }
+
+        void MoneyUpDown_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                loadmny();
+            }
+        }
+
+        void loadmny()
         {
             try
             {
-                Value = decimal.Parse(Text.Replace(Devise, "").Trim());
+                Value = Math.Round(decimal.Parse(Text.Replace(Devise, "").Trim()), DecimalPlaces);
             }
             catch
             {
@@ -22,11 +37,29 @@ namespace CrediNET
             }
         }
 
+        /*private void textChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Value = Math.Round(decimal.Parse(Text.Replace(Devise, "").Trim()), DecimalPlaces);
+            }
+            catch
+            {
+                base.UpdateEditText();
+            }
+        }*/
+
         public MoneyUpDown()
         {
             InitializeComponent();
             Maximum = 999999999999;
-            DecimalPlaces = 2;
+            //DecimalPlaces = Convert.ToInt32(Properties.Settings.Default.DecimalPlaces);
+            
+        }
+
+        public new int DecimalPlaces
+        {
+            get { return Convert.ToInt32(Properties.Settings.Default.DecimalPlaces); }
         }
 
         private string _dev = "€";
@@ -43,7 +76,7 @@ namespace CrediNET
 
         protected override void UpdateEditText()
         {
-            Text = Value + @" " + Devise;
+            Text = Math.Round(Value, DecimalPlaces) + @" " + Devise;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Xml;
 using System.Xml.Linq;
@@ -25,6 +26,16 @@ namespace CrediNET
             {
                 dic.Add(key, value);
             }
+        }
+
+        public static string ToString(this decimal d, int decimals)
+        {
+            return Math.Round(d, decimals).ToString();
+        }
+
+        public static string ToString(this double d, int decimals)
+        {
+            return ToString((decimal) d, decimals);
         }
 
         public static XmlDocument ToXmlDocument(this XDocument xDocument)

@@ -205,7 +205,7 @@ namespace CrediNET
                         break;
                 }
 
-                lblSoldeAt.Text += DateTime.Now.ToString("dd/MM/yyyy") + @" : " + SoldeActuel.ToString("0.00") + @" " +
+                lblSoldeAt.Text += DateTime.Now.ToString("dd/MM/yyyy") + @" : " + SoldeActuel.ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " +
                                    CompteActuel.Currency.Symbol;
             }
             else
@@ -245,7 +245,7 @@ namespace CrediNET
                         break;
                 }
 
-                lblSoldeAt.Text += d.ToString("dd/MM/yyyy") + @" : " + (totalc - totald).ToString("0.00") + @" " +
+                lblSoldeAt.Text += d.ToString("dd/MM/yyyy") + @" : " + (totalc - totald).ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " +
                                    CompteActuel.Currency.Symbol;
             }
         }
@@ -353,11 +353,11 @@ namespace CrediNET
 
             decimal totalc = 0;
             CompteActuel.Operations.ForEach(x1 => totalc += x1.Credit);
-            lblTotalCredit.Text = totalc.ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+            lblTotalCredit.Text = totalc.ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " + CompteActuel.Currency.Symbol;
 
             decimal totald = 0;
             CompteActuel.Operations.ForEach(x1 => totald += x1.Debit);
-            lblTotalDeb.Text = totald.ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+            lblTotalDeb.Text = totald.ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " + CompteActuel.Currency.Symbol;
 
             switch (Settings.Default.Lang.Name)
             {
@@ -378,7 +378,7 @@ namespace CrediNET
                     break;
             }
 
-            lblSolde.Text += (totalc - totald).ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+            lblSolde.Text += (totalc - totald).ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " + CompteActuel.Currency.Symbol;
 
             SoldeActuel = totalc - totald;
         }
@@ -1112,11 +1112,11 @@ namespace CrediNET
 
             decimal totalc = 0;
             queryOps.ToList().ForEach(x1 => totalc += x1.Credit);
-            lblTotalCredit.Text = totalc.ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+            lblTotalCredit.Text = totalc.ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " + CompteActuel.Currency.Symbol;
 
             decimal totald = 0;
             queryOps.ToList().ForEach(x1 => totald += x1.Debit);
-            lblTotalDeb.Text = totald.ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+            lblTotalDeb.Text = totald.ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " + CompteActuel.Currency.Symbol;
 
             switch (Settings.Default.Lang.Name)
             {
@@ -1137,7 +1137,7 @@ namespace CrediNET
                     break;
             }
 
-            lblSolde.Text += (totalc - totald).ToString("0.00") + @" " + CompteActuel.Currency.Symbol;
+            lblSolde.Text += (totalc - totald).ToString((int)CrediNET.Properties.Settings.Default.DecimalPlaces) + @" " + CompteActuel.Currency.Symbol;
 
             SoldeActuel = totalc - totald;
         }

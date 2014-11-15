@@ -53,8 +53,7 @@ namespace CrediNET
 
             if (!cache.Any(x => x.Key.Equals(new KeyValuePair<CurrencyObj, CurrencyObj>(fromcurrency, tocurrency))))
             {
-                cache[new KeyValuePair<CurrencyObj, CurrencyObj>(fromcurrency, tocurrency)] =
-                    (decimal)CurrencyExtensions.ExchangeRate(fromcurrency, tocurrency);
+                cache[new KeyValuePair<CurrencyObj, CurrencyObj>(fromcurrency, tocurrency)] = (decimal)CurrencyExtensions.ExchangeRate(fromcurrency, tocurrency);
             }
             mupTarget.Value = (decimal)(mupFrom.Value * cache[new KeyValuePair<CurrencyObj, CurrencyObj>(fromcurrency, tocurrency)]);
         }
