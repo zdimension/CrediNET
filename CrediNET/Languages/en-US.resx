@@ -266,4 +266,115 @@
   <data name="Currency_HRK" xml:space="preserve">
     <value>Croatian Kuna</value>
   </data>
+  <data name="Currency_CUP" xml:space="preserve">
+    <value>Cuban Peso</value>
+  </data>
+  <data name="Currency_CYP" xml:space="preserve">
+    <value>Cyprus Pound</value>
+  </data>
+  <data name="Currency_CZK" xml:space="preserve">
+    <value>Czech Koruna</value>
+  </data>
+  <data name="Currency_DKK" xml:space="preserve">
+    <value>Danish Krone</value>
+  </data>
+  <data name="Currency_DJF" xml:space="preserve">
+    <value>Djiboutian Franc</value>
+  </data>
+  <data name="Currency_DOP" xml:space="preserve">
+    <value>Dominican Peso</value>
+  </data>
+  <data name="Currency_XCD" xml:space="preserve">
+    <value>East Caribbean Dollar</value>
+  </data>
+  <data name="Currency_EGP" xml:space="preserve">
+    <value>Egyptian Pound</value>
+  </data>
+  <data name="Currency_SVC" xml:space="preserve">
+    <value>El Salvador Colòn</value>
+  </data>
+  <data name="Currency_ETB" xml:space="preserve">
+    <value>Ethiopian Birr</value>
+  </data>
+  <data name="Currency_EUR" xml:space="preserve">
+    <value>Euro</value>
+  </data>
+  <data name="Currency_FKP" xml:space="preserve">
+    <value>Falkland Islands Pound</value>
+  </data>
+  <data name="Currency_GMD" xml:space="preserve">
+    <value>Gambian Dalasi</value>
+  </data>
+  <data name="Currency_GHC" xml:space="preserve">
+    <value>Ghanian Cedi</value>
+  </data>
+  <data name="Currency_GIP" xml:space="preserve">
+    <value>Gibraltar Pound</value>
+  </data>
+  <data name="Currency_GTQ" xml:space="preserve">
+    <value>Guatemalan Quetzal</value>
+  </data>
+  <data name="Currency_GNF" xml:space="preserve">
+    <value>Guinean Franc</value>
+  </data>
+  <data name="Currency_GYD" xml:space="preserve">
+    <value>Guyana Dollar</value>
+  </data>
+  <data name="Currency_HTG" xml:space="preserve">
+    <value>Haitian Gourde</value>
+  </data>
+  <data name="Currency_HNL" xml:space="preserve">
+    <value>Honduran Lempira</value>
+  </data>
+  <data name="Currency_HKD" xml:space="preserve">
+    <value>Hong Kong Dollar</value>
+  </data>
+  <data name="Currency_HUF" xml:space="preserve">
+    <value>Hungarian Forint</value>
+  </data>
+  <data name="Currency_ISK" xml:space="preserve">
+    <value>Icelandic Króna</value>
+  </data>
+  <data name="Currency_INR" xml:space="preserve">
+    <value>Indian Rupee</value>
+  </data>
+  <data name="Currency_IDR" xml:space="preserve">
+    <value>Indonesian Rupiah</value>
+  </data>
+  <data name="Currency_IQD" xml:space="preserve">
+    <value>Iraqi Dinar</value>
+  </data>
+  <data name="Currency_ILS" xml:space="preserve">
+    <value>Israeli Shekel</value>
+  </data>
+  <data name="Currency_JMD" xml:space="preserve">
+    <value>Jamaican Dollar</value>
+  </data>
+  <data name="Currency_JPY" xml:space="preserve">
+    <value>Japanese Yen</value>
+  </data>
+  <data name="Currency_JOD" xml:space="preserve">
+    <value>Jordanian Dinar</value>
+  </data>
+  <data name="Currency_KZT" xml:space="preserve">
+    <value>Kazakhstani Tenge</value>
+  </data>
+  <data name="Currency_KES" xml:space="preserve">
+    <value>Kenyan Shilling</value>
+  </data>
+  <data name="Currency_KRW" xml:space="preserve">
+    <value>South Korean Won</value>
+  </data>
+  <data name="Currency_KWD" xml:space="preserve">
+    <value>Kuwaiti Dinar</value>
+  </data>
+  <data name="Currency_LAK" xml:space="preserve">
+    <value>Lao Kip</value>
+  </data>
+  <data name="Currency_LBP" xml:space="preserve">
+    <value>Lebanese Pound</value>
+  </data>
+  <data name="Currency_LSL" xml:space="preserve">
+    <value>Lesotho Loti</value>
+  </data>
 </root>

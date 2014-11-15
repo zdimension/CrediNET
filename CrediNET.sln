@@ -11,6 +11,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrediNET.WPF", "CrediNET.WPF\CrediNET.WPF.csproj", "{3B500B8C-090E-4F6C-8C2B-7ECC122422B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{08FEE265-77ED-49A2-BC32-88D2EF9839FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{3B500B8C-090E-4F6C-8C2B-7ECC122422B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B500B8C-090E-4F6C-8C2B-7ECC122422B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B500B8C-090E-4F6C-8C2B-7ECC122422B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08FEE265-77ED-49A2-BC32-88D2EF9839FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08FEE265-77ED-49A2-BC32-88D2EF9839FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08FEE265-77ED-49A2-BC32-88D2EF9839FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08FEE265-77ED-49A2-BC32-88D2EF9839FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -475,11 +475,65 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cuban Peso.
+        /// </summary>
+        internal static string Currency_CUP {
+            get {
+                return ResourceManager.GetString("Currency_CUP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cape Verde Escudo.
         /// </summary>
         internal static string Currency_CVE {
             get {
                 return ResourceManager.GetString("Currency_CVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cyprus Pound.
+        /// </summary>
+        internal static string Currency_CYP {
+            get {
+                return ResourceManager.GetString("Currency_CYP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Czech Koruna.
+        /// </summary>
+        internal static string Currency_CZK {
+            get {
+                return ResourceManager.GetString("Currency_CZK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Djiboutian Franc.
+        /// </summary>
+        internal static string Currency_DJF {
+            get {
+                return ResourceManager.GetString("Currency_DJF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Danish Krone.
+        /// </summary>
+        internal static string Currency_DKK {
+            get {
+                return ResourceManager.GetString("Currency_DKK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dominican Peso.
+        /// </summary>
+        internal static string Currency_DOP {
+            get {
+                return ResourceManager.GetString("Currency_DOP", resourceCulture);
             }
         }
         
@@ -493,6 +547,42 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Egyptian Pound.
+        /// </summary>
+        internal static string Currency_EGP {
+            get {
+                return ResourceManager.GetString("Currency_EGP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ethiopian Birr.
+        /// </summary>
+        internal static string Currency_ETB {
+            get {
+                return ResourceManager.GetString("Currency_ETB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Euro.
+        /// </summary>
+        internal static string Currency_EUR {
+            get {
+                return ResourceManager.GetString("Currency_EUR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Falkland Islands Pound.
+        /// </summary>
+        internal static string Currency_FKP {
+            get {
+                return ResourceManager.GetString("Currency_FKP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à British Pound.
         /// </summary>
         internal static string Currency_GBP {
@@ -502,11 +592,182 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ghanian Cedi.
+        /// </summary>
+        internal static string Currency_GHC {
+            get {
+                return ResourceManager.GetString("Currency_GHC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gibraltar Pound.
+        /// </summary>
+        internal static string Currency_GIP {
+            get {
+                return ResourceManager.GetString("Currency_GIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gambian Dalasi.
+        /// </summary>
+        internal static string Currency_GMD {
+            get {
+                return ResourceManager.GetString("Currency_GMD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Guinean Franc.
+        /// </summary>
+        internal static string Currency_GNF {
+            get {
+                return ResourceManager.GetString("Currency_GNF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Guatemalan Quetzal.
+        /// </summary>
+        internal static string Currency_GTQ {
+            get {
+                return ResourceManager.GetString("Currency_GTQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Guyana Dollar.
+        /// </summary>
+        internal static string Currency_GYD {
+            get {
+                return ResourceManager.GetString("Currency_GYD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Hong Kong Dollar.
+        /// </summary>
+        internal static string Currency_HKD {
+            get {
+                return ResourceManager.GetString("Currency_HKD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Honduran Lempira.
+        /// </summary>
+        internal static string Currency_HNL {
+            get {
+                return ResourceManager.GetString("Currency_HNL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Croatian Kuna.
         /// </summary>
         internal static string Currency_HRK {
             get {
                 return ResourceManager.GetString("Currency_HRK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Haitian Gourde.
+        /// </summary>
+        internal static string Currency_HTG {
+            get {
+                return ResourceManager.GetString("Currency_HTG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Hungarian Forint.
+        /// </summary>
+        internal static string Currency_HUF {
+            get {
+                return ResourceManager.GetString("Currency_HUF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Indonesian Rupiah.
+        /// </summary>
+        internal static string Currency_IDR {
+            get {
+                return ResourceManager.GetString("Currency_IDR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Israeli Shekel.
+        /// </summary>
+        internal static string Currency_ILS {
+            get {
+                return ResourceManager.GetString("Currency_ILS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Indian Rupee.
+        /// </summary>
+        internal static string Currency_INR {
+            get {
+                return ResourceManager.GetString("Currency_INR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Iraqi Dinar.
+        /// </summary>
+        internal static string Currency_IQD {
+            get {
+                return ResourceManager.GetString("Currency_IQD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Icelandic Króna.
+        /// </summary>
+        internal static string Currency_ISK {
+            get {
+                return ResourceManager.GetString("Currency_ISK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Jamaican Dollar.
+        /// </summary>
+        internal static string Currency_JMD {
+            get {
+                return ResourceManager.GetString("Currency_JMD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Jordanian Dinar.
+        /// </summary>
+        internal static string Currency_JOD {
+            get {
+                return ResourceManager.GetString("Currency_JOD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Japanese Yen.
+        /// </summary>
+        internal static string Currency_JPY {
+            get {
+                return ResourceManager.GetString("Currency_JPY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Kenyan Shilling.
+        /// </summary>
+        internal static string Currency_KES {
+            get {
+                return ResourceManager.GetString("Currency_KES", resourceCulture);
             }
         }
         
@@ -529,6 +790,24 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à South Korean Won.
+        /// </summary>
+        internal static string Currency_KRW {
+            get {
+                return ResourceManager.GetString("Currency_KRW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Kuwaiti Dinar.
+        /// </summary>
+        internal static string Currency_KWD {
+            get {
+                return ResourceManager.GetString("Currency_KWD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Cayman Islands Dollar.
         /// </summary>
         internal static string Currency_KYD {
@@ -538,11 +817,65 @@ namespace CrediNET.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Kazakhstani Tenge.
+        /// </summary>
+        internal static string Currency_KZT {
+            get {
+                return ResourceManager.GetString("Currency_KZT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lao Kip.
+        /// </summary>
+        internal static string Currency_LAK {
+            get {
+                return ResourceManager.GetString("Currency_LAK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lebanese Pound.
+        /// </summary>
+        internal static string Currency_LBP {
+            get {
+                return ResourceManager.GetString("Currency_LBP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lesotho Loti.
+        /// </summary>
+        internal static string Currency_LSL {
+            get {
+                return ResourceManager.GetString("Currency_LSL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à El Salvador Colòn.
+        /// </summary>
+        internal static string Currency_SVC {
+            get {
+                return ResourceManager.GetString("Currency_SVC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à CFA Franc (BEAC).
         /// </summary>
         internal static string Currency_XAF {
             get {
                 return ResourceManager.GetString("Currency_XAF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à East Caribbean Dollar.
+        /// </summary>
+        internal static string Currency_XCD {
+            get {
+                return ResourceManager.GetString("Currency_XCD", resourceCulture);
             }
         }
         
