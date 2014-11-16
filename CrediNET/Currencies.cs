@@ -787,7 +787,7 @@ namespace CrediNET
                     SDD = new CurrencyObj("Livre soudanaise", "£Sd", "SDD");
                     SRG = new CurrencyObj("Guilder surinamien", "ƒ", "SRG");
                     SZL = new CurrencyObj("Lilangeni swazilandais", "L", "SZL");
-                    SEK = new CurrencyObj("Couronne suèdoise", "kr", "SEK");
+                    SEK = new CurrencyObj("Couronne suédoise", "kr", "SEK");
                     TRY = new CurrencyObj("Livre turque", "₺", "TRY");
                     CHF = new CurrencyObj("Franc suisse", "Fr", "CHF");
                     SYP = new CurrencyObj("Livre syrienne", "£", "SYP");
@@ -798,7 +798,7 @@ namespace CrediNET
                     TTD = new CurrencyObj("Dollar de Trinité-et-Tobago", "$", "TTD");
                     TND = new CurrencyObj("Dinar tunisien", "د.ت", "TND");
                     USD = new CurrencyObj("Dollar américain", "$", "USD");
-                    AED = new CurrencyObj("Balboa panaméen", "د.إ", "AED");
+                    AED = new CurrencyObj("Dirham des Émirats arabes unis", "د.إ", "AED");
                     UGX = new CurrencyObj("Shilling ougandais", "Ush", "UGX");
                     UAH = new CurrencyObj("Hryvnia ukrainienne", "₴", "UAH");
                     UYU = new CurrencyObj("Peso uruguayen", "$", "UYU");

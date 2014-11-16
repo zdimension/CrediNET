@@ -50,10 +50,53 @@ namespace CrediNET
             Settings.Default.Save();
         }
 
+        void checkMods()
+        {
+            try
+            {
+                var cultureName = cbxLng.SelectedItem.ToString().Split('(')[1].Replace(")", "");
+                if (
+                    Settings.Default.Lang != (CultureInfo)new CultureInfoConverter().ConvertFromString(cultureName) ||
+                    cbxDftCrc.SelectedItem.Text !=
+                    Currencies.All.First(y => y.ShortName == Settings.Default.DefaultCurrency).Name ||
+                    cbxUseDashes.Checked != Settings.Default.UseDashes ||
+                    nupDecimals.Value != Settings.Default.DecimalPlaces)
+                {
+                    pbxIcI.Visible = true;
+                    lblRestart.Visible = true;
+                }
+                else
+                {
+                    pbxIcI.Visible = false;
+                    lblRestart.Visible = false;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
         private void nupDecimals_ValueChanged(object sender, EventArgs e)
         {
             lblSample.Text = Math.Round(123.456789123, Convert.ToInt32(nupDecimals.Value)).ToString() + @" " +
                              Currencies.All.First(x => x.Name == cbxDftCrc.SelectedItem.Text).Symbol;
+            checkMods();
+        }
+
+        private void cbxLng_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkMods();
+        }
+
+        private void cbxDftCrc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkMods();
+        }
+
+        private void cbxUseDashes_CheckedChanged(object sender, EventArgs e)
+        {
+            checkMods();
         }
     }
 }

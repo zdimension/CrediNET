@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace CrediNET
@@ -57,6 +58,7 @@ namespace CrediNET
             
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new int DecimalPlaces
         {
             get { return Convert.ToInt32(Properties.Settings.Default.DecimalPlaces); }

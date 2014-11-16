@@ -117,113 +117,131 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;btnIntervertir.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbxDev2.Name" xml:space="preserve">
-    <value>cbxDev2</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbxDev2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 24</value>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>392, 100</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="cbxDev2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>346, 71</value>
-  </data>
-  <data name="&gt;&gt;cbxDev1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mupTarget.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;mupFrom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mupTarget.Type" xml:space="preserve">
-    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbxDev1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;btnIntervertir.Name" xml:space="preserve">
-    <value>btnIntervertir</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Saisissez une valeur, puis sélectionnez la monnaie de départ et la monnaie d'arrivée.</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>478, 134</value>
-  </data>
-  <data name="&gt;&gt;mupFrom.Type" xml:space="preserve">
-    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="cbxDev1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 24</value>
-  </data>
-  <data name="mupTarget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>346, 42</value>
-  </data>
   <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
     <value>btnClose</value>
   </data>
-  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 100</value>
+  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="cbxDev2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;mupFrom.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;cbxDev1.Type" xml:space="preserve">
-    <value>CrediNET.ImageComboBox, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
   </data>
-  <data name="&gt;&gt;cbxDev1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>446, 15</value>
   </data>
-  <data name="&gt;&gt;cbxDev2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="btnIntervertir.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Saisissez une valeur, puis sélectionnez la monnaie de départ et la monnaie d'arrivée.</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="mupFrom.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnIntervertir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 41</value>
+  </data>
+  <data name="btnIntervertir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 25</value>
+  </data>
+  <data name="btnIntervertir.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="btnIntervertir.Text" xml:space="preserve">
     <value>&lt;-&gt;</value>
   </data>
-  <data name="&gt;&gt;mupFrom.Name" xml:space="preserve">
-    <value>mupFrom</value>
+  <data name="&gt;&gt;btnIntervertir.Name" xml:space="preserve">
+    <value>btnIntervertir</value>
+  </data>
+  <data name="&gt;&gt;btnIntervertir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnIntervertir.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnIntervertir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbxDev2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 71</value>
+  </data>
+  <data name="cbxDev2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 24</value>
+  </data>
+  <data name="cbxDev2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbxDev2.Name" xml:space="preserve">
+    <value>cbxDev2</value>
+  </data>
+  <data name="&gt;&gt;cbxDev2.Type" xml:space="preserve">
+    <value>CrediNET.ImageComboBox, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cbxDev2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbxDev2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbxDev1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 71</value>
+  </data>
+  <data name="cbxDev1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 24</value>
+  </data>
+  <data name="cbxDev1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbxDev1.Name" xml:space="preserve">
+    <value>cbxDev1</value>
+  </data>
+  <data name="&gt;&gt;cbxDev1.Type" xml:space="preserve">
+    <value>CrediNET.ImageComboBox, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cbxDev1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbxDev1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="mupTarget.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 42</value>
   </data>
   <data name="mupTarget.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 23</value>
@@ -231,79 +249,61 @@
   <data name="mupTarget.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;mupTarget.Name" xml:space="preserve">
+    <value>mupTarget</value>
   </data>
-  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrmExchangeRate</value>
-  </data>
-  <data name="cbxDev1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 71</value>
-  </data>
-  <data name="btnIntervertir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 25</value>
-  </data>
-  <data name="&gt;&gt;cbxDev1.Name" xml:space="preserve">
-    <value>cbxDev1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 15</value>
-  </data>
-  <data name="&gt;&gt;cbxDev2.Type" xml:space="preserve">
-    <value>CrediNET.ImageComboBox, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cbxDev2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnIntervertir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;mupTarget.Type" xml:space="preserve">
+    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mupTarget.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnIntervertir.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;mupTarget.Name" xml:space="preserve">
-    <value>mupTarget</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="mupFrom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="btnIntervertir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 41</value>
-  </data>
-  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Convertisseur de monnaies</value>
+  <data name="&gt;&gt;mupTarget.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="mupFrom.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 42</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
+  <data name="mupFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 23</value>
+  </data>
+  <data name="mupFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;mupFrom.Name" xml:space="preserve">
+    <value>mupFrom</value>
+  </data>
+  <data name="&gt;&gt;mupFrom.Type" xml:space="preserve">
+    <value>CrediNET.MoneyUpDown, CrediNET, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mupFrom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mupFrom.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>478, 134</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Convertisseur de monnaies</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmExchangeRate</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

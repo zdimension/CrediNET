@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOptions));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbxIcI = new System.Windows.Forms.PictureBox();
+            this.lblRestart = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cbxDftCrc = new CrediNET.ImageComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxLng = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,17 +46,33 @@
             this.cbxUseDashes = new System.Windows.Forms.CheckBox();
             this.cbxSplash = new System.Windows.Forms.CheckBox();
             this.vsbMain = new System.Windows.Forms.VScrollBar();
+            this.cbxDftCrc = new CrediNET.ImageComboBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIcI)).BeginInit();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupDecimals)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pbxIcI);
+            this.panel1.Controls.Add(this.lblRestart);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnCancel);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // pbxIcI
+            // 
+            this.pbxIcI.Image = global::CrediNET.Properties.Resources.information;
+            resources.ApplyResources(this.pbxIcI, "pbxIcI");
+            this.pbxIcI.Name = "pbxIcI";
+            this.pbxIcI.TabStop = false;
+            // 
+            // lblRestart
+            // 
+            resources.ApplyResources(this.lblRestart, "lblRestart");
+            this.lblRestart.Name = "lblRestart";
             // 
             // btnOK
             // 
@@ -72,15 +89,6 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // cbxDftCrc
-            // 
-            this.cbxDftCrc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxDftCrc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxDftCrc.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxDftCrc, "cbxDftCrc");
-            this.cbxDftCrc.Name = "cbxDftCrc";
-            this.cbxDftCrc.SelectedItem = null;
-            // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
@@ -96,6 +104,7 @@
             resources.GetString("cbxLng.Items3")});
             resources.ApplyResources(this.cbxLng, "cbxLng");
             this.cbxLng.Name = "cbxLng";
+            this.cbxLng.SelectedIndexChanged += new System.EventHandler(this.cbxLng_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -159,6 +168,7 @@
             this.cbxUseDashes.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::CrediNET.Properties.Settings.Default, "UseDashes", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cbxUseDashes.Name = "cbxUseDashes";
             this.cbxUseDashes.UseVisualStyleBackColor = true;
+            this.cbxUseDashes.CheckedChanged += new System.EventHandler(this.cbxUseDashes_CheckedChanged);
             // 
             // cbxSplash
             // 
@@ -175,6 +185,16 @@
             resources.ApplyResources(this.vsbMain, "vsbMain");
             this.vsbMain.Name = "vsbMain";
             // 
+            // cbxDftCrc
+            // 
+            this.cbxDftCrc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxDftCrc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDftCrc.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxDftCrc, "cbxDftCrc");
+            this.cbxDftCrc.Name = "cbxDftCrc";
+            this.cbxDftCrc.SelectedItem = null;
+            this.cbxDftCrc.SelectedIndexChanged += new System.EventHandler(this.cbxDftCrc_SelectedIndexChanged);
+            // 
             // FrmOptions
             // 
             resources.ApplyResources(this, "$this");
@@ -187,6 +207,8 @@
             this.Name = "FrmOptions";
             this.Load += new System.EventHandler(this.FrmOptions_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxIcI)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupDecimals)).EndInit();
@@ -212,6 +234,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblSample;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pbxIcI;
+        private System.Windows.Forms.Label lblRestart;
 
     }
 }

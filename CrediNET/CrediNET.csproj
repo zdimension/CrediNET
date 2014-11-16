@@ -533,6 +533,7 @@
     <None Include="Resources\chart_line.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\information.png" />
     <None Include="Resources\flag_france.png" />
     <None Include="Resources\money1.png" />
     <None Include="Resources\money.png" />

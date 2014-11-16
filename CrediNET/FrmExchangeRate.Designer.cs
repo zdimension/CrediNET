@@ -61,28 +61,28 @@
             // 
             // cbxDev2
             // 
-            resources.ApplyResources(this.cbxDev2, "cbxDev2");
             this.cbxDev2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxDev2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDev2.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxDev2, "cbxDev2");
             this.cbxDev2.Name = "cbxDev2";
             this.cbxDev2.SelectedItem = null;
             this.cbxDev2.SelectedIndexChanged += new System.EventHandler(this.cbxDev2_SelectedIndexChanged);
             // 
             // cbxDev1
             // 
-            resources.ApplyResources(this.cbxDev1, "cbxDev1");
             this.cbxDev1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxDev1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDev1.FormattingEnabled = true;
+            resources.ApplyResources(this.cbxDev1, "cbxDev1");
             this.cbxDev1.Name = "cbxDev1";
             this.cbxDev1.SelectedItem = null;
             this.cbxDev1.SelectedIndexChanged += new System.EventHandler(this.cbxDev1_SelectedIndexChanged);
             // 
             // mupTarget
             // 
-            resources.ApplyResources(this.mupTarget, "mupTarget");
             this.mupTarget.Devise = "$";
+            resources.ApplyResources(this.mupTarget, "mupTarget");
             this.mupTarget.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -94,8 +94,8 @@
             // 
             // mupFrom
             // 
-            resources.ApplyResources(this.mupFrom, "mupFrom");
             this.mupFrom.Devise = "€";
+            resources.ApplyResources(this.mupFrom, "mupFrom");
             this.mupFrom.Maximum = new decimal(new int[] {
             -727379969,
             232,
